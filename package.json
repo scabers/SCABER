@@ -22,6 +22,8 @@
         "jsonfile": "^2.4.0",
         "request": "^2.7.0",
         "moment": "^2.17.1",
+        "passport": "^0.3.2",
+        "passport-github": "^1.1.0",
         "socket.io": "^1.4.5"
     }
 }

@@ -14,7 +14,7 @@ app.set('views',path.join(__dirname,'client-service/views'));
 app.use(express.static('client-service/elements'));
 app.use(express.static('client-service/images'));
 app.use(express.static('client-service/js'));
-app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 /* Setting view engine as ejs */
 app.set('view engine','ejs');
