@@ -20,12 +20,6 @@ app.set('view engine','ejs');
 // Modules
 IntroService.init(app);
 
-/* index page */
-app.get('/',function(req,res){
-    console.log('Index page');
-    res.end('OK');
-});
-
 // Server open
 const server = http.createServer(app);
 

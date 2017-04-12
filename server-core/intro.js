@@ -3,10 +3,14 @@
 // definition here
 class IntroService {
     init(app){
+        app.get('/',this.index);
         app.get('/about',this.about);
     }
+    index(req,res){
+        res.render('index');
+    }
     about(req,res){
-        res.end("about us");
+        res.render("about");
     }
 }
 

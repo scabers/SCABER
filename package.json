@@ -1,5 +1,5 @@
 {
-    "name": "LifeGamer",
+    "name": "SCABER",
     "main": "app.js",
     "config":  {
         "port": 3000
@@ -12,19 +12,16 @@
     "license": "GPL-3.0",
     "repository":{
         "type": "git",
-        "url": "https://github.com/pd2-ncku/LifeGamer.git"
+        "url": "https://github.com/kevinbird61/SCABER.git"
     },
     "dependencies": {
         "body-parser": "^1.15.2",
         "express": "^4.6.1",
         "express-session": "^1.11.3",
         "ejs": "^2.5.5",
-        "github-api": "^3.0.0",
         "jsonfile": "^2.4.0",
         "request": "^2.7.0",
         "moment": "^2.17.1",
-        "passport": "^0.3.2",
-        "passport-github": "^1.1.0",
         "socket.io": "^1.4.5"
     }
 }
