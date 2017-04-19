@@ -4,7 +4,10 @@
 - SCABER = safe + cab + togerther
 
 ## Collaborate
+<<<<<<< HEAD
 
+=======
+>>>>>>> fa02617744e3ca00ec32cb25eb325b152b62dd24
 - server-core:
     - `Currently worker`:
         - Kevin Cyu
