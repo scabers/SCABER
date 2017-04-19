@@ -4,12 +4,12 @@
 }
 
 .signin .signin-social a {
-    color: white;
+    color: #FFFFFF;
     opacity: 0.9;
 }
 
 .signin .signin-social a:hover {
-    color: white;
+    color: #FFFFFF;
     opacity: 1;
 }
 
@@ -17,7 +17,7 @@
     background: #3B5998;
 }
 
-.signin .sigin-social .btn-twitter {
+.signin .signin-social .btn-twitter {
     background: #00ACED;
 }
 
@@ -35,7 +35,7 @@
     position: relative;
 }
 
-.signin .sigin-bar .hr-bar {
+.signin .signin-bar .hr-bar {
     background: #CDCDCD;
     height: 1px;
     margin-top: 0px !important;
