@@ -4,6 +4,7 @@ const config = require('./config');
 const passport = require('passport');
 const querystring = require('querystring');
 const GithubStrategy = require('passport-github').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 
 // definition here
 class AuthService{
@@ -25,6 +26,18 @@ class AuthService{
                 return done(null,userdata);
             }
         ));
+        // Facebook Strategy
+        passport.use(new FacebookStrategy({
+            clientID: config.auth.facebook.clientID,
+            clientSecret: config.auth.facebook.clientSecret,
+            scope: config.auth.facebook.profileFields,
+            callbackURL: config.auth.facebook.callback
+            },
+            function(accessToken, refreshToken, profile,done){
+                let userdata = profile;
+                return done(null,userdata);
+            }
+        ))
 
         //serialize and deserialize
         passport.serializeUser(function(user, done) {
@@ -36,10 +49,36 @@ class AuthService{
             done(null, user);
         });
 
-        // login/callback
+        // for github
         app.get('/login/github',this.gitlogin);
         app.get('/auth/github',this.gitauth);
         app.get('/auth/github/callback',this.gitauthcb);
+        // for facebook
+        app.get('/login/facebook',this.fblogin);
+        app.get('/auth/facebook',this.fbauth);
+        app.get('/auth/facebook/callback',passport.authenticate('facebook',{
+            successReturnToOrRedirect: config.auth.facebook.successUrl,
+            failureRedirect: config.auth.facebook.failureUrl
+        }));
+    }
+
+    fblogin(req,res){
+        if(req.isAuthenticated()){
+            res.redirect(config.auth.facebook.successUrl);
+        }
+        else{
+            // Main Login page ~
+            // res.render('login',{title:"LifeGamer-User login",type:'facebook'});
+            res.redirect('/auth/facebook');
+        }
+    }
+    fbauth(req,res,next){
+        // Using passport to get authenticate
+        if (!req.session) req.session = {};
+        req.session.returnTo = config.auth.facebook.successUrl;
+        // Pass them to session
+        //req.session.username = req.query.usr;
+        passport.authenticate('facebook')(req, res, next);
     }
 
     gitlogin(req,res){
@@ -47,7 +86,7 @@ class AuthService{
     }
     gitauth(req,res,next){
         if (!req.session) req.session = {};
-        req.session.returnTo = config.auth.successUrl;
+        req.session.returnTo = config.auth.github.successUrl;
         // Pass them to session
         // FIXME: usr,pwd need to build in web
         // req.session.username = req.query.usr;
