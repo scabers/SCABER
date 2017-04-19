@@ -68,8 +68,7 @@ class AuthService{
         }
         else{
             // Main Login page ~
-            // res.render('login',{title:"LifeGamer-User login",type:'facebook'});
-            res.redirect('/auth/facebook');
+            res.render('signin',{title:"LifeGamer-User login",type:'facebook'});
         }
     }
     fbauth(req,res,next){
@@ -77,7 +76,9 @@ class AuthService{
         if (!req.session) req.session = {};
         req.session.returnTo = config.auth.facebook.successUrl;
         // Pass them to session
-        //req.session.username = req.query.usr;
+        req.session.email = req.query.email;
+        req.session.password = req.query.pwd;
+        console.log('Email: ' + req.session.email + "; Pwd: " + req.session.password );
         passport.authenticate('facebook')(req, res, next);
     }
 

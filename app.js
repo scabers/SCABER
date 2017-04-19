@@ -13,15 +13,14 @@ const {UserService} = require('./server-core/user');
 
 /* Redirect views path */
 app.set('views', path.join(__dirname, 'client-service/views'));
-
 /* Setting static directory - image use */
 app.use(express.static('client-service/elements'));
-app.use(express.static('client-service/images'));
+app.use(express.static('client-service/img'));
+app.use(express.static('client-service/css'));
 app.use(express.static('client-service/js'));
 app.use(bodyParser.urlencoded({
     extended: true
 }));
-app.use(express.static('client-service/css'));;
 app.use(bodyParser.json());
 
 /* Setting view engine as ejs */
