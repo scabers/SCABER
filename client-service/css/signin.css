@@ -1,0 +1,72 @@
+.signin .signin-title {
+    line-height: 300%;
+    text-align: center;
+}
+
+.signin .signin-social a {
+    color: white;
+    opacity: 0.9;
+}
+
+.signin .signin-social a:hover {
+    color: white;
+    opacity: 1;
+}
+
+.signin .signin-social .btn-facebook {
+    background: #3B5998;
+}
+
+.signin .sigin-social .btn-twitter {
+    background: #00ACED;
+}
+
+.signin .signin-social .btn-google {
+    background: #C32F10;
+}
+
+.signin .signin-bar {
+    color: #AAAAAA;
+    font-size: 1.5em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    position: relative;
+}
+
+.signin .sigin-bar .hr-bar {
+    background: #CDCDCD;
+    height: 1px;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.signin .signin-bar .span-or {
+    background: #FFFFFF;
+    display: block;
+    margin-left: -1.5em;
+    position: absolute;
+    top: -0.6em;
+    left: 50%;
+    text-align: center;
+    width: 3em;
+}
+
+.signin .signin-form .input-group i {
+    width: 2em;
+}
+
+.signin .signin-form .help-block {
+    color: #FF0000;
+}
+
+@media (min-width: 768px) {
+    .row-sm-offset-3 div:first-child[class*="col-"] {
+        margin-left: 25%;
+    }
+    .signin .signin-forgotPwd {
+        margin-top: 10px;
+        text-align: right;
+    }
+}

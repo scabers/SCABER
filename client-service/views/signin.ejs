@@ -2,8 +2,79 @@
     <head>
         <% include meta &>
         <% include lib %>
+
+        <!-- CSS -->
+        <<link rel="stylesheet" href="">
     </head>
     <body>
-        
+        <div class="container">
+            <div class="signin">
+                <h3 class="signin-title">Sign in or <a href="#">Sign up</a></h3>
+                <!-- Signin social buttons -->
+                <div class="row row-sm-offset-3 sigin-social">
+                    <div class="col-xs-4 col-sm-2">
+                        <a href="#" class="btn btn-lg btn-block btn-facebook">
+                            <i class="fa fa-facebook visible-xs"></i>
+                            <span class="hidden-xs">Facebook</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-2">
+                        <a href="#" class="btn btn-lg btn-block btn-twitter">
+                            <i class="fa fa-twitter visible-xs"></i>
+                            <span class="hidden-xs">Twitter</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-2">
+                        <a href="#" class="btn btn-lg btn-block btn-google">
+                            <i class="fa fa-google-plus visible-xs"></i>
+                            <span class="hidden-xs">Google+</span>
+                        </a>
+                    </div>
+                </div>
+                <!-- Signin bar -->
+                <div class="row row-sm-offset-3 signin-bar">
+                    <div class="col-xs-12 col-sm-6">
+                        <hr class="hr-bar">
+                        <span class="span-or">or</span>
+                    </div>
+                </div>
+
+                <div class="row row-sm-offset-3">
+                    <div class="col-xs-12 col-sm-6">
+                        <form class="signin-form" action="" autocomplete="off" method="POST">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input class="form-control" type="text" name="email" placeholder="Email address">
+                            </div>
+
+                            <span class="help-block"></span>
+
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input class="form-control" type="password" name="pass" placeholder="Password">
+                            </div>
+
+                            <span class="help-block"></span>
+
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        </form>
+                    </div>
+
+                    <!-- Singin remeber-me & forgot-pwd -->
+                    <div class="row row-sm-offset-3">
+                        <div class="col-xs-12 col-sm-3">
+                            <label class="checkbox">
+                                <input class="signin-remember" type="checkbox" value="remember-me">Remember Me
+                            </label>
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <p class="sign-forgotPwd">
+                                <a href="#">Forgot password?</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
