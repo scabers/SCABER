@@ -67,3 +67,7 @@ class DBModule_MDB {
             });
     }
 }
+
+module.exports = {
+    MongoDBService = new DBModule_MDB()
+}
