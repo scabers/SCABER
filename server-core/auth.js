@@ -12,29 +12,16 @@ class AuthService{
         // Initial passport Strategy
         app.use(passport.initialize());
         app.use(passport.session());
-        // FIXME: application id & secret replace with available one
-        // Github Strategy
-        passport.use(new GithubStrategy({
-            clientID: config.auth.github.clientID,
-            clientSecret: config.auth.github.clientSecret,
-            scope: "user repo",
-            callbackURL: config.auth.github.callback
-            },
-            function(accessToken, refreshToken, profile, done){
-                let userdata = profile;
-                // Return user model
-                return done(null,userdata);
-            }
-        ));
         // Facebook Strategy
         passport.use(new FacebookStrategy({
             clientID: config.auth.facebook.clientID,
             clientSecret: config.auth.facebook.clientSecret,
-            scope: config.auth.facebook.profileFields,
+            profileFields: config.auth.facebook.profileFields,
             callbackURL: config.auth.facebook.callback
             },
             function(accessToken, refreshToken, profile,done){
                 let userdata = profile;
+                console.dir(profile);
                 return done(null,userdata);
             }
         ))
@@ -49,10 +36,6 @@ class AuthService{
             done(null, user);
         });
 
-        // for github
-        app.get('/login/github',this.gitlogin);
-        app.get('/auth/github',this.gitauth);
-        app.get('/auth/github/callback',this.gitauthcb);
         // for facebook
         app.get('/login/facebook',this.fblogin);
         app.get('/auth/facebook',this.fbauth);
@@ -80,29 +63,6 @@ class AuthService{
         req.session.password = req.query.pwd;
         console.log('Email: ' + req.session.email + "; Pwd: " + req.session.password );
         passport.authenticate('facebook')(req, res, next);
-    }
-
-    gitlogin(req,res){
-        res.end('login with github');
-    }
-    gitauth(req,res,next){
-        if (!req.session) req.session = {};
-        req.session.returnTo = config.auth.github.successUrl;
-        // Pass them to session
-        // FIXME: usr,pwd need to build in web
-        // req.session.username = req.query.usr;
-        // req.session.password = req.query.pwd;
-        passport.authenticate('github')(req, res, next);
-    }
-    gitauthcb(req,res){
-        if(req.query.error){
-            // redirect to error page
-            res.end("Github callback error");
-        }
-        else{
-            // Redirect to successful url
-            res.end("Github authenticate pass");
-        }
     }
 }
 

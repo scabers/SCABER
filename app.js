@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 
 /* Setting view engine as ejs */
 app.set('view engine','ejs');
-app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+app.use(require('express-session')({ secret: 'SCABER cat', resave: true, saveUninitialized: true }));
 
 /* Modules */
 IntroService.init(app);
