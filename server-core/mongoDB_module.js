@@ -1,10 +1,10 @@
 /* mongoose - usage */
 const mongoose = require('mongoose');
 
-class DBModule_MDB {
+class MongoDBService {
     constructor(){
         // Connect to our SCABER db
-        mongoose.connect('mongodb:://localhost/SCABER');
+        mongoose.connect('mongodb://localhost/SCABER');
         this.scaberdb = mongoose.connection;
 
         // Define user schema
@@ -24,27 +24,36 @@ class DBModule_MDB {
         // location schema model
         this.loc_m = mongoose.model('loc_m',this.locSchema);
     }
-    user_findOrCreate(n_type,n_name){
+
+    user_findOrCreate(n_type,n_name,callback){
         // Find
-        this.user_m.findOne({ name: n_name, type: n_type },'name type')
-            .then(function(person){
+        let query = this.user_m.findOne({ name: n_name, type: n_type },'name type');
+        let promise = query.exec();
+        var usermodel = this.user_m;
+        promise.then(function(person){
                 if(person == null){
                     // not found , then we create
-                    let newuser = new this.user_m({name: n_name,type:n_type});
+                    let newuser = new usermodel({name: n_name,type:n_type});
                     newuser.save(function(err,newuser){
-                        if(err)
-                            console.log("Error save user:"+err)
-                        else
+                        if(err){
+                            console.log("Error save user:"+err);
+                            callback(0,err);
+                        }
+                        else{
                             console.log("Successful save user");
+                            callback(1,"create");
+                        }
                     })
                 }
                 else{
                     // found one , and then do not create
                     console.log("Found one, so do nothing");
                     console.log("With info: "+person);
+                    callback(1,"exist");
                 }
             });
     }
+
     loc_findOrCreate(n_owner,n_time,n_x,n_y){
         // Find
         this.loc_m.findOne({ owner: n_owner, time: n_time, x: n_x, y: n_y },'owner time x y')
@@ -69,5 +78,5 @@ class DBModule_MDB {
 }
 
 module.exports = {
-    MongoDBService = new DBModule_MDB()
+    MongoDBService : new MongoDBService()
 }

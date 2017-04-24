@@ -21,7 +21,6 @@ class AuthService{
             },
             function(accessToken, refreshToken, profile,done){
                 let userdata = profile;
-                console.dir(profile);
                 return done(null,userdata);
             }
         ))
