@@ -57,7 +57,7 @@ class AuthService{
                     successReturnToOrRedirect: config.auth.facebook.successUrl,
                     failureRedirect: config.auth.facebook.failureUrl
                 }));
-            }
+            });
             //serialize and deserialize
             passport.serializeUser(function(user, done) {
                 done(null, user);
@@ -79,7 +79,7 @@ class AuthService{
                 else{
                     res.redirect(config.auth.facebook.successUrl);
                 }
-            }
+            });
         }
         else{
             // Main Login page ~
@@ -96,7 +96,7 @@ class AuthService{
             else{
                 req.session.returnTo = config.auth.facebook.successUrl;
             }
-        }
+        });
 
         // Pass them to session
         req.session.email = req.query.email;
