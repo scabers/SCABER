@@ -54,7 +54,7 @@ class AuthService{
     fbauth(req,res,next){
         // Using passport to get authenticate
         if (!req.session) req.session = {};
-        req.session.returnTo = config.auth.fb.successUrl_luffy;
+        req.session.returnTo = config.auth.facebook.successUrl_luffy;
         // Pass them to session
         req.session.email = req.query.email;
         req.session.password = req.query.pwd;
