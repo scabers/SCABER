@@ -57,7 +57,7 @@ class AuthService{
                     successReturnToOrRedirect: config.auth.facebook.successUrl,
                     failureRedirect: config.auth.facebook.failureUrl
                 }));
-            });
+            }
             //serialize and deserialize
             passport.serializeUser(function(user, done) {
                 done(null, user);
