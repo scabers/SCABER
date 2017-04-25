@@ -1,4 +1,4 @@
-# SCABER
+![banner](http://i.imgur.com/8u1OtSr.png)
 
 - Integrate local country taxi resources.
 - SCABER = safe + cab + togerther
@@ -37,7 +37,7 @@
     - `Personal Control Panel`: provide personal status page, let user can manipulate with their information.
     - `Route History`: maintain the routes of users.
 - Driver
-    
+
 - Rating system
     - Both passenger and driver can rate each other, to promote entire quality.
     - Avoid passenger/driver with bad behavior.
