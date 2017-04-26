@@ -11,6 +11,13 @@ module.exports = {
             "failureUrl": "http://140.116.245.242:3000/error",
             "failureUrl_luffy": "http://luffy.ee.ncku.edu.tw:3000/error",
             "userAgent": "SCABER"
+        },
+        "google": {
+            "clientID": "877935941595-c8t5u1tj55ns8us3mc8d1a6qbhk2apnc.apps.googleusercontent.com",
+            "clientSecret": "EyLka2fH3rCHDhfn43_PHP8F",
+            "callback_luffy": "http://luffy.ee.ncku.edu.tw:3000/auth/google/callback",
+            "successUrl_luffy": "http://luffy.ee.ncku.edu.tw:3000/normal?type=google",
+            "failureUrl_luffy": "http://luffy.ee.ncku.edu.tw:3000/error"
         }
     },
     "db": {
