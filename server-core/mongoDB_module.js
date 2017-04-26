@@ -11,7 +11,7 @@ class MongoDBService {
             password: config.db.password
         }
         // Connect to our SCABER db
-        mongoose.connect('mongodb://localhost/'+config.db.dbname,this.options);
+        mongoose.connect('mongodb://'+config.db.user+":"+config.db.password+"@localhost:27017/"+config.db.dbname);
         this.scaberdb = mongoose.connection;
 
         // Define user schema
@@ -32,7 +32,9 @@ class MongoDBService {
         this.loc_m = mongoose.model('loc_m',this.locSchema);
     }
 
+    // callback method of findorCreate
     user_findOrCreateCB(n_type,n_name,callback){
+        var usermodel = this.user_m;
         this.user_m.findOne({name: n_name,type: n_type}, 'name type',function(err,user){
             if(err)
                 console.log(err);
@@ -54,13 +56,14 @@ class MongoDBService {
                 else{
                     // found one , and then do not create
                     console.log("Found one, so do nothing");
-                    console.log("With info: "+person);
+                    console.log("With info: "+user);
                     callback(1,"exist");
                 }
             }
         });
     }
 
+    // promise save method of findorCreate
     user_findOrCreate(n_type,n_name,callback){
         // Find
         let query = this.user_m.findOne({ name: n_name, type: n_type },'name type');
