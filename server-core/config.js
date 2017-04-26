@@ -14,8 +14,8 @@ module.exports = {
         }
     },
     "db": {
-        "dbname": "uidd2017_groupk",
+        "dbname": "uidd2017_groupK",
         "user": "groupk",
-        "password": "3W3k7uQI"
+        "password": "3W3j7uQI"
     }
 }
