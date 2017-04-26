@@ -49,8 +49,13 @@ body {
 
 footer {
     background: #373737;
-    margin-top: auto;
-    width: 100vw;
+    height: auto;
+    width: 100%;
+}
+
+footer .footer-index {
+    height: inherit;
+    width: inherit;
 }
 
 
@@ -185,8 +190,13 @@ footer .social-icon#envelope span {
     background-color: #6B6B6B;
 }
 
+
+/* footer copyright */
+
 footer .footer-copyright {
     background: #222222;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 footer .footer-copyright #copyright {
