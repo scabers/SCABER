@@ -12,5 +12,10 @@ module.exports = {
             "failureUrl_luffy": "http://luffy.ee.ncku.edu.tw:3000/error",
             "userAgent": "SCABER"
         }
+    },
+    "db": {
+        "dbname": "uidd2017_groupk",
+        "user": "groupk",
+        "password": "3W3k7uQI"
     }
 }

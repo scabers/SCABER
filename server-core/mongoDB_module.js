@@ -1,10 +1,20 @@
 /* mongoose - usage */
 const mongoose = require('mongoose');
+const config = require('./config');
 
 class MongoDBService {
     constructor(){
+        let options = {
+            db: {native_parser: true},
+            server: {poolSize:5},
+            user: config.db.user,
+            password: config.db.password
+        }
         // Connect to our SCABER db
-        mongoose.connect('mongodb://localhost/SCABER');
+        mongoose.connect('mongodb://localhost/${config.db.dbname}',options,function(err){
+            if(err)
+                console.log("MongoDB connection err: " + err);
+        });
         this.scaberdb = mongoose.connection;
 
         // Define user schema
