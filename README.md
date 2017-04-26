@@ -12,8 +12,12 @@
         - Yung-Sheng Lu
             - contain front-end work.
         - Derhua Lu
+<<<<<<< HEAD
 		- Wu,Chih-Wei
 		    - web
+=======
+            - part-time designer.
+>>>>>>> ffcf7b1b1427f08f59e7f9ed29c55fcac341a0c9
 - client-service:
     - `Currently worker`:
     - contain our all front-end resources and work.
