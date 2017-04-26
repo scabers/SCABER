@@ -1,3 +1,8 @@
+html,
+body {
+    width: 100%;
+}
+
 body {
     background-color: #D8D8D8;
 }
@@ -127,19 +132,19 @@ footer .social-icon:hover i {
 }
 
 footer .social-icon #icon-facebook {
-    color: #3B5998;
+    background: #3B5998;
 }
 
 footer .social-icon #icon-google-plus {
-    color: #DB5A3C;
+    background: #DB5A3C;
 }
 
 footer .social-icon #icon-twitter {
-    color: #4099FF;
+    background: #4099FF;
 }
 
 footer .social-icon #icon-envelope {
-    color: #6B6B6B;
+    background: #6B6B6B;
 }
 
 footer .social-icon span {
@@ -186,4 +191,7 @@ footer .footer-copyright {
 
 footer .footer-copyright #copyright {
     color: #FFFFFF;
+    font-size: 1.0em;
+    text-align: center;
+    width: inherit;
 }
