@@ -55,6 +55,8 @@ footer {
 
 footer .footer-index {
     height: inherit;
+    padding-bottom: 30px;
+    position: relative;
     width: inherit;
 }
 
