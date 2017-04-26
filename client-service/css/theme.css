@@ -1,0 +1,25 @@
+body {
+    background-color: #D8D8D8;
+}
+
+.navbar {
+    border: none;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    background-color: #000000;
+    cursor: pointer;
+}
+
+#logo {
+    height: 9vh;
+}
+
+#navbar a {
+    font-size: 120%;
+    font: white bold;
+}
+
+#banner1 {
+    position: absolute;
+    width: 100vw;
+}

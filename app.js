@@ -18,6 +18,9 @@ app.use(express.static('client-service/elements'));
 app.use(express.static('client-service/img'));
 app.use(express.static('client-service/css'));
 app.use(express.static('client-service/js'));
+app.use(express.static('client-service/lib'));
+app.use(express.static('client-service/fonts'));
+
 app.use(bodyParser.urlencoded({
     extended: true
 }));

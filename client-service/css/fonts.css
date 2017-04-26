@@ -1,0 +1,19 @@
+@font-face {
+    font-family: GOTHIC;
+    src: url('GOTHIC/GOTHIC.TTF');
+}
+
+@font-face {
+    font-family: GOTHICB;
+    src: url("GOTHIC/GOTHICB.TTF");
+}
+
+@font-face {
+    font-family: GILC____;
+    src: url('GIL/GLIC____.TTF');
+}
+
+@font-face {
+    font-family: calibri;
+    src: url('calibri/calibri.TTF');
+}
