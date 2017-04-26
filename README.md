@@ -12,6 +12,8 @@
         - Yung-Sheng Lu
             - contain front-end work.
         - Derhua Lu
+		- Wu,Chih-Wei
+		    - web
 - client-service:
     - `Currently worker`:
     - contain our all front-end resources and work.
