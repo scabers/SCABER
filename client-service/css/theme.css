@@ -2,6 +2,9 @@ body {
     background-color: #D8D8D8;
 }
 
+
+/* home.ejs */
+
 .navbar {
     border: none;
     padding-top: 0.5%;
@@ -22,4 +25,54 @@ body {
 #banner1 {
     position: absolute;
     width: 100vw;
+}
+
+
+/* about.ejs */
+
+
+/* service.ejs */
+
+
+/* signin.ejs */
+
+
+/* contact.ejs */
+
+
+/* footer.ejs */
+
+footer {
+    background: #373737;
+    margin-top: auto;
+    width: 100vw;
+}
+
+footer .footer-list {
+    list-style: none;
+    width: 25vw;
+}
+
+footer .footer-list li {
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+footer .footer-list .index-header {
+    color: #FFFFFF;
+    font-size: 2.3vw;
+    padding: 10px 0 5px 0;
+}
+
+footer .footer-list .index-anchor {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3em;
+}
+
+footer .footer-list .index-anchor:visited {
+    color: #8DB9ED;
+}
+
+footer .footer-list .index-anchor:hover {
+    color: #CCCCCC;
 }
