@@ -110,16 +110,14 @@ footer .social-list {
 }
 
 footer .social-list li {
-    background: #B5B5B5;
-    border: 2px solid #B5B5B5;
     border-radius: 50%;
     float: left;
-    height: 36px;
-    line-height: 36px;
+    height: 36rem;
+    line-height: 36rem;
     margin: 0 8px 0 0;
     padding: 0;
     text-align: center;
-    width: 36px;
+    width: 36rem;
     transition: all 0.5s ease 0s;
     -webkit-transition: all 0.5s ease 0s;
     -moz-transition: all 0.5s ease 0s;
@@ -153,9 +151,8 @@ footer .social-list a {
     -ms-user-select: none;
 }
 
-footer .social-icon a i {
+footer .social-list a i {
     background: none;
-    color: #EDEFF1 !important;
     font-size: 16px;
     height: 3.6rem;
     line-height: 3.6rem;
@@ -171,27 +168,27 @@ footer .social-icon a i {
     z-index: 10;
 }
 
-footer .social-icon:hover i {
+footer .social-list a:hover i {
     color: #FFFFFF;
 }
 
-footer .social-icon #icon-facebook {
+footer .social-list #icon-facebook {
     color: #3B5998;
 }
 
-footer .social-icon #icon-google-plus {
+footer .social-list #icon-google-plus {
     color: #DB5A3C;
 }
 
-footer .social-icon #icon-twitter {
+footer .social-list #icon-twitter {
     color: #4099FF;
 }
 
-footer .social-icon #icon-envelope {
+footer .social-list #icon-envelope {
     color: #6B6B6B;
 }
 
-footer .social-icon span {
+footer .social-list span {
     border-radius: 0;
     display: block;
     height: 0;
@@ -206,7 +203,7 @@ footer .social-icon span {
     width: 0;
 }
 
-footer .social-icon:hover span {
+footer .social-list:hover span {
     border-radius: 3.6rem;
     color: #FFFFFF;
     margin: -1.8rem;
@@ -214,19 +211,19 @@ footer .social-icon:hover span {
     width: 3.6rem;
 }
 
-footer .social-icon#facebook span {
+footer .social-list #facebook span {
     background-color: #3B5998;
 }
 
-footer .social-icon#google-plus span {
+footer .social-list #google-plus span {
     background-color: #DB5A3C;
 }
 
-footer .social-icon#twitter span {
+footer .social-list #twitter span {
     background-color: #4099FF;
 }
 
-footer .social-icon#envelope span {
+footer .social-list #envelope span {
     background-color: #6B6B6B;
 }
 
