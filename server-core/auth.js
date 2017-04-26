@@ -32,7 +32,7 @@ class AuthService{
             callbackURL: config.auth.google.callback_luffy
             },
             function(accessToken, refreshToken, profile, done){
-                return done(err,profile);
+                return done(null,profile);
             }
         ));
         //serialize and deserialize
