@@ -7,10 +7,16 @@ class IntroService {
         app.get('/about',this.about);
     }
     index(req,res){
-        res.render('index',{title: "SCABER - Your best choice of taxi."});
+        // Define for landing page - parameter here
+        res.render('index',{
+            title: "SCABER - Your best choice of taxi."
+        });
     }
     about(req,res){
-        res.render("about",{title: "About us"});
+        // Define for About us page
+        res.render("about",{
+            title: "About us"
+        });
     }
 }
 
