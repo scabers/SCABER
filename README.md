@@ -12,6 +12,7 @@
         - Yung-Sheng Lu
             - contain front-end work.
         - Derhua Lu
+            - part-time designer.
 - client-service:
     - `Currently worker`:
     - contain our all front-end resources and work.
