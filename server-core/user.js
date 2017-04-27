@@ -11,9 +11,10 @@ class UserService {
     }
     normal(req,res){
         // Parsing parameter from session
+        let logintype = req.query.type;
         let profile = req.user;
         // Store in db
-        MongoDBService.user_findOrCreateCB('facebook',profile.name.familyName + profile.name.givenName,function(err,msg_type){
+        MongoDBService.user_findOrCreateCB(req.query.type,profile.name.familyName + profile.name.givenName,function(err,msg_type){
             if(err == 0){
                 // Error occur
                 console.log(msg_type);

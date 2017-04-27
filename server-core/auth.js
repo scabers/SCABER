@@ -59,7 +59,7 @@ class AuthService{
                 // successful goes here - debug with req.user data
                 console.log(req.user);
                 // Prepare page for Google Auth
-                res.end('Google OAuth Complete...');
+                res.redirect(config.auth.google.successUrl_luffy);
             }
         );
     }
