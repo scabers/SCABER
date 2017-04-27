@@ -26,6 +26,6 @@ module.exports = {
         "password": "3W3j7uQI"
     },
     "map": {
-        "apikey": "AIzaSyARwz3pyOaiHMJnXAyl33JewO0NjNr10jU"
+        "apikey": "AIzaSyDNT8S6xvvrKY1Ef8AXtcROOKDYBsVt-p4"
     }
 }
