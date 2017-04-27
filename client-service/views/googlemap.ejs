@@ -21,19 +21,24 @@ function myMap() {
     var infoWindow = new google.maps.InfoWindow({map: map});
 
     var update = setInterval(function(){
-        jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=AIzaSyDCa1LUe1vOczX1hO_iGYgyo8p_jYuGOPU", function(success) {
-            console.log("Postion here!")
+        jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=<%= apikey %>"
+            ,function(success) {
+            console.log("Postion here! Accuracy"+ success.accuracy );
             var pos = {
                 lat: success.location.lat,
                 lng: success.location.lng
             };
             infoWindow.setPosition(pos);
-            infoWindow.setContent('Lat: '+success.location.lat + '; Lng: ' + success.location.lng);
+            infoWindow.setContent('Lat: '+success.location.lat + '; Lng: ' + success.location.lng + '; Accuracy: ' + success.accuracy);
+            map.setCenter(pos);
+        }).fail(function(err){
+            console.log("Faile: ");
+            console.dir(err);
         });
     },1000);
 }
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARwz3pyOaiHMJnXAyl33JewO0NjNr10jU&callback=myMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=<%= apikey %>&callback=myMap"></script>
 <!--
 To use this code on your website, get a free API key from Google.
 Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp

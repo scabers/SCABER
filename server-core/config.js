@@ -24,5 +24,8 @@ module.exports = {
         "dbname": "uidd2017_groupK",
         "user": "groupk",
         "password": "3W3j7uQI"
+    },
+    "map": {
+        "apikey": "AIzaSyARwz3pyOaiHMJnXAyl33JewO0NjNr10jU"
     }
 }

@@ -32,7 +32,8 @@ class UserService {
     }
     map(req,res){
         res.render('googlemap',{
-            title: "SCABER Monitor"
+            title: "SCABER Monitor",
+            apikey: config.map.apikey
         });
     }
 }
