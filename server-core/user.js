@@ -3,8 +3,11 @@ const {MongoDBService} = require('./mongoDB_module');
 
 class UserService {
     init(app){
+        // Normal usage
         app.get('/normal',this.normal);
         app.get('/error',this.error);
+        // Google Map tracking
+        app.get('/map',this.map);
     }
     normal(req,res){
         // Parsing parameter from session
@@ -26,6 +29,11 @@ class UserService {
     error(req,res){
         res.end("End");
         // res.render("about",{title: "About us"});
+    }
+    map(req,res){
+        res.render('googlemap',{
+            title: "SCABER Monitor"
+        });
     }
 }
 
