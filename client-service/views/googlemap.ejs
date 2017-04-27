@@ -14,7 +14,7 @@
 <script>
 function myMap() {
     var map = new google.maps.Map(document.getElementById('googleMap'),{
-        center: {lat: -34.397, lng: 150.644},
+        center: {lat: 22.9966676, lng: 120.2224312},
         zoom: 19
     });
 
@@ -35,7 +35,7 @@ function myMap() {
             console.log("Faile: ");
             console.dir(err);
         });
-    },1000);
+    },100000);
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= apikey %>&callback=myMap"></script>
