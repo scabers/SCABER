@@ -5,12 +5,11 @@ const path = require('path');
 const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
-
 /* Server core */
 const { IntroService } = require('./server-core/intro');
 const { AuthService } = require('./server-core/auth');
 const { UserService } = require('./server-core/user');
-
+const { SyncService } = require('./server-core/io');
 const app = express();
 
 /* Setting static directory */
@@ -46,6 +45,7 @@ UserService.init(app);
 
 /* Create server */
 const server = http.createServer(app);
+SyncService.init(server);
 
 server.listen(process.env.npm_package_config_port, function() {
     console.log("SCABER server listening on port " + process.env.npm_package_config_port);

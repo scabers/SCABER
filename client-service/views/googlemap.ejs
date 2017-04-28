@@ -3,15 +3,28 @@
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> <!-- jQuery library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script> <!-- Socket.io lib -->
 <body>
 
 <h1><%= title %></h1>
 
+<!-- Google map here -->
 <div id="googleMap" style="width:100%;height:100vh;"></div>
 
-
 <script>
+// Enable socket io service
+const socket = io();
+// join channel - FIXME: user name need to add in here(as room_name)
+socket.emit('join',{
+    room_name: "Testbed"
+});
+// disconnect from server
+window.addEventListener("beforeunload", function(e){
+    socket.emit('disconnect');
+    control_channel.disconnect();
+}, false);
+
 function myMap() {
     var map = new google.maps.Map(document.getElementById('googleMap'),{
         center: {lat: 22.9966676, lng: 120.2224312},
@@ -20,22 +33,29 @@ function myMap() {
 
     var infoWindow = new google.maps.InfoWindow({map: map});
 
+    updateloc(infoWindow,map);
+
+    // Update information / and sync with our server
     var update = setInterval(function(){
-        jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=<%= apikey %>"
-            ,function(success) {
-            console.log("Postion here! Accuracy"+ success.accuracy );
-            var pos = {
-                lat: success.location.lat,
-                lng: success.location.lng
-            };
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Lat: '+success.location.lat + '; Lng: ' + success.location.lng + '; Accuracy: ' + success.accuracy);
-            map.setCenter(pos);
-        }).fail(function(err){
-            console.log("Faile: ");
-            console.dir(err);
-        });
-    },100000);
+        updateloc(infoWindow,map)
+    },10000);
+}
+
+function updateloc(infoWindow,map){
+    jQuery.post( "https://www.googleapis.com/geolocation/v1/geolocate?key=<%= apikey %>"
+        ,function(success) {
+        console.log("Postion here! Accuracy"+ success.accuracy );
+        var pos = {
+            lat: success.location.lat,
+            lng: success.location.lng
+        };
+        infoWindow.setPosition(pos);
+        infoWindow.setContent('Lat: '+success.location.lat + '; Lng: ' + success.location.lng + '; Accuracy: ' + success.accuracy);
+        map.setCenter(pos);
+    }).fail(function(err){
+        console.log("Faile: ");
+        console.dir(err);
+    });
 }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=<%= apikey %>&callback=myMap"></script>
