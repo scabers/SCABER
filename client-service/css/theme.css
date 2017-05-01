@@ -113,8 +113,9 @@ footer .social-list li {
     border: 1px solid rgba(167, 146, 129, 0.4);
     color: rgba(167, 146, 129, 0.6);
     cursor: pointer;
-    display: none;
+    display: inline-block;
     height: 50px;
+    line-height: 50px;
     list-style-type: none;
     margin-bottom: 20px;
     margin-left: 10px;
