@@ -110,16 +110,18 @@ footer .social-list {
 }
 
 footer .social-list li a {
-    border: 1px solid rgba(167, 146, 129, 0.4);
-    color: rgba(167, 146, 129, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.6);
     cursor: pointer;
     display: inline-block;
+    font-size: 2rem;
     height: 50px;
     line-height: 50px;
     list-style-type: none;
     margin-bottom: 20px;
     margin-left: 10px;
     padding: 1%;
+    text-align: center;
     transition: ease 0.3s;
     -webkit-transition: ease 0.3s;
     -moz-transition: ease 0.3s;
@@ -135,7 +137,7 @@ footer .social-list:hover>li a {
     opacity: 0.5;
 }
 
-foote .social-list:hover>li:hover a {
+footer .social-list:hover>li:hover a {
     opacity: 1.0;
 }
 
