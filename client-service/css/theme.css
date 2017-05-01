@@ -176,35 +176,35 @@ footer .social-list .btn-social i {
     -o-transform: scale(0.8);
 }
 
-footer .social-list .btn-social#facebook:before {
+footer .social-list #facebook:before {
     background: #3B5998;
 }
 
-footer .social-list .btn-social#facebook i {
+footer .social-list #facebook i {
     color: #3B5998;
 }
 
-footer .social-list .btn-social#google-plus:before {
+footer .social-list #google-plus:before {
     background: #DC4A38;
 }
 
-footer .social-list .btn-social#google-plus i {
+footer .social-list #google-plus i {
     color: #DC4A38;
 }
 
-footer .social-list .btn-social#twitter:before {
+footer .social-list #twitter:before {
     background: #33CCFF;
 }
 
-footer .social-list .btn-social#twitter i {
+footer .social-list #twitter i {
     color: #33CCFF;
 }
 
-footer .social-list .btn-social#envelop:before {
+footer .social-list #envelop:before {
     background: #ABABAB;
 }
 
-footer .social-list .btn-social#envelop i {
+footer .social-list #envelop i {
     color: #ABABAB;
 }
 
