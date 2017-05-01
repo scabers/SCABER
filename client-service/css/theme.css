@@ -109,7 +109,7 @@ footer .social-list {
 footer .social-list .btn-social {
     background: transparent;
     border-color: #FFFFFF;
-    border-width: 1em;
+    border-width: 2rem;
     border-radius: 3.6rem;
     cursor: pointer;
     display: inline-block;
@@ -133,10 +133,10 @@ footer .btn-social span {
     border-radius: 0;
     display: block;
     height: 0;
-    left: 50%;
     margin: 0;
     position: absolute;
     top: 50%;
+    left: 50%;
     transition: all 0.3s;
     -webkit-transition: all 0.3s;
     -moz-transition: all 0.3s;
