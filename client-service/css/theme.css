@@ -102,6 +102,8 @@ footer .index-list .index-anchor:hover {
 /* footer social-list */
 
 footer .social-list {
+    box-sizing: border-box;
+    color: inherit;
     font-size: 0;
     height: 90px;
     margin: auto;
@@ -111,6 +113,10 @@ footer .social-list {
     bottom: 0;
     left: 0;
     text-align: center;
+}
+
+footer .social-list:focus {
+    outline: none;
 }
 
 footer .social-list .btn-social {
