@@ -103,15 +103,8 @@ footer .index-list .index-anchor:hover {
 
 footer .social-list {
     box-sizing: border-box;
-    color: inherit;
-    font-size: 0;
     height: 3.6rem;
     margin: auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
     text-align: center;
 }
 
@@ -146,7 +139,7 @@ footer .social-list .btn-social:before {
 }
 
 footer .social-list .btn-social i {
-    font-size: 38px;
+    font-size: 2rem;
     vertical-align: middle;
 }
 
@@ -200,12 +193,12 @@ footer .social-list #twitter i {
     color: #33CCFF;
 }
 
-footer .social-list #envelop:before {
-    background: #ABABAB;
+footer .social-list #envelope:before {
+    background: #565656;
 }
 
-footer .social-list #envelop i {
-    color: #ABABAB;
+footer .social-list #envelope i {
+    color: #565656;
 }
 
 footer .social-list .btn-social:focus:before,
