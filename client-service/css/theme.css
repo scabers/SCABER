@@ -102,7 +102,6 @@ footer .index-list .index-anchor:hover {
 /* footer social-list */
 
 footer .social-list {
-    display: table;
     padding-left: 0;
     width: inherit;
 }
