@@ -105,7 +105,7 @@ footer .social-list {
     box-sizing: border-box;
     color: inherit;
     font-size: 0;
-    height: 36rem;
+    height: 3.6rem;
     margin: auto;
     position: absolute;
     top: 0;
@@ -124,13 +124,13 @@ footer .social-list .btn-social {
     border-radius: 28%;
     box-shadow: 0 5px 15px -5px rgba(0, 0, 0, 0.1);
     display: inline-block;
-    height: 36rem;
-    line-height: 36rem;
+    height: 3.6rem;
+    line-height: 3.6rem;
     margin: 0 10px;
     opacity: 0.99;
     position: relative;
     text-align: center;
-    width: 36rem;
+    width: 3.6rem;
 }
 
 footer .social-list .btn-social:before {
