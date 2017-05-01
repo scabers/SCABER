@@ -130,7 +130,7 @@ footer .social-list li a {
     width: 50px;
 }
 
-footer .social-list li:hover a {
+footer .social-list li:hover {
     border: 1px solid #A79281;
 }
 
