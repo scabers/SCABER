@@ -109,7 +109,7 @@ footer .social-list {
     width: inherit;
 }
 
-footer .social-list li {
+footer .social-list li a {
     border: 1px solid rgba(167, 146, 129, 0.4);
     color: rgba(167, 146, 129, 0.6);
     cursor: pointer;
@@ -127,15 +127,15 @@ footer .social-list li {
     width: 50px;
 }
 
-footer .social-list li:hover {
+footer .social-list li:hover a {
     border: 1px solid #A79281;
 }
 
-footer .social-list:hover>li {
+footer .social-list:hover>li a {
     opacity: 0.5;
 }
 
-foote .social-list:hover>li:hover {
+foote .social-list:hover>li:hover a {
     opacity: 1.0;
 }
 
