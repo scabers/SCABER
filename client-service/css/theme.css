@@ -101,7 +101,7 @@ footer .index-list .index-anchor:hover {
 
 /* footer social-list */
 
-footer .social-list {
+footer .social-buttons {
     height: 50px;
     font-size: 10;
     text-align: center;
@@ -112,7 +112,7 @@ footer .social-list {
     bottom: 50%;
 }
 
-.btn-social {
+footer .social-buttons .social-button {
     display: inline-block;
     background-color: #fff;
     width: 50px;
@@ -130,7 +130,7 @@ footer .social-list {
     transition: all .35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
 }
 
-.btn-social:before {
+footer .social-buttons .social-button:before {
     content: '';
     background-color: #000;
     width: 120%;
@@ -145,7 +145,7 @@ footer .social-list {
     transition: all .35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
 }
 
-footer .social-list .btn-social i {
+footer .social-buttons .social-button i {
     font-size: 28px;
     vertical-align: middle;
     -webkit-transform: scale(0.75);
@@ -155,59 +155,59 @@ footer .social-list .btn-social i {
     transition: all .35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
 }
 
-.btn-social .facebook:before {
+.social-button .facebook:before {
     background-color: #3B5998;
 }
 
-.btn-social .facebook i {
+.social-button .facebook i {
     color: #3B5998;
 }
 
-.btn-social.twitter:before {
+.social-button.twitter:before {
     background-color: #3CF;
 }
 
-.btn-social.twitter i {
+.social-button.twitter i {
     color: #3CF;
 }
 
-.btn-social.google:before {
+.social-button.google:before {
     background-color: #DC4A38;
 }
 
-.btn-social.google i {
+.social-button.google i {
     color: #DC4A38;
 }
 
-.btn-social.dribbble:before {
+.social-button.dribbble:before {
     background-color: #F26798;
 }
 
-.btn-social.dribbble i {
+.social-button.dribbble i {
     color: #F26798;
 }
 
-.btn-social.skype:before {
+.social-button.skype:before {
     background-color: #00AFF0;
 }
 
-.btn-social.skype i {
+.social-button.skype i {
     color: #00AFF0;
 }
 
-.btn-social:hover:before {
+.social-button:hover:before {
     top: -10%;
     left: -10%;
 }
 
-.btn-social:hover i {
+.social-button:hover i {
     color: #fff;
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
 }
 
-.btn-social:focus {
+.social-button:focus {
     opacity: .85;
 }
 
