@@ -102,7 +102,7 @@ footer .index-list .index-anchor:hover {
 /* footer social-list */
 
 footer .social-list {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     height: inherit;
     list-style: none;
     margin-top: 15px;
@@ -112,34 +112,102 @@ footer .social-list {
     width: 100%;
 }
 
-footer .social-list li a {
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: rgba(255, 255, 255, 0.6);
-    cursor: pointer;
+footer .social-list li .btn-social {
+    background: #FFFFFF;
+    border-radius: 50%;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.6);
     display: inline-block;
     height: 50px;
     line-height: 50px;
-    list-style-type: none;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    padding: 1%;
-    transition: ease 0.3s;
-    -webkit-transition: ease 0.3s;
-    -moz-transition: ease 0.3s;
-    -o-transition: ease 0.3s;
+    margin-right: 15px !important;
+    margin-left: 0 !important;
+    opacity: 0.99;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    -moz-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    -o-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
     width: 50px;
 }
 
-footer .social-list li:hover {
-    border: 1px solid #A79281;
+footer .social-list li .btn-social:before {
+    background: #000;
+    content: '';
+    height: 120%;
+    position: absolute;
+    top: 90%;
+    left: -110%;
+    width: 120%;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
+    -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
+    -moz-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
+    -o-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
 }
 
-footer .social-list:hover>li a {
-    opacity: 0.5;
+footer .social-list li i.fa {
+    font-size: 28px;
+    vertical-align: middle;
+    transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
+    transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    -moz-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    -o-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
 }
 
-footer .social-list:hover>li:hover a {
-    opacity: 1.0;
+footer .social-list .btn-social:focus {
+    opacity: 0.85;
+}
+
+footer .social-list .btn-social:hover fa {
+    color: #FFFFFF;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+}
+
+footer .social-list li #facebook:before {
+    background: #3B599B;
+}
+
+footer .social-list li #facebook .fa {
+    color: #3B599B;
+}
+
+footer .social-list li #google-plus:before {
+    background: #DC4A38;
+}
+
+footer .social-list li #google-plus .fa {
+    color: #DC4A38;
+}
+
+footer .social-list li #twitter:before {
+    background: #33CCFF;
+}
+
+footer .social-list li #twitter .fa {
+    color: #33CCFF;
+}
+
+footer .social-list li #envelope:before {
+    background: #565656;
+}
+
+footer .social-list li #envelope .fa {
+    color: #565656;
 }
 
 
