@@ -102,7 +102,6 @@ footer .index-list .index-anchor:hover {
 /* footer social-list */
 
 footer .social-list {
-    box-sizing: border-box;
     height: 50px;
     position: absolute;
     top: 40%;
@@ -110,16 +109,6 @@ footer .social-list {
     bottom: 50%;
     left: 0;
     text-align: center;
-}
-
-footer .social-list * {
-    box-sizing: inherit;
-    color: inherit;
-    margin: 0;
-}
-
-footer .social-list *:focus {
-    outline: none;
 }
 
 footer .social-list .btn-social {
@@ -132,8 +121,9 @@ footer .social-list .btn-social {
     margin-right: 15px !important;
     margin-left: 0 !important;
     opacity: 0.99;
+    overflow: hidden;
     position: relative;
-    text-align: right;
+    text-align: center;
     transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
     -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
     -moz-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
@@ -185,7 +175,7 @@ footer .social-list .btn-social i {
 }
 
 footer .social-list .btn-social:hover i {
-    color: #FFFFFF !important;
+    color: #FFFFFF;
     transform: scale(1);
     -webkit-transform: scale(1);
     -moz-transform: scale(1);
