@@ -168,11 +168,10 @@ footer .social-list .btn-social:before {
     -o-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
 }
 
-
-/*footer .social-list .btn-social:hover:before {
+footer .social-list .btn-social:hover:before {
     top: -10%;
     left: -10%;
-}*/
+}
 
 footer .social-list .btn-social:focus {
     opacity: 0.85;
@@ -181,6 +180,7 @@ footer .social-list .btn-social:focus {
 footer .social-list .btn-social i {
     border: none;
     font-size: 28px;
+    text-align: center;
     transform: scale(0.75);
     -webkit-transform: scale(0.75);
     -moz-transform: scale(0.75);
