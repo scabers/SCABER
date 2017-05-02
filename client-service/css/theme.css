@@ -103,116 +103,112 @@ footer .index-list .index-anchor:hover {
 
 footer .social-list {
     height: 50px;
-    position: absolute;
-    top: 40%;
-    right: 0;
-    bottom: 50%;
-    left: 0;
+    font-size: 10;
     text-align: center;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 40%;
+    bottom: 50%;
 }
 
 footer .social-list .btn-social {
-    background: #FFFFFF;
-    border-radius: 50%;
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.06);
     display: inline-block;
+    background-color: #fff;
+    width: 50px;
     height: 50px;
     line-height: 50px;
-    margin-right: 15px !important;
     margin-left: 0 !important;
-    opacity: 0.99;
-    overflow: hidden;
-    position: relative;
+    margin-right: 15px !important;
     text-align: center;
-    transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    -moz-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    -o-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    width: 50px;
+    position: relative;
+    overflow: hidden;
+    opacity: .99;
+    border-radius: 50%;
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.06);
+    -webkit-transition: all .35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    transition: all .35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
 }
 
 footer .social-list .btn-social:before {
-    background: #000000;
     content: '';
+    background-color: #000;
+    width: 120%;
     height: 120%;
     position: absolute;
     top: 90%;
-    left: -120%;
-    transform: rotate(45deg);
+    left: -110%;
     -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
-    transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
-    -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
-    -moz-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
-    -o-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
-    width: 120%;
+    transform: rotate(45deg);
+    -webkit-transition: all .35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
+    transition: all .35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
 }
 
-footer .social-list .btn-social:hover:before {
+footer .social-list .btn-social i {
+    font-size: 28px;
+    vertical-align: middle;
+    -webkit-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    transform: scale(0.75);
+    -webkit-transition: all .35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    transition: all .35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+}
+
+.btn-social .facebook:before {
+    background-color: #3B5998;
+}
+
+.btn-social .facebook i {
+    color: #3B5998;
+}
+
+.btn-social.twitter:before {
+    background-color: #3CF;
+}
+
+.btn-social.twitter i {
+    color: #3CF;
+}
+
+.btn-social.google:before {
+    background-color: #DC4A38;
+}
+
+.btn-social.google i {
+    color: #DC4A38;
+}
+
+.btn-social.dribbble:before {
+    background-color: #F26798;
+}
+
+.btn-social.dribbble i {
+    color: #F26798;
+}
+
+.btn-social.skype:before {
+    background-color: #00AFF0;
+}
+
+.btn-social.skype i {
+    color: #00AFF0;
+}
+
+.btn-social:hover:before {
     top: -10%;
     left: -10%;
 }
 
-footer .social-list .btn-social:focus {
-    opacity: 0.85;
-}
-
-footer .social-list .btn-social i {
-    border: none;
-    font-size: 28px;
-    transform: scale(0.75);
-    -webkit-transform: scale(0.75);
-    -moz-transform: scale(0.75);
-    -ms-transform: scale(0.75);
-    -o-transform: scale(0.75);
-    transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    -moz-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    -o-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
-    vertical-align: middle;
-}
-
-footer .social-list .btn-social:hover i {
-    color: #FFFFFF;
-    transform: scale(1);
+.btn-social:hover i {
+    color: #fff;
     -webkit-transform: scale(1);
-    -moz-transform: scale(1);
     -ms-transform: scale(1);
-    -o-transform: scale(1);
+    transform: scale(1);
 }
 
-footer .social-list #facebook:before {
-    background: #3B599B;
-}
-
-footer .social-list #facebook>i {
-    color: #3B599B;
-}
-
-footer .social-list #google-plus:before {
-    background: #DC4A38;
-}
-
-footer .social-list #google-plus>i {
-    color: #DC4A38;
-}
-
-footer .social-list #twitter:before {
-    background: #33CCFF;
-}
-
-footer .social-list #twitter>i {
-    color: #33CCFF;
-}
-
-footer .social-list #envelope:before {
-    background: #565656;
-}
-
-footer .social-list #envelope>i {
-    color: #565656;
+.btn-social:focus {
+    opacity: .85;
 }
 
 
