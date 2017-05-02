@@ -116,7 +116,6 @@ footer .social-list * {
     box-sizing: inherit;
     color: inherit;
     margin: 0;
-    padding: 0;
 }
 
 footer .social-list *:focus {
@@ -130,10 +129,9 @@ footer .social-list .btn-social {
     display: inline-block;
     height: 50px;
     line-height: 50px;
-    margin-right: 55px !important;
+    margin-right: 15px !important;
     margin-left: 0 !important;
     opacity: 0.99;
-    overflow: hidden;
     position: relative;
     text-align: right;
     transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
