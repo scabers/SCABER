@@ -155,7 +155,7 @@ footer .social-list .btn-social:before {
     height: 120%;
     position: absolute;
     top: 90%;
-    left: -110%;
+    left: 120%;
     width: 120%;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
@@ -180,7 +180,6 @@ footer .social-list .btn-social:focus {
 footer .social-list .btn-social i {
     border: none;
     font-size: 28px;
-    text-align: center;
     transform: scale(0.75);
     -webkit-transform: scale(0.75);
     -moz-transform: scale(0.75);
