@@ -102,6 +102,7 @@ footer .index-list .index-anchor:hover {
 /* footer social-list */
 
 footer .social-list {
+    box-sizing: border-box;
     font-size: 10;
     height: 50px;
     list-style: none;
@@ -140,7 +141,7 @@ footer .social-list .btn-social {
     opacity: 0.99;
     overflow: hidden;
     position: relative;
-    text-align: center;
+    text-align: center !important;
     transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
     -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
     -moz-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
