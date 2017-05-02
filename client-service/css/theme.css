@@ -110,7 +110,6 @@ footer .social-list {
     bottom: 50%;
     left: 0;
     text-align: center;
-    width: 100%;
 }
 
 footer .social-list * {
@@ -127,7 +126,7 @@ footer .social-list *:focus {
 footer .social-list .btn-social {
     background: #FFFFFF;
     border-radius: 50%;
-    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.06);
     display: inline-block;
     height: 50px;
     line-height: 50px;
@@ -136,7 +135,7 @@ footer .social-list .btn-social {
     opacity: 0.99;
     overflow: hidden;
     position: relative;
-    text-align: center !important;
+    text-align: right;
     transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
     -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
     -moz-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
@@ -151,7 +150,6 @@ footer .social-list .btn-social:before {
     position: absolute;
     top: 90%;
     left: -120%;
-    width: 120%;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
@@ -161,6 +159,7 @@ footer .social-list .btn-social:before {
     -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
     -moz-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
     -o-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.79);
+    width: 120%;
 }
 
 footer .social-list .btn-social:hover:before {
