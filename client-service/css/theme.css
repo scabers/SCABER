@@ -103,12 +103,7 @@ footer .index-list .index-anchor:hover {
 
 footer .social-list {
     box-sizing: border-box;
-    font-size: 10;
     height: 50px;
-    list-style: none;
-    margin-top: 15px;
-    margin-left: 0;
-    padding-left: 0;
     position: absolute;
     top: 40%;
     right: 0;
@@ -155,7 +150,7 @@ footer .social-list .btn-social:before {
     height: 120%;
     position: absolute;
     top: 90%;
-    left: 120%;
+    left: -120%;
     width: 120%;
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
