@@ -117,7 +117,18 @@ footer .social-list {
     width: 100%;
 }
 
-footer .social-list li .btn-social {
+footer .social-list * {
+    box-sizing: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+footer .social-list *:focus {
+    outline: none;
+}
+
+footer .social-list .btn-social {
     background: #FFFFFF;
     border-radius: 50%;
     box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.6);
@@ -137,8 +148,8 @@ footer .social-list li .btn-social {
     width: 50px;
 }
 
-footer .social-list li .btn-social:before {
-    background: #000;
+footer .social-list .btn-social:before {
+    background: #000000;
     content: '';
     height: 120%;
     position: absolute;
@@ -165,9 +176,8 @@ footer .social-list .btn-social:focus {
     opacity: 0.85;
 }
 
-footer .social-list .btn-social .fa {
+footer .social-list .btn-social i {
     font-size: 28px;
-    vertical-align: middle;
     transform: scale(0.75);
     -webkit-transform: scale(0.75);
     -moz-transform: scale(0.75);
@@ -177,9 +187,10 @@ footer .social-list .btn-social .fa {
     -webkit-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
     -moz-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
     -o-transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
+    vertical-align: middle;
 }
 
-footer .social-list .btn-social:hover .fa {
+footer .social-list .btn-social:hover i {
     color: #FFFFFF;
     transform: scale(1);
     -webkit-transform: scale(1);
@@ -188,35 +199,35 @@ footer .social-list .btn-social:hover .fa {
     -o-transform: scale(1);
 }
 
-footer .social-list li #facebook:before {
+footer .social-list #facebook:before {
     background: #3B599B;
 }
 
-footer .social-list li #facebook .fa {
+footer .social-list #facebook>i {
     color: #3B599B;
 }
 
-footer .social-list li #google-plus:before {
+footer .social-list #google-plus:before {
     background: #DC4A38;
 }
 
-footer .social-list li #google-plus .fa {
+footer .social-list #google-plus>i {
     color: #DC4A38;
 }
 
-footer .social-list li #twitter:before {
+footer .social-list #twitter:before {
     background: #33CCFF;
 }
 
-footer .social-list li #twitter .fa {
+footer .social-list #twitter>i {
     color: #33CCFF;
 }
 
-footer .social-list li #envelope:before {
+footer .social-list #envelope:before {
     background: #565656;
 }
 
-footer .social-list li #envelope .fa {
+footer .social-list #envelope>i {
     color: #565656;
 }
 
