@@ -112,7 +112,7 @@ footer .social-list {
     bottom: 50%;
 }
 
-footer .social-list .btn-social {
+.btn-social {
     display: inline-block;
     background-color: #fff;
     width: 50px;
@@ -130,7 +130,7 @@ footer .social-list .btn-social {
     transition: all .35s cubic-bezier(0.31, -0.105, 0.43, 1.59);
 }
 
-footer .social-list .btn-social:before {
+.btn-social:before {
     content: '';
     background-color: #000;
     width: 120%;
