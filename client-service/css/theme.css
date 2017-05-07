@@ -541,17 +541,16 @@ header .header-content .header-brand {
 
 /** signin-left **/
 .signin-content .signin-left{
-    z-index: 999;
-	width: 400px;
-	height: 540px;
-	position: relative;
-	top: 5%;
-	left: 40%;
-	border-radius: 20px;
+    z-index: 1000;
+    border-radius: 20px;
 	box-shadow: 16px 16px 56px rgba(0, 0, 0, 0.3);
 	background: linear-gradient;
-	display: flex;
+    display: flex;
 	flex-direction: column;
+	position: relative;
+    width: 400px;
+	height: 540px;
+	top: 5%;
 	overflow: hidden;
 }
 
