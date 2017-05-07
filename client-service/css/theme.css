@@ -554,18 +554,23 @@ header .header-content .header-brand {
 
 /** signin-left **/
 .signin-content .signin-left{
-    z-index: 500;
+    position: relative;
+    width: 400px;
+	height: 600px;
+	top: 1%;
     border-radius: 20px;
 	box-shadow: 16px 16px 56px rgba(0, 0, 0, 0.3);
     background: -webkit-linear-gradient(top, #c74848, #952e2e);
 	background: linear-gradient(180deg, #c74848, #952e2e);
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
 	flex-direction: column;
-	position: relative;
-    width: 400px;
-	height: 600px;
-	top: 1%;
-	overflow: hidden;
+    overflow: hidden;
+    z-index: 500;
 }
 
 
