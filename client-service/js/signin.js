@@ -36,6 +36,6 @@ function switchCards(){
 			card1.removeClass('signup-form').addClass('signin-form animated bounceInLeft');
 		}
 	});
-		
+		alert("55415415");
 }
 switchCards();
