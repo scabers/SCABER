@@ -9,7 +9,7 @@ setTimeout(function(){
 	}, 50);
 }, 3000);
 
-$("h1 a").click(function(){
+$("li a").click(function(){
 	$(this).siblings().removeClass("active");
 	$(this).addClass("active");
 	if ($(this).is("#link-signup")) {
