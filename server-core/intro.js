@@ -11,6 +11,8 @@ class IntroService {
         app.get('/about',this.about);
         // List out all taxi guilds.
         app.get('/taxi_list',this.taxi_list);
+        // List out all location which accident occur.
+        app.get('/accident',this.accident);
     }
     index(req,res){
         // Define for landing page - parameter here
@@ -48,6 +50,18 @@ class IntroService {
                 }
             }
         });
+    }
+    accident(req,res){
+        // List out all accident occur in Taiwan (Now only support Taoyuan)
+        Converter.csv2json(config.traffic.accident_taoyuan, (accept,data) => {
+            if(accept == 0){
+                console.log(data);
+            }
+            else{
+                // pass it into map drawer
+                res.render('accident_map',{title:"Accident location in Taiwan",apikey:config.map.apikey,accident:data});
+            }
+        })
     }
 }
 
