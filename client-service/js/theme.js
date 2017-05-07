@@ -61,7 +61,7 @@
 
 
 /**這裡是signin.ejs部分的動畫設置 **/
-var signIn = $('.sign-in'),
+var  signIn = $('.sign-in'),
 	 signUp = $('.sign-up'),
 	 card1 = $('#signin-left-main-1'),
 	 card2 = $('#signin-left-main-2'),
