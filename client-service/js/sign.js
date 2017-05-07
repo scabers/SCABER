@@ -12,7 +12,7 @@ setTimeout(function(){
 $("li a").click(function(){
 	$(this).siblings().removeClass("active");
 	$(this).addClass("active");
-	if ($(this).is("#link-signup")) {
+	if ($(this).is("#link-signin")) {
 		$("#form-signup").removeClass("active");
 		setTimeout(function(){
 			$("#form-signin").addClass("active");
