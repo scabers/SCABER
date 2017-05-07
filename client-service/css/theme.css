@@ -475,6 +475,7 @@ header .header-content .header-brand {
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    position: relative;
     height: 20%;
     width: 70%;
 }
