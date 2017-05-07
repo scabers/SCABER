@@ -27,5 +27,11 @@ module.exports = {
     },
     "map": {
         "apikey": "AIzaSyDNT8S6xvvrKY1Ef8AXtcROOKDYBsVt-p4"
+    },
+    "taxi": {
+        "valid_guild": "opendata/valid_taxi.csv"
+    },
+    "traffic":{
+        "accident_taoyuan": "opendata/taoyuan_accident_105.csv"
     }
 }

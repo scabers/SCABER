@@ -1,0 +1,80 @@
+<html>
+<head>
+    <!-- Include meta.ejs -->
+    <% include ../elements/meta %>
+    <!-- Include lib.ejs -->
+    <% include ../elements/lib %>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
+<body>
+
+<!-- for searching filter -->
+<div class="w3-center w3-row-padding">
+    <form action="/taxi_list" class="w3-container w3-card-4 w3-light-grey w3-round-xxlarge" method="GET">
+        <div class="w3-center w3-padding w3-xlarge">
+            <div class="w3-quarter">
+                <div class="w3-bar">
+                    <h3><i class="fa fa-search-plus" aria-hidden="true"></i> Filter </h3>
+                </div>
+            </div>
+            <div class="w3-half">
+                <input type="text" class="w3-white w3-border-0 w3-padding w3-round-xlarge" style="width:100%" placeholder="keyword of your target..." name="filter">
+            </div>
+            <div class="w3-quarter">
+                <div class="w3-bar w3-xlarge">
+                    <button class="w3-btn w3-round-xxlarge w3-light-grey w3-hover-yellow" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    <button class="w3-btn w3-round-xxlarge w3-light-grey w3-hover-red" type="reset"><i class="fa fa-undo" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+
+<div id="container">
+    <table class="table">
+        <thead class="thead-inverse">
+            <tr>
+                <th>#</th>
+                <th>統一編號</th>
+                <th>商業名稱</th>
+                <th>商業地址</th>
+                <th>登記狀態</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var index in taxi_list){ %>
+            <% if(taxi_list[index].vendor_state.includes("歇業") || taxi_list[index].vendor_state.includes("廢止") || taxi_list[index].vendor_state.includes("停業")){ %>
+                <tr class="bg-primary">
+                    <th scope="row"><%= parseInt(index)+1 %></th>
+                    <td><%= taxi_list[index].tax_number %></td>
+                    <td><%= taxi_list[index].vendor_name %></td>
+                    <td><%= taxi_list[index].vendor_address %></td>
+                    <td><%= taxi_list[index].vendor_state %></td>
+                </tr>
+            <% } else if(taxi_list[index].vendor_state.includes("遷")) {%>
+                <tr class="bg-info">
+                    <th scope="row"><%= parseInt(index)+1 %></th>
+                    <td><%= taxi_list[index].tax_number %></td>
+                    <td><%= taxi_list[index].vendor_name %></td>
+                    <td><%= taxi_list[index].vendor_address %></td>
+                    <td><%= taxi_list[index].vendor_state %></td>
+                </tr>
+            <% } else {%>
+                <tr class="bg-success">
+                    <th scope="row"><%= parseInt(index)+1 %></th>
+                    <td><%= taxi_list[index].tax_number %></td>
+                    <td><%= taxi_list[index].vendor_name %></td>
+                    <td><%= taxi_list[index].vendor_address %></td>
+                    <td><%= taxi_list[index].vendor_state %></td>
+                </tr>
+            <% } %>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

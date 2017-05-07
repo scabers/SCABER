@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include ../elements/lib %>
+    <% include ../elements/meta %>
+</head>
+
+<wrapper> <!-- Back to landing page -->
+    <% include ../elements/navbar_pure %>
+</wrapper>
+
+<body>
+    <h1 style="margin-top: 100px;"> <%= title %> </h1>
+    <div id="googleMap" class="container" style="width:100%; height:100vh;"><div>
+</body>
+
+<script>
+function drawMap(){
+    // draw the map from data
+    var map = new google.maps.Map(document.getElementById('googleMap'),{
+        center: {lat:24.93759, lng:121.2168 },
+        zoom: 10
+    });
+    // Setup all accident points
+    let raw_point = <%- JSON.stringify(accident) %>;
+
+    for(var index in raw_point){
+        // Setup each infoWindow for each point
+        let infoWindow = new google.maps.InfoWindow({
+            content: raw_point[index].address
+        });
+        let loc = {lat: parseFloat(raw_point[index].lat), lng: parseFloat(raw_point[index].lon) };
+        let marker = new google.maps.Marker({
+            position: loc,
+            map: map,
+            title: raw_point[index].area
+        });
+        marker.addListener('click',function(){
+            infoWindow.open(map,marker);
+        });
+    }
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= apikey %>&callback=drawMap"></script>
+</html>

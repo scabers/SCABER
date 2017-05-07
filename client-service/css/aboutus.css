@@ -1,0 +1,189 @@
+@font-face{
+	font-family: GOTHIC;
+	src:url("GOTHIC/GOTHIC.TTF");
+}
+@font-face{
+	font-family: GILC____;
+	src:url("GIL/GILC____.TTF");
+}
+@font-face{
+	font-family: calibri;
+	src:url("calibri/calibri.ttf");
+}
+
+@font-face{
+	font-family: GOTHICB;
+	src:url("GOTHIC/GOTHICB.TTF");
+}
+
+
+html.body{
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#top {
+
+	height: auto;
+	width: 100%;
+}
+
+ul{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	list-style: none;
+	text-align: center;
+	overflow: hidden;
+
+
+}
+
+div.out{
+	margin: 0;
+	padding:0;
+	height: 100%;
+	width: 100%;
+
+}
+div.content{
+	margin: 0;
+	padding: 0;
+  height: 100%;
+  width: inherit;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: url("aboutus/aboutus5-07.jpg");
+}
+
+div.blank{
+	 width: 100%;
+	 height:  20px;
+	 margin-bottom: 10px;
+	 background-color: #fff;
+}
+
+.circle{
+	width: 150px;
+	height: 150px;
+	border-radius: 75px;
+	-webkit-border-radius: 75px;
+	-moz-border-radius: 75px;
+	display: inline-block;
+	margin-left: 5px;
+	margin-top: 25px;
+	margin-bottom: 40px;
+
+
+
+}
+li{
+	float: center;
+	width: 200px;
+	height: auto;
+	margin-left: 30px;
+	margin-right: 30px;
+	padding-bottom: 10px;
+	display: inline-block;
+}
+
+
+li p{
+	text-decoration: none;
+	display: block;
+}
+
+
+back{
+    width: inherit;
+    margin-left: 30px;
+}
+
+
+back p{
+	width: inherit;
+}
+
+p.name{
+	font-size: 2.353467em;
+	font-famliy: "微軟正黑體";
+	letter-spacing: 0.264214em;
+}
+
+p.job{
+    font-size: 1.31245em;
+	font-famliy: "微軟正黑體";
+	letter-spacing: 0.264214em;
+}
+
+p.hint{
+	font-size: 1.11245em;
+	font-famliy: "微軟正黑體";
+	letter-spacing: 0.264214em;
+	font-weight: bold;
+	width: 70%;
+	display: inline-block;
+	text-align: left;
+	margin-bottom: 300px;
+}
+
+
+#chu{
+
+	background: url("aboutus/chu-1.jpg") no-repeat;
+	background-size: 150px 150px;
+}
+
+#king{
+    background: url("aboutus/king-1.jpg") no-repeat;
+	background-size: 150px 150px;
+}
+
+#designer{
+	background: url("aboutus/designer-1.jpg") no-repeat;
+	background-size: 150px 150px;
+}
+
+#lu{
+	background: url("aboutus/lu-1.jpg") no-repeat;
+    background-size: 150px 150px;
+}
+
+#liu{
+	background: url("aboutus/liu-1.jpg") no-repeat;
+    background-size: 150px 150px;
+}
+
+#chu_back{
+    background-repeat: no-repeat;
+    background-size: 200px 525px;
+	background-image: url("aboutus/aboutus2-04.png");
+
+
+}
+
+#king_back{
+    background-repeat: no-repeat;
+    background-size: 200px 525px;
+	background-image: url("aboutus/aboutus2-04.png");
+}
+
+#designer_back{
+	background-repeat: no-repeat;
+    background-size: 200px 525px;
+	background-image: url("aboutus/aboutus2-04.png");
+}
+
+#lu_back{
+	background-repeat: no-repeat;
+    background-size: 200px 525px;
+	background-image: url("aboutus/aboutus2-04.png");
+}
+
+#liu_back{
+	background-repeat: no-repeat;
+    background-size: 200px 525px;
+	background-image: url("aboutus/aboutus2-04.png");
+}

@@ -9,13 +9,14 @@
     - `Currently worker`:
         - Kevin Cyu
             - contain mostly server work.
-        - Yung-Sheng Lu
-            - contain front-end work.
-		- Wu,Chih-Wei
-		    - web
-            - 	part-time designer.
+    - OpenData usage goes here.
 - client-service:
     - `Currently worker`:
+        - Yung-Sheng Lu
+            - contain front-end work.
+        - Wu,Chih-Wei
+            - web
+            - 	part-time designer.
     - contain our all front-end resources and work.
     - web designer goes here.
     - repository structure(edit if you modify this repository structure):
@@ -48,6 +49,8 @@
     - Provide realtime monitor of each passenger/driver, prevent from accident or carjacking.
 - Integration
     - Integrate all the locality taxi resources, and promote entire benefit.
+- Cooperate with Government
+    - Using resources provide on
 
 ## Dependencies
 
@@ -64,16 +67,7 @@
 
 ## Installation
 
-- Build
+- Build & start
 ```bash
-$ npm install
-```
-- Start
-```bash
-$ node app.js
-```
-
-- All: build & start
-```bash
-$ npm run build && npm run start
+$ npm run all
 ```
