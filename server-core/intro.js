@@ -5,8 +5,11 @@ const {Converter} = require('./converter');
 // definition here
 class IntroService {
     init(app){
+        // Landing page of SCABER.
         app.get('/',this.index);
+        // About us page of SCABER
         app.get('/about',this.about);
+        // List out all taxi guilds.
         app.get('/taxi_list',this.taxi_list);
     }
     index(req,res){
@@ -24,8 +27,8 @@ class IntroService {
     taxi_list(req,res){
         // List out all valid taxi guilds
         let filter = req.query.filter;
-        Converter.csv2json(config.taxi.valid_guild, (err,data) => {
-            if(err==0){
+        Converter.csv2json(config.taxi.valid_guild, (accept,data) => {
+            if(accept==0){
                 // print out the error message
                 console.log(data);
             }
@@ -33,7 +36,7 @@ class IntroService {
                 if(filter != undefined){
                     var filterobj = [];
                     for(var index in data){
-                        // Filtering 
+                        // Filtering
                         if(data[index].tax_number.includes(filter)||data[index].vendor_name.includes(filter)||data[index].vendor_address.includes(filter)||data[index].vendor_state.includes(filter)){
                             filterobj.push(data[index]);
                         }
