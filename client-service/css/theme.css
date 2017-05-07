@@ -493,7 +493,7 @@ header .header-content .header-brand {
 }
 
 .signin-content .signin-form .form-auth {
-    max-height: 100%;
+    max-height: 50px;
     padding: 0;
     padding-bottom: 20px;
     width: auto;
