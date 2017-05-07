@@ -489,7 +489,7 @@ header .header-content .header-brand {
 
 .signin-content .signin-form {
     position: relative;
-    top: 25%;
+    top: 17%;
 }
 
 .signin-content .signin-form .form-auth {
@@ -550,7 +550,7 @@ header .header-content .header-brand {
 	flex-direction: column;
 	position: relative;
     width: 400px;
-	height: 500px;
+	height: 600px;
 	top: 1%;
 	overflow: hidden;
 }
