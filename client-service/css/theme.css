@@ -448,10 +448,18 @@ header .header-content .header-brand {
 /*signin-bar的形式*/
 
 .signin-content .signin-bar {
-    padding: 5px 0;
-    position: relative;
-    text-decoration: none;
-    width: 100%;
+     display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 12px;
+  color: #DFB72C;
+  font-size: 28px;
+  line-height: 1;
+  text-align: center;
+  text-transform: lowercase;
 }
 
 .signin-content .signin-bar li {
@@ -460,13 +468,16 @@ header .header-content .header-brand {
 }
 
 .signin-content .signin-bar li a {
-    color: #3F3133;
-    display: block;
-    font-size: 1.5rem;
-    padding: 15px 15px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
+     display: block;
+     margin: 0 6px;
+     cursor: pointer;
+     -webkit-transform: none;
+     transform: none;
+}
+
+.signin-content .signin-bar li a:hover, .signin-content .signin-bar li a:focus {
+    color: #976a36;
+
 }
 
 .signin-content .signin-bar li a:active {
@@ -484,6 +495,7 @@ header .header-content .header-brand {
 .signin-content .signin-bar li a:hover {
     color: #E79535;
 }
+
 
 
 /* signin form */
