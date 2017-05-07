@@ -14,7 +14,7 @@ class IntroService {
     }
     about(req,res){
         // Define for About us page
-        res.render("about",{
+        res.render("aboutus",{
             title: "About us"
         });
     }
