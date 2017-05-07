@@ -61,6 +61,8 @@
 
 
 /**這裡是signin.ejs部分的動畫設置 **/
+
+(function($){
 var  signIn = $('.sign-in'),
 	 signUp = $('.sign-up'),
 	 card1 = $('#signin-left-main-1'),
@@ -97,5 +99,6 @@ function switchCards(){
 	});
 		
 }
-
+})
 switchCards();
+
