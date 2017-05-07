@@ -474,7 +474,7 @@ header .header-content .header-brand {
 .signin-content .signin-left .signin-bar {
     position: relative;
     width: 100%;
-    height: 3%;
+    height: 2%;
     border-radius: 20px 20px 0 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -485,13 +485,13 @@ header .header-content .header-brand {
 
 .signin-content .signin-left .signin-bar li {
     /* DEFINE */
+    float: left;
 }
 
 .signin-content .signin-left .signin-bar li a {
      
     color: rgba(255, 255, 255, 0.7);
     display: block;
-    float: left;
     font-size: 1.2rem;
     font-family: 'Open Sans';
     font-weight: normal;
@@ -531,7 +531,7 @@ header .header-content .header-brand {
     align-items: center;
 }
 
-.signin-content .signin-form .card-box-body .form-signin .form-signin input[type="text"]{
+.signin-content .signin-left .signin-form .card-box-body .form-signin .form-group input[type="text"]{
   border-radius: 40px;
   border: none;
   background-color: #f1f1f1;
@@ -540,7 +540,7 @@ header .header-content .header-brand {
   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
-.signin-content .signin-form .card-box-body .form-signin .form-signin input[type="text"]:focus{
+.signin-content .signin-form .card-box-body .form-signin .form-group input[type="text"]:focus{
   outline: none;
   box-shadow: inset 3px 3px 3px rgba(44, 168, 209, 0.6);
 
