@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="scaber" content="">
-	<link rel="icon" href="icon/logo_icon.png">
-
-    <title><%= title %></title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="aboutus.css" rel="stylesheet">
-
-  </head>
-
-  <body>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="scaber" content="">
+        <link rel="icon" href="logo/logo_icon.png">
+        <title><%= title %></title>
+        <!-- Custom styles for this template -->
+        <link href="aboutus.css" rel="stylesheet">
+        <!-- Include lib.ejs -->
+        <% include ../elements/lib %>
+    </head>
+    <% include ../elements/navbar_pure %>
+<body>
     <div class="out">
     	<img id="top" src="aboutus/aboutus1-03.png">
          <div class="blank"></div>
@@ -70,11 +66,16 @@
                      <p class="hint">人的生命是有限的，可是為人民服務是無限的，我要把有限的生命投入到無限的為人民服務之中去！</p>
     	        	   </div>
                 </li>
-
          </ul>
     	</div>
-
     </div>
-
-  </body>
+</body>
+    <script>
+        // Offset for navbar
+        $('#navbar').affix({
+          offset: {
+              top: 100
+          }
+        });
+    </script>
 </html>
