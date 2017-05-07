@@ -497,8 +497,8 @@ header .header-content .header-brand {
     padding: 0;
     padding-bottom: 20px;
     position: relative;
-    height: 40px;
-    width: 10px;
+    height: 50px;
+    width: 100px;
 }
 
 .signin-content .signin-form .form-auth a img{
