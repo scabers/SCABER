@@ -430,6 +430,7 @@ header .header-content .header-brand {
 
 /** signin.ejs **/
 
+
 .signin-content ul {
     list-style: none;
     padding: 0;
@@ -445,6 +446,27 @@ header .header-content .header-brand {
     font-size: 2.6rem;
     letter-spacing: 0.5rem;
     text-align: center;
+}
+
+/** signin-left **/
+.signin-content .signin-left{
+    position: relative;
+    width: 400px;
+	height: 600px;
+	top: 2%;
+    border-radius: 20px;
+	box-shadow: 16px 16px 56px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #c74848, #952e2e);
+	background: linear-gradient(180deg, #c74848, #952e2e);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+	flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
 }
 
 /** signin-bar的設計**/
@@ -463,14 +485,14 @@ header .header-content .header-brand {
 
 .signin-content .signin-left .signin-bar li {
     /* DEFINE */
-    float: left;
 }
 
 .signin-content .signin-left .signin-bar li a {
-
+     
     color: rgba(255, 255, 255, 0.7);
     display: block;
-    font-size: 1.2rem;
+    float: left;
+    font-size: 1.2em;
     font-family: 'Open Sans';
     font-weight: normal;
     padding: 15px 15px;
@@ -498,8 +520,7 @@ header .header-content .header-brand {
 }
 
 .signin-content .signin-form .card-box-body{
-    display: -webkit-box;
-    display: -ms-flexbox;
+
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -510,7 +531,7 @@ header .header-content .header-brand {
     align-items: center;
 }
 
-.signin-content .signin-form .card-box-body .form-signin input[type="text"]{
+.signin-content .signin-form .card-box-body .form-signin .form-signin input[type="text"]{
   border-radius: 40px;
   border: none;
   background-color: #f1f1f1;
@@ -519,15 +540,13 @@ header .header-content .header-brand {
   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
-.signin-content .signin-form .card-box-body .form-signin input[type="text"]:focus{
+.signin-content .signin-form .card-box-body .form-signin .form-signin input[type="text"]:focus{
   outline: none;
   box-shadow: inset 3px 3px 3px rgba(44, 168, 209, 0.6);
 
 }
 
-.signin-content .sign-form .card-box-body .form-signin .check-form{
-  display: -webkit-box;
-  display: -ms-flexbox;
+.signin-content .signin-left .sign-form .card-box-body .form-signin .check-form{
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -541,7 +560,7 @@ header .header-content .header-brand {
 
 }
 
-.signin-content .sign-form .card-box-body .form-signin .check-form *{
+.signin-content .signin-left .sign-form .card-box-body .form-signin .check-form *{
   cursor: pointer;
 }
 
@@ -570,11 +589,7 @@ label{
 }
 
 .submit:focus{
-  background-color: mediumseagreen;
-  border: none;
-  padding: 12px 60px;
-  border-radius: 40px;
-  color: white;   
+box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .form-forget{
@@ -658,9 +673,12 @@ label{
 }
 
 /** signup form **/
-.signin-content .signup-form {
+.signin-content .signin-left .signup-form {
         display: none;
 }
+
+
+
 
 /** active動畫效果 **/
 .active {
@@ -670,28 +688,6 @@ label{
   -webkit-transition-delay: 200ms all ease-in-out;
   transition-delay: 200ms all ease-in-out;
 }
-
-/** signin-left **/
-.signin-content .signin-left{
-    position: relative;
-    width: 400px;
-	height: 600px;
-	top: 2%;
-    border-radius: 20px;
-	box-shadow: 16px 16px 56px rgba(0, 0, 0, 0.3);
-    background: -webkit-linear-gradient(top, #c74848, #952e2e);
-	background: linear-gradient(180deg, #c74848, #952e2e);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-	flex-direction: column;
-    overflow: hidden;
-    z-index: 999;
-}
-
 
 /** contact.ejs **/
 
