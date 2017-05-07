@@ -501,13 +501,13 @@ header .header-content .header-brand {
     width: 10px;
 }
 
-.signin-content .signin-form .form-auth a{
+.signin-content .signin-form .form-auth a img{
 
     padding: 0;
     padding-bottom: 20px;
     position: relative;
-    height: 40px;
-    width: 10px;
+    height: 4px;
+    width: 1px;
 }
 
 
