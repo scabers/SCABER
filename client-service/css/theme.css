@@ -575,7 +575,7 @@ label{
   font-weight: 300;
 }
 
-.submitin {
+.submit {
   background-color: mediumseagreen;
   border: none;
   padding: 12px 60px;
@@ -583,31 +583,15 @@ label{
   color: white;
 }
 
-.submitin:hover, .submitin:focus {
+.submit:hover, .submit:focus {
   background-color: #36a065;
   outline: none;
 }
 
-.submitin:focus{
+.submit:focus{
 box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
-.submitout {
-  background-color: mediumseagreen;
-  border: none;
-  padding: 12px 60px;
-  border-radius: 40px;
-  color: white;
-}
-
-.submitout:hover, .submitout:focus {
-  background-color: #36a065;
-  outline: none;
-}
-
-.submitout:focus{
-box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
-}
 
 .form-forget{
   color: rgba(255, 255, 255, 0.6);
