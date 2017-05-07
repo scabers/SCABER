@@ -450,7 +450,7 @@ header .header-content .header-brand {
 .signin-content .signin-bar {
     position: relative;
     width: 100%;
-    height: 1%;
+    height: 5%;
     border-radius: 20px 20px 0 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -542,7 +542,7 @@ header .header-content .header-brand {
 
 /** signin-left **/
 .signin-content .signin-left{
-    z-index: 1000;
+    z-index: 500;
     border-radius: 20px;
 	box-shadow: 16px 16px 56px rgba(0, 0, 0, 0.3);
 	background: linear-gradient;
@@ -550,8 +550,8 @@ header .header-content .header-brand {
 	flex-direction: column;
 	position: relative;
     width: 400px;
-	height: 540px;
-	top: 2%;
+	height: 500px;
+	top: 1%;
 	overflow: hidden;
 }
 
