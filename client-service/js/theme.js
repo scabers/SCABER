@@ -98,7 +98,7 @@ function switchCards(){
 		}
 	});
 		
-}
+}switchCards();
 })
-switchCards();
+
 
