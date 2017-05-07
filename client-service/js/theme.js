@@ -14,6 +14,7 @@ function ifActive(elem){
 		return false;
 	}
 }
+alert("55415415");
 
 function switchCards(){
 	signUp.on('click', function(e){
