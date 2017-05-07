@@ -33,7 +33,7 @@ class Converter{
         // convert xlsx format object to json format and return
         if(!fs.existsSync(path.join(__dirname,xlsx_path))){
             // not exist
-            cb(0,'Invalid reading file path!');
+            cb(0,'Invalid reading file path: '+xlsx_path);
         }
         else{
             xlsx2json(path.join(__dirname,xlsx_path)).then(jsonArray => {
@@ -46,7 +46,7 @@ class Converter{
         // convert the target xlsx format object and write back into json file specify in dist_path
         if(!fs.existsSync(path.join(__dirname,xlsx_path))){
             // not exist
-            cb(0,'Invalid reading file path!');
+            cb(0,'Invalid reading file path: '+xlsx_path);
         }
         else{
             xlsx2json(path.join(__dirname,xlsx_path)).then(jsonArray => {
