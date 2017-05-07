@@ -492,7 +492,7 @@ header .header-content .header-brand {
     color: rgba(255, 255, 255, 0.7);
     display: block;
     float: left;
-    font-size: 1.2em;
+    font-size: 1.2rem;
     font-family: 'Open Sans';
     font-weight: normal;
     padding: 15px 15px;
@@ -922,7 +922,7 @@ footer .footer-bottom {
 
 footer .footer-bottom #copyright {
     color: #F6B41E;
-    font-size: 1.0em;
+    font-size: 1.0rem;
     text-align: center;
     width: inherit;
 }
