@@ -2,7 +2,7 @@
     "name": "SCABER",
     "main": "app.js",
     "config":  {
-        "port": 3001
+        "port": 2999
     },
     "scripts": {
         "build": "npm install",
