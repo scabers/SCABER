@@ -501,6 +501,16 @@ header .header-content .header-brand {
     width: 10px;
 }
 
+.signin-content .signin-form .form-auth a{
+
+    padding: 0;
+    padding-bottom: 20px;
+    position: relative;
+    height: 40px;
+    width: 10px;
+}
+
+
 .signin-content .signin-form button#signin {
     background-color: transparent;
     border: 2px solid #3F3133;
