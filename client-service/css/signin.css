@@ -1,7 +1,11 @@
 /**對於登陸畫面的設計包含**/
 
 
+.signin .form-signin{
+    transition: all 1000ms eas-out;
+    
 
+}
 
 
 
