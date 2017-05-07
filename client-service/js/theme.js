@@ -1,6 +1,6 @@
 (function($) {
     // Start of use strict
-    "use strict"
+    "use strict";
 
     // Page scrolling feature
     $(document).on('click', 'a.page-scroll', function(event) {
@@ -12,22 +12,15 @@
     });
 
     // Highlight the top navbar as scrolling occurs
-    $('body').scrollTop({
+    $('body').scrollspy({
         target: '.navbar-fixed-top',
         offset: 51
     });
 
 
-    // Close the respomsive menu on menu item click
+    // Close the responsive menu on menu item click
     $('.navbar-collapse ul li a').click(function() {
         $('.navbar-toggle:visible').click();
-    });
-
-    // Offset for navbar
-    $('#navbr').affix({
-        offset: {
-            top: 100
-        }
     });
 
     // Initialize and configure scroll reveal animation
@@ -37,10 +30,12 @@
         scale: 0.3,
         distance: '0px'
     }, 200);
+
     sr.reveal('.sr-button', {
         duration: 1000,
         delay: 200
     });
+
     sr.reveal('.sr-contact', {
         duration: 600,
         scale: 0.3,
@@ -48,7 +43,7 @@
     }, 300);
 
     // Initialize and configure magnific popup lightbox plugin
-    $('.pop-gallery').magnificPopup({
+    $('.popup-gallery').magnificPopup({
         delegate: 'a',
         type: 'image',
         tLoading: 'Loading image #%curr%...',

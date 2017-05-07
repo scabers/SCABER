@@ -5,14 +5,19 @@
         <!-- Include lib.ejs -->
         <% include ../elements/lib %>
     </head>
-    <body id="pop-top">
+    <body id="page-top">
         <!-- Include navbar.ejs -->
         <% include ../elements/navbar %>
 
+        <!-- Include header.ejs -->
         <% include ../elements/header %>
+
+        <!-- Include about.ejs -->
+        <% include ../elements/about %>
 
         <% include ../elements/service %>
 
+        <!-- Include signin.ejs -->
         <% include ../elements/signin %>
 
         <% include ../elements/contact %>
@@ -20,4 +25,12 @@
         <!-- Include footer.ejs -->
         <% include ../elements/footer %>
     </body>
+    <script>
+    // Offset for navbar
+    $('#navbar').affix({
+        offset: {
+            top: 100
+        }
+    });
+    </script>
 </html>
