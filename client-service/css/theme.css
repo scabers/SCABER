@@ -496,7 +496,7 @@ header .header-content .header-brand {
     max-height: 50px;
     padding: 0;
     padding-bottom: 20px;
-    width: auto;
+    width: 50px;
 }
 
 .signin-content .signin-form button#signin {
