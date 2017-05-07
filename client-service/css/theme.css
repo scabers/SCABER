@@ -539,6 +539,22 @@ header .header-content .header-brand {
     -o-transition: all 0.3s;
 }
 
+/** signin-left **/
+.signin-content .signin-left{
+    z-index: 999;
+	width: 400px;
+	height: 480px;
+	position: relative;
+	top: 5%;
+	left: 40%;
+	border-radius: 20px;
+	box-shadow: 16px 16px 56px rgba(0, 0, 0, 0.3);
+	background: linear-gradient;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
 
 /** contact.ejs **/
 
