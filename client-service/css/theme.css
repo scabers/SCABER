@@ -557,7 +557,8 @@ header .header-content .header-brand {
     z-index: 500;
     border-radius: 20px;
 	box-shadow: 16px 16px 56px rgba(0, 0, 0, 0.3);
-	background: linear-gradient;
+    background: -webkit-linear-gradient(top, #c74848, #952e2e);
+	background: linear-gradient(180deg, #c74848, #952e2e);
     display: flex;
 	flex-direction: column;
 	position: relative;
