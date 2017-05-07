@@ -1,10 +1,13 @@
 // display message to viewers
+const config = require('./config');
+const {Converter} = require('./converter');
 
 // definition here
 class IntroService {
     init(app){
         app.get('/',this.index);
         app.get('/about',this.about);
+        app.get('/taxi_list',this.taxi_list);
     }
     index(req,res){
         // Define for landing page - parameter here
@@ -16,6 +19,31 @@ class IntroService {
         // Define for About us page
         res.render("aboutus",{
             title: "About us"
+        });
+    }
+    taxi_list(req,res){
+        // List out all valid taxi guilds
+        let filter = req.query.filter;
+        Converter.csv2json(config.taxi.valid_guild, (err,data) => {
+            if(err==0){
+                // print out the error message
+                console.log(data);
+            }
+            else {
+                if(filter != undefined){
+                    var filterobj = [];
+                    for(var index in data){
+                        // Filtering 
+                        if(data[index].tax_number.includes(filter)||data[index].vendor_name.includes(filter)||data[index].vendor_address.includes(filter)||data[index].vendor_state.includes(filter)){
+                            filterobj.push(data[index]);
+                        }
+                    }
+                    res.render('valid_taxi',{title:"Current valid taxi vendor in Taiwan",taxi_list:filterobj});
+                }
+                else{
+                    res.render('valid_taxi',{title:"Current valid taxi vendor in Taiwan",taxi_list:data});
+                }
+            }
         });
     }
 }

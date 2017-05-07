@@ -2,7 +2,7 @@
     "name": "SCABER",
     "main": "app.js",
     "config":  {
-        "port": 3000
+        "port": 4000
     },
     "scripts": {
         "build": "npm install",
@@ -16,6 +16,7 @@
     },
     "dependencies": {
         "body-parser": "^1.15.2",
+        "csvjson": "^4.1.3",
         "express": "^4.6.1",
         "express-session": "^1.11.3",
         "ejs": "^2.5.5",
@@ -27,6 +28,7 @@
         "passport-github": "^1.1.0",
         "passport-facebook": "^2.1.1",
         "passport-google-oauth20": "^1.0.0",
-        "socket.io": "^1.4.5"
+        "socket.io": "^1.4.5",
+        "xlsx2json": "^1.0.0"
     }
 }
