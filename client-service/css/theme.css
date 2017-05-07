@@ -445,6 +445,8 @@ header .header-content .header-brand {
     text-align: center;
 }
 
+/*signin-bar的形式*/
+
 .signin-content .signin-bar {
     padding: 5px 0;
     position: relative;
@@ -467,6 +469,18 @@ header .header-content .header-brand {
     text-transform: uppercase;
 }
 
+.signin-content .signin-bar li a:active {
+    color: #857567;
+}
+
+.signin-content .signin-bar li a.active {
+    font-weight: 500;
+}
+
+.signin-content .signin-bar li a:not(.active) {
+    font-weight: 300;
+}
+
 .signin-content .signin-bar li a:hover {
     color: #E79535;
 }
@@ -479,71 +493,213 @@ header .header-content .header-brand {
     position: relative;
     top: 25%;
 }
-/*用來設計入場效果*/
-.signin-content .signin-form .form-signin fieldset:nth-child(2){
+
+.signin-content .signin-form .form-signup input[type="submit"]:hover,.signin-content .signin-form .form-signup input[type="submit"]:focus{
+    background: #976a36;
+}
+
+.signin-content .signin-form .form-signup input[type="submit"]:active{
+    background: #857567;
+}
+
+.signin-content .signin-form .form-signin#active fieldset input[type="sumbit"] {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+            opacity: 1;
+
+}
+
+.signin-content .signin-form .form-signin:not(.active){
+      opacity: 0;
+      z-index: 0;
+}
+
+.signin-content .signin-form .form-signin:not(.active) fieldset, .signin-content .signin-form .form-signin:not(.active) li,.signin-content .signin-form .form-signin:not(.active) input[type="sumbit"]{
+
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+          opacity: 0;
+}
+
+.signin-content .signin-form .form-signin{
+    -webkit-transition: all 1000ms ease-out;
+  transition: all 1000ms ease-out;
+}
+
+.signin-content .signin-form .form-signin fieldset,.signin-content .signin-form .form-signin li, .signin-content .signin-form .form-signin input[type="sumbit"]{
+   -webkit-transition: all 500ms ease-out;
+  transition: all 500ms ease-out;
+}
+
+.signin-content .signin-form .form-signin button, .signin-content .signin-form .form-signin input{
+    -webkit-transition: all 150ms ease-out;
+     transition: all 150ms ease-out;
+}
+
+.signin-content .signin-form .form-signin button:hover, .signin-content .signin-form .form-signin button:focus,
+.signin-content .signin-form .form-signin input:hover, .signin-content .signin-form .form-signin input:focus{
+     -webkit-transition: all 300ms ease-out;
+      transition: all 300ms ease-out;
+}
+
+.signin-content .signin-form .form-signin button:active, .signin-content .signin-form .form-signin input:active{
+     -webkit-transition: all 150ms ease-in;
+     transition: all 150ms ease-in;
+}
+
+
+/*用來設計signin入場效果*/
+.signin-content .signin-form .form-signin#active fieldset:nth-child(2){
     -webkit-transition-delay: 50ms;
             transition-delay: 50ms;
 }
 
-.signin-content .signin-form .form-signin fieldset:nth-child(3){
+.signin-content .signin-form .form-signin#active fieldset:nth-child(3){
     -webkit-transition-delay: 100ms;
             transition-delay: 100ms;
 }
 
-.signin-content .signin-form .form-signin fieldset:nth-child(2){
+.signin-content .signin-form .form-signin#active li:nth-child(1){
     -webkit-transition-delay: 150ms;
             transition-delay: 150ms;
+}
+
+.signin-content .signin-form .form-signin#active li:nth-child(2){
+    -webkit-transition-delay: 200ms;
+            transition-delay: 200ms;
+}
+
+.signin-content .signin-form .form-signin#active input[type="submit"]{
+     -webkit-transition-delay: 250ms;
+          transition-delay: 250ms;
+
 }
 /*singup的入場效果*/
 
-.signin-content .signin-form .form-signup fieldset:nth-child(2){
+.signin-content .signin-form .form-signup#active fieldset:nth-child(2){
     -webkit-transition-delay: 50ms;
             transition-delay: 50ms;
 }
 
-.signin-content .signin-form .form-signup fieldset:nth-child(1){
+.signin-content .signin-form .form-signup#active li:nth-child(1){
     -webkit-transition-delay: 100ms;
             transition-delay: 100ms;
 }
 
-.signin-content .signin-form .form-signup fieldset:nth-child(2){
+.signin-content .signin-form .form-signup#active li:nth-child(2){
     -webkit-transition-delay: 150ms;
             transition-delay: 150ms;
 }
 
-.signin-content .signin-form .form-signup input[type="submit"]{
+.signin-content .signin-form .form-signup#active input[type="submit"]{
     -webkit-transition-delay: 200ms;
             transition-delay: 200ms;
 }
 
-.signin-content .signin-form .form:not(.active)#form-signin fieldset:nth-child(1){
+.signin-content .signin-form .form-signin#form:not(.active) fieldset:nth-child(1){
     -webkit-transition-delay: 250ms;
             transition-delay: 250ms;
 }
 
-.signin-content .signin-form .form:not(.active)#form-signin fieldset:nth-child(2){
+.signin-content .signin-form .form-signin#form:not(.active) fieldset:nth-child(2){
     -webkit-transition-delay: 200ms;
             transition-delay: 200ms;
 }
 
-.signin-content .signin-form .form:not(.active)#form-signin fieldset:nth-child(3){
+.signin-content .signin-form .form-signin#form:not(.active) fieldset:nth-child(3){
     -webkit-transition-delay: 150ms;
             transition-delay: 150ms;
 }
 
-.signin-content .signin-form .form:not(.active)#form-signin fieldset:nth-child(1){
-    -webkit-transition-delay: 250ms;
-            transition-delay: 250ms;
+.signin-content .signin-form .form-signin#form:not(.active) li:nth-child(1){
+    -webkit-transition-delay: 100ms;
+            transition-delay: 100ms;
 }
 
-.signin-content .signin-form .form:not(.active)#form-signup fieldset:nth-child(1){
+.signin-content .signin-form .form-signin#form:not(.active) li:nth-child(2){
+    -webkit-transition-delay: 50ms;
+            transition-delay: 50ms;
+}
+
+.signin-content .signin-form .form-signup#form:not(.active) fieldset:nth-child(1){
     -webkit-transition-delay: 200ms;
             transition-delay: 200ms;
 }
 
-.signin-content .signin-form .form:not(.active)#form-signup fieldset:nth-child(2){
+.signin-content .signin-form .form-signup#form:not(.active) fieldset:nth-child(2){
     -webkit-transition-delay: 150ms;
             transition-delay: 150ms;
+}
+
+.signin-content .signin-form .form-signup#form:not(.active) li:nth-child(1){
+    -webkit-transition-delay: 100ms;
+            transition-delay: 100ms;
+}
+
+.signin-content .signin-form .form-signup#form:not(.active) li:nth-child(2){
+    -webkit-transition-delay: 50ms;
+            transition-delay: 50ms;
+}
+
+.signin-content .pre-enter .signin-form fieldset,.signin-content .pre-enter .signin-form li{
+          opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+          visibility: hidden;
+
+}
+
+.signin-content .pre-enter .signin-form input[type="submit"]{
+    -webkit-transform-origin: center bottom;
+          transform-origin: center bottom;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  color: #DFB72C;
+  visibility: hidden;
+
+}
+
+.signin-content .on-enter .signin-form fieldset,.signin-content .pre-enter .signin-form li{
+-webkit-animation: slideInUp-fadeIn 1000ms linear forwards;
+          animation: slideInUp-fadeIn 1000ms linear forwards;
+          visibility: visible;
+}
+
+.signin-content .on-enter .signin-form fieldset:nth-child(1){
+
+    -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
+}
+
+.signin-content .on-enter .signin-form fieldset:nth-child(2){
+
+    -webkit-animation-delay: 1350ms;
+          animation-delay: 1350ms;
+}
+
+.signin-content .on-enter .signin-form fieldset:nth-child(3){
+
+    -webkit-animation-delay: 1450ms;
+          animation-delay: 1450ms;
+}
+
+.signin-content .on-enter .signin-form li:nth-child(1){
+
+    -webkit-animation-delay: 1550ms;
+          animation-delay: 1550ms;
+}
+
+.signin-content .on-enter .signin-form li:nth-child(2){
+
+    -webkit-animation-delay: 1650ms;
+          animation-delay: 1650ms;
+}
+
+.signin-content .on-enter .signin-form input[type="submit"]{
+
+  -webkit-animation: scaleYIn 1000ms linear forwards 1750ms, lemon-white 250ms linear forwards 2150ms;
+          animation: scaleYIn 1000ms linear forwards 1750ms, lemon-white 250ms linear forwards 2150ms;
+          visibility: visible;
 }
 
 
@@ -846,6 +1002,27 @@ footer .footer-bottom #copyright {
     footer .footer-news {
         border-left: 1px solid rgba(63, 49, 51, 0.7);
     }
+}
+
+
+
+
+/*顏色*/
+@-webkit-keyframes lemon-white {
+  0% {
+    color: #DFB72C;
+  }
+  100% {
+    color: white;
+  }
+}
+@keyframes lemon-white {
+  0% {
+    color: #DFB72C;
+  }
+  100% {
+    color: white;
+  }
 }
 
 
