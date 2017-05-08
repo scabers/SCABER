@@ -546,17 +546,28 @@ header .header-section .header-brand {
 }
 
 .signin-section .signin-bar li a {
+    background: rgba(160, 179, 176, 0.25);
     color: #3F3133;
+    cursor: pointer;
     display: block;
     font-size: 1.5rem;
     padding: 15px 15px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    transition: .5s ease;
+    width: 50%;
+    
 }
 
 .signin-section .signin-bar li a:hover {
-    color: #E79535;
+    background: #179b77;
+    color: #ffffff;
+}
+
+.signin-section .signin-bar .active a {
+    background: #1ab188;
+    color: #ffffff;
 }
 
 
