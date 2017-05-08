@@ -12,7 +12,7 @@ function ifActive(elem){
 		return false;
 	}
 }
-
+alter("dsdasdas");
 
 function switchCards(){
 	signUp.on('click', function(e){
