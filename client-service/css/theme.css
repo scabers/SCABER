@@ -512,11 +512,6 @@ header .header-content .header-brand {
 
 /* signin form */
 
-.signin-content .signin-form {
-    position: relative;
-    top: 7.4%;
-    display: block;
-}
 
 .signin-content .signin-left .signin-form .card-box-body{
 
@@ -545,7 +540,9 @@ header .header-content .header-brand {
 
 }
 
-.signin-content .signin-left .sign-form .card-box-body .form-signin .check-form{
+
+
+.signin-content .signin-left .signin-form .card-box-body .form-signin .check-form{
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -559,7 +556,7 @@ header .header-content .header-brand {
 
 }
 
-.signin-content .signin-left .sign-form .card-box-body .form-signin .check-form *{
+.signin-content .signin-left .signin-form .card-box-body .form-signin .check-form *{
   cursor: pointer;
 }
 
@@ -645,6 +642,13 @@ header .header-content .header-brand {
 }
 
 /** signup form **/
+
+.signin-content .signin-form {
+    position: relative;
+    top: 7.4%;
+    display: block;
+}
+
 .signin-content .signin-left .signup-form {
         display: none;
 }
