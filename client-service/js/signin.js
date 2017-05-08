@@ -4,7 +4,7 @@ var  signIn = $('.sign-in'),
 	 card1 = $('#signin-left-main-1'),
 	 card2 = $('#signin-left-main-2'),
 	 submit = $('.submit');
-alter("dsdasdas1");
+alert("dsdasdas1");
 function ifActive(elem){
 	if (elem.hasClass('activebar')) {
 		return true;
@@ -12,7 +12,7 @@ function ifActive(elem){
 		return false;
 	}
 }
-alter("dsdasdas2");
+alert("dsdasdas2");
 
 function switchCards(){
 	signUp.on('click', function(e){
