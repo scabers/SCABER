@@ -540,6 +540,11 @@ header .header-section .header-brand {
     text-decoration: none;
     width: 100%;
 }
+.signin-section .signin-bar:after{
+    content:"";
+    display: table;
+    clear: both;
+}
 
 .signin-section .signin-bar li {
     /* DEFINE */
