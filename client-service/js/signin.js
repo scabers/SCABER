@@ -15,6 +15,7 @@ function ifActive(elem){
 alert("dsdasdas2");
 
 function switchCards(){
+	alert("dsdasdas3");
 	signUp.on('click', function(e){
 		e.preventDefault();
 		if (ifActive(signIn)){
@@ -22,7 +23,7 @@ function switchCards(){
 			signIn.removeClass('activebar');
 			card1.removeClass('signinform').addClass('signupform');
 			card2.removeClass('signupform').addClass('signinform animated bounceInRight');
-			alert("dsdasdas3");
+			alert("dsdasdas4");
 		   }
 		}
 	);
@@ -33,9 +34,10 @@ function switchCards(){
 			signIn.addClass('activebar');
 			card2.removeClass('signinform').addClass('signupform');
 			card1.removeClass('signupform').addClass('signinform animated bounceInLeft');
-		}
+		alert("dsdasdas5");
+	    }
 	});
-		
+		 alert("dsdasdas6");
 }
 switchCards();
 
