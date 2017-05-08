@@ -1,65 +1,43 @@
 <!-- Sign in section - index.ejs -->
-<section class="signin-content" id="signin">
+<section class="signin-section" id="signin">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 signin-left">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 signin-title">
                     <p id="title">SCABER</p>
                 </div>
-            <!-- 用fieldset來設定區塊,以方面後續維護 -->
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signin-bar">
-                      <ul>
-                        <li class="tab acitve"><button class="sign-in">Sign in</button></li>
-                        <li class="tab"><button class="sign-up">Sign up</button></li>
-                      </ul>
+                    <ul>
+                        <li><a href="#">Sign in</a></li>
+                        <li><a href="#">Sign up</a></li>
+                    </ul>
                 </div>
-             <!-- 用fieldset來設定區塊,以方面後續維護 -->
-              <div class="tab-content1">
-                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signinform" id="signin1">
-                    <div class="card-box-body">
-                      <form class="form-signin" action="">
-                          <div class="form-group">
-                             <input class="form-control" id="inputEmail" name="email" type="text" placeholder="Your email" required autocomplete="off"></input>
-                          </div>
-                          <div class="form-group">   
-                             <input class="form-control" id="inputPass" name="pass" type="text" placeholder="Your password" required autocomplete="off"></input>
-                          </div>
 
-                          <div class="check-form">
-                             <label class="form-check-label">
-                                 <input class="form-check-input" type="checkbox">Remember me</input>
-                             </label>
-                          </div>
-                          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 form-auth">
+                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signin-form">
+                    <form class="form-signin" action="">
+                        <div class="form-group">
+                            <label class="form-label" for="inputEmail"><b>Email</b></label>
+                            <input class="form-control" id="inputEmail" name="email" type="text" placeholder="Your email"></input>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="inputPass"><b>Password</b></label>
+                            <input class="form-control" id="inputPass" name="pass" type="text" placeholder="Your password"></input>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox">Remember me
+                            </label>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 form-auth">
                             <a class="form-facebook" href="#"><img src="../social/signin_facebook.png"></a>
-                          </div>
-                          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 form-auth">
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 form-auth">
                             <a class="form-google" href="#"><img src="../social/signin_google.png"></a>
-                          </div>
-                          <button class="btn btn-default submit" id="signin" name="submitin" type="submit">Sign in</button>
-                          <a class="form-forget" href="#">Forget your password?</a>
-                      </form>
-                    </div>
-                </div>
-              </div>  
-              <div class="tab-content2">
-                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signupform" id="signup1">
-                      <div class="card-box-body" id="sign-up-body">
-                          <form class="form-signup" action="">
-                              <div class="form-group">
-                                 <label class="form-label" for="inputEmail2"><b>525</b></label>
-                                 <input class="form-control" id="inputEmail2" name="email22" type="text" placeholder="Your email22"></input>
-                               </div>
-                             <div class="check-form">
-                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">I have read the terms and conditions</input>
-                                 </label>
-                             </div>
-                             <button class="btn btn-default submit" id="signup" name="submitout" type="submit">Sign Up</button>
-                           </form>
-                       </div>
+                        </div>
+                        <button class="btn btn-default" id="signin" name="submit" type="submit">Sign in</button>
+                        <a class="form-forget" href="#">Forget your password?</a>
+                    </form>
                  </div>
-              </div>
             </div>
         </div>
     </div>

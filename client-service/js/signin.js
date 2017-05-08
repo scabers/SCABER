@@ -22,7 +22,7 @@ $(document).ready(function(){
             height: '430px',
             width: '550px',
         });
-
+alert("5145");
     });
 });
 
@@ -33,7 +33,8 @@ $(document).ready(function(){
     $("button .sign-in").click(function(){
         $("div.tab-content1").fadeIn(800);
         $("div.tab-content2").fadeOut();      /*開一個,其他關掉*/
-    });
+  alert("5145"); 
+   });
 });
 $(document).ready(function(){ 
     $("div.tab-content2").hide();

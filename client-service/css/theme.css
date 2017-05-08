@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700");
-
 html,
 body {
     height: 100%;
@@ -149,6 +147,10 @@ aside {
     background-color: #F6B41E;
     color: #3F3133;
     padding: -2px;
+}
+
+.btn-circle:focus {
+    text-decoration: none;
 }
 
 
@@ -313,14 +315,14 @@ header {
     width: 100%;
 }
 
-header .header-content {
+header .header-section {
     padding: 100px 15px 100px;
     position: relative;
     text-align: left;
     width: 100%;
 }
 
-header .header-content .header-brand {
+header .header-section .header-brand {
     height: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -330,30 +332,110 @@ header .header-content .header-brand {
 
 /* header main */
 
-.header-main .header-title {
-    height: 40vh;
+.header-main .header-content {
+    height: 52.5vh;
     overflow: hidden;
+    width: auto;
 }
 
-.header-main .header-title #content {
+.header-main .header-content .dialogue {
+    background-color: rgba(216, 216, 216, 0.75);
+    border-radius: 10px;
+    box-shadow: 0 3px 3px 0 rgba(34, 34, 34, 0.5);
+    box-sizing: border-box;
+    font-size: 2.0rem;
+    height: 90%;
+    margin-bottom: 4.0rem;
+    padding: 15px;
+    position: relative;
+}
+
+.header-main .header-content .dialogue:after {
+    border-color: transparent transparent rgba(216, 216, 216, 0.9) rgba(216, 216, 216, 0.9);
+    border-style: solid;
+    border-width: 1.5rem;
+    box-shadow: -3px 3px 3px 0 rgba(34, 34, 34, 0.5);
+    box-sizing: border-box;
     color: #FFFFFF;
-    display: inline-block;
-    font-size: 2.25rem;
+    content: '';
+    display: block;
+    height: 0;
+    margin-left: -0.5rem;
+    position: absolute;
+    bottom: -2.25rem;
+    left: 20%;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform-origin: 0.0;
+    -webkit-transform-origin: 0.0;
+    -moz-transform-origin: 0.0;
+    -ms-transform-origin: 0.0;
+    -o-transform-origin: 0.0;
+    width: 0;
 }
 
-.header-main .header-btns {
+.header-main .header-content .dialogue-btn1:after,
+.header-main .header-content .dialogue-btn2:after,
+.header-main .header-content .dialogue-btn3:after,
+.header-main .header-content .dialogue-btn4:after,
+{
+    border-color: transparent transparent rgba(216, 216, 216, 0.9) rgba(216, 216, 216, 0.9);
+    border-style: solid;
+    border-width: 1.5rem;
+    box-shadow: -3px 3px 3px 0 rgba(34, 34, 34, 0.5);
+    box-sizing: border-box;
+    color: #FFFFFF;
+    content: '';
+    display: block;
+    height: 0;
+    margin-left: -0.5rem;
+    position: absolute;
+    bottom: -2.25rem;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform-origin: 0.0;
+    -webkit-transform-origin: 0.0;
+    -moz-transform-origin: 0.0;
+    -ms-transform-origin: 0.0;
+    -o-transform-origin: 0.0;
+    width: 0;
+}
+
+.header-main .header-content .dialogue-btn1:after {
+    left: 25%;
+}
+
+.header-main .header-content .dialogue-btn2:after {
+    left: 40%;
+}
+
+.header-main .header-content .dialogue-btn3:after {
+    left: 55%;
+}
+
+.header-main .header-content .dialogue-btn4:after {
+    left: 70%;
+}
+
+.header-main .header-buttons {
     position: relative;
     text-align: center;
 }
 
-.header-main .header-btns .btn-main:before {
+.header-main .header-buttons .btn-main:before {
     height: 80px;
     margin-top: -40px;
     margin-left: -40px;
     width: 80px;
 }
 
-.header-main .btn-circle {
+.header-main .header-buttons .btn-circle {
     background-color: #D8D8D8;
     height: 70px;
     line-height: 70px;
@@ -362,9 +444,9 @@ header .header-content .header-brand {
     width: 70px;
 }
 
-.header-main .btn-circle:hover {
-    background-color: #F6B41E;
-    color: #3F3133;
+.header-main .header-buttons .btn-circle img {
+    height: inherit;
+    width: inherit;
 }
 
 
@@ -381,7 +463,7 @@ header .header-content .header-brand {
     header {
         min-height: 100%;
     }
-    header .header-content {
+    header .header-section {
         padding-top: 200px;
         position: absolute;
         top: 50%;
@@ -391,7 +473,7 @@ header .header-content .header-brand {
         -ms-transform: translateY(-50%);
         -o-transform: translateY(-50%);
     }
-    header .header-content .header-brand {
+    header .header-section .header-brand {
         height: 100%;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -409,14 +491,18 @@ header .header-content .header-brand {
 
 /** about.ejs **/
 
-.about-content .btn-main:before {
+.about-section {
+    background-color: #D8D8D8;
+}
+
+.about-section .btn-main:before {
     height: 80px;
     margin-top: -40px;
     margin-left: -40px;
     width: 80px;
 }
 
-.about-content .btn-circle {
+.about-section .btn-circle {
     height: 70px;
     line-height: 70px;
     margin: 25px 10px 0;
@@ -430,237 +516,66 @@ header .header-content .header-brand {
 
 /** signin.ejs **/
 
-.signin-content ul {
+.signin-section ul {
     list-style: none;
     padding: 0;
 }
 
-.signin-content .signin-title {
+.signin-section .signin-title {
     position: relative;
     margin-top: 7.5vh;
 }
 
-.signin-content .signin-title #title {
+.signin-section .signin-title #title {
     font-family: 'Metrophobic', sans-serif;
     font-size: 2.6rem;
     letter-spacing: 0.5rem;
     text-align: center;
 }
 
-/** signin-left **/
-.signin-content .signin-left{
+.signin-section .signin-bar {
+    padding: 5px 0;
     position: relative;
-    width: 400px;
-	height: 600px;
-	top: 2%;
-    border-radius: 20px;
-	box-shadow: 16px 16px 56px rgba(0, 0, 0, 0.3);
-    background: -webkit-linear-gradient(top, #c74848, #952e2e);
-	background: linear-gradient(180deg, #c74848, #952e2e);
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-	flex-direction: column;
-    overflow: hidden;
-    z-index: 999;
-}
-
-
-/** label **/
-label {
-  font-size: 22px;
-  position: absolute;
-  -webkit-transform: translateY(6px);
-          transform: translateY(6px);
-  left: 13px;
-  color: rgba(255, 255, 255, 0.5);
-  -webkit-transition: all 0.25s ease;
-  transition: all 0.25s ease;
-  -webkit-backface-visibility: hidden;
-  pointer-events: none;
-}
-
-label.active {
-  -webkit-transform: translateY(50px);
-          transform: translateY(50px);
-  left: 2px;
-  font-size: 14px;
-}
-
-label.highlight {
-	color: white;
-}
-
-
-
-/** tab-content **/
-.signin-content .tab-content1 > div:last-child{
-     display: none;
-}
-.signin-content .tab-content2 > div:last-child{
-     display: none;
-}
-
-/** signin-bar的設計**/
-
-.signin-content .signin-left .signin-bar {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 40px 0;
-}
-
-.signin-content .signin-left .signin-bar:after {
-   content:"";
-   display: table;
-   clear: both;
-}
-
-.signin-content .signin-left .signin-bar li .sign-in, .signin-content .signin-left .signin-bar li .sign-up{
-    /* DEFINE */
-    display: block;
     text-decoration: none;
-    padding: 15px;
-   background: rgba(160, 179, 176, 0.25);
-  color: #a0b3b0;
-  font-size: 20px;
-  float: left;
-  width: 50%;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
+    width: 100%;
 }
 
-.signin-content .signin-left .signin-bar .active{
-      background: #1ab188;
-      color: #ffffff;
+.signin-section .signin-bar li {
+    /* DEFINE */
+    float: left;
 }
 
-.signin-content .signin-bar ul li .sign-in :hover {
-  background: #179b77;
-  color: #ffffff;
+.signin-section .signin-bar li a {
+    color: #3F3133;
+    display: block;
+    font-size: 1.5rem;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
 }
 
-.signin-content .signin-bar ul li .sign-up :hover {
-  background: #179b77;
-  color: #ffffff;
+.signin-section .signin-bar li a:hover {
+    color: #E79535;
 }
-
-.signin-content .signin-bar .activebar {
-  background: #179b77;
-  color: #ffffff;
-}
-
-
-
-/** form-group的設計 **/
-.signin-content .signin-left .form-group{
-      position: relative;
-      margin-bottom: 40px;
-
-}
-
 
 
 /* signin form */
 
-
-.card-box-body{
-    align-items: center;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
+.signin-section .signin-form {
+    position: relative;
+    top: 25%;
 }
 
-/** inpuut的設置 *//
-
-input, textarea {
-  font-size: 22px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  padding: 5px 10px;
-  background: none;
-  background-image: none;
-  border: 1px solid #a0b3b0;
-  color: #ffffff;
-  border-radius: 0;
-  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
-  transition: border-color .25s ease, box-shadow .25s ease;
-}
-
-input:focus, textarea:focus {
-  outline: 0;
-  border-color: #1ab188;
-}
-
-textarea {
-  border: 2px solid #a0b3b0;
-  resize: vertical;
-}
-
-
-/** check-form的設置 **/
-
-.card-box-body .form-signin .check-form{
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: row;
-  flex-direction: row;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  padding: 10px;
-  margin-bottom: 30px;
-
-}
-
-
-
-.signin-content .signin-left .signinform .card-box-body .form-signin .form-forget{
-  color: rgba(255, 255, 255, 0.6);
-  text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 300;
-  padding-top: 15px;
-}
-
-.signin-content .signin-left .signinform .card-box-body .form-signin .form-forget:hover{
-   color: rgba(0,0,0,1);
-}
-
-
-
-
-
-.signin-content .signinform .form-auth {
-
+.signin-section .signin-form .form-auth {
+    max-height: 100%;
     padding: 0;
     padding-bottom: 20px;
-    position: relative;
-    height: 60px;
-    width: 138.8px;
+    text-align: center;
+    width: auto;
 }
 
-.signin-content .signinform .form-auth a img{
-
-    padding: 0;
-    padding-bottom: 20px;
-    position: relative;
-    height: 60px;
-    width: 134.8px;
-}
-
-
-.signin-content .signinform button#signin {
+.signin-section .signin-form button#signin {
     background-color: transparent;
     border: 2px solid #3F3133;
     color: #3F3133;
@@ -673,7 +588,7 @@ textarea {
     width: 100%;
 }
 
-.signin-content .signinform button#signin:hover {
+.signin-section .signin-form button#signin:hover {
     border-color: #E79535;
     color: #E79535;
     transition: all 0.3s;
@@ -682,7 +597,7 @@ textarea {
     -o-transition: all 0.3s;
 }
 
-.signin-content .signinform .form-forget {
+.signin-section .signin-form .form-forget {
     color: #72595C;
     display: inline-block;
     font-size: 0.75rem;
@@ -692,7 +607,7 @@ textarea {
     width: 100%;
 }
 
-.signin-content .signinform .form-forget:hover {
+.signin-section .signin-form .form-forget:hover {
     color: #E79535;
     text-decoration: none;
     transition: all 0.3s;
@@ -701,29 +616,7 @@ textarea {
     -o-transition: all 0.3s;
 }
 
-/** signup form **/
 
-.signinform {
-    position: relative;
-    top: 7.4%;
-    display: block;
-}
-
-
-.signupform {
-        display: none;
-}
-
-
-
-/** active動畫效果 **/
-.signin-content .signin-left .active {
-  color: white;
-  opacity: 1 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  -webkit-transition-delay: 200ms all ease-in-out;
-  transition-delay: 200ms all ease-in-out;
-}
 /** contact.ejs **/
 
 
@@ -737,7 +630,7 @@ footer {
     width: 100%;
 }
 
-footer .footer-content {
+footer .footer-section {
     color: #3F3133;
     font-size: 12px;
     height: inherit;
@@ -746,21 +639,21 @@ footer .footer-content {
     width: inherit;
 }
 
-footer .footer-brand {
+footer .footer-section .footer-brand {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 10px 25px;
 }
 
-footer .footer-menu,
-footer .footer-contact {
+footer .footer-section .footer-menu,
+footer .footer-section .footer-contact {
     border-left: 1px solid rgba(63, 49, 51, 0.7);
     margin-top: 25px;
     margin-bottom: 10px;
     padding: 10px 25px;
 }
 
-footer .footer-social {
+footer .footer-section .footer-social {
     margin-bottom: 10px;
 }
 
@@ -957,7 +850,7 @@ footer .footer-bottom {
 
 footer .footer-bottom #copyright {
     color: #F6B41E;
-    font-size: 1.0rem;
+    font-size: 1.0em;
     text-align: center;
     width: inherit;
 }
