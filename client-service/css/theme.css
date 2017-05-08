@@ -469,18 +469,39 @@ header .header-content .header-brand {
     z-index: 999;
 }
 
+
+/** label **/
+label {
+  font-size: 22px;
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+}
+
+
+/** tab-content **/
+.signin-content .tab-content > div:last-child{
+     display: none;
+}
+
 /** signin-bar的設計**/
 
 .signin-content .signin-left .signin-bar {
-    position: relative;
-    width: 100%;
-    height: 2%;
-    border-radius: 20px 20px 0 0;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    padding: 5px 0;
-    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+.signin-content .signin-left .signin-bar:after {
+   content: "";
+   display: table;
+   clear: both;
 }
 
 .signin-content .signin-left .signin-bar li {
@@ -490,24 +511,39 @@ header .header-content .header-brand {
 
 .signin-content .signin-left .signin-bar ul li a {
      
-    color: rgba(255, 255, 255, 0.7);
-    display: block;
-    font-size: 1.2rem;
-    font-family: 'Open Sans';
-    font-weight: normal;
-    padding: 15px 15px;
-    letter-spacing: 2px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    position: relative;
-    height: 20%;
-    width: 70%;
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
 }
 
 .signin-content .signin-bar ul li a:hover {
-    color:rgba(0,0,0,1);
+  background: #179b77;
+  color: #ffffff;
 }
+
+.signin-content .signin-bar .activebar {
+  background: #179b77;
+  color: #ffffff;
+}
+
+
+
+/** form-group的設計 **/
+.signin-content .signin-left .form-group{
+      position: relative;
+      margin-bottom: 40px;
+
+}
+
 
 
 /* signin form */
@@ -524,22 +560,35 @@ header .header-content .header-brand {
     -ms-flex-align: center;
 }
 
-.card-box-body .form-signin .form-group input[type="text"]{
-  border-radius: 40px;
-  border: none;
-  background-color: #f1f1f1;
-  padding: 15px;
-  margin-top: 35px;
-  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
+/** inpuut的設置 *//
+
+input, textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #a0b3b0;
+  color: #ffffff;
+  border-radius: 0;
+  -webkit-transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color .25s ease, box-shadow .25s ease;
 }
 
-.card-box-body .form-signin .form-group input[type="text"]:focus{
-  outline: none;
-  box-shadow: inset 3px 3px 3px rgba(44, 168, 209, 0.6);
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #1ab188;
+}
 
+textarea {
+  border: 2px solid #a0b3b0;
+  resize: vertical;
 }
 
 
+/** check-form的設置 **/
 
 .card-box-body .form-signin .check-form{
   display: flex;
@@ -555,9 +604,6 @@ header .header-content .header-brand {
 
 }
 
-.card-box-body .form-signin .check-form *{
-  cursor: pointer;
-}
 
 
 .signin-content .signin-left .signinform .card-box-body .form-signin .form-forget{
@@ -572,10 +618,7 @@ header .header-content .header-brand {
    color: rgba(0,0,0,1);
 }
 
-#signin-left-main-1,#signin-left-main-2 {
-  animation-delay: 200ms;
-  animation-iteration-count: infinite;
-}
+
 
 
 
@@ -655,7 +698,7 @@ header .header-content .header-brand {
 
 
 /** active動畫效果 **/
-.activebar {
+.signin-content .signin-left .active {
   color: white;
   opacity: 1 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);

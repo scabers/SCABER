@@ -6,19 +6,23 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 signin-title">
                     <p id="title">SCABER</p>
                 </div>
+            <!-- 用fieldset來設定區塊,以方面後續維護 -->
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signin-bar">
                       <ul>
-                        <li><a class="sign-in activebar" onclick="switchCards()">Sign in</a></li>
-                        <li><a class="sign-up activebar" onclick="switchCards()">Sign up</a></li>
+                        <li><a class="sign-in active" >Sign in</a></li>
+                        <li><a class="sign-up ">Sign up</a></li>
                       </ul>
                 </div>
-
+             <!-- 用fieldset來設定區塊,以方面後續維護 -->
+              <div class="tab-content">
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signinform" id="signin-left-main-1">
                     <div class="card-box-body">
-                      <form class="form-signin">
+                      <form class="form-signin" action="">
                           <div class="form-group">
-                             <input class="form-control" id="inputEmail" name="email" type="text" placeholder="Your email"></input>
-                             <input class="form-control" id="inputPass" name="pass" type="text" placeholder="Your password"></input>
+                             <input class="form-control" id="inputEmail" name="email" type="text" placeholder="Your email" required autocomplete="off"></input>
+                          </div>
+                          <div class="form-group">   
+                             <input class="form-control" id="inputPass" name="pass" type="text" placeholder="Your password" required autocomplete="off"></input>
                           </div>
 
                           <div class="check-form">
@@ -40,7 +44,7 @@
 
                  <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signupform" id="signin-left-main-2">
                       <div class="card-box-body" id="sign-up-body">
-                          <form class="form-signup">
+                          <form class="form-signup" action="">
                               <div class="form-group">
                                  <label class="form-label" for="inputEmail2"><b>525</b></label>
                                  <input class="form-control" id="inputEmail2" name="email22" type="text" placeholder="Your email22"></input>
@@ -54,6 +58,7 @@
                            </form>
                        </div>
                  </div>
+              </div>
             </div>
         </div>
     </div>
