@@ -513,6 +513,23 @@ header .header-section .header-brand {
 
 /** service.ejs **/
 
+/** cont_principal **/
+.signin-section .signin-left{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+/* Rectangle 3: */
+      background-image: linear-gradient(-87deg, #F2F5F6 0%, #DDE5E8 100%);
+}
+
+/** cont_center **/
+.cont_centrar {
+      position: absolute;
+      left:30%;
+      top:50%;
+      margin-left: -160px;
+      margin-top: -160px;
+}
 
 /** signin.ejs **/
 
@@ -534,11 +551,11 @@ header .header-section .header-brand {
 }
 
 .signin-section .signin-bar {
-    padding: 5px 0;
-    position: relative;
-    left: 2%;
-    text-decoration: none;
-    width: 100%;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* Rectangle 3: */
+  background-image: linear-gradient(-87deg, #F2F5F6 0%, #DDE5E8 100%);
 }
 .signin-section .signin-bar:after{
     content:"";
