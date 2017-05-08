@@ -484,6 +484,18 @@ label {
   pointer-events: none;
 }
 
+label.active {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+
+label.highlight {
+	color: white;
+}
+
+
 
 /** tab-content **/
 .signin-content .tab-content > div:last-child{
@@ -499,7 +511,6 @@ label {
 }
 
 .signin-content .signin-left .signin-bar:after {
-   content: "";
    display: table;
    clear: both;
 }
@@ -509,7 +520,11 @@ label {
     float: left;
 }
 
-.signin-content .signin-left .signin-bar ul li a {
+.signin-content .signin-left .signin-bar .active a{
+      background: #1ab188;
+      color: #ffffff;
+}
+.signin-content .signin-left .signin-bar a {
      
   display: block;
   text-decoration: none;
