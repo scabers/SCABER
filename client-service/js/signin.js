@@ -1,5 +1,5 @@
 /**這裡是signin.ejs部分的動畫設置 **/
-
+(function($) {
 
 var  signIn = $('.sign-in'),
 	 signUp = $('.sign-up'),
@@ -39,3 +39,4 @@ function switchCards(){
 		
 }
 switchCards();
+})(jQuery);
