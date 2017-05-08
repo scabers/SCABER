@@ -512,11 +512,6 @@ header .header-content .header-brand {
 
 /* signin form */
 
-.signin-content .signinform {
-    position: relative;
-    top: 7.4%;
-    display: block;
-}
 
 .card-box-body{
     align-items: center;
@@ -646,9 +641,14 @@ header .header-content .header-brand {
 
 /** signup form **/
 
+.signinform {
+    position: relative;
+    top: 7.4%;
+    display: block;
+}
 
 
-.signin-content .signin-left .signupform {
+.signupform {
         display: none;
 }
 
