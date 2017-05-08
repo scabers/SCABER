@@ -578,8 +578,7 @@ header .header-content .header-brand {
    color: rgba(0,0,0,1);
 }
 
-#signin-left-main-1.animated,
-#signin-left-main-2.animated {
+#signin-left-main-1,#signin-left-main-2 {
   animation-delay: 200ms;
   animation-iteration-count: infinite;
 }
