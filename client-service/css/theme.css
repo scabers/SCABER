@@ -658,7 +658,7 @@ header .header-content .header-brand {
 /** active動畫效果 **/
 .signin-content .signin-left .signin-bar ul li .activebar {
   color: white;
-  opacity: 1 !important;
+  opacity: 0 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   -webkit-transition-delay: 200ms all ease-in-out;
   transition-delay: 200ms all ease-in-out;
