@@ -79,6 +79,7 @@ switch(d) {
   setTimeout(function(){
  document.querySelector('.terms_and_cons').className = "terms_and_cons d_none"; 
 document.querySelector('.link_forgot_pass').className = "link_forgot_pass d_block";
+document.querySelector('.form-check-input').className = "form-check-input d_block";
 
  },500);
 
@@ -86,6 +87,8 @@ document.querySelector('.link_forgot_pass').className = "link_forgot_pass d_bloc
 
  document.querySelector('.link_forgot_pass').style.opacity = "1";
    document.querySelector('.link_forgot_pass').style.top = "5px";
+   document.querySelector('.form-check-input').style.opacity = "1";
+   document.querySelector('.form-check-input').style.top = "5px";
     
 
 for(var d = 0; d < inputs.length ; d++  ) {
