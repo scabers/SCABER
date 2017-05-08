@@ -572,7 +572,7 @@ header .header-section .header-brand {
     color: #ffffff;
 }
 
-.signin-section .signin-bar ul .active a {
+.signin-section .signin-bar ul a:active {
     background: #1ab188;
     color: #ffffff;
 }
