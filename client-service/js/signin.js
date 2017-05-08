@@ -1,7 +1,7 @@
 /*去讓對話框彈出來*/
 
 $(document).ready(function(){
-    $("sign-in").click(function(){
+    $("button .sign-in").click(function(){
         $("div.tab-content1").animate({
             top:'20vh',
             left: '58vw',
@@ -14,7 +14,7 @@ $(document).ready(function(){
     });
 });
 $(document).ready(function(){
-    $("sign-up").click(function(){
+    $("button .sign-up").click(function(){
         $("div.tab-content2").animate({
             top:'26vh',
             left: '58vw',
@@ -30,14 +30,14 @@ $(document).ready(function(){
 /*讓效果展現更好,淡入淡出*/
 $(document).ready(function(){ 
     $("div.tab-content1").hide();
-    $("sign-in").click(function(){
+    $("button .sign-in").click(function(){
         $("div.tab-content1").fadeIn(800);
         $("div.tab-content2").fadeOut();      /*開一個,其他關掉*/
     });
 });
 $(document).ready(function(){ 
     $("div.tab-content2").hide();
-    $("sign-up").click(function(){
+    $("button .sign-up").click(function(){
         $("div.tab-content2").fadeIn(800);
         $("div.tab-content1").fadeOut();      /*開一個,其他關掉*/
     });

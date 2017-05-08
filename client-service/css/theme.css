@@ -497,7 +497,10 @@ label.highlight {
 
 
 /** tab-content **/
-.signin-content .tab-content > div:last-child{
+.signin-content .tab-content1 > div:last-child{
+     display: none;
+}
+.signin-content .tab-content2 > div:last-child{
      display: none;
 }
 
