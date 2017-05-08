@@ -691,9 +691,20 @@ position: relative;
     padding: 0;
     padding-bottom: 20px;
     text-align: center;
+    width: auto;
+}
+
+/** 圖示大小 **/
+.form-facebook{
+    height: 200px;
+    width: 100px;
+}
+.form-google{
+    height: 200px;
     width: 100px;
 }
 
+/** button **/
 .signin-section .signin-form button#signin {
     background-color: transparent;
     border: 2px solid #3F3133;
