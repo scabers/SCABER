@@ -9,14 +9,14 @@
             <!-- 用fieldset來設定區塊,以方面後續維護 -->
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signin-bar">
                       <ul>
-                        <li class="tab active"><a class="sign-in" href="#signin">Sign in</a></li>
+                        <li class="tab acitve"><a class="sign-in" href="#signin">Sign in</a></li>
                         <li class="tab"><a class="sign-up" href="#signup">Sign up</a></li>
                       </ul>
                 </div>
              <!-- 用fieldset來設定區塊,以方面後續維護 -->
               <div class="tab-content">
                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signinform" id="signin">
-                    
+                    <div class="card-box-body">
                       <form class="form-signin" action="">
                           <div class="form-group">
                              <input class="form-control" id="inputEmail" name="email" type="text" placeholder="Your email" required autocomplete="off"></input>
@@ -39,11 +39,11 @@
                           <button class="btn btn-default submit" id="signin" name="submitin" type="submit">Sign in</button>
                           <a class="form-forget" href="#">Forget your password?</a>
                       </form>
-                    
+                    </div>
                 </div>
 
                  <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signupform" id="signup">
-                      
+                      <div class="card-box-body" id="sign-up-body">
                           <form class="form-signup" action="">
                               <div class="form-group">
                                  <label class="form-label" for="inputEmail2"><b>525</b></label>
@@ -56,7 +56,7 @@
                              </div>
                              <button class="btn btn-default submit" id="signup" name="submitout" type="submit">Sign Up</button>
                            </form>
-                       
+                       </div>
                  </div>
               </div>
             </div>

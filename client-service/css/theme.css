@@ -556,7 +556,16 @@ label.highlight {
 /* signin form */
 
 
-
+.card-box-body{
+    align-items: center;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+}
 
 /** inpuut的設置 *//
 
@@ -588,10 +597,33 @@ textarea {
 
 /** check-form的設置 **/
 
+.card-box-body .form-signin .check-form{
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 30px;
+
+}
 
 
 
+.signin-content .signin-left .signinform .card-box-body .form-signin .form-forget{
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 300;
+  padding-top: 15px;
+}
 
+.signin-content .signin-left .signinform .card-box-body .form-signin .form-forget:hover{
+   color: rgba(0,0,0,1);
+}
 
 
 
