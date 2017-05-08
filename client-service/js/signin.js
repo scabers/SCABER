@@ -22,7 +22,7 @@ function switchCards(){
 			signUp.addClass('activebar');
 			signIn.removeClass('activebar');
 			card1.removeClass('signinform').addClass('signupform');
-			card2.removeClass('signupform').addClass('signinform animated bounceInRight');
+			card2.removeClass('signupform').addClass('signinform bounceInRight');
 			alert("dsdasdas4");
 		   }
 		}
