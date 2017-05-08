@@ -1,65 +1,79 @@
-<!-- Sign in section - index.ejs -->
-<section class="signin-content" id="signin">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 signin-left">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 signin-title">
-                    <p id="title">SCABER</p>
-                </div>
-            <!-- 用fieldset來設定區塊,以方面後續維護 -->
-                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signin-bar">
-                      <ul>
-                        <li class="tab acitve"><a class="sign-in" href="#signin">Sign in</a></li>
-                        <li class="tab"><a class="sign-up" href="#signup">Sign up</a></li>
-                      </ul>
-                </div>
-             <!-- 用fieldset來設定區塊,以方面後續維護 -->
-              <div class="tab-content">
-                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signinform" id="signin">
-                    <div class="card-box-body">
-                      <form class="form-signin" action="">
-                          <div class="form-group">
-                             <input class="form-control" id="inputEmail" name="email" type="text" placeholder="Your email" required autocomplete="off"></input>
-                          </div>
-                          <div class="form-group">   
-                             <input class="form-control" id="inputPass" name="pass" type="text" placeholder="Your password" required autocomplete="off"></input>
-                          </div>
-
-                          <div class="check-form">
-                             <label class="form-check-label">
-                                 <input class="form-check-input" type="checkbox">Remember me</input>
-                             </label>
-                          </div>
-                          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 form-auth">
-                            <a class="form-facebook" href="#"><img src="../social/signin_facebook.png"></a>
-                          </div>
-                          <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 form-auth">
-                            <a class="form-google" href="#"><img src="../social/signin_google.png"></a>
-                          </div>
-                          <button class="btn btn-default submit" id="signin" name="submitin" type="submit">Sign in</button>
-                          <a class="form-forget" href="#">Forget your password?</a>
-                      </form>
-                    </div>
-                </div>
-
-                 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 signupform" id="signup">
-                      <div class="card-box-body" id="sign-up-body">
-                          <form class="form-signup" action="">
-                              <div class="form-group">
-                                 <label class="form-label" for="inputEmail2"><b>525</b></label>
-                                 <input class="form-control" id="inputEmail2" name="email22" type="text" placeholder="Your email22"></input>
-                               </div>
-                             <div class="check-form">
-                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="checkbox">I have read the terms and conditions</input>
-                                 </label>
-                             </div>
-                             <button class="btn btn-default submit" id="signup" name="submitout" type="submit">Sign Up</button>
-                           </form>
-                       </div>
-                 </div>
-              </div>
+<div class="form">
+      
+      <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="#login">Log In</a></li>
+      </ul>
+      
+      <div class="tab-content">
+        <div id="signup">   
+          <h1>Sign Up for Free</h1>
+          
+          <form action="/" method="post">
+          
+          <div class="top-row">
+            <div class="field-wrap">
+              <label>
+                First Name<span class="req">*</span>
+              </label>
+              <input type="text" required autocomplete="off" />
             </div>
+        
+            <div class="field-wrap">
+              <label>
+                Last Name<span class="req">*</span>
+              </label>
+              <input type="text"required autocomplete="off"/>
+            </div>
+          </div>
+
+          <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Set A Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <button type="submit" class="button button-block"/>Get Started</button>
+          
+          </form>
+
         </div>
-    </div>
-</section>
+        
+        <div id="login">   
+          <h1>Welcome Back!</h1>
+          
+          <form action="/" method="post">
+          
+            <div class="field-wrap">
+            <label>
+              Email Address<span class="req">*</span>
+            </label>
+            <input type="email"required autocomplete="off"/>
+          </div>
+          
+          <div class="field-wrap">
+            <label>
+              Password<span class="req">*</span>
+            </label>
+            <input type="password"required autocomplete="off"/>
+          </div>
+          
+          <p class="forgot"><a href="#">Forgot Password?</a></p>
+          
+          <button class="button button-block"/>Log In</button>
+          
+          </form>
+
+        </div>
+        
+      </div><!-- tab-content -->
+      
+</div> <!-- /form -->
