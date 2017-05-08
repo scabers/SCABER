@@ -585,7 +585,7 @@ box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
 .signin-content .signin-left .signin-form .card-box-body .form-signin .form-forget{
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  font-size: 10rem;
+  font-size: 3rem;
   font-weight: 300;
   padding-top: 15px;
 }
