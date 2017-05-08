@@ -1,58 +1,44 @@
-$('.form').find('input, textarea').on('keyup blur focus', function (e) {
-  alert("1");
-  var $this = $(this),
-      label = $this.prev('label');
+/*去讓對話框彈出來*/
 
-	  if (e.type === 'keyup') {
-			if ($this.val() === '') {
-          label.removeClass('active highlight');
-        } else {
-          label.addClass('active highlight');
-        }
-    } else if (e.type === 'blur') {
-    	if( $this.val() === '' ) {
-    		label.removeClass('active highlight'); 
-			} else {
-		    label.removeClass('highlight');   
-			}   
-    } else if (e.type === 'focus') {
-        alert("2");
-      if( $this.val() === '' ) {
-    		label.removeClass('highlight'); 
-			} 
-      else if( $this.val() !== '' ) {
-		    label.addClass('highlight');
-			}
-    }
+$(document).ready(function(){
+    $("sign-in").click(function(){
+        $("div.tab-content1").animate({
+            top:'20vh',
+            left: '58vw',
+            opacity: '0.5',
+            height: '430px',
+            width: '550px'
 
+        });
+
+    });
+});
+$(document).ready(function(){
+    $("sign-up").click(function(){
+        $("div.tab-content2").animate({
+            top:'26vh',
+            left: '58vw',
+            opacity: '0.5',
+            height: '430px',
+            width: '550px',
+        });
+
+    });
 });
 
-$('.tab a').on('click', function (e) {
-        alert("3");
-  e.preventDefault();
-  
-  $(this).parent().addClass('active');
-  $(this).parent().siblings().removeClass('active');
-  
-  target = $(this).attr('href');
 
-  $('.tab-content > div').not(target).hide();
-  
-  $(target).fadeIn(600);
-  
+/*讓效果展現更好,淡入淡出*/
+$(document).ready(function(){ 
+    $("div.tab-content1").hide();
+    $("sign-in").click(function(){
+        $("div.tab-content1").fadeIn(800);
+        $("div.tab-content2").fadeOut();      /*開一個,其他關掉*/
+    });
 });
-
-$('.tab a').on('click', function (e) {
-  
-  e.preventDefault();
-      alert("2");
-  $(this).parent().addClass('active');
-  $(this).parent().siblings().removeClass('active');
-  
-  target = $(this).attr('href');
-
-  $('.tab-content > div').not(target).hide();
-  
-  $(target).fadeIn(600);
-  
+$(document).ready(function(){ 
+    $("div.tab-content2").hide();
+    $("sign-up").click(function(){
+        $("div.tab-content2").fadeIn(800);
+        $("div.tab-content1").fadeOut();      /*開一個,其他關掉*/
+    });
 });
