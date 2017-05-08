@@ -8,7 +8,7 @@ var  signIn = $('.sign-in'),
 	 submit = $('.submit');
 
 function ifActive(elem){
-	if (elem.hasClass('active')) {
+	if (elem.hasClass('activebar')) {
 		return true;
 	} else {
 		return false;
@@ -20,8 +20,8 @@ function switchCards(){
 	signUp.on('click', function(e){
 		e.preventDefault();
 		if (ifActive(signIn)){
-			signUp.addClass('active');
-			signIn.removeClass('active');
+			signUp.addClass('activebar');
+			signIn.removeClass('activebar');
 			card1.removeClass('signin-form').addClass('signup-form');
 			card2.removeClass('signup-form').addClass('signin-form animated bounceInRight');
 			}
@@ -30,8 +30,8 @@ function switchCards(){
 	signIn.on('click', function(e){
 		e.preventDefault();
 		if (ifActive(signUp)) {
-			signUp.removeClass('active');
-			signIn.addClass('active');
+			signUp.removeClass('activebar');
+			signIn.addClass('activebar');
 			card2.removeClass('signin-form').addClass('signup-form');
 			card1.removeClass('signup-form').addClass('signin-form animated bounceInLeft');
 		}
