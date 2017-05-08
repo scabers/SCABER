@@ -514,22 +514,9 @@ header .header-section .header-brand {
 /** service.ejs **/
 
 /** cont_principal **/
-.signin-section .signin-left{
-      position: absolute;
-      width: 500px;
-      height: 500px;
-/* Rectangle 3: */
-      background-image: linear-gradient(-87deg, #F2F5F6 0%, #DDE5E8 100%);
-}
+
 
 /** cont_center **/
-.cont_centrar {
-      position: absolute;
-      left:30%;
-      top:10%;
-      margin-left: -160px;
-      margin-top: -160px;
-}
 
 /** signin.ejs **/
 
