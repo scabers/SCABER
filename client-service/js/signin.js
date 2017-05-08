@@ -18,8 +18,10 @@ for(var d = 0; d < inputs.length ; d++  ) {
 
 
  },100 );
- document.querySelector('.link_forgot_pass').style.opacity = "0";
+   document.querySelector('.link_forgot_pass').style.opacity = "0";
    document.querySelector('.link_forgot_pass').style.top = "-5px";
+   document.querySelector('.form-check-input').style.opacity = "0";
+   document.querySelector('.form-check-input').style.top = "-5px";
    document.querySelector('.btn_sign').innerHTML = "SIGN UP";    
   setTimeout(function(){
 
@@ -29,6 +31,7 @@ for(var d = 0; d < inputs.length ; d++  ) {
   },500);
   setTimeout(function(){
     document.querySelector('.link_forgot_pass').className = "link_forgot_pass d_none";
+	document.querySelector('.form-check-input').className = "form-check-input d_none";
  document.querySelector('.terms_and_cons').className = "terms_and_cons d_block";
   },450);
 
