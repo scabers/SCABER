@@ -695,11 +695,11 @@ position: relative;
 }
 
 /** 圖示大小 **/
-.form-facebook{
+.form-facebook img{
     height: 200px;
     width: 100px;
 }
-.form-google{
+.form-google img{
     height: 200px;
     width: 100px;
 }
