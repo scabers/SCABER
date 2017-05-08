@@ -515,7 +515,7 @@ label.highlight {
    clear: both;
 }
 
-.signin-content .signin-left .signin-bar li .sign-in{
+.signin-content .signin-left .signin-bar li .sign-in, .signin-content .signin-left .signin-bar li .sign-up{
     /* DEFINE */
     display: block;
     text-decoration: none;
