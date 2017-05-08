@@ -520,11 +520,11 @@ label.highlight {
     float: left;
 }
 
-.signin-content .signin-left .signin-bar .active a{
+.signin-content .signin-left .signin-bar .active{
       background: #1ab188;
       color: #ffffff;
 }
-.signin-content .signin-left .signin-bar a {
+.signin-content .signin-left .signin-bar {
      
   text-decoration: none;
   color: #1ab188;
@@ -532,7 +532,12 @@ label.highlight {
   transition: .5s ease;
 }
 
-.signin-content .signin-bar ul li a:hover {
+.signin-content .signin-bar ul li .sign-in :hover {
+  background: #179b77;
+  color: #ffffff;
+}
+
+.signin-content .signin-bar ul li .sign-up :hover {
   background: #179b77;
   color: #ffffff;
 }
