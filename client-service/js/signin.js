@@ -107,6 +107,7 @@ switch(d) {
 }
   }
    },1500);
+   document.querySelector('.btn_sign').style.opacity = "0";
    document.querySelector('.btn_sign').innerHTML = "SIGN IN";    
 }
 
