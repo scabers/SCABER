@@ -506,7 +506,7 @@ header .header-content .header-brand {
 }
 
 .signin-content .signin-bar ul li a:hover {
-    color: rgba(0, 0, 0, 0.3);
+    opacity: 1;
 }
 
 
@@ -519,7 +519,7 @@ header .header-content .header-brand {
 }
 
 .signin-content .signin-left .signin-form .card-box-body{
-
+    align-items: center;
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -527,7 +527,6 @@ header .header-content .header-brand {
     flex-direction: column;
     -webkit-box-align: center;
     -ms-flex-align: center;
-    align-items: center;
 }
 
 .signin-content .signin-left .signin-form .card-box-body .form-signin .form-group input[type="text"]{
@@ -658,7 +657,7 @@ header .header-content .header-brand {
 /** active動畫效果 **/
 .activebar {
   color: white;
-  opacity: 0 !important;
+  opacity: 1 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   -webkit-transition-delay: 200ms all ease-in-out;
   transition-delay: 200ms all ease-in-out;
