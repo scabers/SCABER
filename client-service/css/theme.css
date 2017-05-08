@@ -513,10 +513,6 @@ header .header-section .header-brand {
 
 /** service.ejs **/
 
-/** cont_principal **/
-
-
-/** cont_center **/
 
 /** signin.ejs **/
 
@@ -538,16 +534,10 @@ header .header-section .header-brand {
 }
 
 .signin-section .signin-bar {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  /* Rectangle 3: */
-  background-image: linear-gradient(-87deg, #F2F5F6 0%, #DDE5E8 100%);
-}
-.signin-section .signin-bar:after{
-    content:"";
-    display: table;
-    clear: both;
+    padding: 5px 0;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
 }
 
 .signin-section .signin-bar li {
@@ -556,29 +546,17 @@ header .header-section .header-brand {
 }
 
 .signin-section .signin-bar li a {
-    background: rgba(160, 179, 176, 0.25);
     color: #3F3133;
-    cursor: pointer;
     display: block;
     font-size: 1.5rem;
     padding: 15px 15px;
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
-    transition: .5s ease;
-    -webkit-transition: .5s ease;
-    width: 220px;
-    
 }
 
 .signin-section .signin-bar li a:hover {
-    background: #179b77;
-    color: #ffffff;
-}
-
-.signin-section .signin-bar ul a:active {
-    background: #1ab188;
-    color: #ffffff;
+    color: #E79535;
 }
 
 
