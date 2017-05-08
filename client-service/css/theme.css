@@ -430,76 +430,48 @@ header .header-content .header-brand {
 
 /** signin.ejs **/
 
-*, *:before, *:after {
-  box-sizing: border-box;
+.signin-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.signin-content .signin-title {
+    position: relative;
+    margin-top: 7.5vh;
+}
+
+.signin-content .signin-title #title {
+    font-family: 'Metrophobic', sans-serif;
+    font-size: 2.6rem;
+    letter-spacing: 0.5rem;
+    text-align: center;
+}
+
+/** signin-left **/
+.signin-content .signin-left{
+    position: relative;
+    width: 400px;
+	height: 600px;
+	top: 2%;
+    border-radius: 20px;
+	box-shadow: 16px 16px 56px rgba(0, 0, 0, 0.3);
+    background: -webkit-linear-gradient(top, #c74848, #952e2e);
+	background: linear-gradient(180deg, #c74848, #952e2e);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+	flex-direction: column;
+    overflow: hidden;
+    z-index: 999;
 }
 
 
-
-.form .tab-group a {
-  text-decoration: none;
-  color: #1ab188;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-.form .tab-group a:hover {
-  color: #179b77;
-}
-
-.form {
-  background: rgba(19, 35, 47, 0.9);
-  padding: 40px;
-  max-width: 600px;
-  margin: 40px auto;
-  border-radius: 4px;
-  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
-}
-
-.tab-group {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-}
-.tab-group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.tab-group li a {
-  display: block;
-  text-decoration: none;
-  padding: 15px;
-  background: rgba(160, 179, 176, 0.25);
-  color: #a0b3b0;
-  font-size: 20px;
-  float: left;
-  width: 50%;
-  text-align: center;
-  cursor: pointer;
-  -webkit-transition: .5s ease;
-  transition: .5s ease;
-}
-.tab-group li a:hover {
-  background: #179b77;
-  color: #ffffff;
-}
-.tab-group .active a {
-  background: #1ab188;
-  color: #ffffff;
-}
-
-.tab-content > div:last-child {
-  display: none;
-}
-
-.form h1 {
-  text-align: center;
-  color: #ffffff;
-  font-weight: 300;
-  margin: 0 0 40px;
-}
-
+/** label **/
 label {
+  font-size: 22px;
   position: absolute;
   -webkit-transform: translateY(6px);
           transform: translateY(6px);
@@ -509,11 +481,6 @@ label {
   transition: all 0.25s ease;
   -webkit-backface-visibility: hidden;
   pointer-events: none;
-  font-size: 22px;
-}
-label .req {
-  margin: 2px;
-  color: #1ab188;
 }
 
 label.active {
@@ -522,13 +489,94 @@ label.active {
   left: 2px;
   font-size: 14px;
 }
-label.active .req {
-  opacity: 0;
-}
 
 label.highlight {
+	color: white;
+}
+
+
+
+/** tab-content **/
+.signin-content .tab-content > div:last-child{
+     display: none;
+}
+
+/** signin-bar的設計**/
+
+.signin-content .signin-left .signin-bar {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+}
+
+.signin-content .signin-left .signin-bar:after {
+   content:"";
+   display: table;
+   clear: both;
+}
+
+.signin-content .signin-left .signin-bar li .sign-in{
+    /* DEFINE */
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+   background: rgba(160, 179, 176, 0.25);
+  color: #a0b3b0;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  -webkit-transition: .5s ease;
+  transition: .5s ease;
+}
+
+.signin-content .signin-left .signin-bar .active{
+      background: #1ab188;
+      color: #ffffff;
+}
+
+.signin-content .signin-bar ul li .sign-in :hover {
+  background: #179b77;
   color: #ffffff;
 }
+
+.signin-content .signin-bar ul li .sign-up :hover {
+  background: #179b77;
+  color: #ffffff;
+}
+
+.signin-content .signin-bar .activebar {
+  background: #179b77;
+  color: #ffffff;
+}
+
+
+
+/** form-group的設計 **/
+.signin-content .signin-left .form-group{
+      position: relative;
+      margin-bottom: 40px;
+
+}
+
+
+
+/* signin form */
+
+
+.card-box-body{
+    align-items: center;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+}
+
+/** inpuut的設置 *//
 
 input, textarea {
   font-size: 22px;
@@ -544,6 +592,7 @@ input, textarea {
   -webkit-transition: border-color .25s ease, box-shadow .25s ease;
   transition: border-color .25s ease, box-shadow .25s ease;
 }
+
 input:focus, textarea:focus {
   outline: 0;
   border-color: #1ab188;
@@ -554,41 +603,124 @@ textarea {
   resize: vertical;
 }
 
-.field-wrap {
-  position: relative;
-  margin-bottom: 40px;
-}
 
-.button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  padding: 15px 0;
-  font-size: 2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: .1em;
-  background: #1ab188;
-  color: #ffffff;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  -webkit-appearance: none;
-}
-.button:hover, .button:focus {
-  background: #179b77;
-}
+/** check-form的設置 **/
 
-.button-block {
-  display: block;
-  width: 100%;
-}
+.card-box-body .form-signin .check-form{
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 30px;
 
-.forgot {
-  margin-top: -20px;
-  text-align: right;
 }
 
 
+
+.signin-content .signin-left .signinform .card-box-body .form-signin .form-forget{
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 300;
+  padding-top: 15px;
+}
+
+.signin-content .signin-left .signinform .card-box-body .form-signin .form-forget:hover{
+   color: rgba(0,0,0,1);
+}
+
+
+
+
+
+.signin-content .signinform .form-auth {
+
+    padding: 0;
+    padding-bottom: 20px;
+    position: relative;
+    height: 60px;
+    width: 138.8px;
+}
+
+.signin-content .signinform .form-auth a img{
+
+    padding: 0;
+    padding-bottom: 20px;
+    position: relative;
+    height: 60px;
+    width: 134.8px;
+}
+
+
+.signin-content .signinform button#signin {
+    background-color: transparent;
+    border: 2px solid #3F3133;
+    color: #3F3133;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 45px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.signin-content .signinform button#signin:hover {
+    border-color: #E79535;
+    color: #E79535;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.signin-content .signinform .form-forget {
+    color: #72595C;
+    display: inline-block;
+    font-size: 0.75rem;
+    padding-top: 2.5vh;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.signin-content .signinform .form-forget:hover {
+    color: #E79535;
+    text-decoration: none;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+/** signup form **/
+
+.signinform {
+    position: relative;
+    top: 7.4%;
+    display: block;
+}
+
+
+.signupform {
+        display: none;
+}
+
+
+
+/** active動畫效果 **/
+.signin-content .signin-left .active {
+  color: white;
+  opacity: 1 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  -webkit-transition-delay: 200ms all ease-in-out;
+  transition-delay: 200ms all ease-in-out;
+}
 /** contact.ejs **/
 
 
