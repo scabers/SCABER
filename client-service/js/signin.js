@@ -3,21 +3,7 @@ function sign_up(){
 document.querySelectorAll('.ul_tabs > li')[0].className=""; 
 document.querySelectorAll('.ul_tabs > li')[1].className="active"; 
   
-  for(var i = 0; i < inputs.length ; i++  ) {
-if(i == 2  ){
 
-}else{  
-document.querySelectorAll('.input_form_sign')[i].className = "input_form_sign d_block";
-}
-} 
-
-setTimeout( function(){
-for(var d = 0; d < inputs.length ; d++  ) {
- document.querySelectorAll('.input_form_sign')[d].className = "input_form_sign d_block active_inp";  
-   }
-
-
- },100 );
    document.querySelector('.link_forgot_pass').style.opacity = "0";
    document.querySelector('.link_forgot_pass').style.top = "-5px";
    document.querySelector('.form-check').style.opacity = "0";
@@ -45,34 +31,9 @@ function sign_in(){
 document.querySelectorAll('.ul_tabs > li')[0].className = "active"; 
 document.querySelectorAll('.ul_tabs > li')[1].className = ""; 
   
-  for(var i = 0; i < inputs.length ; i++  ) {
-switch(i) {
-    case 1:
- console.log(inputs[i].name);
-        break;
-    case 2:
- console.log(inputs[i].name);
-    default: 
-document.querySelectorAll('.input_form_sign')[i].className = "input_form_sign d_block";
-}
-} 
 
-setTimeout( function(){
-for(var d = 0; d < inputs.length ; d++  ) {
-switch(d) {
-    case 1:
- console.log(inputs[d].name);
-        break;
-    case 2:
- console.log(inputs[d].name);
 
-    default:
- document.querySelectorAll('.input_form_sign')[d].className = "input_form_sign d_block";  
- document.querySelectorAll('.input_form_sign')[2].className = "input_form_sign d_block active_inp";  
 
-   }
-  }
- },100 );
 
  document.querySelector('.terms_and_cons').style.opacity = "0";
   document.querySelector('.terms_and_cons').style.top = "-5px";
