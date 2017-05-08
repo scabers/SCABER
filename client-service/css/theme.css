@@ -518,7 +518,7 @@ header .header-content .header-brand {
     display: block;
 }
 
-.signin-content .signin-form .card-box-body{
+.signin-content .signin-left .signin-form .card-box-body{
 
     display: flex;
     -webkit-box-orient: vertical;
@@ -585,7 +585,7 @@ box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
 .form-forget{
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
-  font-size: .8em;
+  font-size: 1rem;
   font-weight: 300;
   padding-top: 15px;
 }
