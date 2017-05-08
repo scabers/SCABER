@@ -697,11 +697,11 @@ position: relative;
 /** 圖示大小 **/
 .form-facebook img{
     height: 50px;
-    width: 220px;
+    width: 200px;
 }
 .form-google img{
     height: 50px;
-    width: 220px;
+    width: 200px;
 }
 
 /** button **/
