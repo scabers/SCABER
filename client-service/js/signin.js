@@ -1,5 +1,5 @@
 $('.form').find('input, textarea').on('keyup blur focus', function (e) {
-  
+  alert("1");
   var $this = $(this),
       label = $this.prev('label');
 
@@ -16,7 +16,7 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
 		    label.removeClass('highlight');   
 			}   
     } else if (e.type === 'focus') {
-      
+        alert("2");
       if( $this.val() === '' ) {
     		label.removeClass('highlight'); 
 			} 
@@ -28,7 +28,7 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
 });
 
 $('.tab a').on('click', function (e) {
-  
+        alert("3");
   e.preventDefault();
   
   $(this).parent().addClass('active');
@@ -45,7 +45,7 @@ $('.tab a').on('click', function (e) {
 $('.tab a').on('click', function (e) {
   
   e.preventDefault();
-  
+      alert("2");
   $(this).parent().addClass('active');
   $(this).parent().siblings().removeClass('active');
   
