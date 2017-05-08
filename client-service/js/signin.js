@@ -1,6 +1,4 @@
 /**這裡是signin.ejs部分的動畫設置 **/
-(function($) {
-
 var  signIn = $('.sign-in'),
 	 signUp = $('.sign-up'),
 	 card1 = $('#signin-left-main-1'),
@@ -22,8 +20,8 @@ function switchCards(){
 		if (ifActive(signIn)){
 			signUp.addClass('activebar');
 			signIn.removeClass('activebar');
-			card1.removeClass('signin-form').addClass('signup-form');
-			card2.removeClass('signup-form').addClass('signin-form animated bounceInRight');
+			card1.removeClass('signinform').addClass('signupform');
+			card2.removeClass('signupform').addClass('signinform animated bounceInRight');
 			}
 		}
 	);
@@ -32,11 +30,11 @@ function switchCards(){
 		if (ifActive(signUp)) {
 			signUp.removeClass('activebar');
 			signIn.addClass('activebar');
-			card2.removeClass('signin-form').addClass('signup-form');
-			card1.removeClass('signup-form').addClass('signin-form animated bounceInLeft');
+			card2.removeClass('signinform').addClass('signupform');
+			card1.removeClass('signupform').addClass('signinform animated bounceInLeft');
 		}
 	});
 		
 }
 switchCards();
-})(jQuery);
+

@@ -512,13 +512,13 @@ header .header-content .header-brand {
 
 /* signin form */
 
-.signin-content .signin-form {
+.signin-content .signinform {
     position: relative;
     top: 7.4%;
     display: block;
 }
 
-.signin-content .signin-left .signin-form .card-box-body{
+.card-box-body{
     align-items: center;
     display: flex;
     -webkit-box-orient: vertical;
@@ -529,7 +529,7 @@ header .header-content .header-brand {
     -ms-flex-align: center;
 }
 
-.signin-content .signin-left .signin-form .card-box-body .form-signin .form-group input[type="text"]{
+.card-box-body .form-signin .form-group input[type="text"]{
   border-radius: 40px;
   border: none;
   background-color: #f1f1f1;
@@ -538,7 +538,7 @@ header .header-content .header-brand {
   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
-.signin-content .signin-left .signin-form .card-box-body .form-signin .form-group input[type="text"]:focus{
+.card-box-body .form-signin .form-group input[type="text"]:focus{
   outline: none;
   box-shadow: inset 3px 3px 3px rgba(44, 168, 209, 0.6);
 
@@ -546,7 +546,7 @@ header .header-content .header-brand {
 
 
 
-.signin-content .signin-left .signin-form .card-box-body .form-signin .check-form{
+.card-box-body .form-signin .check-form{
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -560,12 +560,12 @@ header .header-content .header-brand {
 
 }
 
-.signin-content .signin-left .signin-form .card-box-body .form-signin .check-form *{
+.card-box-body .form-signin .check-form *{
   cursor: pointer;
 }
 
 
-.signin-content .signin-left .signin-form .card-box-body .form-signin .form-forget{
+.signin-content .signin-left .signinform .card-box-body .form-signin .form-forget{
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-size: 1.3rem;
@@ -573,7 +573,7 @@ header .header-content .header-brand {
   padding-top: 15px;
 }
 
-.signin-content .signin-left .signin-form .card-box-body .form-signin .form-forget:hover{
+.signin-content .signin-left .signinform .card-box-body .form-signin .form-forget:hover{
    color: rgba(0,0,0,1);
 }
 
@@ -584,7 +584,7 @@ header .header-content .header-brand {
 
 
 
-.signin-content .signin-form .form-auth {
+.signin-content .signinform .form-auth {
 
     padding: 0;
     padding-bottom: 20px;
@@ -593,7 +593,7 @@ header .header-content .header-brand {
     width: 138.8px;
 }
 
-.signin-content .signin-form .form-auth a img{
+.signin-content .signinform .form-auth a img{
 
     padding: 0;
     padding-bottom: 20px;
@@ -603,7 +603,7 @@ header .header-content .header-brand {
 }
 
 
-.signin-content .signin-form button#signin {
+.signin-content .signinform button#signin {
     background-color: transparent;
     border: 2px solid #3F3133;
     color: #3F3133;
@@ -616,7 +616,7 @@ header .header-content .header-brand {
     width: 100%;
 }
 
-.signin-content .signin-form button#signin:hover {
+.signin-content .signinform button#signin:hover {
     border-color: #E79535;
     color: #E79535;
     transition: all 0.3s;
@@ -625,7 +625,7 @@ header .header-content .header-brand {
     -o-transition: all 0.3s;
 }
 
-.signin-content .signin-form .form-forget {
+.signin-content .signinform .form-forget {
     color: #72595C;
     display: inline-block;
     font-size: 0.75rem;
@@ -635,7 +635,7 @@ header .header-content .header-brand {
     width: 100%;
 }
 
-.signin-content .signin-form .form-forget:hover {
+.signin-content .signinform .form-forget:hover {
     color: #E79535;
     text-decoration: none;
     transition: all 0.3s;
@@ -648,7 +648,7 @@ header .header-content .header-brand {
 
 
 
-.signin-content .signin-left .signup-form {
+.signin-content .signin-left .signupform {
         display: none;
 }
 
