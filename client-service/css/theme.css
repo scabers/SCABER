@@ -665,19 +665,7 @@ position: relative;
 }
 
 /**cont_text_inputs排序法**/
-.cont_text_inputs > input:nth-child(1){
-  transition-delay: 0.2s;
-}
 
-.cont_text_inputs > input:nth-child(2){
-  transition-delay: 0.4s;
-}
-.cont_text_inputs > input:nth-child(3){
-  transition-delay: 0.6s;
-}
-.cont_text_inputs > input:nth-child(4){
-  transition-delay: 0.8s;
-}
 
 /* signin form */
 
