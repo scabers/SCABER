@@ -691,7 +691,7 @@ position: relative;
     padding: 0;
     padding-bottom: 20px;
     text-align: center;
-    width: auto;
+    width: 100px;
 }
 
 .signin-section .signin-form button#signin {
