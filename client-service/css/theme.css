@@ -656,7 +656,7 @@ header .header-content .header-brand {
 
 
 /** active動畫效果 **/
-.signin-content .signin-left .signin-bar ul li .activebar {
+.activebar {
   color: white;
   opacity: 0 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
