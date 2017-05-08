@@ -22,7 +22,8 @@ function switchCards(){
 			signIn.removeClass('activebar');
 			card1.removeClass('signinform').addClass('signupform');
 			card2.removeClass('signupform').addClass('signinform animated bounceInRight');
-			}
+			alter("dsdasdas");
+		   }
 		}
 	);
 	signIn.on('click', function(e){
