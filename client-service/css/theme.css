@@ -528,8 +528,8 @@ header .header-section .header-brand {
     height: 105vh;
 	margin: 50px auto;
 	position: relative;
-    left: 5%;
-    top: 10%;
+    left: 0%;
+    top: 5%;
  
 
 }
@@ -544,7 +544,7 @@ fieldset{
 	/*stacking fieldsets above each other*/
 	position: absolute;
     top: -30vh;
-    width: 26vw;
+    width: 26.2vw;
     height: 83vh;
 
 }
