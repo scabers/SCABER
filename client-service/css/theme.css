@@ -605,25 +605,7 @@ color: #FF8383;
 }
 
 /** input **/
-.signin-content .form-group input{
-  position: relative;
-  float: left;
-  width: 200%;
-  border: none;
-  border-bottom: 1px solid #B0BEC5;
-  border-radius: 20em;
-  background-color: transparent;
-  font-size: 500px;
-  outline: none;
-  transition: all 0.5s;
-  height: 0px;
-   margin: 0px;
-    padding: 0px;  
-}
 
-.signin-content .signin-left input:focus {
-  border-bottom: 1px solid #FF8383 ;
-  }
 
 /** active_inp **/
 .active_inp {
