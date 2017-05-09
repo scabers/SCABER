@@ -8,7 +8,7 @@ document.querySelectorAll('.ul_tabs > li')[1].className="active";
    document.querySelector('.link_forgot_pass').style.top = "-5px";
    document.querySelector('.form-check').style.opacity = "0";
    document.querySelector('.form-check').style.top = "-5px";
-   document.querySelector('.input_form_sign').style.opacity= "0";   
+   document.querySelector('.form-group').style.opacity= "0";   
    document.querySelector('.btn_sign').style.opacity= "0";
    document.querySelector('.btn_sign').style.top= "-5px";    
   setTimeout(function(){
@@ -52,7 +52,7 @@ document.querySelector('.form-check').className = "form-check d_block";
    document.querySelector('.link_forgot_pass').style.top = "5px";
    document.querySelector('.form-check').style.opacity = "1";
    document.querySelector('.form-check').style.top = "5px";
-   document.querySelector('.input_form_sign').style.opacity= "1";
+   document.querySelector('.form-group').style.opacity= "1";
     
 
 for(var d = 0; d < inputs.length ; d++  ) {
