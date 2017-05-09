@@ -575,7 +575,7 @@ header .header-section .header-brand {
     border: none;
     border-bottom: 1px solid #B0BEC5 ;
     background-color: transparent;
-    font-size: 14px;
+    font-size: 2rem;
     outline: none;
     transition: all 0.5s;
 }
