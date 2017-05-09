@@ -543,8 +543,7 @@ fieldset{
 	box-sizing: border-box;
 	/*stacking fieldsets above each other*/
 	position: absolute;
-    left: 10%;
-    top: 5%;
+    top: 20vh;
 
 }
 
