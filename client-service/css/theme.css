@@ -530,7 +530,7 @@ header .header-section .header-brand {
 
 }
 
-.signin-section .signin-left #form-signin fieldset{
+fieldset{
     background:  linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
 	border: 0 none;
 	border-radius: 3px;
@@ -542,7 +542,7 @@ header .header-section .header-brand {
 
 }
 
-.signin-section .signin-left #form-signin fieldset:not(:first-of-type){
+fieldset:not(:first-of-type){
     display: none;
 
 }
