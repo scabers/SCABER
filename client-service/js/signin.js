@@ -3,13 +3,6 @@ function sign_up(){
 document.querySelectorAll('.ul_tabs > li')[0].className=""; 
 document.querySelectorAll('.ul_tabs > li')[1].className="active"; 
   
-  for(var i = 0; i < inputs.length ; i++  ) {
-if(i == 2  ){
-
-}else{  
-document.querySelectorAll('.input_form_sign')[i].className = "input_form_sign d_block";
-}
-} 
 
 setTimeout( function(){
 for(var d = 0; d < inputs.length ; d++  ) {
