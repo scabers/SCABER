@@ -605,7 +605,12 @@ color: #FF8383;
 }
 
 /** input **/
+.form-group{
+    position: relative;
+    top: 23%;
+    left: 13%;
 
+}
 
 /** active_inp **/
 .active_inp {
