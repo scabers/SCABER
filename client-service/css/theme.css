@@ -567,18 +567,10 @@ header .header-section .header-brand {
     top: 25%;
 }
 
-
-
-.signin-section .signin-form .form-control{
-    position: relative;
-    top:50%;
-    float: left;
-    width: 90%;
-    border: none;
-    border-bottom: 2rem solid #B0BEC5 ;
-    background-color: transparent;
-    font-size: 2rem;
-    outline: none;
+.signin-section .signin-form .form-label{
+     color: rgba(216, 216, 216, 0.7);
+     font-size: 6rem;
+    
 }
 
 
