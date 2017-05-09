@@ -547,6 +547,7 @@ header .header-section .header-brand {
 
 }
 
+/** action-button design**/
 .action-button{
     	width: 100px;
 	background: #27AE60;
@@ -557,6 +558,10 @@ header .header-section .header-brand {
 	cursor: pointer;
 	padding: 10px 5px;
 	margin: 10px 5px;
+}
+
+.action-button:hover, .action-button:focus{
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
 
 
