@@ -9,7 +9,7 @@ function sign_up(){
   document.querySelectorAll('.ul_tabs > li')[1].className="active"; 
   $(document).ready(function(){ 
     $("div.signup-form").hide();
-    $("a.fad1").click(function(){
+    $("a.fad2").click(function(){
         $("div.signup-form").fadeIn(800);
         $("div.signin-form").fadeOut();      /*開一個,其他關掉*/
 
