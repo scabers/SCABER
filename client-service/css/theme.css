@@ -569,7 +569,8 @@ header .header-section .header-brand {
 
 .signin-section .signin-form .form-label{
      color: rgba(0, 123, 142, 0.7);
-     font-size: 6rem;
+     font-size: 2rem;
+     font-family: 'Metrophobic', sans-serif;
     
 }
 
