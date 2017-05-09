@@ -564,7 +564,7 @@ fieldset:not(:first-of-type){
     width: 100px;
 	font-weight: bold;
 	padding: 10px 1px;
-	margin: 10px 5px;
+	margin: 10px 1px;
     position: relative;
     left: 10%;
 
