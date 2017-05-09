@@ -9,12 +9,13 @@ $(".next").click(function(){
 	
 	current_fs = $(this).parent();
 	next_fs = $(this).parent().next();
-	
+	alert("1");
 	//activate next step on progressbar using the index of next_fs
 	
 	
 	//show the next fieldset
 	next_fs.show(); 
+	alert("2");
 	//hide the current fieldset with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
@@ -44,7 +45,7 @@ $(".next").click(function(){
 $(".previous").click(function(){
 	if(animating) return false;
 	animating = true;
-	
+	alert("3");
 	current_fs = $(this).parent();
 	previous_fs = $(this).parent().prev();
 	
