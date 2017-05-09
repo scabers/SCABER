@@ -547,18 +547,7 @@ header .header-section .header-brand {
 
 }
 
-.signin-section .signin-left #form-signin input{
-    padding: 15px;
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	margin-bottom: 10px;
-	width: 100%;
-	box-sizing: border-box;
-	font-family: montserrat;
-	color: #2C3E50;
-	font-size: 13px;
 
-}
 
 
 .signin-section .signin-title {
