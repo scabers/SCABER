@@ -605,7 +605,7 @@ color: #FF8383;
 }
 
 /** input **/
-.signin-content .signin-left input {
+.signin-content .signin-left .signin-form .password {
   position: relative;
   float: left;
   width: 100%;
@@ -613,11 +613,11 @@ color: #FF8383;
   border-bottom: 1px solid #B0BEC5;
   border-radius: 5em;
   background-color: transparent;
-  font-size: 14px;
+  font-size: 50px;
   outline: none;
   transition: all 0.5s;
-    height: 0px;
-    margin: 0px;
+  height: 0px;
+   margin: 0px;
     padding: 0px;  
 }
 
