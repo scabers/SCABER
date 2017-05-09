@@ -575,12 +575,21 @@ header .header-section .header-brand {
     position: relative;
     top: 25%;
 }
+
 .signin-section .signin-form .fs-title {
 	font-size: 15px;
 	text-transform: uppercase;
 	color: #2C3E50;
 	margin-bottom: 10px;
 }
+
+.signin-section .signin-form .fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+
 .signin-section .signin-form .form-label{
      color: rgba(0, 123, 142, 0.7);
      font-size: 2rem;
