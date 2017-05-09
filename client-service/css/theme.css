@@ -515,9 +515,7 @@ header .header-section .header-brand {
 
 
 /** signin.ejs **/
-.signin-section{
 
-}
 .signin-section ul {
     list-style: none;
     padding: 0;
@@ -535,37 +533,11 @@ header .header-section .header-brand {
     text-align: center;
 }
 
-/** ul_tabs**/
-.ul_tabs > li { 
-position: relative;
-  float: left;
-  width: 50%;
-  list-style: none;
-  text-align: center;
-
-}
-
-.ul_tabs > li > a  {  
-text-decoration: none;
-font-family: Helvetica;
-font-size: 16px;
-    color: #999;
-line-height: 14px;
-padding: 20px ;
-display: block;
-transition: all 0.5s;
-}
-
-  .ul_tabs > .active > a  {  
-color: #FF8383;
-
-}
-
-/** signin-bar **/
 .signin-section .signin-bar {
-  position: relative;
-  float: left;
-  width: 85%;
+    padding: 5px 0;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
 }
 
 .signin-section .signin-bar li {
@@ -587,71 +559,6 @@ color: #FF8383;
     color: #E79535;
 }
 
-/** linea_bajo_nom **/
-.linea_bajo_nom {
-  position: relative;
-  width: 100%;
-  float: left;
-  background-color: #999;
-  height: 2px;
-}
-
-.active .linea_bajo_nom {
-  position: relative;
-  width: 100%;
-  float: left;
-  background-color: #FF8383;
-  height: 2px;
-}
-
-/** input **/
-.form-group{
-    position: relative;
-    top: 23%;
-    left: 7%;
-
-}
-
-/** active_inp **/
-.active_inp {
-  margin: 5% 5% ;  
-  padding: 10px 0px;
-  opacity: 1;
-height: 5px;
-}
-
-/** link_forgot_pass **/
-.link_forgot_pass {
-position: relative;
-  margin-top: 0px;
-  margin-left: 30%;
-  text-decoration: none;
-  color: #999;
-  font-size: 13px;
-  display: none;
-  float: left;
-  transition: all 0.5s;
-}
-
-/** terms_and_cons **/
-.terms_and_cons {
-  width: 70%;  
-  color: #999;
-  font-size: 13px;
-  transition: all 0.5s;
-}
-
-/** d的用法**/
-.d_none {
-  display: none;
-}
-
-.d_block {
-  display: block;
-}
-
-/**cont_text_inputs排序法**/
-
 
 /* signin form */
 
@@ -668,17 +575,6 @@ position: relative;
     width: auto;
 }
 
-/** 圖示大小 **/
-.form-facebook img{
-    height: 50px;
-    width: 214px;
-}
-.form-google img{
-    height: 50px;
-    width: 214px;
-}
-
-/** button **/
 .signin-section .signin-form button#signin {
     background-color: transparent;
     border: 2px solid #3F3133;
