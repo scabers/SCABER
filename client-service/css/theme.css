@@ -526,6 +526,7 @@ header .header-section .header-brand {
     width: 35vw;
 	margin: 50px auto;
 	position: relative;
+    border-radius: 10rem;
 
 }
 
