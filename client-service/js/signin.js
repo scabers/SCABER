@@ -1,44 +1,5 @@
 
-$(document).ready(function(){
-    $("a.fad1").click(function(){
-        $("div.signin-form").animate({
-            top:'20vh',
-            left: '58vw',
-            opacity: '0.5',
-            height: '430px',
-            width: '550px'
 
-        });
-
-    });
-});
-$(document).ready(function(){
-    $("a.fad2").click(function(){
-        $("div.signup-form").animate({
-            top:'26vh',
-            left: '58vw',
-            opacity: '0.5',
-            height: '430px',
-            width: '550px',
-        });
-
-    });
-});
-
-$(document).ready(function(){ 
-    $("a.fad1").hide();
-    $("div.signin-form").click(function(){
-        $("div.fad1").fadeIn(800);
-        $("div.fad2").fadeOut();      /*開一個,其他關掉*/
-    });
-});
-$(document).ready(function(){ 
-    $("a.fad2").hide();
-    $("div.signup-form").click(function(){
-        $("div.fad2").fadeIn(800);
-        $("div.fad1").fadeOut();      /*開一個,其他關掉*/
-    });
-});
 
 
 
