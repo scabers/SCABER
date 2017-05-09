@@ -554,15 +554,17 @@ fieldset:not(:first-of-type){
 
 /** action-button design**/
 .action-button{
-    	width: 100px;
-	background: #27AE60;
-	font-weight: bold;
-	color: white;
-	border: 0 none;
+    border: 0 none;
 	border-radius: 1px;
-	cursor: pointer;
+    background: #27AE60;
+    color: white;
+    cursor: pointer;
+    width: 100px;
+	font-weight: bold;
 	padding: 10px 5px;
 	margin: 10px 5px;
+    position: relative;
+    left: 20%;
 }
 
 .action-button:hover, .action-button:focus{
