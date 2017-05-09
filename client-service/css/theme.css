@@ -544,8 +544,8 @@ fieldset{
 	/*stacking fieldsets above each other*/
 	position: absolute;
     top: -30vh;
-    width: 20vw;
-    height: 30vh;
+    width: 35vw;
+    height: 120vh;
 
 }
 
