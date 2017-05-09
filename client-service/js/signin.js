@@ -39,6 +39,16 @@ document.querySelectorAll('.input_form_sign')[i].className = "input_form_sign d_
 }
 } 
 
+  $(document).ready(function(){ 
+    $("div.signin-form").hide();
+    $("a.fad1").click(function(){
+        $("div.signin-form").fadeIn(800);
+        $("div.signup-form").fadeOut();      /*開一個,其他關掉*/
+
+    });
+});
+
+
 setTimeout( function(){
 for(var d = 0; d < inputs.length ; d++  ) {
 switch(d) {
