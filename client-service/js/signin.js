@@ -2,20 +2,20 @@
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
-alert("0");
-$(".next").click(function(){
+
+$(document).ready(function(){
+   $(".next").click(function(){
 	if(animating) return false;
 	animating = true;
 	
 	current_fs = $(this).parent();
 	next_fs = $(this).parent().next();
-	alert("1");
-	//activate next step on progressbar using the index of next_fs
 	
+	//activate next step on progressbar using the index of next_fs
+	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
 	
 	//show the next fieldset
 	next_fs.show(); 
-	alert("2");
 	//hide the current fieldset with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
@@ -40,17 +40,20 @@ $(".next").click(function(){
 		//this comes from the custom easing plugin
 		easing: 'easeInOutBack'
 	});
+  });
 });
 
+
+$(document).ready(function(){
 $(".previous").click(function(){
 	if(animating) return false;
 	animating = true;
-	alert("3");
+	
 	current_fs = $(this).parent();
 	previous_fs = $(this).parent().prev();
 	
 	//de-activate current step on progressbar
-	
+	$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
 	
 	//show the previous fieldset
 	previous_fs.show(); 
@@ -78,3 +81,4 @@ $(".previous").click(function(){
 });
 
 
+});
