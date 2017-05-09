@@ -594,8 +594,8 @@ header .header-section .header-brand {
 
 /** img的設置 **/
 .signin-section .signin-form .form-auth img{
-    width: 5vw;
-    height: 5vh;
+    width: 15vw;
+    height: 6vh;
 
 }
 
