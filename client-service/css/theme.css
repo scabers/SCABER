@@ -563,8 +563,8 @@ fieldset:not(:first-of-type){
     cursor: pointer;
     width: 100px;
 	font-weight: bold;
-	padding: 10px -10px;
-	margin: 10px 1px;
+	padding: 10px 1px;
+	margin: 1px 5px;
     position: relative;
     left: 10%;
 
