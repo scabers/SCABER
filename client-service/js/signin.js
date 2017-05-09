@@ -8,10 +8,10 @@ function sign_up(){
   document.querySelectorAll('.ul_tabs > li')[0].className=""; 
   document.querySelectorAll('.ul_tabs > li')[1].className="active"; 
   $(document).ready(function(){ 
-    $("div.signin-form").hide();
+    $("div.signup-form").hide();
     $("a.fad1").click(function(){
-        $("div.signin-form").fadeIn(800);
-        $("div.signpu-form").fadeOut();      /*開一個,其他關掉*/
+        $("div.signup-form").fadeIn(800);
+        $("div.signin-form").fadeOut();      /*開一個,其他關掉*/
 
     });
 });
