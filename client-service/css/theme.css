@@ -618,10 +618,9 @@ input {
     height: 0px;
     margin: 0px;
     padding: 0px;  
-   display: none;
 }
 
-.input:focus {
+input:focus {
   border-bottom: 1px solid #FF8383 ;
   }
 
