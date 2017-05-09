@@ -27,17 +27,7 @@ function sign_in(){
 document.querySelectorAll('.ul_tabs > li')[0].className = "active"; 
 document.querySelectorAll('.ul_tabs > li')[1].className = ""; 
   
-  for(var i = 0; i < inputs.length ; i++  ) {
-switch(i) {
-    case 1:
- console.log(inputs[i].name);
-        break;
-    case 2:
- console.log(inputs[i].name);
-    default: 
-document.querySelectorAll('.input_form_sign')[i].className = "input_form_sign d_block";
-}
-} 
+
 
   $(document).ready(function(){ 
     $("div.signin-form").hide();

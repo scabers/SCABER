@@ -618,8 +618,7 @@ color: #FF8383;
     height: 0px;
     margin: 0px;
     padding: 0px;  
-opacity: 0;
-display: none;
+   display: none;
 }
 
 .input_form_sign:focus {
