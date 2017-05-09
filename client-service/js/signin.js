@@ -10,7 +10,7 @@ function sign_up(){
   $(document).ready(function(){ 
     $("div.signup-form").hide();
     $("a.fad2").click(function(){
-        $("div.signup-form").fadeIn(800);
+        $("div.signup-form").fadeIn(500);
         $("div.signin-form").fadeOut();      /*開一個,其他關掉*/
 
     });
@@ -32,7 +32,7 @@ document.querySelectorAll('.ul_tabs > li')[1].className = "";
   $(document).ready(function(){ 
     $("div.signin-form").hide();
     $("a.fad1").click(function(){
-        $("div.signin-form").fadeIn(800);
+        $("div.signin-form").fadeIn(500);
         $("div.signup-form").fadeOut();      /*開一個,其他關掉*/
 
     });
@@ -40,7 +40,21 @@ document.querySelectorAll('.ul_tabs > li')[1].className = "";
 
 
 setTimeout( function(){
+for(var d = 0; d < inputs.length ; d++  ) {
+switch(d) {
+    case 1:
+ console.log(inputs[d].name);
+        break;
+    case 2:
+ console.log(inputs[d].name);
 
+    default:
+ document.querySelectorAll('.input_form_sign')[d].className = "input_form_sign d_block";  
+ document.querySelectorAll('.input_form_sign')[2].className = "input_form_sign d_block active_inp";  
+
+   }
+  }
+ },100 );
 
  document.querySelector('.terms_and_cons').style.opacity = "0";
   document.querySelector('.terms_and_cons').style.top = "-5px";
