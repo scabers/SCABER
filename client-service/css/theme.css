@@ -525,7 +525,7 @@ header .header-section .header-brand {
     background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
     width: 35vw;
 	margin: 50px auto;
-	position: relative;
+	position: absolute;
     border-radius: 3rem;
 
 }
@@ -538,7 +538,7 @@ fieldset{
 	padding: 20px 30px;
 	box-sizing: border-box;
 	/*stacking fieldsets above each other*/
-	position: relative;
+	position: absolute;
 
 }
 
