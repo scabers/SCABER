@@ -1,7 +1,5 @@
 function sign_up(){
-  var inputs = document.querySelectorAll('.input_form_sign');
-document.querySelectorAll('.ul_tabs > li')[0].className=""; 
-document.querySelectorAll('.ul_tabs > li')[1].className="active"; 
+
   
 
    document.querySelector('.link_forgot_pass').style.opacity = "0";
@@ -28,10 +26,7 @@ document.querySelectorAll('.ul_tabs > li')[1].className="active";
 
 
 function sign_in(){
-  var inputs = document.querySelectorAll('.input_form_sign');
-document.querySelectorAll('.ul_tabs > li')[0].className = "active"; 
-document.querySelectorAll('.ul_tabs > li')[1].className = ""; 
-  
+
 
 
 
@@ -55,20 +50,7 @@ document.querySelector('.form-check').className = "form-check d_block";
    document.querySelector('.form-group').style.opacity= "1";
     
 
-for(var d = 0; d < inputs.length ; d++  ) {
 
-switch(d) {
-    case 1:
- console.log(inputs[d].name);
-        break;
-    case 2:
- console.log(inputs[d].name);
-
-         break;
-    default:
- document.querySelectorAll('.input_form_sign')[d].className = "input_form_sign";  
-}
-  }
    },1500);
    document.querySelector('.btn_sign').style.opacity = "1";
    document.querySelector('.btn_sign').innerHTML = "SIGN IN";    
