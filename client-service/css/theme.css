@@ -592,6 +592,13 @@ header .header-section .header-brand {
     width: auto;
 }
 
+/** img的設置 **/
+.signin-section .signin-form .form-auth img{
+    width: 5vw;
+    height: 5vh;
+
+}
+
 .signin-section .signin-form button#signin {
     background-color: transparent;
     border: 2px solid #3F3133;
