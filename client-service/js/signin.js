@@ -18,6 +18,7 @@ function sign_up(){
   setTimeout(function(){
     document.querySelector('.link_forgot_pass').className = "link_forgot_pass d_none";
 	document.querySelector('.form-check').className = "form-check d_none";
+	document.querySelector('.form-group').className = "form-group d_none";
  document.querySelector('.terms_and_cons').className = "terms_and_cons d_block";
   },450);
 
@@ -38,6 +39,7 @@ function sign_in(){
  document.querySelector('.terms_and_cons').className = "terms_and_cons d_none"; 
 document.querySelector('.link_forgot_pass').className = "link_forgot_pass d_block";
 document.querySelector('.form-check').className = "form-check d_block";
+document.querySelector('.form-group').className = "form-group d_block";
 
  },500);
 
