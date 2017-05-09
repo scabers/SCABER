@@ -605,7 +605,7 @@ color: #FF8383;
 }
 
 /** input **/
-.input_form_sign {
+.input_form_sign1 {
   position: relative;
   float: left;
   width: 90%;
@@ -621,7 +621,7 @@ color: #FF8383;
    display: none;
 }
 
-.input_form_sign:focus {
+.input_form_sign1:focus {
   border-bottom: 1px solid #FF8383 ;
   }
 
