@@ -527,9 +527,9 @@ header .header-section .header-brand {
     width: 35vw;
     height: 100vh;
 	margin: 50px auto;
-	position: absolute;
+	position: relative;
     left: 10%;
-    top: 200%;
+    top: 20%;
  
 
 }
