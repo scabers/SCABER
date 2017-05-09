@@ -40,21 +40,7 @@ document.querySelectorAll('.ul_tabs > li')[1].className = "";
 
 
 setTimeout( function(){
-for(var d = 0; d < inputs.length ; d++  ) {
-switch(d) {
-    case 1:
- console.log(inputs[d].name);
-        break;
-    case 2:
- console.log(inputs[d].name);
 
-    default:
- document.querySelectorAll('.input_form_sign')[d].className = "input_form_sign d_block";  
- document.querySelectorAll('.input_form_sign')[2].className = "input_form_sign d_block active_inp";  
-
-   }
-  }
- },100 );
 
  document.querySelector('.terms_and_cons').style.opacity = "0";
   document.querySelector('.terms_and_cons').style.top = "-5px";
