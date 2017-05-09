@@ -564,7 +564,7 @@ fieldset:not(:first-of-type){
     width: 100px;
 	font-weight: bold;
 	padding: 10px 5px;
-	margin: 10px 5px;
+	margin: 5px 5px;
     position: relative;
     left: 10%;
 
@@ -584,9 +584,9 @@ fieldset:not(:first-of-type){
     width: 100px;
 	font-weight: bold;
 	padding: 10px 5px;
-	margin: 10px 5px;
+	margin: 5px 5px;
     position: relative;
-    left: 0%;
+    left: 10%;
 }
 
 .action-button:hover, .action-button:focus{
