@@ -4,30 +4,7 @@ document.querySelectorAll('.ul_tabs > li')[0].className="";
 document.querySelectorAll('.ul_tabs > li')[1].className="active"; 
   
 
-setTimeout( function(){
-for(var d = 0; d < inputs.length ; d++  ) {
- document.querySelectorAll('.input_form_sign')[d].className = "input_form_sign d_block active_inp";  
-   }
 
-
- },100 );
-   document.querySelector('.link_forgot_pass').style.opacity = "0";
-   document.querySelector('.link_forgot_pass').style.top = "-5px";
-   document.querySelector('.form-check').style.opacity = "0";
-   document.querySelector('.form-check').style.top = "-5px";
-   document.querySelector('.btn_sign').style.opacity= "0";
-   document.querySelector('.btn_sign').style.top= "0";    
-  setTimeout(function(){
-
- document.querySelector('.terms_and_cons').style.opacity = "1";
-  document.querySelector('.terms_and_cons').style.top = "5px";
- 
-  },500);
-  setTimeout(function(){
-    document.querySelector('.link_forgot_pass').className = "link_forgot_pass d_none";
-	document.querySelector('.form-check').className = "form-check d_none";
- document.querySelector('.terms_and_cons').className = "terms_and_cons d_block";
-  },450);
 
 }
 
