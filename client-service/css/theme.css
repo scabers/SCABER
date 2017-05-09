@@ -568,6 +568,9 @@ fieldset:not(:first-of-type){
 
 }
 
+.topbutton-left:hover, .topbutton-left:focus{
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60; 
+}
 
 /** action-button design**/
 .action-button{
