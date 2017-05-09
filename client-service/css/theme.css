@@ -567,6 +567,19 @@ header .header-section .header-brand {
     top: 25%;
 }
 
+.signin-section .signin-form .form-control{
+    position: relative;
+    float: left;
+    width: 90%;
+    border: none;
+    border-bottom: 1px solid #B0BEC5 ;
+    background-color: transparent;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.5s;
+}
+
+
 .signin-section .signin-form .form-auth {
     max-height: 100%;
     padding: 0;
@@ -600,7 +613,7 @@ header .header-section .header-brand {
 .signin-section .signin-form .form-forget {
     color: #72595C;
     display: inline-block;
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     padding-top: 2.5vh;
     position: relative;
     text-align: center;
