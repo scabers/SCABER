@@ -577,17 +577,19 @@ header .header-section .header-brand {
 }
 
 .signin-section .signin-form .fs-title {
+    color: #2C3E50;
 	font-size: 15px;
-	text-transform: uppercase;
-	color: #2C3E50;
 	margin-bottom: 10px;
+    text-transform: uppercase;
+	text-align: center;
 }
 
 .signin-section .signin-form .fs-subtitle {
+    color: #666;
 	font-weight: normal;
 	font-size: 13px;
-	color: #666;
 	margin-bottom: 20px;
+    text-align: center;
 }
 
 .signin-section .signin-form .form-label{
