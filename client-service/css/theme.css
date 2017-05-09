@@ -523,11 +523,14 @@ header .header-section .header-brand {
 
 .signin-section .signin-left{
     background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+    border-radius: 3rem;
     width: 35vw;
     height: 10vh;
 	margin: 50px auto;
 	position: absolute;
-    border-radius: 3rem;
+    left: 30%;
+    top: 20%;
+ 
 
 }
 
