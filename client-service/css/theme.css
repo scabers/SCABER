@@ -542,9 +542,9 @@ fieldset{
 	padding: 20px 30px;
 	box-sizing: border-box;
 	/*stacking fieldsets above each other*/
-	position: absolute;
+	position: relative;
     left: 10%;
-    top: -10%;
+    top: -20%;
 
 }
 
