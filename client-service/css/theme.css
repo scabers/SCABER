@@ -566,7 +566,7 @@ fieldset:not(:first-of-type){
 	padding: 10px 1px;
 	margin: 1px 5px;
     position: relative;
-    left: 5%;
+    left: 0%;
 
 }
 
@@ -586,7 +586,7 @@ fieldset:not(:first-of-type){
 	padding: 10px 1px;
 	margin: 10px 5px;
     position: relative;
-    left: 5%;
+    left: 0%;
 }
 
 .action-button:hover, .action-button:focus{
