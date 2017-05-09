@@ -605,7 +605,7 @@ color: #FF8383;
 }
 
 /** input **/
-input {
+.signin-content input {
   position: relative;
   float: left;
   width: 90%;
@@ -620,7 +620,7 @@ input {
     padding: 0px;  
 }
 
-input:focus {
+.signin-content input:focus {
   border-bottom: 1px solid #FF8383 ;
   }
 
