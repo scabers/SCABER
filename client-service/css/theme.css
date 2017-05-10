@@ -512,12 +512,7 @@ header .header-section .header-brand {
 
 
 /** service.ejs **/
-.steps {
-  position: absolute;
-  bottom: 50px;
-  width: 100%;
-  font: 700 25px/39px "Open Sans";
-}
+
 
 /** signin.ejs **/
 
@@ -538,6 +533,20 @@ header .header-section .header-brand {
  
 
 }
+
+/** steps **/
+
+.steps {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  font: 700 25px/39px "Open Sans";
+}
+
+.steps div {
+  display: inline-block;
+}
+/** fieldset **/
 
 fieldset{
     background:  linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
