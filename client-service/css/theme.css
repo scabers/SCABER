@@ -581,21 +581,37 @@ fieldset:not(:first-of-type){
     background: #27AE60;
     color: white;
     cursor: pointer;
-    width: 100px;
 	font-weight: bold;
 	padding: 10px 1px;
 	margin: 10px 5px;
     position: relative;
     left: 0%;
+    width: 100px;
 }
 
 .action-button:hover, .action-button:focus{
     box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
 }
 
+/** action-button1 design**/
 
+.action-button1{
+    border: 0 none;
+	border-radius: 1px;
+    background: #27AE60;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+	padding: 10px 1px;
+	margin: 10px 5px;
+    position: relative;
+    left: 0%;
+    width: 200px;
+    height: 100px;
 
+}
 
+/** signin-title **/
 .signin-section .signin-title {
     position: relative;
     margin-top: 7.5vh;
