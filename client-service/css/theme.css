@@ -555,24 +555,7 @@ fieldset:not(:first-of-type){
 }
 
 /** sign in **/
-.topbutton-left{
-    border: 0 none;
-	border-radius: 1px;
-    background: #27AE60;
-    color: white;
-    cursor: pointer;
-    width: 100px;
-	font-weight: bold;
-	padding: 10px 1px;
-	margin: 1px 5px;
-    position: relative;
-    left: 0%;
 
-}
-
-.topbutton-left:hover, .topbutton-left:focus{
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60; 
-}
 
 /** action-button design**/
 .action-button{
