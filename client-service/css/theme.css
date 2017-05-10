@@ -606,6 +606,8 @@ fieldset:not(:first-of-type){
 .choose-your-way{
     font-family: 'Metrophobic', sans-serif;
     font-size: 2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
 
 }
 
