@@ -553,6 +553,33 @@ header .header-section .header-brand {
   width: 100%;
   font: 700 25px/39px "Open Sans";
 }
+
+.steps div[class^='line-']:after {
+  -webkit-transition: width 0.7s;
+  -moz-transition: width 0.7s;
+  -o-transition: width 0.7s;
+  -ms-transition: width 0.7s;
+  transition: width 0.7s;
+  border-bottom: 2px solid rgba(255,255,255,0.9);
+  content: ' ';
+  display: block;
+  width: 0;
+  position: absolute;
+}
+
+.steps div[class^='step-'] {
+  color: rgba(255,255,255,0.2);
+  height: 44px;
+  width: 44px;
+  border-radius: 50%;
+  text-align: center;
+  border: 2px solid rgba(255,255,255,0.2);
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -o-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  transition: all 0.7s;
+}
 /** fieldset **/
 
 fieldset{
