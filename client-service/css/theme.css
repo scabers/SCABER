@@ -586,7 +586,7 @@ fieldset:not(:first-of-type){
 	margin: 10px 5px;
     position: relative;
     left: 0%;
-    width: 100px;
+    width: 14vw;
 }
 
 .action-button:hover, .action-button:focus{
@@ -598,7 +598,7 @@ fieldset:not(:first-of-type){
 .action-button1{
     border: 0 none;
 	border-radius: 1px;
-    background: #27AE60;
+    background: rgba(164, 102, 142, 0.8);
     color: white;
     cursor: pointer;
     font-weight: bold;
@@ -606,9 +606,13 @@ fieldset:not(:first-of-type){
 	margin: 10px 5px;
     position: relative;
     left: 0%;
-    width: 200px;
-    height: 100px;
+    width: 22vw;
+    height: 16vh;
 
+}
+
+.action-button1:hover, .action-button1:focus{
+    box-shadow: 0 0 0 2px white, 0 0 0 3px rgba(164, 102, 142, 0.8);
 }
 
 /** signin-title **/
