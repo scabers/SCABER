@@ -603,6 +603,12 @@ fieldset:not(:first-of-type){
     font-size: 3rem;
 }
 
+.choose-your-way{
+    font-family: 'Metrophobic', sans-serif;
+    font-size: 2rem;
+
+}
+
 /** signin-title **/
 .signin-section .signin-title {
     position: relative;
