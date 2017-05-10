@@ -546,6 +546,13 @@ header .header-section .header-brand {
 .steps div {
   display: inline-block;
 }
+
+.steps {
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  font: 700 25px/39px "Open Sans";
+}
 /** fieldset **/
 
 fieldset{
