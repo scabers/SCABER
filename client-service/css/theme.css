@@ -598,6 +598,11 @@ fieldset:not(:first-of-type){
     box-shadow: 0 0 0 2px white, 0 0 0 3px rgba(0, 102, 142, 0.7);
 }
 
+
+.choice{
+    font-size: 3rem;
+}
+
 /** signin-title **/
 .signin-section .signin-title {
     position: relative;
