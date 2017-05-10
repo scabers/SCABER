@@ -601,6 +601,39 @@ header .header-section .header-brand {
   -webkit-box-shadow: -1px 1px rgba(0,0,0,0.2);
   box-shadow: -1px 1px rgba(0,0,0,0.2);
 }
+
+/** step-1 **/
+
+.step-1-container label {
+  margin: 0 8px;
+  display: inline-block;
+  color: rgba(255,255,255,0.85);
+  background-color: rgba(54,61,67,0.85);
+  -webkit-transition: background-color 0.3s, #fff 0.3s;
+  -moz-transition: background-color 0.3s, #fff 0.3s;
+  -o-transition: background-color 0.3s, #fff 0.3s;
+  -ms-transition: background-color 0.3s, #fff 0.3s;
+  transition: background-color 0.3s, #fff 0.3s;
+  padding: 0px 25px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 2.3;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0 35px;
+  line-height: 3;
+  font-size: 15px;
+}
+
 /** fieldset **/
 
 fieldset{
