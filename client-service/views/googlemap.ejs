@@ -36,10 +36,10 @@ function myMap() {
     var infoWindow = new google.maps.InfoWindow({content: "Hey Man!"});
     // Customed Marker
     var scaber_boy = {
-        url: 'http://i.imgur.com/UCIt3fj.png',
-        size: new google.maps.Size(200,320),
+        url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+        size: new google.maps.Size(20,32),
         origin: new google.maps.Point(0,0),
-        anchor: new google.maps.Point(0,320)
+        anchor: new google.maps.Point(0,32)
     };
     // shape of click =>
     var scaber_boy_shape = {
@@ -65,7 +65,7 @@ function myMap() {
         updateLoc(map,infoWindow,marker);
         // Update in a time slot
         var update = setInterval(function(){
-            updateLoc(map,infoWindow,maker);
+            updateLoc(map,infoWindow,marker);
         },10000);
     } else {
         handleLocationError(false,infoWindow,map.getCenter());
@@ -79,10 +79,9 @@ function updateLoc(map,infoWindow,marker){
             lat: position.coords.latitude,
             lng: position.coords.longitude
         };
-
         marker.setPosition(pos);
-        //infoWindow.setPosition(pos);
-        //infoWindow.setContent('Location found.');
+        infoWindow.setPosition(pos);
+        infoWindow.setContent('Location found.');
         map.setCenter(pos);
     }, function(){
         handleLocationError(true, infoWindow, map.getCenter());
@@ -92,6 +91,12 @@ function updateLoc(map,infoWindow,marker){
 function handleLocationError(browserHasGeolocation, infoWindow, pos){
     infoWindow.setPosition(pos);
     infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.')
+    if(browserHasGeolocation){
+        console.log("Support but error.");
+    }
+    else{
+        console.log("Not support!");
+    }
 }
 </script>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= apikey %>&callback=myMap"></script>
