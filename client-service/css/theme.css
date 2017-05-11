@@ -562,7 +562,7 @@ header .header-section .header-brand {
 	font-size: 10px;
 	color: #333;
 	background: white;
-	border-radius: 3px;
+	border-radius: 10px;
 	margin: 0 auto 5px auto;
 }
 /*progressbar connectors*/
@@ -583,7 +583,7 @@ header .header-section .header-brand {
 /*marking active/completed steps green*/
 /*The number of the step and the connector before it = green*/
 #progressbar li.active:before,  #progressbar li.active:after{
-	background: #27AE60;
+	background: rgba(162,120,150,0.7);
 	color: white;
 }
 
