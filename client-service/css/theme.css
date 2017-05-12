@@ -157,7 +157,15 @@ aside {
 /** navbar.ejs **/
 
 .navbar-default {
-
+    background-color: #FFCF47;
+    border-color: rgba(255, 207, 71, 0.9);
+    font-family: 'Metrophobic', sans-serif;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.35s;
+    -webkit-transition: all 0.35s;
+    -moz-transition: all 0.35s;
+    -o-transition: all 0.35s;
 }
 
 .navbar-default .navbar-header {
