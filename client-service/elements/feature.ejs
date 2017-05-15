@@ -1,0 +1,29 @@
+<!-- About section - index.ejs -->
+<section class="feature-section" id="feature">
+    <div class="container container-slides">
+        <div class="row">
+            <!-- feature-center -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 feature-center">
+                <div class="feature-content content">
+                    <% var slide = [['開放整合', 'Integration'], ['安全服務', 'Safety'], ['共乘共享', 'Share'], ['公開評價', 'Rating']]; %>
+                    <% for (var i = 0; i < slide.length; ++i) { %>
+                    <div class="feature-slide slide" id="slide-<%= i + 1 %>" data-target="<%= i + 1 %>">
+                        <div class="slide-title">
+                            <div class="slide-title-ch" id="title-ch-<%= i + 1 %>"><%= slide[i][0] %></div>
+                            <div class="slide-title-en" id="title-en-<%= i + 1 %>"><%= slide[i][1] %></div>
+                        </div>
+                        <div class="slide-text" id="text-<%= i + 1 %>">SCABER，是一套提供乘客「安全、共乘、評價」的乘車系統。透過政府的開放資料，整合臺灣現有核准執業的計程車業者，解決Uber的合法性爭議，減少對計程車業者的衝擊，也保障乘客的乘車安全，以達到雙方互利共生的經營方式。</div>
+                        <div class="slide-bg"></div>
+                        <div class="slide-img">
+                            <div class="slide-close"></div>
+                            <div class="slide-wrapper"></div>
+                        </div>
+                        <div class="slide-dark"></div>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+            <!-- /.feature-center -->
+        </div>
+    </div>
+</section>

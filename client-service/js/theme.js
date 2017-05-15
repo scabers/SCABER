@@ -1,46 +1,47 @@
-(function($) {
+$(document).ready(function() {
     // Start of use strict
     "use strict";
 
-    // Page scrolling feature
-    $(document).on('click', 'a.page-scroll', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: ($($anchor.attr('href')).offset().top - 50)
-        }, 1250, 'easeInOutExpo');
-        event.preventDefault();
+    // Smooth scrolling using jQuery easing
+    $('a[href*="#"]:not([href="#"])').click(function() {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+                $('html, body').animate({
+                    scrollTop: (target.offset().top - 48)
+                }, 1000, "easeInOutExpo");
+                return false;
+            }
+        }
     });
 
     // Highlight the top navbar as scrolling occurs
     $('body').scrollspy({
         target: '.navbar-fixed-top',
-        offset: 51
+        offset: 54
     });
 
-
-    // Close the responsive menu on menu item click
-    $('.navbar-collapse ul li a').click(function() {
-        $('.navbar-toggle:visible').click();
+    // Collapse responsive menu when a link is clicked
+    $('.navbar-collapse>ul>li>a').click(function() {
+        $('.navbar-collapse').collapse('hide');
     });
 
-    // Initialize and configure scroll reveal animation
-    window.sr = ScrollReveal();
-    sr.reveal('.sr-icons', {
-        duration: 600,
-        scale: 0.3,
-        distance: '0px'
-    }, 200);
+    // Offset for Main Navigation
+    $('#navbar').affix({
+        offset: {
+            top: 100
+        }
+    })
 
-    sr.reveal('.sr-button', {
-        duration: 1000,
-        delay: 200
+    // Collapse the navbar when page is scrolled
+    $(window).scroll(function() {
+        if ($("#navbar").offset().top > 100) {
+            $("#navbar").addClass("navbar-shrink");
+        } else {
+            $("#navbar").removeClass("navbar-shrink");
+        }
     });
-
-    sr.reveal('.sr-contact', {
-        duration: 600,
-        scale: 0.3,
-        distance: '0px'
-    }, 300);
 
     // Initialize and configure magnific popup lightbox plugin
     $('.popup-gallery').magnificPopup({
@@ -57,65 +58,4 @@
             error: '<a href="%url%">The image #%curr%</a> could not be loaded.'
         }
     });
-})(jQuery);
-
-// Define hover animation in header buttons
-$(document).ready(function() {
-    $('.header-section .header-buttons #rate').hover(function() {
-        $(this).fadeIn(300, function() {
-            $(this).text('');
-            $(this).html("<img src='icon/icon_1.png'>");
-        });
-    }, function() {
-        $(this).fadeIn(300, function() {
-            $(this).text('公開評價');
-        });
-    });
-
-    $('.header-section .header-buttons #rate').click(function() {
-        $('.header-section .header-content .dialogue').toggleClass('dialogue-btn1');
-    });
-
-    $('.header-section .header-buttons #safe').hover(function() {
-        $(this).fadeIn(300, function() {
-            $(this).text('');
-            $(this).html("<img src='icon/icon_3.png'>");
-        });
-    }, function() {
-        $(this).fadeIn(300, function() {
-            $(this).text('安全服務');
-        });
-    });
-
-    $('.header-section .header-buttons #safe').click(function() {
-        $('.header-section .header-content .dialogue').toggleClass('dialogue-btn2');
-    });
-
-    $('.header-section .header-buttons #share').hover(function() {
-        $(this).fadeIn(100, function() {
-            $(this).text('');
-            $(this).html("<img src='icon/icon_2.png'>");
-        });
-    }, function() {
-        $(this).text('共乘模式');
-    });
-
-    $('.header-section .header-buttons #share').click(function() {
-        $('.header-section .header-content .dialogue').toggleClass('dialogue-btn3');
-    });
-
-    $('.header-section .header-buttons #solve').hover(function() {
-        $(this).fadeIn(300, function() {
-            $(this).text('');
-            $(this).html("<img src='icon/icon_5.png'>");
-        });
-    }, function() {
-        $(this).fadeIn(300, function() {
-            $(this).text('解決現況');
-        });
-    });
-
-    $('.header-section .header-buttons #solve').click(function() {
-        $('.header-section .header-content .dialogue').toggleClass('dialogue-btn4');
-    });
-})
+});
