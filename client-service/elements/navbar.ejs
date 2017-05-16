@@ -13,21 +13,12 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                <% var navbar = [['特色', 'feature'], ['服務', 'service'], ['登入', 'signin'], ['團隊', 'about'], ['聯絡', 'contact']]; %>
+                <% for (var i = 0; i < navbar.length; ++i) { %>
                 <li>
-                    <a class="page-scroll" href="#feature">Features</a>
+                    <a class="page-scroll" href="#<%= navbar[i][1] %>"><%= navbar[i][0] %></a>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#service">Services</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#signin">Sign In</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#about">About</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                </li>
+                <% } %>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
