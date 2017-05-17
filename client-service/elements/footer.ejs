@@ -1,63 +1,55 @@
 <!-- Footer - index.ejs -->
-<footer id="contact">
-    <!-- Footer index -->
-    <div class="footer-section">
+<footer>
+    <!-- footer-top -->
+    <div class="footer-top">
         <div class="container">
             <div class="row">
-                <!-- Footer brand -->
-                <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 footer-brand">
-                    <img class="footer-icon" src="../logo/logo_all.png" alt="">
-                    <ul class="footer-info">
-                        <li>
-                            <i class="fa fa-map-marker"></i>
-                            <p class="footer-content"><span>Address</span></p>
-                        </li>
-                        <li>
-                            <i class="fa fa-phone"></i>
-                            <p class="footer-content"><span>+886-000-0000</span></p>
-                        </li>
-                    </ul>
+                <!-- footer-brand -->
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-brand">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 footer-logo">
+                        <img class="footer-icon" src="../logo/logo_all.png" alt="">
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 footer-account">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <a class="btn btn-lg btn-theme2" href="#">註冊享受乘車</a>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                            <a class="btn btn-lg btn-theme2" href="#">成爲合作駕駛</a>
+                        </div>
+                    </div>
                 </div>
-                <!-- Footer menu -->
-                <div class="col-lg-5 col-md-5 col-sm-8 col-xs-8 footer-menu">
-                    <h4 class="footer-title">Menu —</h4>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <!-- /.footer-brand -->
+
+                <!-- footer-menu -->
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 footer-menu">
+                    <h4>Menu —</h4>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <ul class="footer-page">
+                            <% var footer_page = [['feature', '特色'], ['passenger', '乘客'], ['driver', '駕駛'], ['team', '團隊']]; %>
+                            <% for (var i = 0; i < footer_page.length; ++i) { %>
                             <li>
-                                <a href="#">About</a>
+                                <a href="#<%= footer_page[i][0] %>"><%= footer_page[i][1] %></a>
                             </li>
-                            <li>
-                                <a href="#">Services</a>
-                            </li>
-                            <li>
-                                <a href="#">Sign In</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact</a>
-                            </li>
+                            <% } %>
                         </ul>
                     </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <ul class="footer-list">
+                            <% var footer_list = [['terms', '條款'], ['privacy', '隱私權'], ['security', '安全性'], ['help', '幫助']]; %>
+                            <% for (var i = 0; i < footer_list.length; ++i) { %>
                             <li>
-                                <a href="#">Terms</a>
+                                <a href="#"><%= footer_list[i][1] %></a>
                             </li>
-                            <li>
-                                <a href="#">Privacy</a>
-                            </li>
-                            <li>
-                                <a href="#">Security</a>
-                            </li>
-                            <li>
-                                <a href="#">Help</a>
-                            </li>
+                            <% } %>
                         </ul>
                     </div>
                 </div>
-                <!-- Footer contact -->
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 footer-contact">
-                    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6 footer-social">
-                        <h4 class="footer-title">Follow Us —</h4>
+                <!-- /.footer-menu -->
+
+                <!-- footer-contact -->
+                <div class="col-lg-8 col-md-8 col-sm-7 col-xs-8 footer-contact">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 footer-social">
+                        <h4>Follow Us —</h4>
                         <a class="btn-social" id="facebook" href="#">
                             <i class="fa fa-facebook"></i><span></span>
                         </a>
@@ -67,31 +59,25 @@
                         <a class="btn-social" id="twitter" href="#">
                             <i class="fa fa-twitter"></i><span></span>
                         </a>
-                        <a class="btn-social" id="linkedin" href="#">
-                            <i class="fa fa-linkedin"></i><span></span>
-                        </a>
                         <a class="btn-social" id="instagram" href="#">
                             <i class="fa fa-instagram"></i><span></span>
                         </a>
                     </div>
-                    <div class="col-lg-12 col-md-12 col-sm-6 col-xs-6 footer-news">
-                        <h4 class="footer-title">Newsletter —</h4>
-                        <p class="footer-content">A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
-                        <div class="input-group">
-                            <input class="form-control" type="text" placeholder="Search for...">
-                            <span class="input-group-btn">
-                                <button class="btn btn-default" type="button">
-                                    &nbsp;<span class="glyphicon glyphicon-envelope"></span>
-                                </button>
-                            </span>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 footer-app">
+                        <h4>探索 SCABER —</h4>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 footer-badges">
+                            <a class="badge-link" href="#"><img src="badge/google_play.svg" alt=""></a>
+                            <a class="badge-link" href="#"><img src="badge/apple_store.svg" alt=""></a>
                         </div>
                     </div>
                 </div>
+                <!-- /.footer-contact -->
             </div>
         </div>
     </div>
+    <!-- /.footer-top -->
 
-    <!-- Footer copyright -->
+    <!-- footer-bottom -->
     <div class="footer-bottom">
         <div class="container">
             <div class="row">
@@ -101,4 +87,5 @@
             </div>
         </div>
     </div>
+    <!-- /.footer-bottom -->
 </footer>

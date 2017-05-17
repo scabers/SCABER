@@ -1,22 +1,31 @@
 <!-- Navbar - navbar.ejs -->
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+    <!-- container-fluid -->
     <div class="container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
+        <!-- navbar-header: brand / toggle -->
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                 <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
             </button>
-            <img class="navbar-icon" src="../logo/logo_icon.png" alt="">
-            <a class="navbar-logo page-scroll" href="#page-top">SCABER</a>
+            <a class="navbar-brand page-scroll" href="#page-top"><img class="navbar-icon" src="../logo/logo_icon.png" alt="">SCABER</a>
         </div>
+        <!-- /.navbar-header -->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- navbar-collpase: nav-toggle -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <% var navbar = [['特色', 'feature'], ['服務', 'service'], ['登入', 'signin'], ['團隊', 'about'], ['聯絡', 'contact']]; %>
-                <% for (var i = 0; i < navbar.length; ++i) { %>
+            <ul class="nav navbar-nav navbar-left">
+                <% var navbar_left = [['feature', '特色'], ['passenger', '乘客'], ['driver', '駕駛'], ['team', '團隊']]; %>
+                <% for (var i = 0; i < navbar_left.length; ++i) { %>
                 <li>
-                    <a class="page-scroll" href="#<%= navbar[i][1] %>"><%= navbar[i][0] %></a>
+                    <a class="page-scroll" href="#<%= navbar_left[i][0] %>"><%= navbar_left[i][1] %></a>
+                </li>
+                <% } %>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <% var navbar_right = [['help', '幫助'], ['signin', '登入']]; %>
+                <% for (var i = 0; i < navbar_right.length; ++i) { %>
+                <li>
+                    <a class="page-scroll" href="#<%= navbar_right[i][0] %>"><%= navbar_right[i][1] %></a>
                 </li>
                 <% } %>
             </ul>
