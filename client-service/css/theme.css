@@ -166,6 +166,7 @@ aside {
     -webkit-transition: all 0.35s;
     -moz-transition: all 0.35s;
     -o-transition: all 0.35s;
+
 }
 
 .navbar-default .navbar-header {
@@ -628,8 +629,8 @@ fieldset:not(:first-of-type){
 	font-weight: bold;
 	padding: 10px 1px;
 	margin: 10px 5px;
-    position: relative;
-    left: 0%;
+    position: absolute;
+    left: -10%;
     width: 8vw;
 }
 
