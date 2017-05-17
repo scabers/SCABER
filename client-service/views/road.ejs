@@ -1,0 +1,49 @@
+<!DOCTYPE html> <html>
+  <head>
+    <title>Roads API Inspector</title>
+    <link rel="stylesheet" src="road.css">
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <div class="floating" id="toggle">—</div>
+    <div id="panel">
+      <div class="block">
+        <strong>範例查詢</strong> <div id="button-div">
+          <button id="eg1" class="button raised blue">範例 1</button>
+          <button id="eg2" class="button raised blue">範例 2</button>
+          <button id="eg3" class="button raised blue">範例 3</button>
+          <button id="eg4" class="button raised blue">範例 4</button>
+        </div>
+      </div>
+      <form id="controls">
+        <div class="block">
+          <div>
+            <strong><span id="requestURL">要求網址</span>或路徑（以縱線字元分隔）</strong><br /> <textarea id="coords" class="u-full-width coords-large" type="text" placeholder="-35.123,150.332 | 80.654,22.439" id="exampleEmailInput"></textarea>
+          </div>
+          <div>
+            <label>內插計算： </label>
+            <input for="interpolate" id="interpolate" type='"checkbox" checked/'>
+          </div>
+        </div>
+        <div>
+          <div class="block">
+            <button id="plot" class="button raised blue">繪製路線</button>
+          </div>
+          <div id="legend">
+            <img src="https://maps.google.com/mapfiles/ms/icons/green-dot.png" style="height:16px;" /> 原始 <img src="https://maps.google.com/mapfiles/ms/icons/red-dot.png" /> 貼齊 <img src="https://maps.google.com/mapfiles/ms/icons/blue-dot.png" /> 內插 <img src="https://maps.google.com/mapfiles/ms/icons/yellow-dot.png" /> 無法貼齊
+          </div>
+          <div>
+            <p id="unsnappedPoints">
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="map">
+    </div>
+  </body>
+  <script type="text/javascript" src="road.js"></script>
+</html>
