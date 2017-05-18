@@ -1,5 +1,5 @@
 // Replace with your own API key
-var API_KEY = 'AIzaSyDIJ9XX2ZvRKCJcFRrl-lRanEtFUow4piM';
+var API_KEY = 'AIzaSyDNT8S6xvvrKY1Ef8AXtcROOKDYBsVt-p4';
 
 // Icons for markers
 var RED_MARKER = 'https://maps.google.com/mapfiles/ms/icons/red-dot.png';
@@ -42,11 +42,10 @@ strokeWidth: '#005db5'
 };
 
 // Example 1 - Frolick around Sydney
-var eg1 = '-33.870315,151.196532|-33.869979,151.197355|' +
-'-33.870044,151.197712|-33.870358,151.198206|' +
-'-33.870595,151.198376|-33.870640,151.198398|' +
-'-33.870620,151.198449|-33.870951,151.198525|' +
-'-33.871040,151.198528|-33.872031,151.198413';
+var eg1 = '22.999907, 120.228869|22.9991320,120.2296040|'+
+'22.9972960,120.2402200|22.9981900,120.2487490|'+
+'22.9921690,120.2472550|22.9964210,120.2498450|'+
+'22.9982680,120.2531040';
 
 // Example 2 - Lap around Canberra
 var eg2 = '-35.274346,149.130168|-35.278012,149.129583|' +
@@ -66,39 +65,41 @@ var eg4 = '36.28881,-80.8525|36.287038,-80.85313|36.286161,-80.85369|' +
 
 // Initialize
 function initialize() {
-$('#eg1').click(function(e) {
-$('#coords').val(eg1);
-$('#plot').trigger('click');
-});
+    $('#eg1').click(function(e) {
+        $('#coords').val(eg1);
+        $('#plot').trigger('click');
+    });
 
-$('#eg2').click(function(e) {
-$('#coords').val(eg2);
-$('#plot').trigger('click');
-});
+    $('#eg2').click(function(e) {
+        $('#coords').val(eg2);
+        $('#plot').trigger('click');
+    });
 
-$('#eg3').click(function(e) {
-$('#coords').val(eg3);
-$('#plot').trigger('click');
-});
+    $('#eg3').click(function(e) {
+        $('#coords').val(eg3);
+        $('#plot').trigger('click');
+    });
 
-$('#eg4').click(function(e) {
-$('#coords').val(eg4);
-$('#plot').trigger('click');
-});
+    $('#eg4').click(function(e) {
+        $('#coords').val(eg4);
+        $('#plot').trigger('click');
+    });
 
-$('#toggle').click(function(e) {
- if ($('#panel').css("display") != 'none') {
+    $('#toggle').click(function(e) {
+    if ($('#panel').css("display") != 'none') {
     $('#toggle').html("+");
     $('#panel').hide("scale",{origin:["top","right"]});
- } else {
+    } else {
     $('#toggle').html("&mdash;");
     $('#panel').show("scale",{origin:["top","right"]});
- }
-});
+    }
+    });
+
+// =========================== Down below don't need to modify
 
 // Centre the map on Sydney
 var mapOptions = {
-center: {'lat': -33.870315, 'lng': 151.196532},
+center: {'lat': 22.999907, 'lng': 120.228869},
 zoom: 14
 };
 
