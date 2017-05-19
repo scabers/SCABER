@@ -76,13 +76,13 @@ aside {
 
 /* Selection effects */
 
-::selection {
+ ::selection {
     background-color: #222222;
     color: #FFFFFF;
     text-shadow: none;
 }
 
-::-moz-selection {
+ ::-moz-selection {
     background-color: #222222;
     color: #FFFFFF;
     text-shadow: none;
@@ -114,6 +114,10 @@ img::-moz-selection {
 .section-text {
     color: #3F3133;
     font-size: 1.5rem;
+}
+
+.btn-circle:focus {
+    text-decoration: none;
 }
 
 
@@ -537,17 +541,10 @@ header .header-right .header-brand {
 }
 
 
-/*.section-feature .container-slides {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100%;
-}*/
-
-
 /** passenger.ejs **/
 
 .section-passenger {
-    background: linear-gradient(to top, rgba(63, 49, 51, .75) 0%, transparent), url('https://d1a3f4spazzrp4.cloudfront.net/chameleon-assets/v1.0.0/2b1ded46-f298-411c-ba28-14939552116d/desk.jpg');
+    background: linear-gradient(to bottom, rgba(63, 49, 51, .75) 0%, transparent), url('https://d1a3f4spazzrp4.cloudfront.net/chameleon-assets/v1.0.0/2b1ded46-f298-411c-ba28-14939552116d/desk.jpg');
     background-position: center center;
     background-size: cover;
 }
@@ -564,7 +561,7 @@ header .header-right .header-brand {
 /** driver.ejs **/
 
 .section-driver {
-    background: linear-gradient(to bottom, rgba(63, 49, 51, .75) 0%, transparent), url('https://d1a3f4spazzrp4.cloudfront.net/chameleon-assets/v1.0.0/76830279-22dd-4a34-8150-004f75a3afd9/desk.jpg');
+    background: linear-gradient(to top, rgba(63, 49, 51, .75) 0%, transparent), url('https://d1a3f4spazzrp4.cloudfront.net/chameleon-assets/v1.0.0/76830279-22dd-4a34-8150-004f75a3afd9/desk.jpg');
     background-position: center center;
     background-size: cover;
 }
@@ -598,109 +595,6 @@ header .header-right .header-brand {
     margin: 25px 10px 0;
     padding: 0;
     width: 70px;
-}
-
-
-/** signin.ejs **/
-
-.signin-section ul {
-    list-style: none;
-    padding: 0;
-}
-
-.signin-section .signin-title {
-    position: relative;
-    margin-top: 7.5vh;
-}
-
-.signin-section .signin-title #title {
-    font-family: 'Metrophobic', sans-serif;
-    font-size: 2.6rem;
-    letter-spacing: 0.5rem;
-    text-align: center;
-}
-
-.signin-section .signin-bar {
-    padding: 5px 0;
-    position: relative;
-    text-decoration: none;
-    width: 100%;
-}
-
-.signin-section .signin-bar li {
-    /* DEFINE */
-    float: left;
-}
-
-.signin-section .signin-bar li a {
-    color: #3F3133;
-    display: block;
-    font-size: 1.5rem;
-    padding: 15px 15px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-}
-
-.signin-section .signin-bar li a:hover {
-    color: #E79535;
-}
-
-
-/* signin form */
-
-.signin-section .signin-form {
-    position: relative;
-    top: 25%;
-}
-
-.signin-section .signin-form .form-auth {
-    max-height: 100%;
-    padding: 0;
-    padding-bottom: 20px;
-    text-align: center;
-    width: auto;
-}
-
-.signin-section .signin-form button#signin {
-    background-color: transparent;
-    border: 2px solid #3F3133;
-    color: #3F3133;
-    font-size: 1.5rem;
-    font-weight: bold;
-    height: 45px;
-    text-align: center;
-    text-decoration: none;
-    text-transform: uppercase;
-    width: 100%;
-}
-
-.signin-section .signin-form button#signin:hover {
-    border-color: #E79535;
-    color: #E79535;
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
-}
-
-.signin-section .signin-form .form-forget {
-    color: #72595C;
-    display: inline-block;
-    font-size: 0.75rem;
-    padding-top: 2.5vh;
-    position: relative;
-    text-align: center;
-    width: 100%;
-}
-
-.signin-section .signin-form .form-forget:hover {
-    color: #E79535;
-    text-decoration: none;
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
 }
 
 
@@ -760,7 +654,8 @@ footer .footer-top {
 }
 
 .footer-top .footer-brand .footer-account a {
-    margin-top: 30px;
+    font-size: 1.2rem;
+    margin: 10px 0 10px;
     vertical-align: middle;
 }
 
@@ -847,8 +742,10 @@ footer .footer-top {
 }
 
 @media screen and (max-width: 768px) {
-    footer .footer-contact {
-        border: none;
+    footer .footer-top .footer-brand .footer-account a {
+        font-size: 1.5rem;
+        margin: 30px 0 30px;
+        vertical-align: middle;
     }
 }
 
@@ -1046,4 +943,29 @@ footer .footer-bottom #copyright {
 
 .btn-social:hover i {
     color: #D8D8D8 !important;
+}
+
+
+/* footer copyright */
+
+footer .footer-bottom {
+    background-color: #3F3133;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+footer .footer-bottom #copyright {
+    color: #F6B41E;
+    font-size: 1.0em;
+    text-align: center;
+    width: inherit;
+}
+
+@media (max-width: 969px) {
+    footer .footer-contact {
+        border: none;
+    }
+    footer .footer-news {
+        border-left: 1px solid rgba(63, 49, 51, 0.7);
+    }
 }

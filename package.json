@@ -1,8 +1,8 @@
 {
     "name": "SCABER",
     "main": "app.js",
-    "config":  {
-        "port": 4000
+    "config": {
+        "port": 3000
     },
     "scripts": {
         "build": "npm install",
@@ -10,7 +10,7 @@
         "all": "npm run build && npm run start"
     },
     "license": "GPL-3.0",
-    "repository":{
+    "repository": {
         "type": "git",
         "url": "https://github.com/kevinbird61/SCABER.git"
     },

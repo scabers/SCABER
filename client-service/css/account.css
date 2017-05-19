@@ -1,0 +1,263 @@
+/* Define CSS for sign-in and sign-up.
+ * FILE - account.ejs
+*/
+
+
+/** account-title **/
+
+.account-title {
+    position: relative;
+}
+
+.account-title ul {
+    list-style: none;
+    padding: 0;
+}
+
+
+/* account-progressbar */
+
+.account-title .account-progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    /* CSS counter to number of step */
+    counter-reset: step;
+}
+
+.account-title .account-progressbar li {
+    /* Change color */
+    color: #FFFFFF;
+    float: left;
+    font-size: 9px;
+    list-style-type: none;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    width: 33.33%;
+}
+
+.account-title .account-progressbar li:before {
+    /* Change color */
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    color: #333333;
+    /* CSS counter */
+    content: counter(step);
+    counter-increment: step;
+    display: block;
+    font-size: 10px;
+    line-height: 20px;
+    margin: 0 auto 5px auto;
+    width: 20px;
+}
+
+.account-title .account-progressbar li:after {
+    /* Change color */
+    background: #FFFFFF;
+    content: '';
+    height: 2px;
+    position: absolute;
+    top: 9px;
+    left: -50%;
+    width: 100%;
+    z-index: -1;
+}
+
+.account-title .account-progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+
+.account-title .account-progressbar li.active:before,
+.account-title .account-progressbar li.active:after {
+    /* Change color */
+    background: rgba(162, 120, 150, .7);
+    color: #FFFFFF;
+}
+
+
+/** account-form **/
+
+.account-form {
+    position: relative;
+    top: 25%;
+}
+
+.account-form #title {
+    /* Change color */
+    color: #2C3E50;
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.account-form #subtitle {
+    /* Change color */
+    color: #666666;
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.account-form #label {
+    /* Change color */
+    color: rgba(0, 123, 142, .7);
+    font-family: 'Metrophobic', sans-serif;
+    font-size: 1.6rem;
+}
+
+.account-form .form-auth {
+    max-height: 100%;
+    padding: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    width: auto;
+}
+
+
+/** img的設置 **/
+
+.account-form .form-auth img {
+    width: 11.05vw;
+    height: 6vh;
+}
+
+.account-form button#signin {
+    background-color: transparent;
+    border: 2px solid #3F3133;
+    color: #3F3133;
+    font-size: 1.5rem;
+    font-weight: bold;
+    height: 45px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.account-form button#signin:hover {
+    border-color: #E79535;
+    color: #E79535;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+.account-form .form-forget {
+    color: #72595C;
+    display: inline-block;
+    font-size: 0.9rem;
+    padding-top: 2.5vh;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.account-form .form-forget:hover {
+    color: #E79535;
+    text-decoration: none;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+
+/* .account-fieldset */
+
+.account-fieldset {
+    /* Change color */
+    background: linear-gradient(rgba(196, 102, 0, .6), rgba(155, 89, 182, .6));
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, .4);
+    box-sizing: border-box;
+    height: 78vh;
+    padding: 20px 30px;
+    position: absolute;
+    top: -30vh;
+    width: 26.2vw;
+}
+
+.account-fieldset:not(:first-of-type) {
+    display: none;
+}
+
+
+/** 最外圍的底層顏色 **/
+
+.section.signin .signin-left {
+    background: linear-gradient(rgba(196, 102, 0, 0.6), rgba(155, 89, 182, 0.6));
+    border-radius: 3rem;
+    width: 35vw;
+    height: 105vh;
+    margin: 50px auto;
+    position: relative;
+    left: 0%;
+    top: 5%;
+}
+
+
+/*marking active/completed steps green*/
+
+
+/** sign in **/
+
+
+/** action-button design**/
+
+.action-button {
+    border: 0 none;
+    border-radius: 1px;
+    background: #27AE60;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 1px;
+    margin: 10px 5px;
+    position: relative;
+    left: 0%;
+    width: 8vw;
+}
+
+.action-button:hover,
+.action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+}
+
+
+/** action-button1 design**/
+
+.action-button1 {
+    border: 0 none;
+    border-radius: 1px;
+    background: rgba(0, 102, 142, 0.7);
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 1px;
+    margin: 10px 5px;
+    position: relative;
+    left: 0%;
+    width: 22vw;
+    height: 16vh;
+}
+
+.action-button1:hover,
+.action-button1:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px rgba(0, 102, 142, 0.7);
+}
+
+.choice {
+    font-size: 3rem;
+}
+
+.choose-your-way {
+    font-family: 'Metrophobic', sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+}
