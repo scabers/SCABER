@@ -10,6 +10,7 @@ const { IntroService } = require('./server-core/intro');
 const { AuthService } = require('./server-core/auth');
 const { UserService } = require('./server-core/user');
 const { SyncService } = require('./server-core/io');
+const { Debugger } = require('./server-core/debug');
 const app = express();
 
 /* Setting static directory */
@@ -42,6 +43,7 @@ IntroService.init(app);
 /* Server start */
 AuthService.init(app);
 UserService.init(app);
+Debugger.init(app);
 
 /* Create server */
 const server_config = {
