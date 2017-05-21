@@ -58,4 +58,9 @@ $(document).ready(function() {
             error: '<a href="%url%">The image #%curr%</a> could not be loaded.'
         }
     });
+
+    // Define animation of box.
+    $('.team-box').click(function() {
+        $(this).toggleClass('selected');
+    });
 });

@@ -256,7 +256,7 @@
 }
 
 #slide-1 .slide-wrapper {
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/snow-forest.jpg") center center no-repeat;
+    background: url('integration.png') center center no-repeat;
     background-size: cover;
 }
 
@@ -265,7 +265,7 @@
 }
 
 #slide-2 .slide-wrapper {
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/desert.jpg") center center no-repeat;
+    background: url('safety.png') center center no-repeat;
     background-size: cover;
 }
 
@@ -274,7 +274,7 @@
 }
 
 #slide-3 .slide-wrapper {
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/lonely-tree.jpg") center center no-repeat;
+    background: url('share.png') center center no-repeat;
     background-size: cover;
 }
 
@@ -283,7 +283,7 @@
 }
 
 #slide-4 .slide-wrapper {
-    background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/537051/road.jpeg") center center no-repeat;
+    background: url('rating.png') center center no-repeat;
     background-size: cover;
 }
 
