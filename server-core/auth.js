@@ -6,6 +6,7 @@ const querystring = require('querystring');
 const GithubStrategy = require('passport-github').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const {RedisServer} = require('./redis');
 
 // definition here
 class AuthService{
@@ -47,25 +48,32 @@ class AuthService{
         // for facebook
         app.get('/login/facebook',this.fblogin);
         app.get('/auth/facebook',this.fbauth);
-        app.get('/auth/facebook/callback',passport.authenticate('facebook',{
-            successReturnToOrRedirect: config.auth.facebook.successUrl_luffy,
-            failureRedirect: config.auth.facebook.failureUrl_luffy
-        }));
+        app.get('/auth/facebook/callback',passport.authenticate('facebook',{ failureRedirect: config.auth.facebook.failureUrl_luffy}),
+            function(req,res){
+                console.log(req.user);
+                req.session.auth_type = "facebook";
+                res.redirect(config.auth.facebook.successUrl_luffy);
+        }
+        );
         // for google
         app.get('/login/google',this.googlelogin);
         app.get('/auth/google',this.googleauth);
-        app.get('/auth/google/callback',passport.authenticate('google',{ failureRedirect: '/error' }),
+        app.get('/auth/google/callback',passport.authenticate('google',{ failureRedirect: config.auth.google.failureUrl_luffy }),
             function(req,res){
                 // successful goes here - debug with req.user data
                 console.log(req.user);
+                req.session.auth_type = "google";
                 // Prepare page for Google Auth
                 res.redirect(config.auth.google.successUrl_luffy);
             }
         );
+
+        // logout
+        app.get('/logout',this.logout);
     }
     // Facebook
     fblogin(req,res){
-        if(req.isAuthenticated()){
+        if(req.isAuthenticated() && req.session.auth_type == "facebook"){
             res.redirect(config.auth.facebook.successUrl_luffy);
         }
         else{
@@ -85,7 +93,7 @@ class AuthService{
     }
     // Google
     googlelogin(req,res){
-        if(req.isAuthenticated()){
+        if(req.isAuthenticated() && req.session.auth_type == "google"){
             res.redirect(config.auth.google.successUrl_luffy);
         }
         else{
@@ -102,6 +110,12 @@ class AuthService{
         req.session.password = req.query.pwd;
         console.log('Email: ' + req.session.email + "; Pwd: " + req.session.password );
         passport.authenticate('google')(req, res, next);
+    }
+    logout(req,res){
+        req.session.destroy();
+        // FIXME change to kill this logout person
+        RedisServer.destroy();
+        res.end("Logout");
     }
 }
 

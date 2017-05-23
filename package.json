@@ -2,7 +2,7 @@
     "name": "SCABER",
     "main": "app.js",
     "config": {
-        "port": 3000
+        "port": 4000
     },
     "scripts": {
         "build": "npm install",
@@ -22,6 +22,8 @@
         "ejs": "^2.5.5",
         "jsonfile": "^2.4.0",
         "request": "^2.7.0",
+        "redis-sessions": "^1.2.0",
+        "randomstring": "^1.1.5",
         "moment": "^2.17.1",
         "mongoose": "^4.9.5",
         "passport": "^0.3.2",
@@ -29,6 +31,7 @@
         "passport-facebook": "^2.1.1",
         "passport-google-oauth20": "^1.0.0",
         "socket.io": "^1.4.5",
+        "sjcl": "^1.0.6",
         "xlsx2json": "^1.0.0"
     }
 }

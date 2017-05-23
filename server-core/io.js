@@ -1,5 +1,13 @@
 // mostly use on sync service
 const IO = require('socket.io');
+const sjcl = require('sjcl');
+const rs = require('randomstring');
+const jsfs = require('jsonfile');
+const path = require('path');
+
+// Available car pool
+
+// Monitor
 
 class SyncService {
     init(server){
@@ -14,6 +22,14 @@ class SyncService {
             socket.on("disconnect",function(){
                 console.log('[Sync] '+ socket.request.connection.remoteAddress +' ,detach from channel.' )
             });
+
+            // "User join service"
+            socket.on("key_require",function(userdata){
+                // First get user data :
+                // @userdata.username : user account
+                // @userdata.type : driver / passenger
+
+            })
         });
     }
 }
