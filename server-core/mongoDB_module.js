@@ -50,9 +50,22 @@ class MongoDBService {
                 }
                 else{
                     // found one , and then do not create
-                    console.log("Found one, so do nothing");
-                    console.log("With info: "+user);
-                    callback(1,"exist");
+                    // update token and id
+                    console.log("Token: " + n_token + "; ID: " + n_id);
+                    console.dir(n_token);
+                    user.token = n_token;
+                    user.redisID = n_id;
+                    user.save(function(err,user){
+                        if(err){
+                            console.log("Exist user information update failure.");
+                            callback(0,"Exist user information update failure.");
+                        }
+                        else{
+                            console.log("Found one, so do nothing");
+                            console.log("With info: "+user);
+                            callback(1,"exist");
+                        }
+                    });
                 }
             }
         });

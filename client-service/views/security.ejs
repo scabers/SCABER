@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <% include ../elements/meta %>
+    <% include ../elements/pure_lib %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script> <!-- Socket.io lib -->
+    <script src="sjcl.js"></script> <!-- Sjcl lib -->
+</head>
+<body>
+    <div class="container" style="margin-top: 20px">
+        <div class="w3-row-padding w3-round-xlarge w3-light-gray">
+            <!-- <form action="" class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin" method="post"> -->
+                <h2 class="w3-center">Security Ensurement</h2>
+                <!-- Username -->
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+                    <div class="w3-rest">
+                        <input id="userID" class="w3-input w3-border" name="userID" type="text" placeholder="Username here...">
+                    </div>
+                </div>
+                <!-- Password -->
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-book"></i></div>
+                    <div class="w3-rest">
+                        <input id="userPWD" class="w3-input w3-border" name="userPWD" type="text" placeholder="Password here...">
+                    </div>
+                </div>
+                <!-- Type -->
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-book"></i></div>
+                    <div class="w3-rest">
+                        <input id="userTYPE" class="w3-input w3-border" name="type" type="text" placeholder="Facebook, google...">
+                    </div>
+                </div>
+                <!-- Key from server -->
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-book"></i></div>
+                    <div class="w3-rest">
+                        <input id="key" class="w3-input w3-border" name="key" type="text" placeholder="key">
+                    </div>
+                </div>
+
+                <!-- Encrypted result -->
+                <div class="w3-row w3-section">
+                    <div class="form-group">
+                        <label for="comment">Encryted result Here</label>
+                        <textarea class="form-control" rows="10" id="result" name="result"></textarea>
+                    </div>
+                </div>
+                <!-- Submit -->
+                <div class="w3-row w3-section">
+                    <div class="w3-half">
+                        <button onclick="goEncrypt()" class="w3-button w3-block w3-section w3-blue w3-ripple w3-padding w3-round-large">Submit</button>
+                    </div>
+                    <div class="w3-half">
+                        <button onclick="clear()" class="w3-button w3-block w3-section w3-red w3-ripple w3-padding w3-round-large">Back</button>
+                    </div>
+                </div>
+            <!-- </form> -->
+        </div>
+    </div>
+</body>
+<script>
+const socket = io();
+
+socket.on('key_get',function(data){
+    document.getElementById('key').value = data.key;
+    document.getElementById('result').value = "Get encrypted password: " + sjcl.encrypt(data.key,document.getElementById('userPWD').value);
+});
+
+function goEncrypt(){
+    socket.emit('key_require',{
+        username: document.getElementById('userID').value,
+        type: document.getElementById('userTYPE').value
+    });
+}
+</script>
+</html>

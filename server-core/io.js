@@ -4,7 +4,8 @@ const sjcl = require('sjcl');
 const rs = require('randomstring');
 const jsfs = require('jsonfile');
 const path = require('path');
-
+const {RedisServer} = require('./redis');
+const {MongoDBService} = require('./mongoDB_module');
 // Available car pool
 
 // Monitor
@@ -28,7 +29,24 @@ class SyncService {
                 // First get user data :
                 // @userdata.username : user account
                 // @userdata.type : driver / passenger
-
+                console.log("Get key data, name = " + userdata.username);
+                MongoDBService.user_m.findOne({name: userdata.username,type: userdata.type},'name type token redisID',function(err,user){
+                    if(err)
+                        console.log('Server mongoDB error: ' + err);
+                    else {
+                        if(user == null){
+                            // not found , emit error
+                            console.log("Not found this user!");
+                        }
+                        else{
+                            console.log("key deliver to client!");
+                            socket.emit('key_get',{
+                                key: user.token,
+                                id: user.redisID
+                            });
+                        }
+                    }
+                })
             })
         });
     }
