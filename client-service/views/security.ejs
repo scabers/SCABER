@@ -32,11 +32,18 @@
                         <input id="userTYPE" class="w3-input w3-border" name="type" type="text" placeholder="Facebook, google...">
                     </div>
                 </div>
+                <!-- Random Key from server -->
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge w3-text-red fa fa-key"></i></div>
+                    <div class="w3-rest">
+                        <input id="randomkey" class="w3-input w3-border" name="r_key" type="text" readonly="true" placeholder="Random Key">
+                    </div>
+                </div>
                 <!-- Key from server -->
                 <div class="w3-row w3-section">
-                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-book"></i></div>
+                    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-key"></i></div>
                     <div class="w3-rest">
-                        <input id="key" class="w3-input w3-border" name="key" type="text" placeholder="key">
+                        <input id="key" class="w3-input w3-border" name="key" type="text" readonly="true" placeholder="key">
                     </div>
                 </div>
 
@@ -57,12 +64,25 @@
                     </div>
                 </div>
             <!-- </form> -->
+            <!-- Modal here -->
+            <% include ../elements/modal_error %>
         </div>
     </div>
 </body>
 <script>
 const socket = io();
+$('#modal_error').modal({show:false});
+var key1_rand = '';
+// emit first , to get an random generated key
+socket.emit('randomkey_require',{});
 
+// Get this random key (for the first time)
+socket.on('randomkey_get',function(data){
+    key1_rand = data.randomkey;
+    document.getElementById('randomkey').value = key1_rand;
+});
+
+// Get the user token
 socket.on('key_get',function(data){
     document.getElementById('key').value = data.key;
     document.getElementById('result').value = "Get encrypted password: " + sjcl.encrypt(data.key,document.getElementById('userPWD').value);
@@ -70,9 +90,19 @@ socket.on('key_get',function(data){
 
 function goEncrypt(){
     socket.emit('key_require',{
-        username: document.getElementById('userID').value,
-        type: document.getElementById('userTYPE').value
+        username: sjcl.encrypt(key1_rand,document.getElementById('userID').value),
+        type: sjcl.encrypt(key1_rand,document.getElementById('userTYPE').value),
+        key: key1_rand
     });
 }
+
+// when error occur
+socket.on('user_error',function(msg_data){
+    console.log("Get error message!")
+    document.getElementById('modal_error_msg').innerHTML = msg_data.msg;
+    // And show the modal
+    $('#modal_error').modal('show');
+});
+
 </script>
 </html>
