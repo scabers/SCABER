@@ -86,6 +86,8 @@ socket.on('randomkey_get',function(data){
 socket.on('key_get',function(data){
     document.getElementById('key').value = data.key;
     document.getElementById('result').value = "Get encrypted password: " + sjcl.encrypt(data.key,document.getElementById('userPWD').value);
+    // show the success modal for user to use
+    
 });
 
 function goEncrypt(){
