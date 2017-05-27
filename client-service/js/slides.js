@@ -2,7 +2,7 @@
 'use strict';
 
 $(document).ready(function() {
-    var $content = $('.content');
+    var $content = $('.slides');
     var $slide = $('.slide');
     var $title = $('.slide-title');
     var $text = $('.slide-text');

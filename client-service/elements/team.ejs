@@ -6,15 +6,16 @@
                 <h2 class="section-head">開發團隊</h2>
             </div>
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section-center">
-                <% var team = [['劉家良', 'Engineer', '電機工程'], ['瞿旭民', 'Engineer', '資訊工程'], ['陸勇盛', 'Engineer', '資訊工程'], ['吳治緯', 'Engineer', '電機工程'], ['張睿宏', 'Designer', '交通管理科'], ['江曜新', 'Engineer', '測量及空間資訊']]; %>
+                <% var team = [['劉家良', '前端工程', '電機工程'], ['瞿旭民', '系統工程', '資訊工程'], ['陸勇盛', '前端工程', '資訊工程'], ['吳治緯', '系統工程', '電機工程'], ['張睿宏', '視覺設計', '交通管理科'], ['江曜新', '前端工程', '測量及空間資訊']]; %>
                 <% for (var i = 0 ; i < team.length; ++i) { %>
                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4 team-box">
                     <img class="box-img" src="profile/<%= team[i][0] %>.jpg">
                     <h3 class="box-title" id="name"><%= team[i][0] %></h3>
                     <h3 class="box-title" id="work"><%= team[i][1] %></h3>
                     <ul class="box-hidden">
-                        <li>國立成功大學</li>
-                        <li><%= team[i][2] %>學系</li>
+                        <li><i class="fa fa-graduation-cap" aria-hidden="true"></i>國立成功大學</li>
+                        <li><i class="fa fa-briefcase" aria-hidden="true"></i><%= team[i][2] %></li>
+                        <li><i class="fa fa-heart" aria-hidden="true"></i>專長</li>
                     </ul>
                 </div>
                 <% } %>

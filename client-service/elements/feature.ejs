@@ -1,22 +1,18 @@
 <!-- Features into section - index.ejs -->
-<section class="section section-feature" id="feature">
+<section class="section-default section-feature" id="feature">
     <div class="container container-slides">
         <div class="row">
-            <!-- feature-top -->
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 feature-top">
+            <!-- section-content -->
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section-content">
                 <h2 class="section-head">上路吧！一切任您作主！</h2>
                 <p class="section-text">無論是日常通勤、出差洽公、早班飛機或深夜小酌，只要有交通需求，皆可選擇值得信賴的 SCABER。</p>
-            </div>
-            <!-- /.feature-top -->
-            <!-- feature-center -->
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 feature-center">
-                <div class="feature-content content">
+                <div class="section-slides slides">
                     <% var slide = [['開放整合', 'Integration'], ['安全服務', 'Safety'], ['共乘共享', 'Share'], ['公開評價', 'Rating']]; %>
                     <% for (var i = 0; i < slide.length; ++i) { %>
-                    <div class="feature-slide slide" id="slide-<%= i + 1 %>" data-target="<%= i + 1 %>">
+                    <div class="slide" id="slide-<%= i + 1 %>" data-target="<%= i + 1 %>">
                         <div class="slide-title">
-                            <div class="slide-title-ch" id="title-ch-<%= i + 1 %>"><%= slide[i][0] %></div>
-                            <div class="slide-title-en" id="title-en-<%= i + 1 %>"><%= slide[i][1] %></div>
+                            <div class="title title-ch" id="title-ch-<%= i + 1 %>"><%= slide[i][0] %></div>
+                            <div class="title title-en" id="title-en-<%= i + 1 %>"><%= slide[i][1] %></div>
                         </div>
                         <div class="slide-text" id="text-<%= i + 1 %>">SCABER，是一套提供乘客「安全、共乘、評價」的乘車系統。透過政府的開放資料，整合臺灣現有核准執業的計程車業者，解決Uber的合法性爭議，減少對計程車業者的衝擊，也保障乘客的乘車安全，以達到雙方互利共生的經營方式。</div>
                         <div class="slide-bg"></div>
@@ -29,7 +25,7 @@
                     <% } %>
                 </div>
             </div>
-            <!-- /.feature-center -->
+            <!-- /.section-content -->
         </div>
     </div>
 </section>
