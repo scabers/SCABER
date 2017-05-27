@@ -66,13 +66,23 @@
             <!-- </form> -->
             <!-- Modal here -->
             <% include ../elements/modal_error %>
+            <!-- Modal location here -->
+            <% include ../elements/modal_loc %>
         </div>
     </div>
 </body>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= apikey %>&callback=getCurrentLocation"></script>
+<script type="text/javascript" src="geometry.js"></script>
 <script>
 const socket = io();
 $('#modal_error').modal({show:false});
 var key1_rand = '';
+
+// fetch position (callback)
+getCurrentLocation(function(pos){
+    alert(pos.lat);
+});
+
 // emit first , to get an random generated key
 socket.emit('randomkey_require',{});
 
@@ -87,7 +97,7 @@ socket.on('key_get',function(data){
     document.getElementById('key').value = data.key;
     document.getElementById('result').value = "Get encrypted password: " + sjcl.encrypt(data.key,document.getElementById('userPWD').value);
     // show the success modal for user to use
-    
+
 });
 
 function goEncrypt(){

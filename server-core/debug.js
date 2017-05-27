@@ -1,3 +1,5 @@
+const config = require('./config');
+
 class Debugger{
     init(app){
         app.get('/road',this.road);
@@ -9,7 +11,8 @@ class Debugger{
     security(req,res){
         // Just show how we ensure the security
         res.render('security',{
-            title: "Security ensurement Test"
+            title: "Security ensurement Test",
+            apikey: config.map.apikey
         });
     }
 }
