@@ -4,6 +4,7 @@ const https = require('https');
 const path = require('path');
 const fs = require('fs');
 const express = require('express');
+const RedisSessions = require('redis-sessions');
 const bodyParser = require('body-parser');
 /* Server core */
 const { IntroService } = require('./server-core/intro');
@@ -11,7 +12,10 @@ const { AuthService } = require('./server-core/auth');
 const { UserService } = require('./server-core/user');
 const { SyncService } = require('./server-core/io');
 const { Debugger } = require('./server-core/debug');
+const config = require('./server-core/config');
 const app = express();
+const rs = new RedisSessions();
+const rsapp = config.redis.rsapp;
 
 /* Setting static directory */
 app.use(express.static('client-service/elements'));
