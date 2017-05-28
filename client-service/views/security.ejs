@@ -4,7 +4,13 @@
     <% include ../elements/meta %>
     <% include ../elements/pure_lib %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script> <!-- Socket.io lib -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.1/js/star-rating_locale_ua.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.1/js/star-rating.min.js"></script>
     <script src="sjcl.js"></script> <!-- Sjcl lib -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.1/css/star-rating.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.1/css/theme-krajee-fa.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.1/css/theme-krajee-svg.min.css" media="all" rel="stylesheet" type="text/css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-star-rating/4.0.1/css/theme-krajee-uni.min.css" media="all" rel="stylesheet" type="text/css" />
 </head>
 <body>
     <div class="container" style="margin-top: 20px">
@@ -66,13 +72,32 @@
             <!-- </form> -->
             <!-- Modal here -->
             <% include ../elements/modal_error %>
+            <!-- Modal location here -->
+            <% include ../elements/modal_loc %>
         </div>
     </div>
 </body>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= apikey %>&callback=getCurrentLocation"></script>
+<script type="text/javascript" src="geometry.js"></script>
 <script>
 const socket = io();
 $('#modal_error').modal({show:false});
+$('#modal_loc').modal({show:false});
 var key1_rand = '';
+
+// fetch position (callback)
+getCurrentLocation(function(err,msg){
+    // alert(pos.lat);
+    if(err){
+        alert(msg);
+        console.log(msg);
+    }
+    else{
+        alert("Get your position (lat,lng) = (" + msg.lat + "," + msg.lng + ")");
+        console.log("Get your position (lat,lng) = (" + msg.lat + "," + msg.lng + ")");
+    }
+});
+
 // emit first , to get an random generated key
 socket.emit('randomkey_require',{});
 
@@ -87,7 +112,8 @@ socket.on('key_get',function(data){
     document.getElementById('key').value = data.key;
     document.getElementById('result').value = "Get encrypted password: " + sjcl.encrypt(data.key,document.getElementById('userPWD').value);
     // show the success modal for user to use
-    
+    $('#modal_loc').modal('show');
+    $('#ml_statusbar').text("Waiting...");
 });
 
 function goEncrypt(){

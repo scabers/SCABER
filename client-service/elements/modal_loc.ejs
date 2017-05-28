@@ -2,17 +2,109 @@
     <div class="modal-dialog">
         <!-- Modal content -->
         <div class="modal-content">
+            <!-- Modal header -->
             <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-            <h4 class="modal-title">SCABER Service Start</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">SCABER Service Start</h4>
             </div>
+            <!-- Main Content goes here -->
             <div class="modal-body">
-            <p id="modal_error_msg"></p>
+                <div class="container col-md-12 col-xs-12 col-sm-12">
+                    <!-- Panel(First Step) -->
+                    <!-- Selector and filter part -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-triangle-right"></span> 選擇司機類型
+                        </div>
+                        <div class="panel-body">
+                            <!-- User filter -->
+                            <div id="type_filter" class="row">
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">速度</button>
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">高評價</button>
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">無吸菸</button>
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">日語</button>
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">英語</button>
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">健談</button>
+                            </div>
+                            <hr>
+                            <!-- Button Control -->
+                            <div class="row">
+                                <button type="button" class="btn btn-default col-md-6 col-xs-6 col-sm-6 text-center">Join Trip</button>
+                                <button type="button" class="btn btn-default col-md-6 col-xs-6 col-sm-6 text-center">Dismiss</button>
+                            </div>
+                        </div>
+                    </div> <!-- First step panel end -->
+                    <!-- Panel(Second Step) -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-triangle-right"></span> 配對成功!
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <!-- Left side , with driver message here -->
+                                <div class="col-md-8 col-xs-8 col-sm-8 text-center">
+                                    <!-- Name of Driver -->
+                                    <label class="control-label col-md-4 col-xs-4 col-sm-4" for="name"> 司機名稱: </label>
+                                    <div class="col-md-8 col-xs-8 col-sm-8">
+                                        <p id="matched_driver" class="form-control-static">尚未配對</p>
+                                    </div>
+                                    <!-- Arrival Time -->
+                                    <label class="control-label col-md-4 col-xs-4 col-sm-4" for="time"> 到達時間: </label>
+                                    <div class="col-md-8 col-xs-8 col-sm-8">
+                                        <p id="arrival_time" class="form-control-static">xx:xx</p>
+                                    </div>
+                                    <!-- Rating of Driver -->
+                                    <label class="control-label col-md-4 col-xs-4 col-sm-4" for="rate"> 司機評價: </label>
+                                    <div class="col-md-8 col-xs-8 col-sm-8">
+                                        <input id="driver_rating" name="input-xs" class="rating" value="5" data-size="xs" disabled="disabled" data-readonly>
+                                    </div>
+                                </div>
+                                <!-- Right side , with driver image here -->
+                                <div class="col-md-4 col-xs-4 col-sm-4 text-center">
+                                    <img id="driver_img" src="driver/unknown.png" class="img-thumbnail" alt="driver">
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- Second step panel end -->
+                    <!-- Panel(Third Step) -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-triangle-right"></span> 你的守護天使候選:
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <label class="control-label col-md-4 col-xs-4 col-sm-4" for="ga_name"> 旭民 </label>
+                                <label class="control-label col-md-4 col-xs-4 col-sm-4" for="ga_rate"> 83% </label>
+                                <button type="button" class="btn btn-default col-md-4 col-xs-4 col-sm-4"> 允許 </button>
+                                <hr>
+                                <label class="control-label col-md-4 col-xs-4 col-sm-4" for="ga_name"> 治緯 </label>
+                                <label class="control-label col-md-4 col-xs-4 col-sm-4" for="ga_rate"> 91% </label>
+                                <button type="button" class="btn btn-default col-md-4 col-xs-4 col-sm-4"> 允許 </button>
+                                <hr>
+                            </div>
+                        </div>
+                    </div> <!-- Third step panel end -->
+                    <!-- Panel(Fourth Step) -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-triangle-right"></span> 司機到達，準備開始!
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <button type="button" class="btn btn-success col-md-12 col-xs-12 col-sm-12"> 開始旅程! </button>
+                            </div>
+                        </div>
+                    </div> <!-- Third step panel end -->
+                </div>
+                    <hr>
+                    <br>
+                <!-- Status Bar -->
+                <p class="text-center" id="ml_statusbar"></p>
             </div>
+            <!-- Info box -->
             <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-
 </div>
