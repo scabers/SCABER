@@ -1,83 +1,45 @@
-<!-- Sign in section - index.ejs -->
-<section class="section-account" id="account">
+<!-- Account section - index.ejs -->
+<section class="section-default section-account" id="account">
     <div class="container">
         <div class="row">
-        <!-- account-left -->
-            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 account-left">
-                <!-- account-title -->
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 account-title">
-                    <p id="title">SCABER</p>
-                    <ul class="account-progressbar" id="progressbar">
-                        <li class="active">Account Setup</li>
-                        <li>Your attribut, driver or passenger?</li>
-                        <li>Personal Details</li>
-                    </ul>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section-content">
+                <h1 class="section-head">註冊登入</h1>
+                <div class="section-half section-left">
+                    <div class="account-tabs">
+                        <span class="account-tab tab-signin active"><a href="#signin">登入</a></span>
+                        <span class="account-tab tab-signup"><a href="#signup">註冊</a></span>
+                    </div>
+                    <div class="account-content">
+                        <div class="account-page account-signin">
+                            <form action="#" method="post" enctype="multipart/form-data">
+                                <input class="account-input" id="email" type="email" name="email" required="required" placeholder="輸入您的電子信箱">
+                                <label for="email">電子信箱</label>
+                                <input class="account-input" id="password" type="password" name="password" required="required" placeholder="輸入您的密碼">
+                                <label for="password">密碼</label>
+                                <input class="checkbox" id="remember" type="checkbox" checked>
+                                <label for="remember">記住帳號密碼</label>
+                                <div class="account-submit">
+                                    <input class="submit" type="submit" value="登入">
+                                    <a class="more" href="#">忘記密碼？</a>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="account-page account-signup">
+                            <form action="#" method="post" enctype="multipart/form-data">
+                                <input class="account-input" id="name" type="name" name="name" required="required" placeholder="輸入您的姓名">
+                                <label for="name">姓名</label>
+                                <input class="account-input" id="email" type="email" name="email" required="required" placeholder="輸入您的電子信箱">
+                                <label for="email">電子信箱</label>
+                                <input class="account-input" id="password" type="password" name="password" required="required" placeholder="輸入您的密碼">
+                                <label for="password">密碼</label>
+                                <div class="account-submit">
+                                    <input class="submit" type="submit" value="註冊">
+                                    <a class="more" href="#">Terms and conditions</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-                <!-- /.account-title -->
-
-                <!-- account-form -->
-                <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 account-form">
-                    <form action="">
-                        <!-- account-fieldset step-1 -->
-                        <fieldset class="account-fieldset account-signin" id="step-1">
-                            <!-- input type=button, 是用來設計跳到下一頁的按鈕,如果要調整顏色跟形狀,從class=action-button來去做選擇 -->
-                            <input class="btn btn-account" type="button" value="signin" />
-                            <input class="btn btn-account btn-next" type="button" name="next"  value="signup" />
-                            <h2 id="title">Sign in</h2>
-                            <div class="welcome">
-                                <h3 id="subtitle">This is step 1 to signin</h3>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label" id="label" for="inputEmail">Email</label>
-                                <input class="form-control" id="inputEmail" type="text" name="email" placeholder="輸入電子郵件" autocomplete="off" aria-label="輸入電子郵件：電子郵件爲必填">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-label" id="label" for="inputPass"><b>Password</b></label>
-                                <input class="form-control" id="inputPass" type="text" name="pass" placeholder="輸入密碼" autocomplete="off" aria-label="輸入密碼：密碼爲必填">
-                            </div>
-
-                            <div class="form-group">
-                                <label class="form-check-label"><input class="form-check-input" type="checkbox">Remember me</label>
-                            </div>
-
-                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 form-auth">
-                                <a class="form-facebook" href="#"><img src="../social/signin_facebook.png"></a>
-                            </div>
-
-                            <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 form-auth">
-                                <a class="form-google" href="#"><img src="../social/signin_google.png"></a>
-                            </div>
-                        </fieldset>
-                        <!-- /.account-fieldset step-1 -->
-                        <!-- account-fieldset step-2 -->
-                        <fieldset class="account-fieldset account-signup" id="step-2">
-                            <input type="button" name="previous" class="previous action-button" value="Previous" />
-                            <br>
-                            <br>
-                            <p class="choose-your-way">Choose your identity!</p>
-                            <br>
-                            <br>
-                            <input type="button" name="next" class="next action-button1 choice" value="Driver" />
-                            <input type="button" name="previous" class="next action-button1 choice" value="Passenger" />
-                        </fieldset>
-                        <!-- /.account-fieldset step-2 -->
-                        <!-- account-fieldset step-3 -->
-                        <fieldset class="account-fieldset account-signup" id="step-3">
-                            <input type="button" name="previous" class="previous action-button" value="Previous" />
-                            <input type="button" name="next" class="next action-button" value="Driver" />
-                            <input type="button" name="previous" class="next action-button" value="passenger" />
-                            <div class="welcome">
-                            <h2 id="title">Sign up</h2>
-                            <h3 id="subtitle">This is step 1 to signup</h3>
-                            <h3 id="subtitle"><b>Choose your attribut, taxi? or passenger?<b></h3>
-                            </div>
-                        </fieldset> 
-                        <!-- /.account-fieldset step-3 -->
-                    </form>
-                </div>
-                <!-- /.account-form -->
             </div>
         </div>
     </div>

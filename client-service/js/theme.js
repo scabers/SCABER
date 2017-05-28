@@ -1,6 +1,6 @@
 $(document).ready(function() {
     // Start of use strict
-    "use strict";
+    'use strict';
 
     // Smooth scrolling using jQuery easing
     $('a[href*="#"]:not([href="#"])').click(function() {
@@ -10,7 +10,7 @@ $(document).ready(function() {
             if (target.length) {
                 $('html, body').animate({
                     scrollTop: (target.offset().top - 48)
-                }, 1000, "easeInOutExpo");
+                }, 1000, 'easeInOutExpo');
                 return false;
             }
         }
@@ -36,10 +36,10 @@ $(document).ready(function() {
 
     // Collapse the navbar when page is scrolled
     $(window).scroll(function() {
-        if ($("#navbar").offset().top > 100) {
-            $("#navbar").addClass("navbar-shrink");
+        if ($('#navbar').offset().top > 100) {
+            $('#navbar').addClass('navbar-shrink');
         } else {
-            $("#navbar").removeClass("navbar-shrink");
+            $('#navbar').removeClass('navbar-shrink');
         }
     });
 
@@ -59,8 +59,29 @@ $(document).ready(function() {
         }
     });
 
-    // Define animation of box.
+    // Define animation of box
     $('.team-box').click(function() {
         $(this).toggleClass('selected');
+    });
+
+
+    $('.account-tabs .account-tab').click(function() {
+        if ($(this).hasClass('tab-signin')) {
+            $('.account-tabs .account-tab').removeClass('active');
+            $(this).addClass('active');
+            $('.account-page').hide();
+            $('.account-signin').show();
+        }
+        if ($(this).hasClass('tab-signup')) {
+            $('.account-tabs .account-tab').removeClass('active');
+            $(this).addClass('active');
+            $('.account-page').hide();
+            $('.account-signup').show();
+        }
+    });
+    $('.section-right').mousemove(function(e) {
+        var amountMovedX = (e.pageX * -1 / 30);
+        var amountMovedY = (e.pageY * -1 / 9);
+        $(this).css('background-position', amountMovedX + 'px ' + amountMovedY + 'px');
     });
 });

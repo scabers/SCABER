@@ -841,7 +841,7 @@ img::-moz-selection {
 }
 
 .section-feature .section-slides #slide-3 .slide-wrapper {
-    background-image: url('share.png');
+    background-image: url('sharing.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1134,6 +1134,331 @@ img::-moz-selection {
 }
 
 
+/** account.ejs **/
+
+.section-account {
+    background-color: #3F3133;
+    padding-bottom: 0;
+    position: relative;
+}
+
+.section-account .section-content {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.section-account .section-content * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+.section-account .section-head {
+    color: #F6B41E;
+}
+
+
+/* standard */
+
+.section-half {
+    height: 100%;
+    padding: 20px 40px 0;
+    width: 50%;
+}
+
+.section-left {
+    background: #72595C;
+    float: left;
+}
+
+.section-half.section-right {
+    background-image: url("https://s7.postimg.org/boj7tcxhn/image.jpg");
+    background-repeat: no-repeat;
+    background-size: 400px;
+}
+
+.section-account .account-tabs {
+    margin-bottom: 29px;
+    border-bottom: 2px solid #FFCF47;
+    width: 100%;
+}
+
+.section-account .account-tabs .account-tab {
+    border-bottom: 2px solid #FFCF47;
+    cursor: pointer;
+    display: inline-block;
+    letter-spacing: 0;
+    margin-bottom: -2px;
+    padding: 20px 15px 10px;
+    /* transition */
+    transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+    /* user-select */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+}
+
+.section-account .account-tabs .account-tab a {
+    color: #FFCF47;
+    font-size: 11px;
+    text-decoration: none;
+    text-transform: uppercase;
+    /* transition */
+    transition: all .1s ease-in-out;
+    -webkit-transition: all .1s ease-in-out;
+    -moz-transition: all .1s ease-in-out;
+    -o-transition: all .1s ease-in-out;
+}
+
+.account-tabs .account-tab.active a,
+.account-tabs .account-tab:hover a {
+    color: #E79535;
+}
+
+.account-tabs .account-tab.active {
+    border-bottom: 2px solid #E79535;
+}
+
+.account-content form {
+    height: 287px;
+    position: relative;
+}
+
+.account-content label:first-of-type,
+.account-content input:first-of-type,
+.account-content .more:first-of-type {
+    animation: slideIn .4s cubic-bezier(.37, .82, .2, 1);
+    -webkit-animation: slideIn .4s cubic-bezier(.37, .82, .2, 1);
+    -moz-animation: slideIn .4s cubic-bezier(.37, .82, .2, 1);
+    -o-animation: slideIn .4s cubic-bezier(.37, .82, .2, 1);
+}
+
+.account-content label:nth-of-type(2),
+.account-content input:nth-of-type(2),
+.account-content .more:nth-of-type(2) {
+    animation: slideIn .5s cubic-bezier(.37, .82, .2, 1);
+    -webkit-animation: slideIn .5s cubic-bezier(.37, .82, .2, 1);
+    -moz-animation: slideIn .5s cubic-bezier(.37, .82, .2, 1);
+    -o-animation: slideIn .5s cubic-bezier(.37, .82, .2, 1);
+}
+
+.account-content label:nth-of-type(3),
+.account-content input:nth-of-type(3),
+.account-content .more:nth-of-type(3) {
+    animation: slideIn .6s cubic-bezier(.37, .82, .2, 1);
+    -webkit-animation: slideIn .6s cubic-bezier(.37, .82, .2, 1);
+    -moz-animation: slideIn .6s cubic-bezier(.37, .82, .2, 1);
+    -o-animation: slideIn .6s cubic-bezier(.37, .82, .2, 1);
+}
+
+@keyframes slideIn {
+    0% {
+        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+        margin-left: -320px;
+        opacity: 0;
+    }
+    100% {
+        filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
+        margin-left: 0px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slideIn {
+    0% {
+        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+        margin-left: -320px;
+        opacity: 0;
+    }
+    100% {
+        filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
+        margin-left: 0px;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes slideIn {
+    0% {
+        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+        margin-left: -320px;
+        opacity: 0;
+    }
+    100% {
+        filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
+        margin-left: 0px;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes slideIn {
+    0% {
+        filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+        margin-left: -320px;
+        opacity: 0;
+    }
+    100% {
+        filter: progid: DXImageTransform.Microsoft.Alpha(enabled=false);
+        margin-left: 0px;
+        opacity: 1;
+    }
+}
+
+.account-content label {
+    color: #FFCF47;
+    font-size: 12px;
+    /* user-select */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: -moz-none;
+    -ms-user-select: none;
+}
+
+.account-content label:not([for='remember']) {
+    display: none;
+}
+
+.account-content .account-input {
+    background: transparent;
+    border: 1px solid #FFCF47;
+    border-radius: 2px;
+    color: #FFCF47;
+    font-size: 14px;
+    display: block;
+    height: 42px;
+    margin-bottom: 12px;
+    padding: 16px 13px;
+    width: 100%;
+}
+
+.account-content .account-input::-webkit-input-placeholder {
+    color: #FFCF47;
+    font-family: 'Metrophobic', sans-serif;
+    font-size: 14px;
+}
+
+.account-content .account-input:-moz-placeholder {
+    color: #FFCF47;
+    font-family: 'Metrophobic', sans-serif;
+    font-size: 14px;
+}
+
+.account-content .account-input::-moz-placeholder {
+    color: #FFCF47;
+    font-family: 'Metrophobic', sans-serif;
+    font-size: 14px;
+}
+
+.account-content .account-input:-ms-input-placeholder {
+    color: #FFCF47;
+    font-family: 'Metrophobic', sans-serif;
+    font-size: 14px;
+}
+
+.account-content .account-input:focus {
+    border-color: #E79535;
+}
+
+.account-content input.submit {
+    background: transparent;
+    border: 1px solid #FFCF47;
+    border-radius: 2px;
+    color: #FFCF47;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    display: block;
+    height: 42px;
+    letter-spacing: 2px;
+    line-height: 42px;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.account-content input.submit:hover {
+    background-color: #FFCF47;
+    color: #3F3133;
+    /* transition */
+    transition: all .2s;
+    -webkit-transition: all .2s;
+    -moz-transition: all .2s;
+    -o-transition: all .2s;
+}
+
+.account-content input:focus {
+    outline: none;
+}
+
+.account-content .checkbox {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 0;
+    margin: 4px -1px 17px;
+    opacity: 0;
+    overflow: hidden;
+    padding: 0;
+    visibility: hidden;
+    width: 0;
+}
+
+.account-content .checkbox+label {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.account-content .checkbox+label:before {
+    background: transparent;
+    border: 1px solid #FFCF47;
+    border-radius: 2px;
+    color: #999999;
+    content: "\A";
+    display: inline-block;
+    font-family: Verdana;
+    font-size: 8px;
+    font-weight: bold;
+    height: 11px;
+    line-height: 10px;
+    margin: -2px 8px 0 0;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    width: 11px;
+}
+
+.account-content .checkbox:checked+label:before {
+    content: "✓";
+}
+
+.account-content .account-submit {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.account-content .account-submit a {
+    color: #999999;
+    display: block;
+    font-size: 12px;
+    margin-top: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.account-content .account-submit a:hover {
+    text-decoration: underline;
+}
+
+.account-content .account-signup {
+    display: none;
+}
+
+
 /** team.ejs **/
 
 .section-team {
@@ -1147,10 +1472,6 @@ img::-moz-selection {
     -webkit-transition: all .5s;
     -moz-transition: all .5s;
     -o-transition: all .5s;
-}
-
-.section-team {
-    margin-top: 15px;
 }
 
 .section-team .section-head {
