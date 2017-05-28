@@ -8,14 +8,14 @@ const path = require('path');
 // Define prototype of carpool element
 const carpool_element_1 = {
     name: "勇盛老司機",
-    type: ['velocity','high_rate','no_smoke','jp','en','outgoing'],
+    type: ['high_rate','no_smoke','jp','en'],
     rate: 4,
     img: 'driver/liu.jpg'
 }
 const carpool_element_2 = {
     name: "旭民老司機",
-    type: ['high_rate','no_smoke','en','outgoing'],
-    rate: 3,
+    type: ['no_smoke','en','outgoing'],
+    rate: 1,
     img: 'driver/chu.jpg'
 }
 
