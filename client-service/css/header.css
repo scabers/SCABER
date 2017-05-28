@@ -1,0 +1,118 @@
+/*** header.ejs ***/
+
+.header-default {
+    background-image: linear-gradient(to bottom, #3F3133 0%, transparent), url('header_1.png');
+    background-position: center center;
+    background-size: cover;
+    color: #FFFFFF;
+    font-family: 'Metrophobic', sans-serif;
+    margin: 0;
+    min-height: auto;
+    overflow-y: hidden;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.header-default .header-left .header-content {
+    padding: 125px 15px 25px;
+    position: relative;
+    text-align: center;
+}
+
+.header-default .header-left .header-main {
+    margin: 0 auto 10px;
+    overflow: hidden;
+    position: relative;
+    /* transform */
+    transform: translateY(-10%);
+    -webkit-transform: translateY(-10%);
+    -moz-transform: translateY(-10%);
+    -ms-transform: translateY(-10%);
+    -o-transform: translateY(-10%);
+}
+
+.header-default .header-left .header-main h1 {
+    display: inline-block;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    width: 100%;
+}
+
+.header-default .header-left .header-main a {
+    margin-top: 30px;
+}
+
+.header-default .header-left .header-badges {
+    margin-top: 5px;
+    padding: 0 15px 0;
+    text-align: center;
+}
+
+.header-default .header-left .header-badges .badge-link {
+    display: inline-block;
+}
+
+.header-default .header-left .header-badges .badge-link img {
+    height: 22.5px;
+}
+
+.header-default .header-left .header-pays {
+    margin: 5px auto 10px;
+    padding: 0 15px 0;
+    text-align: center;
+}
+
+.header-default .header-left .header-pays img {
+    display: inline-block;
+    height: 20px;
+    margin: 0 0 0 2px;
+}
+
+@media screen and (min-width: 768px) {
+    .header-default {
+        min-height: 100%;
+    }
+    .header-default .header-left .header-content {
+        height: 85vh;
+        padding: 0;
+        text-align: left;
+    }
+    .header-default .header-left .header-main {
+        margin: 0;
+        max-width: 500px;
+        position: relative;
+        top: 50%;
+        /* transfrom */
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+    .header-default .header-left .header-main h1 {
+        font-size: 50px;
+    }
+    .header-default .header-left .header-main a {
+        margin-top: 15px;
+    }
+    .header-default .header-left .header-badges {
+        position: relative;
+        bottom: 20%;
+        text-align: left;
+    }
+    .header-default .header-left .header-badges .badge-link img {
+        height: 22.5px;
+        text-align: left;
+    }
+    .header-default .header-left .header-pays {
+        position: relative;
+        text-align: left;
+    }
+    .header-default .header-left .header-pays img {
+        height: 20px;
+        text-align: left;
+    }
+}

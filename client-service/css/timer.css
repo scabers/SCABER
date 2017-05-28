@@ -1,0 +1,31 @@
+/*** timer.ejs ***/
+
+.section-timer {
+    background-color: #F4B781;
+}
+
+.section-timer .section-head {
+    color: #3F3133;
+    font-weight: 300;
+    margin-bottom: 50px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.section-timer .section-head span {
+    color: #DB5A3C !important;
+}
+
+.section-timer .clock {
+    padding-left: 12.5vw;
+    text-align: center;
+}
+
+.section-timer .clock .flip-clock-label {
+    text-transform: uppercase
+}
+
+.section-timer .clock .inn {
+    color: #FFCF47;
+    font-family: 'Metrophobic', sans-serif;
+}

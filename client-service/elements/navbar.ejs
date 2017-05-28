@@ -1,4 +1,7 @@
-<!-- Navbar - navbar.ejs -->
+<!-- Include CSS file -->
+<link rel="stylesheet" href="navbar.css">
+
+<!-- navbar.ejs -->
 <nav class="navbar navbar-default navbar-fixed-top" id="navbar">
     <!-- container-fluid -->
     <div class="container-fluid">
@@ -22,7 +25,7 @@
                 <% } %>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <% var navbar_right = [['help', '幫助'], ['signin', '登入']]; %>
+                <% var navbar_right = [['help', '幫助'], ['account', '登入']]; %>
                 <% for (var i = 0; i < navbar_right.length; ++i) { %>
                 <li>
                     <a class="page-scroll" href="#<%= navbar_right[i][0] %>"><%= navbar_right[i][1] %></a>
