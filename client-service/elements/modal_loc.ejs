@@ -9,9 +9,57 @@
             </div>
             <!-- Main Content goes here -->
             <div class="modal-body">
-                <!-- JoinTrip - (Filter by user) -->
-                
-
+                <div class="container col-md-12 col-xs-12 col-sm-12">
+                    <!-- Panel(First Step) -->
+                    <!-- Selector and filter part -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-triangle-right"></span> 選擇司機類型
+                        </div>
+                        <div class="panel-body">
+                            <!-- User filter -->
+                            <div id="type_filter" class="row">
+                                <button type="button" class="btn btn-default col-md-4 col-xs-4 col-sm-4 text-center">速度</button>
+                                <button type="button" class="btn btn-default col-md-4 col-xs-4 col-sm-4 text-center">高評價</button>
+                                <button type="button" class="btn btn-default col-md-4 col-xs-4 col-sm-4 text-center">無吸菸</button>
+                                <button type="button" class="btn btn-default col-md-4 col-xs-4 col-sm-4 text-center">日語</button>
+                                <button type="button" class="btn btn-default col-md-4 col-xs-4 col-sm-4 text-center">英語</button>
+                                <button type="button" class="btn btn-default col-md-4 col-xs-4 col-sm-4 text-center">健談</button>
+                            </div>
+                            <hr>
+                            <!-- Button Control -->
+                            <div class="row">
+                                <button type="button" class="btn btn-default col-md-6 col-xs-6 col-sm-6 text-center">Join Trip</button>
+                                <button type="button" class="btn btn-default col-md-6 col-xs-6 col-sm-6 text-center">Dismiss</button>
+                            </div>
+                        </div>
+                    </div> <!-- First step panel end -->
+                    <!-- Panel(Second Step) -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <span class="glyphicon glyphicon-triangle-right"></span> 配對成功!
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <!-- Left side , with driver message here -->
+                                <div class="col-md-8 col-xs-8 col-sm-8 text-center">
+                                    <label class="control-label col-md-2 col-xs-2 col-sm-2" for="name"> 司機名稱: </label>
+                                    <div class="col-md-6 col-xs-6 col-sm-6">
+                                        <p class="form-control-static">勇勝老司機</p>
+                                    </div>
+                                </div>
+                                <!-- Right side , with driver image here -->
+                                <div class="col-md-4 col-xs-4 col-sm-4 text-center">
+                                    <img src="old_driver.jpg" class="img-thumbnail" alt="driver">
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- Second step panel end -->
+                </div>
+                    <hr>
+                    <br>
+                <!-- Status Bar -->
+                <p class="text-center" id="ml_statusbar"></p>
             </div>
             <!-- Info box -->
             <div class="modal-footer">

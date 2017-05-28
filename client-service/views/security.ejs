@@ -76,11 +76,20 @@
 <script>
 const socket = io();
 $('#modal_error').modal({show:false});
+$('#modal_loc').modal({show:false});
 var key1_rand = '';
 
 // fetch position (callback)
-getCurrentLocation(function(pos){
-    alert(pos.lat);
+getCurrentLocation(function(err,msg){
+    // alert(pos.lat);
+    if(err){
+        alert(msg);
+        console.log(msg);
+    }
+    else{
+        alert("Get your position (lat,lng) = (" + msg.lat + "," + msg.lng + ")");
+        console.log("Get your position (lat,lng) = (" + msg.lat + "," + msg.lng + ")");
+    }
 });
 
 // emit first , to get an random generated key
@@ -97,7 +106,8 @@ socket.on('key_get',function(data){
     document.getElementById('key').value = data.key;
     document.getElementById('result').value = "Get encrypted password: " + sjcl.encrypt(data.key,document.getElementById('userPWD').value);
     // show the success modal for user to use
-
+    $('#modal_loc').modal('show');
+    $('#ml_statusbar').text("Waiting...");
 });
 
 function goEncrypt(){
