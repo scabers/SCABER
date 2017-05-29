@@ -18,6 +18,12 @@ const carpool_element_2 = {
     rate: 1,
     img: 'driver/chu.jpg'
 }
+// Define prototype of waiting channel
+const waiting_channel_1 = {
+    room: "username",
+    driver: "driver_name",
+    GAs: []
+}
 
 // server-core
 const {RedisServer} = require('./redis');
@@ -112,11 +118,34 @@ class SyncService {
                         });
                         // FIXME remove this driver from carpool
 
+                        // Add this into waiting channel
+                        self.waiting_channel.push({
+                            room: init_obj.user,
+                            driver: self.carpool[index].name,
+                            GAs: []
+                        });
                         // return
                         return;
                     }
                 }
             });
+            // "Trip Cancel !"
+            socket.on("trip_cancel",function(canc_obj){
+                // user,type,key
+                console.dir(canc_obj);
+                // delete this from waiting_channel
+                for(var index in self.waiting_channel){
+                    if(self.waiting_channel[index].room == canc_obj.user){
+                        // splice this element , and then return
+                        self.waiting_channel.splice(index,1);
+                        // emit cancel signal
+                        socket.emit('cancel_accept',{
+                            msg: "This ride is deleted."
+                        })
+                        return;
+                    }
+                }
+            })
         });
     }
 }
