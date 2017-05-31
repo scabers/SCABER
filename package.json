@@ -6,7 +6,7 @@
   },
   "scripts": {
     "build": "npm install",
-    "build_css": "gulp styles",
+    "postbuild": "gulp watch",
     "start": "node app.js",
     "all": "npm run build && npm run start"
   },
