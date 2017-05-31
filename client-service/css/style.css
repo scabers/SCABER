@@ -89,6 +89,112 @@
     -moz-transition: all 0.3s;
     -o-transition: all 0.3s; }
 
+/** _navbar.scss **/
+.navbar-default {
+  transition: all .35s;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  -o-transition: all .35s;
+  background-color: #ffcf47;
+  border-color: rgba(255, 207, 71, 0.9);
+  font-family: Yantramanav, sans-serif;
+  letter-spacing: 2px;
+  padding-top: 7.5px;
+  padding-bottom: 7.5px; }
+  .navbar-default .navbar-header {
+    position: relative;
+    vertical-align: middle; }
+    .navbar-default .navbar-header .navbar-toggle {
+      transition: all .35s;
+      -webkit-transition: all .35s;
+      -moz-transition: all .35s;
+      -o-transition: all .35s;
+      border-color: #3f3133;
+      border-radius: 2.0rem;
+      border-width: .25rem;
+      color: #3f3133;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase; }
+      .navbar-default .navbar-header .navbar-toggle:hover, .navbar-default .navbar-header .navbar-toggle:focus {
+        background-color: #3f3133;
+        color: #db5a3c; }
+    .navbar-default .navbar-header .navbar-brand {
+      transition: all .35s;
+      -webkit-transition: all .35s;
+      -moz-transition: all .35s;
+      -o-transition: all .35s;
+      color: #3f3133;
+      display: inline-block;
+      font-family: Yantramanav, sans-serif;
+      font-size: 3.0rem;
+      height: inherit;
+      letter-spacing: 5px;
+      line-height: 3.0rem;
+      margin-left: 2vw;
+      margin-right: 2vw;
+      padding: 0; }
+      .navbar-default .navbar-header .navbar-brand .navbar-icon {
+        display: inline-block;
+        height: 50px;
+        width: auto; }
+      .navbar-default .navbar-header .navbar-brand:hover, .navbar-default .navbar-header .navbar-brand:focus {
+        color: #72595c;
+        text-decoration: none; }
+      .navbar-default .navbar-header .navbar-brand:focus {
+        color: #3f3133 !important; }
+  .navbar-default .navbar-collapse .nav li a,
+  .navbar-default .navbar-collapse .nav li a:focus {
+    transition: all .35s;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    -o-transition: all .35s;
+    background-color: transparent !important;
+    color: #3f3133;
+    font-size: 12px;
+    font-weight: 700;
+    overflow: hidden;
+    text-transform: uppercase; }
+    .navbar-default .navbar-collapse .nav li a:hover,
+    .navbar-default .navbar-collapse .nav li a:focus:hover {
+      color: #72595c;
+      cursor: pointer; }
+      .navbar-default .navbar-collapse .nav li a:hover:after,
+      .navbar-default .navbar-collapse .nav li a:focus:hover:after {
+        left: 0;
+        width: 100%; }
+    .navbar-default .navbar-collapse .nav li a:after,
+    .navbar-default .navbar-collapse .nav li a:focus:after {
+      transition: all .35s;
+      -webkit-transition: all .35s;
+      -moz-transition: all .35s;
+      -o-transition: all .35s;
+      background-color: #72595c;
+      content: '';
+      height: 3px;
+      position: absolute;
+      bottom: 0;
+      left: auto;
+      right: 0;
+      width: 0; }
+  .navbar-default .navbar-collapse .nav li:active a,
+  .navbar-default .navbar-collapse .nav li:active a:focus {
+    transition: all .35s;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    -o-transition: all .35s;
+    color: #db5a3c !important; }
+    .navbar-default .navbar-collapse .nav li:active a:hover,
+    .navbar-default .navbar-collapse .nav li:active a:focus:hover {
+      background-color: transparent; }
+      .navbar-default .navbar-collapse .nav li:active a:hover:after,
+      .navbar-default .navbar-collapse .nav li:active a:focus:hover:after {
+        left: 0;
+        width: 100%; }
+    .navbar-default .navbar-collapse .nav li:active a:after,
+    .navbar-default .navbar-collapse .nav li:active a:focus:after {
+      background-color: #db5a3c; }
+
 /* Import Layout */
 /** _footer.scss **/
 footer {
