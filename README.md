@@ -20,7 +20,7 @@
     - Using resources provide on [openData](http://data.gov.tw/wise_search?nodetype=metadataset&kw=%E8%A8%88%E7%A8%8B%E8%BB%8A)
 
 ## Installation
-- Before start:
+- Before start (for gulp):
 ```bash
 # Step 1:
 (install ruby on your platform => take some time)
@@ -29,7 +29,7 @@
 # Step 3: (using gem update system)
 > gem update --system
 ```
-- Using gulp:
+- Install gulp (for building):
 ```bash
 # Set gulp as global
 > npm install -g gulp
@@ -38,8 +38,6 @@
 ```
 - Build & start
 ```bash
-# construct css (if first time use , or having any update)
-> npm run build_css
 # run the server
 > npm run all
 ```
