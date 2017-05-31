@@ -8,7 +8,9 @@ var gulp = require('gulp'),             // load gulp module
 
 // add "Watch" service
 gulp.task('watch',function(){
-    gulp.watch('scss/**/*.scss',['styles']);        // Assign "styles" work as target
+    gulp.watch('scss/**/*.scss',['styles'],function(event){
+        console.log('File ' + event.path + ' was ' + event.type + ', running tasks ...');
+    }); // Assign "styles" work as target
 });
 
 // Work process "styles"
