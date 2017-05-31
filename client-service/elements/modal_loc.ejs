@@ -19,18 +19,18 @@
                         <div class="panel-body">
                             <!-- User filter -->
                             <div id="type_filter" class="row">
-                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">速度</button>
-                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">高評價</button>
-                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">無吸菸</button>
-                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">日語</button>
-                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">英語</button>
-                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" data-toggle="button" aria-pressed="false" autocomplete="off">健談</button>
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" onclick="addItem('velocity')" data-toggle="button" aria-pressed="false" autocomplete="off">速度</button>
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" onclick="addItem('high_rate')" data-toggle="button" aria-pressed="false" autocomplete="off">高評價</button>
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" onclick="addItem('no_smoke')" data-toggle="button" aria-pressed="false" autocomplete="off">無吸菸</button>
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" onclick="addItem('jp')" data-toggle="button" aria-pressed="false" autocomplete="off">日語</button>
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" onclick="addItem('en')" data-toggle="button" aria-pressed="false" autocomplete="off">英語</button>
+                                <button type="button" class="btn btn-primary col-md-4 col-xs-4 col-sm-4 text-center" onclick="addItem('outgoing')" data-toggle="button" aria-pressed="false" autocomplete="off">健談</button>
                             </div>
                             <hr>
                             <!-- Button Control -->
                             <div class="row">
-                                <button type="button" class="btn btn-default col-md-6 col-xs-6 col-sm-6 text-center">Join Trip</button>
-                                <button type="button" class="btn btn-default col-md-6 col-xs-6 col-sm-6 text-center">Dismiss</button>
+                                <button type="button" id="hireBtn" class="btn btn-default col-md-6 col-xs-6 col-sm-6 text-center">Join Trip</button>
+                                <button type="button" id="dismissBtn" class="btn btn-default col-md-6 col-xs-6 col-sm-6 text-center">Dismiss</button>
                             </div>
                         </div>
                     </div> <!-- First step panel end -->

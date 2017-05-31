@@ -79,6 +79,8 @@
 </body>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= apikey %>&callback=getCurrentLocation"></script>
 <script type="text/javascript" src="geometry.js"></script>
+<script type="text/javascript" src="user_defined_operator.js"></script> <!-- User-defined Usage -->
+<script type="text/javascript" src="modal_loc.js"></script> <!-- Modal location Usage -->
 <script>
 const socket = io();
 $('#modal_error').modal({show:false});
@@ -116,6 +118,24 @@ socket.on('key_get',function(data){
     $('#ml_statusbar').text("Waiting...");
 });
 
+// Get the match driver
+socket.on('match_driver',function(driver_info){
+    console.dir(driver_info.driver);
+    document.getElementById('matched_driver').innerHTML = driver_info.driver.name;
+    // document.getElementById('arrival_time').innerHTML = "4:33"; // FIXME calculate by true location of driver
+    count_down_timer("4:33");
+    // document.getElementById('driver_rating')
+    $('#driver_rating').rating('update', driver_info.driver.rate);
+    //document.getElementById('driver_rating').value = driver_info.driver.rate;
+    document.getElementById('driver_img').src = driver_info.driver.img;
+})
+
+// Cancel !
+socket.on('cancel_accept',function(msg_data){
+    $('#ml_statusbar').text(msg_data.msg);
+    alert(msg_data.msg);
+});
+
 function goEncrypt(){
     socket.emit('key_require',{
         username: sjcl.encrypt(key1_rand,document.getElementById('userID').value),
@@ -131,6 +151,5 @@ socket.on('user_error',function(msg_data){
     // And show the modal
     $('#modal_error').modal('show');
 });
-
 </script>
 </html>
