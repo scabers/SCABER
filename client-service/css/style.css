@@ -11,6 +11,7 @@
 /* Padding variables */
 /* Text variables */
 /** _mixins.scss **/
+/* Navbar Style */
 /* Footer Style */
 /* Button Style */
 /* Import Components */
@@ -191,5 +192,3 @@ footer {
     footer .footer-top .footer-link .footer-app .badge-link img {
       height: 30px;
       width: auto; } }
-
-/*# sourceMappingURL=style.css.map */
