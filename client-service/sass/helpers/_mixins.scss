@@ -16,13 +16,13 @@
     }
 }
 
-@mixin navbat-header {
+@mixin navbar-header {
     position: relative;
     vertical-align: middle;
     .navbar-toggle {
         @include navbar-transition;
         border: {
-            color: $dark-brwon;
+            color: $dark-brown;
             radius: 2.0rem;
             width: .25rem;
         }
@@ -35,7 +35,7 @@
         &:hover,
         &:focus {
             background-color: $dark-brown;
-            color: $dark-color;
+            color: $dark-orange;
         }
     }
     .navbar-brand {
