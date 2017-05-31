@@ -1,0 +1,72 @@
+/** variables.scss **/
+
+
+/* Ratio variables */
+
+$full-perc: 100%;
+$full-vh: 100vh;
+$full-vw: 100vw;
+
+/* Border variables */
+
+$border-radius: 300px;
+$border-width: 2px;
+
+/* Colors variables */
+
+$light-yellow: rgba(255, 207, 71, 1.0);
+$dark-yellow: rgba(246, 180, 30, 1.0);
+$light-orange: rgba(231, 149, 53, 1.0);
+$dark-orange: rgba(219, 90, 60, 1.0);
+$light-brown: rgba(114, 89, 92, 1.0);
+$dark-brown: rgba(63, 49, 51, 1.0);
+$skin: rgba(244, 193, 129, 1.0);
+$light-gray: rgba(216, 216, 216, 1.0);
+$dark-gray: rgba(51, 51, 51, 1.0);
+$color-none: transparent;
+$color-social: ( facebook: rgba(59, 89, 152, 1.0), google-plus: rgba(219, 90, 60, 1.0), twitter: rgba(64, 153, 255, 1.0), instagram: rgba(92, 61, 46, 1.0));
+
+/* Cursor variables */
+
+$cursor: pointer;
+
+/* Fonts variables */
+
+$font-title: 'Metrophobic';
+$font-text: 'Yantramanav';
+$font-chi: '微軟正黑體';
+$h1-px: 36px;
+$h2-px: 30px;
+$h3-px: 24px;
+$h4-px: 18px;
+$h5-px: 14px;
+$h6-px: 12px;
+$p-px: 12px;
+$a-px: 12px;
+$h1-rem: 2.1rem;
+$h2-rem: 2.0rem;
+$h3-rem: 1.9rem;
+$h4-rem: 1.8rem;
+$h5-rem: 1.7rem;
+$h6-rem: 1.6rem;
+$p-rem: 1.5rem;
+$a-rem: 1.5rem;
+$font-normal: 400;
+$font-bold: 700;
+
+/* Letter-spacing variables */
+
+$letter-spacing: 2px;
+
+/* Margin variables */
+
+$margin-none: 0;
+
+/* Padding variables */
+
+$padding-none: 0;
+
+/* Text variables */
+
+$text-center: center;
+$text-uppercase: uppercase;

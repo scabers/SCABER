@@ -1,0 +1,335 @@
+/** _mixins.scss **/
+
+
+/* Navbar Style */
+
+@mixin navbar {
+    @include navbar-transition;
+    background-color: $light-yellow;
+    border-color: fade-out($light-yellow, 0.1);
+    font-family: #{$font-text},
+    sans-serif;
+    letter-spacing: $letter-spacing;
+    padding: {
+        top: 7.5px;
+        bottom: 7.5px;
+    }
+}
+
+@mixin navbat-header {
+    position: relative;
+    vertical-align: middle;
+    .navbar-toggle {
+        @include navbar-transition;
+        border: {
+            color: $dark-brwon;
+            radius: 2.0rem;
+            width: .25rem;
+        }
+        color: $dark-brown;
+        font: {
+            size: 12px;
+            weight: $font-bold;
+        }
+        text-transform: $text-uppercase;
+        &:hover,
+        &:focus {
+            background-color: $dark-brown;
+            color: $dark-color;
+        }
+    }
+    .navbar-brand {
+        @include navbar-transition;
+        color: $dark-brown;
+        display: inline-block;
+        font: {
+            family: #{$font-text},
+            sans-serif;
+            size: 3.0rem;
+        }
+        height: inherit;
+        letter-spacing: 5px;
+        line-height: 3.0rem;
+        margin: {
+            left: 2vw;
+            right: 2vw;
+        }
+        padding: $padding-none;
+        .navbar-icon {
+            display: inline-block;
+            height: $full-px / 2;
+            width: auto;
+        }
+        &:hover,
+        &:focus {
+            color: $light-brown;
+            text-decoration: none;
+        }
+        &:focus {
+            color: $dark-brown !important;
+        }
+    }
+}
+
+@mixin navbar-collapse {
+    .nav {
+        li {
+            a,
+            a:focus {
+                @include navbar-transition;
+                background-color: $color-none !important;
+                color: $dark-brown;
+                font: {
+                    size: 12px;
+                    weight: $font-bold;
+                }
+                overflow: hidden;
+                text-transform: $text-uppercase;
+                &:hover {
+                    color: $light-brown;
+                    cursor: pointer;
+                    &:after {
+                        left: 0;
+                        width: $full-perc;
+                    }
+                }
+                &:after {
+                    @include navbar-transition;
+                    background-color: $light-brown;
+                    content: '';
+                    height: 3px;
+                    position: absolute;
+                    bottom: 0;
+                    left: auto;
+                    right: 0;
+                    width: 0;
+                }
+            }
+            &:active {
+                a,
+                a:focus {
+                    @include navbar-transition;
+                    color: $dark-orange !important;
+                    &:hover {
+                        background-color: $color-none;
+                        &:after {
+                            left: 0;
+                            width: $full-perc;
+                        }
+                    }
+                    &:after {
+                        background-color: $dark-orange;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin navbar-transition {
+    transition: all .35s;
+    -webkit-transition: all .35s;
+    -moz-transition: all .35s;
+    -o-transition: all .35s;
+}
+
+
+/* Footer Style */
+
+@mixin footer {
+    background-color: $light-yellow;
+    height: auto;
+    width: $full-perc;
+    h4 {
+        font-size: $p-rem;
+        letter-spacing: $letter-spacing;
+        margin: {
+            top: 10px;
+            bottom: 10px;
+        }
+        text-transform: $text-uppercase;
+    }
+    a {
+        color: $dark-brown;
+        font-size: 1.2rem;
+        text-transform: $text-uppercase;
+    }
+}
+
+@mixin footer-top {
+    .footer-brand {
+        border-bottom: 1px solid $dark-brown;
+        padding: {
+            top: 15px;
+            bottom: 15px;
+        }
+        .footer-logo {
+            height: 15%;
+            img {
+                height: auto;
+                width: 90%;
+            }
+        }
+        .footer-user {
+            padding: 10px 0;
+            text-align: $text-center;
+        }
+    }
+}
+
+@mixin footer-menu {
+    margin: 20px 0 0;
+    ul {
+        list-style: none;
+        padding: 0;
+        li {
+            display: inline-block;
+            padding: 5px 0;
+            text: {
+                align: left;
+                transform: $text-uppercase;
+            }
+            width: 20%;
+            a:hover {
+                color: $light-brown;
+                text-decoration: none;
+            }
+            a:focus {
+                color: $dark-brown;
+                text-decoration: none;
+            }
+            .footer-page a {
+                font: {
+                    size: $a-rem;
+                    weight: $font-bold;
+                }
+            }
+        }
+    }
+}
+
+@mixin footer-social {
+    @each $item,
+    $item-color in $color-social {
+        .btn-social##{$item} {
+            span {
+                background-color: $item-color;
+            }
+            i {
+                color: $item-color;
+            }
+        }
+    }
+}
+
+@mixin footer-app {
+    .badge-link {
+        display: inline-block;
+        margin: {
+            top: 10px;
+            bottom: 0;
+            left: 5px;
+            right: 5px;
+        }
+        img {
+            height: 35px;
+            width: auto;
+        }
+    }
+}
+
+@mixin footer-bottom {
+    background-color: $dark-brown;
+    padding: {
+        top: 10px;
+        bottom: 10px;
+    }
+    #copyright {
+        color: $dark-yellow;
+        font-size: 1.0rem;
+        text-align: $text-center;
+        width: inherit;
+    }
+}
+
+
+/* Button Style */
+
+@mixin btn-normal {
+    background-color: $color-none;
+    border: {
+        color: $dark-yellow;
+        radius: $border-radius;
+        width: $border-width;
+    }
+    color: $dark-yellow;
+    cursor: $cursor;
+    font: {
+        family: #{$font-title},
+        sans-serif;
+        weight: $font-bold;
+    }
+    letter-spacing: $letter-spacing;
+    text-transform: $text-uppercase;
+    ;
+    &:hover,
+    &:focus,
+    &:active {
+        background-color: $dark-yellow;
+        border-color: $dark-yellow;
+        color: $dark-brown;
+    }
+}
+
+@mixin btn-circle($radius: 3.6rem) {
+    background-color: $light-gray;
+    border-radius: $radius;
+    cursor: $cursor;
+    display: inline-block;
+    height: $radius;
+    line-height: $radius;
+    margin: 10px 5px 0;
+    padding: $padding-none;
+    text-align: center !important;
+    width: $radius;
+    i {
+        background-color: none;
+        border-right: none !important;
+        font-size: $h6-rem;
+        height: $radius;
+        line-height: $radius !important;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: $radius !important;
+        z-index: 10;
+    }
+    span {
+        border-radius: 0;
+        display: block;
+        height: 0;
+        margin: $margin-none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+    }
+    &:hover {
+        i {
+            color: $light-gray !important;
+        }
+        span {
+            border-radius: $radius;
+            height: $radius;
+            margin: -($radius / 2);
+            width: $radius;
+        }
+    }
+}
+
+@mixin btn-circle-transition {
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}

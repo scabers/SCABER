@@ -1,0 +1,38 @@
+/** _buttons.scss **/
+
+.btn {
+    @include btn-normal;
+}
+
+.btn-theme1 {
+    @extend .btn;
+}
+
+.btn-theme2 {
+    @extend .btn-theme1;
+    border: {
+        color: $dark-brown;
+    }
+    color: $dark-brown;
+    &:hover,
+    &:focus,
+    &:active {
+        background: {
+            color: $dark-brown;
+        }
+        border: {
+            color: $dark-brown;
+        }
+        color: $dark-yellow;
+    }
+}
+
+.btn-social {
+    @include btn-circle;
+    i {
+        @include btn-circle-transition;
+    }
+    span {
+        @include btn-circle-transition;
+    }
+}

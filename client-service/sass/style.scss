@@ -1,0 +1,15 @@
+/** style.scss **/
+
+
+/* Import Helpers */
+
+@import 'helpers/variables';
+@import 'helpers/mixins';
+
+/* Import Components */
+
+@import 'components/buttons';
+
+/* Import Layout */
+
+@import 'layout/footer';

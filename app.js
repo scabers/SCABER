@@ -21,6 +21,7 @@ const rsapp = config.redis.rsapp;
 app.use(express.static('client-service/elements'));
 app.use(express.static('client-service/img'));
 app.use(express.static('client-service/css'));
+app.use(express.static('client-service/sass'));
 app.use(express.static('client-service/js'));
 app.use(express.static('client-service/lib'));
 app.use(express.static('client-service/fonts'));
@@ -51,10 +52,10 @@ Debugger.init(app);
 
 /* Create server */
 const server_config = {
-    key: fs.readFileSync(path.join(__dirname,'..','ssl','private.key')),
-    cert: fs.readFileSync(path.join(__dirname,'..','ssl','certificate.crt'))
+    key: fs.readFileSync(path.join(__dirname, '..', 'ssl', 'private.key')),
+    cert: fs.readFileSync(path.join(__dirname, '..', 'ssl', 'certificate.crt'))
 }
-const server = https.createServer(server_config,app);
+const server = https.createServer(server_config, app);
 SyncService.init(server);
 
 server.listen(process.env.npm_package_config_port, function() {

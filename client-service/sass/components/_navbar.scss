@@ -1,0 +1,11 @@
+/** _navbar.scss **/
+
+.navbar-default {
+    @include navbar;
+    .navbar-header {
+        @include navbar-header;
+    }
+    .navbar-collapse {
+        @include navbar-collapse;
+    }
+}

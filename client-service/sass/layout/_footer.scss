@@ -1,0 +1,62 @@
+/** _footer.scss **/
+
+footer {
+    @include footer;
+    .footer-top {
+        @include footer-top;
+        .footer-menu {
+            @include footer-menu;
+        }
+        .footer-link {
+            @include footer-social;
+            @include footer-app;
+        }
+    }
+    .footer-bottom {
+        @include footer-bottom;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    footer {
+        h4 {
+            font-size: $h4-rem;
+        }
+        a {
+            font-size: $a-rem;
+        }
+        .footer-top {
+            .footer-brand {
+                .footer-user {
+                    padding: $padding-none;
+                    padding: {
+                        top: 20px;
+                        bottom: 20px;
+                    }
+                }
+            }
+            .footer-menu {
+                margin: $margin-none;
+                margin: {
+                    top: 20px;
+                    bottom: 20px;
+                }
+            }
+            .footer-link {
+                margin: $margin-none;
+                margin: {
+                    top: 20px;
+                    bottom: 20px;
+                }
+                .footer-app {
+                    .badge-link {
+                        img {
+                            height: 30px;
+                            width: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

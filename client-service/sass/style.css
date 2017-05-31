@@ -1,0 +1,196 @@
+/** style.scss **/
+/* Import Helpers */
+/** variables.scss **/
+/* Ratio variables */
+/* Border variables */
+/* Colors variables */
+/* Cursor variables */
+/* Fonts variables */
+/* Letter-spacing variables */
+/* Margin variables */
+/* Padding variables */
+/* Text variables */
+/** _mixins.scss **/
+/* Navbar Style */
+/* Footer Style */
+/* Button Style */
+/* Import Components */
+/** _buttons.scss **/
+.btn, .btn-theme1, .btn-theme2 {
+  background-color: transparent;
+  border-color: #f6b41e;
+  border-radius: 300px;
+  border-width: 2px;
+  color: #f6b41e;
+  cursor: pointer;
+  font-family: Metrophobic, sans-serif;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase; }
+  .btn:hover, .btn-theme1:hover, .btn-theme2:hover, .btn:focus, .btn-theme1:focus, .btn-theme2:focus, .btn:active, .btn-theme1:active, .btn-theme2:active {
+    background-color: #f6b41e;
+    border-color: #f6b41e;
+    color: #3f3133; }
+
+.btn-theme2 {
+  border-color: #3f3133;
+  color: #3f3133; }
+  .btn-theme2:hover, .btn-theme2:focus, .btn-theme2:active {
+    background-color: #3f3133;
+    border-color: #3f3133;
+    color: #f6b41e; }
+
+.btn-social {
+  background-color: #d8d8d8;
+  border-radius: 3.6rem;
+  cursor: pointer;
+  display: inline-block;
+  height: 3.6rem;
+  line-height: 3.6rem;
+  margin: 10px 5px 0;
+  padding: 0;
+  text-align: center !important;
+  width: 3.6rem; }
+  .btn-social i {
+    background-color: none;
+    border-right: none !important;
+    font-size: 1.6rem;
+    height: 3.6rem;
+    line-height: 3.6rem !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3.6rem !important;
+    z-index: 10; }
+  .btn-social span {
+    border-radius: 0;
+    display: block;
+    height: 0;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0; }
+  .btn-social:hover i {
+    color: #d8d8d8 !important; }
+  .btn-social:hover span {
+    border-radius: 3.6rem;
+    height: 3.6rem;
+    margin: -1.8rem;
+    width: 3.6rem; }
+  .btn-social i {
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s; }
+  .btn-social span {
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s; }
+
+/* Import Layout */
+/** _footer.scss **/
+footer {
+  background-color: #ffcf47;
+  height: auto;
+  width: 100%; }
+  footer h4 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase; }
+  footer a {
+    color: #3f3133;
+    font-size: 1.2rem;
+    text-transform: uppercase; }
+  footer .footer-top .footer-brand {
+    border-bottom: 1px solid #3f3133;
+    padding-top: 15px;
+    padding-bottom: 15px; }
+    footer .footer-top .footer-brand .footer-logo {
+      height: 15%; }
+      footer .footer-top .footer-brand .footer-logo img {
+        height: auto;
+        width: 90%; }
+    footer .footer-top .footer-brand .footer-user {
+      padding: 10px 0;
+      text-align: center; }
+  footer .footer-top .footer-menu {
+    margin: 20px 0 0; }
+    footer .footer-top .footer-menu ul {
+      list-style: none;
+      padding: 0; }
+      footer .footer-top .footer-menu ul li {
+        display: inline-block;
+        padding: 5px 0;
+        text-align: left;
+        text-transform: uppercase;
+        width: 20%; }
+        footer .footer-top .footer-menu ul li a:hover {
+          color: #72595c;
+          text-decoration: none; }
+        footer .footer-top .footer-menu ul li a:focus {
+          color: #3f3133;
+          text-decoration: none; }
+        footer .footer-top .footer-menu ul li .footer-page a {
+          font-size: 1.5rem;
+          font-weight: 700; }
+  footer .footer-top .footer-link .btn-social#facebook span {
+    background-color: #3b5998; }
+  footer .footer-top .footer-link .btn-social#facebook i {
+    color: #3b5998; }
+  footer .footer-top .footer-link .btn-social#google-plus span {
+    background-color: #db5a3c; }
+  footer .footer-top .footer-link .btn-social#google-plus i {
+    color: #db5a3c; }
+  footer .footer-top .footer-link .btn-social#twitter span {
+    background-color: #4099ff; }
+  footer .footer-top .footer-link .btn-social#twitter i {
+    color: #4099ff; }
+  footer .footer-top .footer-link .btn-social#instagram span {
+    background-color: #5c3d2e; }
+  footer .footer-top .footer-link .btn-social#instagram i {
+    color: #5c3d2e; }
+  footer .footer-top .footer-link .badge-link {
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 0;
+    margin-left: 5px;
+    margin-right: 5px; }
+    footer .footer-top .footer-link .badge-link img {
+      height: 35px;
+      width: auto; }
+  footer .footer-bottom {
+    background-color: #3f3133;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+    footer .footer-bottom #copyright {
+      color: #f6b41e;
+      font-size: 1.0rem;
+      text-align: center;
+      width: inherit; }
+
+@media screen and (min-width: 768px) {
+  footer h4 {
+    font-size: 1.8rem; }
+  footer a {
+    font-size: 1.5rem; }
+  footer .footer-top .footer-brand .footer-user {
+    padding: 0;
+    padding-top: 20px;
+    padding-bottom: 20px; }
+  footer .footer-top .footer-menu {
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+  footer .footer-top .footer-link {
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+    footer .footer-top .footer-link .footer-app .badge-link img {
+      height: 30px;
+      width: auto; } }
+
+/*# sourceMappingURL=style.css.map */
