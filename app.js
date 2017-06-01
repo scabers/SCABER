@@ -18,13 +18,13 @@ const rs = new RedisSessions();
 const rsapp = config.redis.rsapp;
 
 /* Setting static directory */
-app.use(express.static('client-service/elements'));
-app.use(express.static('client-service/img'));
-app.use(express.static('client-service/css'));
-app.use(express.static('client-service/sass'));
-app.use(express.static('client-service/js'));
-app.use(express.static('client-service/lib'));
-app.use(express.static('client-service/fonts'));
+app.use(express.static(__dirname+'/client-service/elements'));
+app.use(express.static(__dirname+'/client-service/img'));
+app.use(express.static(__dirname+'/client-service/css'));
+app.use(express.static(__dirname+'/client-service/sass'));
+app.use(express.static(__dirname+'/client-service/js'));
+app.use(express.static(__dirname+'/client-service/lib'));
+app.use(express.static(__dirname+'/client-service/fonts'));
 
 app.use(bodyParser.urlencoded({
     extended: true
