@@ -17,19 +17,21 @@
                 <th>頻道名稱</th>
                 <th>負責司機</th>
                 <th>守護天使</th>
+                <th>監視台</th>
             </tr>
         </thead>
         <tbody>
             <% for(var index in channel){ %>
                 <tr class="bg-primary">
                     <th scope="row"><%= parseInt(index)+1 %></th>
-                    <td><%= channel[index].room %></td>
+                    <td id="room_<%= index %>"><%= channel[index].room %></td>
                     <td><%= channel[index].driver %></td>
                     <td>
                         <% for(var subindex in channel[index].GAs){ %>
                             <%= channel[index].GAs[subindex] %>
                         <% } %>
                     </td>
+                    <td><button class="btn btn-primary" onclick="joinGA(<%= index %>)">加入!</td>
                 </tr>
             <% } %>
         </tbody>
@@ -37,4 +39,10 @@
 </div>
 
 </body>
+<script>
+function joinGA(index){
+    alert('join: ' + index);
+}
+
+</script>
 </html>

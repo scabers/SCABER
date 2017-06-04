@@ -12,6 +12,7 @@ function addItem(value){
 
 // Timer of waiting time
 function count_down_timer(raw_data){
+    clearInterval(timer);
     // raw_data format: (min:sec)
     var total_sec = parseInt(raw_data.split(':')[0])*60 + parseInt(raw_data.split(':')[1]);
     console.log(total_sec);
@@ -19,7 +20,12 @@ function count_down_timer(raw_data){
     timer = setInterval(function(){
         // count down
         document.getElementById('arrival_time').innerHTML = Math.floor(total_sec/60)+':'+total_sec%60;
-        total_sec--;
+        if(total_sec <= 0){
+            clearInterval(timer);
+        }
+        else{
+            total_sec--;
+        }
     },1000);
 }
 
