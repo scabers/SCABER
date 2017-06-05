@@ -128,7 +128,15 @@ socket.on('match_driver',function(driver_info){
     $('#driver_rating').rating('update', driver_info.driver.rate);
     //document.getElementById('driver_rating').value = driver_info.driver.rate;
     document.getElementById('driver_img').src = driver_info.driver.img;
+
+    // DEBUG: add element into ga
+    // addGA('Kevinbird','83');
+    // addGA('SHUNE','23');
 })
+
+socket.on('newGA',function(newGA){
+    addGA(newGA.ga,newGA.rate);
+});
 
 // Cancel !
 socket.on('cancel_accept',function(msg_data){
@@ -142,6 +150,24 @@ function goEncrypt(){
         type: sjcl.encrypt(key1_rand,document.getElementById('userTYPE').value),
         key: key1_rand
     });
+}
+
+function addGA(name,rate){
+    let namelabel = document.createElement("LABEL");
+    namelabel.className = 'control-label col-md-4 col-xs-4 col-sm-4';
+    namelabel.innerHTML = name;
+    let ratelabel = document.createElement("LABEL");
+    ratelabel.className = 'control-label col-md-4 col-xs-4 col-sm-4';
+    ratelabel.innerHTML = rate+'%';
+    let btn = document.createElement("BUTTON");
+    btn.className = 'btn btn-default col-md-4 col-xs-4 col-sm-4';
+    btn.innerHTML = '允許';
+    let hr = document.createElement("HR");
+
+    document.getElementById('ga').appendChild(namelabel);
+    document.getElementById('ga').appendChild(ratelabel);
+    document.getElementById('ga').appendChild(btn);
+    document.getElementById('ga').appendChild(hr);
 }
 
 // when error occur

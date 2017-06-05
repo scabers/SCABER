@@ -21,6 +21,8 @@ function count_down_timer(raw_data){
         // count down
         document.getElementById('arrival_time').innerHTML = Math.floor(total_sec/60)+':'+total_sec%60;
         if(total_sec <= 0){
+            // emit signal to dismiss
+            disconnectFromServer();
             clearInterval(timer);
         }
         else{
@@ -71,3 +73,18 @@ $('#dismissBtn').click(function(){
     });
     clearInterval(timer);
 });
+
+// disconnect from server
+window.addEventListener("beforeunload", function(e){
+    disconnectFromServer();
+}, false);
+
+function disconnectFromServer(){
+    let username = document.getElementById('userID').value;
+    let type = document.getElementById('userTYPE').value;
+    // Get key
+    let key = document.getElementById('key').value;
+    socket.emit('disconnect',{
+        room: username
+    });
+}

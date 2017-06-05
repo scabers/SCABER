@@ -67,8 +67,11 @@ class SyncService {
                 console.log('[Sync] Join Room request send from : ' + socket.request.connection.remoteAddress+" ; With Room ID :" + room_info.room_name);
             });
             // "Disconnect" type
-            socket.on("disconnect",function(){
-                console.log('[Sync] '+ socket.request.connection.remoteAddress +' ,detach from channel.' )
+            socket.on("disconnect",function(obj){
+                console.log('[Sync] '+ socket.request.connection.remoteAddress +' ,detach from channel.' );
+                // cancel the channel
+                socket.leave(obj.room);
+                self.waiting_channel.splice(self.waiting_channel.indexOf(obj.room),1);
             });
             // "user first require random key"
             socket.on("randomkey_require",function(){
@@ -108,6 +111,8 @@ class SyncService {
             socket.on("trip_start",function(init_obj){
                 // user,type,key,filter,pos
                 console.dir(init_obj);
+                // add this socket into room
+                socket.join(init_obj.user);
                 // Fetch the car pool and find the available driver
                 for(var index in self.carpool){
                     console.log(index);
@@ -133,8 +138,14 @@ class SyncService {
             socket.on("trip_cancel",function(canc_obj){
                 // user,type,key
                 console.dir(canc_obj);
+                socket.leave(canc_obj.user);
                 // delete this from waiting_channel
-                for(var index in self.waiting_channel){
+                // cancel the channel
+                self.waiting_channel.splice(self.waiting_channel.indexOf(canc_obj.user),1);
+                socket.emit('cancel_accept',{
+                    msg: "This ride is deleted."
+                });
+                /*for(var index in self.waiting_channel){
                     if(self.waiting_channel[index].room == canc_obj.user){
                         // splice this element , and then return
                         self.waiting_channel.splice(index,1);
@@ -144,9 +155,18 @@ class SyncService {
                         })
                         return;
                     }
-                }
-            })
-        });
+                }*/
+            });
+            // "GA was in here"
+            socket.on('joinGA',function(ga_obj){
+                self.io.in(ga_obj.room).emit('newGA',{
+                    ga: ga_obj.ga,
+                    rate: ga_obj.rate
+                });
+            });
+
+
+        }); // Web Socket Listening
     }
 }
 

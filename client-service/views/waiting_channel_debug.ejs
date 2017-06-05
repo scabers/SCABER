@@ -4,11 +4,12 @@
     <% include ../elements/meta %>
     <!-- Include lib.ejs -->
     <% include ../elements/lib %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script> <!-- Socket.io lib -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 </head>
 <body>
-
+<!-- Main table -->
 <div id="container">
     <table class="table">
         <thead class="thead-inverse">
@@ -25,7 +26,7 @@
                 <tr class="bg-primary">
                     <th scope="row"><%= parseInt(index)+1 %></th>
                     <td id="room_<%= index %>"><%= channel[index].room %></td>
-                    <td><%= channel[index].driver %></td>
+                    <td id="driver_<%= index %>"><%= channel[index].driver %></td>
                     <td>
                         <% for(var subindex in channel[index].GAs){ %>
                             <%= channel[index].GAs[subindex] %>
@@ -37,11 +38,32 @@
         </tbody>
     </table>
 </div>
-
+<!-- Info modal -->
+<% include ../elements/info_modal %>
 </body>
 <script>
+const socket = new io();
+$('#info_modal').modal({show:false});
+
 function joinGA(index){
-    alert('join: ' + index);
+    // Show the info_modal
+    $('#info_modal').modal('show');
+    // Rander the information you pick
+    alert($('#room_'+index).html());
+    $('#roomName').val($('#room_'+index).html());
+    $('#ga_driver').val($('#driver_'+index).html());
+}
+
+function goGAs(){
+    // FIXME: Need one more step to verify this GA
+    
+    // get information and emit to server
+    socket.emit('joinGA',{
+        room: $('#roomName').val(),
+        ga: $('#userInfo').val(),
+        rate: $('#rate').val(),
+        driver: $('#ga_driver').val()
+    });
 }
 
 </script>
