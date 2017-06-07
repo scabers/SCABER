@@ -19,8 +19,10 @@ function count_down_timer(raw_data){
     // calculate
     timer = setInterval(function(){
         // count down
-        document.getElementById('arrival_time').innerHTML = Math.floor(total_sec/60)+':'+total_sec%60;
+        document.getElementById('arrival_time').innerHTML = (Math.floor(total_sec/60) >= 10 ? Math.floor(total_sec/60).toString() : '0'+Math.floor(total_sec/60).toString())  +':'+ (total_sec%60 >= 10 ? total_sec%60 : '0'+(total_sec%60).toString() );
         if(total_sec <= 0){
+            // enable the button
+            document.getElementById('goTrip').className = "btn btn-success col-md-12 col-xs-12 col-sm-12";
             // emit signal to dismiss
             disconnectFromServer();
             clearInterval(timer);
@@ -30,6 +32,12 @@ function count_down_timer(raw_data){
         }
     },1000);
 }
+
+// StartTrip (Driver、User and GAs all go to one channel)
+function startTrip(){
+    // emit signal
+}
+
 
 $('#hireBtn').click(function(){
     // Deliver the types of driver and user location to server to call the cab
