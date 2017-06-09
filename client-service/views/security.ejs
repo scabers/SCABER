@@ -164,11 +164,23 @@ function addGA(name,rate){
     btn.innerHTML = '允許';
     let hr = document.createElement("HR");
 
+    // add listen
+    btn.addEventListener('click',function(event){
+        socket.emit('ga_accept',{
+            user: document.getElementById('userID').value,
+            ga: name
+        });
+    });
+
     document.getElementById('ga').appendChild(namelabel);
     document.getElementById('ga').appendChild(ratelabel);
     document.getElementById('ga').appendChild(btn);
     document.getElementById('ga').appendChild(hr);
 }
+
+socket.on('launch_receive',function(obj){
+    alert(obj.msg);
+});
 
 // when error occur
 socket.on('user_error',function(msg_data){

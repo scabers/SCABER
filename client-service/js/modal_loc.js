@@ -36,6 +36,16 @@ function count_down_timer(raw_data){
 // StartTrip (Driver、User and GAs all go to one channel)
 function startTrip(){
     // emit signal
+    // Get user name & type
+    let username = document.getElementById('userID').value;
+    let type = document.getElementById('userTYPE').value;
+    // Get key
+    let key = document.getElementById('key').value;
+    socket.emit('trip_launch',{
+        user: username,
+        type: type,
+        key: key
+    });
 }
 
 
@@ -83,9 +93,9 @@ $('#dismissBtn').click(function(){
 });
 
 // disconnect from server
-window.addEventListener("beforeunload", function(e){
+/*window.addEventListener("beforeunload", function(e){
     disconnectFromServer();
-}, false);
+}, false);*/
 
 function disconnectFromServer(){
     let username = document.getElementById('userID').value;

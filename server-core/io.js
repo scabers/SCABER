@@ -29,6 +29,21 @@ const waiting_channel_1 = {
 const {RedisServer} = require('./redis');
 const {MongoDBService} = require('./mongoDB_module');
 
+// Get the specific element in waiting channel, and add GA
+function add_channel_GA(room_name,channels,GA_name,GA_socket){
+    for(var index in channels){
+        if(channels[index].room == room_name){
+            console.log("Push!");
+            channels[index].GAs.push({
+                ga_name: GA_name,
+                ga_socket: GA_socket,
+                accept: false
+            });
+        }
+    }
+}
+
+// Get filter
 function carpool_filter(pool,filter,percent){
     let matcher = 0;
     // if match rate > percentage, then return true
@@ -107,6 +122,14 @@ class SyncService {
                     }
                 })
             });
+            // "Trip launch"
+            socket.on("trip_launch",function(init_obj){
+                // emit signal to
+                self.io.in(init_obj.user).emit('launch_receive',{
+                    msg: "First Signal",
+                    data: ""
+                });
+            });
             // "Trip Start service"
             socket.on("trip_start",function(init_obj){
                 // user,type,key,filter,pos
@@ -159,12 +182,37 @@ class SyncService {
             });
             // "GA was in here"
             socket.on('joinGA',function(ga_obj){
+                // Add this socket into
+
+                add_channel_GA(ga_obj.room,self.waiting_channel,ga_obj.ga,socket);
+                // Emit to user
                 self.io.in(ga_obj.room).emit('newGA',{
                     ga: ga_obj.ga,
                     rate: ga_obj.rate
                 });
             });
-
+            // "Accept this ga"
+            socket.on('ga_accept',function(ga_obj){
+                console.log("GA Accept Get!" + ga_obj.ga + "; User: " + ga_obj.user);
+                // Find current channel
+                for(var index in self.waiting_channel){
+                    if(self.waiting_channel[index].room == ga_obj.user){
+                        console.log("Match Room!");
+                        for(var g_index in self.waiting_channel[index].GAs){
+                            if(self.waiting_channel[index].GAs[g_index].ga_name == ga_obj.ga){
+                                console.log("Match!");
+                                self.waiting_channel[index].GAs[g_index].ga_socket.join(ga_obj.user);
+                                self.io.in(ga_obj.user).emit('launch_receive',{
+                                    msg: "Permission-Accept",
+                                    data: ""
+                                });
+                                self.waiting_channel[index].GAs[g_index].accept = true;
+                                //return;
+                            }
+                        }
+                    }
+                }
+            });
 
         }); // Web Socket Listening
     }

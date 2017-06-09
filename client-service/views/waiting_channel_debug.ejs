@@ -49,14 +49,13 @@ function joinGA(index){
     // Show the info_modal
     $('#info_modal').modal('show');
     // Rander the information you pick
-    alert($('#room_'+index).html());
     $('#roomName').val($('#room_'+index).html());
     $('#ga_driver').val($('#driver_'+index).html());
 }
 
 function goGAs(){
     // FIXME: Need one more step to verify this GA
-    
+
     // get information and emit to server
     socket.emit('joinGA',{
         room: $('#roomName').val(),
@@ -65,6 +64,11 @@ function goGAs(){
         driver: $('#ga_driver').val()
     });
 }
+
+socket.on('launch_receive',function(obj){
+    console.log("Msg: " + obj.msg);
+    alert("Msg: " + obj.msg);
+});
 
 </script>
 </html>
