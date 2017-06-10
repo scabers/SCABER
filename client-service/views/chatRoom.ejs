@@ -1,0 +1,58 @@
+<html>
+<head>
+    <!-- Template -->
+    <% include ../elements/meta %>
+    <% include ../elements/lib %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.min.js"></script> <!-- Socket.io lib -->
+</head>
+<header>
+    <% include ../elements/footer_chat %>
+</header>
+<body>
+    <input type="hidden" id="channel" value="<%= channel %>">
+    <input type="hidden" id="chatter" value="<%= chatter %>">
+    <div class="container">
+        <div class="panel-group">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-triangle-right"></span> 聊天室
+                </div>
+                <div class="panel-body">
+                    <pre id="chatbody" style="height: 80%; max-height:80%; overflow-y:scroll;">歡迎來到 SCABER 聊天室!! ^^
+-----------------------------------------------
+                    </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+const socket = io();
+
+// bind
+socket.emit('bind2gather',{
+    channel: $('#channel').val()
+});
+
+// update
+socket.on('coming_msg',function(msg){
+    appender(msg.who,msg.content);
+});
+
+function send(){
+    // emit to server
+    socket.emit('chat',{
+        channel: $('#channel').val(),
+        who: $('#chatter').val(),
+        content: $('#chattext').val()
+    });
+    // clear the value
+    $('#channel').val("");
+}
+
+function appender(user,content){
+    $('#chatbody').html( $('#chatbody').html() +'\r\n'+ user + ": " + content);
+}
+</script>
+</html>

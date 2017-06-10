@@ -24,7 +24,7 @@ function count_down_timer(raw_data){
             // enable the button
             document.getElementById('goTrip').className = "btn btn-success col-md-12 col-xs-12 col-sm-12";
             // emit signal to dismiss
-            disconnectFromServer();
+            // disconnectFromServer();
             clearInterval(timer);
         }
         else{
@@ -91,18 +91,3 @@ $('#dismissBtn').click(function(){
     });
     clearInterval(timer);
 });
-
-// disconnect from server
-/*window.addEventListener("beforeunload", function(e){
-    disconnectFromServer();
-}, false);*/
-
-function disconnectFromServer(){
-    let username = document.getElementById('userID').value;
-    let type = document.getElementById('userTYPE').value;
-    // Get key
-    let key = document.getElementById('key').value;
-    socket.emit('disconnect',{
-        room: username
-    });
-}

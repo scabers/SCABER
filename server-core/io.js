@@ -77,16 +77,29 @@ class SyncService {
         // Web Socket Listening
         this.io.sockets.on('connection',function(socket){
             // when client side connection to our server
-            // "Join" type
+            // ========================================================================================== "Join" type ==========================================================================================
             socket.on("join",function(room_info){
                 console.log('[Sync] Join Room request send from : ' + socket.request.connection.remoteAddress+" ; With Room ID :" + room_info.room_name);
+                // Remember the socket room_name
+                socket.room_name = room_info.room_name;
+                socket.room_type = room_info.type;
             });
-            // "Disconnect" type
-            socket.on("disconnect",function(obj){
+            // ========================================================================================== "Disconnect" type ==========================================================================================
+            socket.on("disconnect",function(){
+                // disconnet
                 console.log('[Sync] '+ socket.request.connection.remoteAddress +' ,detach from channel.' );
-                // cancel the channel
-                socket.leave(obj.room);
-                self.waiting_channel.splice(self.waiting_channel.indexOf(obj.room),1);
+                // check out the room name
+                console.log('[Sync] Leaving Room: ' + socket.room_name);
+                if(socket.room_name == "waiting" || socket.room_name == undefined){
+                    // don't splice
+                }
+                else{
+                    // cancel the channel
+                    if(socket.room_type == "user"){
+                        socket.leave(socket.room_name);
+                        self.waiting_channel.splice(self.waiting_channel.indexOf(socket.room_name),1);
+                    }
+                }
             });
             // "user first require random key"
             socket.on("randomkey_require",function(){
@@ -94,7 +107,7 @@ class SyncService {
                 socket.emit('randomkey_get',{ randomkey: rs.generate() });
             });
 
-            // "User join service"
+            // ========================================================================================== "User join service" ==========================================================================================
             socket.on("key_require",function(userdata){
                 // First get user data :
                 // @userdata.username : user account
@@ -122,15 +135,19 @@ class SyncService {
                     }
                 })
             });
-            // "Trip launch"
+            // ========================================================================================== "Trip launch" ==========================================================================================
             socket.on("trip_launch",function(init_obj){
+                // get the object of GAs
+
                 // emit signal to
                 self.io.in(init_obj.user).emit('launch_receive',{
-                    msg: "First Signal",
-                    data: ""
+                    msg: "準備跳轉到共同搭乘畫面",
+                    target: "/trip_launch",
+                    type: "go",
+                    channel: init_obj.user
                 });
             });
-            // "Trip Start service"
+            // ========================================================================================== "Trip Start service" ==========================================================================================
             socket.on("trip_start",function(init_obj){
                 // user,type,key,filter,pos
                 console.dir(init_obj);
@@ -157,7 +174,7 @@ class SyncService {
                     }
                 }
             });
-            // "Trip Cancel !"
+            // ========================================================================================== "Trip Cancel !" ==========================================================================================
             socket.on("trip_cancel",function(canc_obj){
                 // user,type,key
                 console.dir(canc_obj);
@@ -165,25 +182,14 @@ class SyncService {
                 // delete this from waiting_channel
                 // cancel the channel
                 self.waiting_channel.splice(self.waiting_channel.indexOf(canc_obj.user),1);
+                // Emit delete message to user
                 socket.emit('cancel_accept',{
                     msg: "This ride is deleted."
                 });
-                /*for(var index in self.waiting_channel){
-                    if(self.waiting_channel[index].room == canc_obj.user){
-                        // splice this element , and then return
-                        self.waiting_channel.splice(index,1);
-                        // emit cancel signal
-                        socket.emit('cancel_accept',{
-                            msg: "This ride is deleted."
-                        })
-                        return;
-                    }
-                }*/
             });
-            // "GA was in here"
+            // ========================================================================================== "GA was in here" ==========================================================================================
             socket.on('joinGA',function(ga_obj){
                 // Add this socket into
-
                 add_channel_GA(ga_obj.room,self.waiting_channel,ga_obj.ga,socket);
                 // Emit to user
                 self.io.in(ga_obj.room).emit('newGA',{
@@ -191,7 +197,7 @@ class SyncService {
                     rate: ga_obj.rate
                 });
             });
-            // "Accept this ga"
+            // ========================================================================================== "Accept this ga" ==========================================================================================
             socket.on('ga_accept',function(ga_obj){
                 console.log("GA Accept Get!" + ga_obj.ga + "; User: " + ga_obj.user);
                 // Find current channel
@@ -201,19 +207,35 @@ class SyncService {
                         for(var g_index in self.waiting_channel[index].GAs){
                             if(self.waiting_channel[index].GAs[g_index].ga_name == ga_obj.ga){
                                 console.log("Match!");
+                                // Add this user into the same socket with this passenger
                                 self.waiting_channel[index].GAs[g_index].ga_socket.join(ga_obj.user);
                                 self.io.in(ga_obj.user).emit('launch_receive',{
-                                    msg: "Permission-Accept",
-                                    data: ""
+                                    msg: "新的守護天使: " + ga_obj.ga + " 加入護衛行列!",
+                                    target: ga_obj.user,
+                                    type: 'new GA'
                                 });
                                 self.waiting_channel[index].GAs[g_index].accept = true;
-                                //return;
+                                return;
                             }
                         }
                     }
                 }
             });
-
+            // ========================================================================================== "Bind together" ==========================================================================================
+            socket.on('bind2gather',function(rawdata){
+                // Just join this channel
+                console.log("Join : " + rawdata.channel);
+                socket.join(rawdata.channel);
+            });
+            socket.on('chat',function(rawdata){
+                //
+                console.log("Broadcast in channel: " + rawdata.channel);
+                console.log("Sender: " + rawdata.who + "; Content: " + rawdata.content);
+                self.io.in(rawdata.channel).emit('coming_msg',{
+                    who: rawdata.who,
+                    content: rawdata.content
+                });
+            });
         }); // Web Socket Listening
     }
 }

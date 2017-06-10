@@ -87,6 +87,21 @@ $('#modal_error').modal({show:false});
 $('#modal_loc').modal({show:false});
 var key1_rand = '';
 
+// disconnect from server
+window.addEventListener("beforeunload", function(e){
+    disconnectFromServer();
+}, false);
+
+function disconnectFromServer(){
+    let username = document.getElementById('userID').value;
+    let type = document.getElementById('userTYPE').value;
+    // Get key
+    let key = document.getElementById('key').value;
+    socket.emit('disconnect',{
+        room: username
+    });
+}
+
 // fetch position (callback)
 getCurrentLocation(function(err,msg){
     // alert(pos.lat);
@@ -95,7 +110,7 @@ getCurrentLocation(function(err,msg){
         console.log(msg);
     }
     else{
-        alert("Get your position (lat,lng) = (" + msg.lat + "," + msg.lng + ")");
+        //alert("Get your position (lat,lng) = (" + msg.lat + "," + msg.lng + ")");
         console.log("Get your position (lat,lng) = (" + msg.lat + "," + msg.lng + ")");
     }
 });
@@ -123,7 +138,7 @@ socket.on('match_driver',function(driver_info){
     console.dir(driver_info.driver);
     document.getElementById('matched_driver').innerHTML = driver_info.driver.name;
     // document.getElementById('arrival_time').innerHTML = "4:33"; // FIXME calculate by true location of driver
-    count_down_timer("3:10");
+    count_down_timer("1:10");
     // document.getElementById('driver_rating')
     $('#driver_rating').rating('update', driver_info.driver.rate);
     //document.getElementById('driver_rating').value = driver_info.driver.rate;
@@ -150,6 +165,11 @@ function goEncrypt(){
         type: sjcl.encrypt(key1_rand,document.getElementById('userTYPE').value),
         key: key1_rand
     });
+    // emit to get room name
+    socket.emit('join',{
+        room_name: document.getElementById('userID').value,
+        type: "user"
+    })
 }
 
 function addGA(name,rate){
@@ -179,7 +199,12 @@ function addGA(name,rate){
 }
 
 socket.on('launch_receive',function(obj){
-    alert(obj.msg);
+    if(obj.type == "new GA"){
+        alert(obj.msg);
+    }
+    else if(obj.type == "go"){
+        window.location.assign(obj.target+'?channel='+obj.channel+'&chatter='+document.getElementById('userID').value);
+    }
 });
 
 // when error occur
