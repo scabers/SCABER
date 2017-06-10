@@ -80,7 +80,7 @@ socket.on('launch_receive',function(obj){
         // FIXME => Add loading modal !
     }
     else if(obj.type == "go"){
-        window.location.assign(obj.target+'?channel='+obj.channel+'&chatter='+$('#userInfo').val());
+        window.location.assign(obj.target+'?channel='+obj.channel+'&chatter='+$('#userInfo').val()+'&type=1');
     }
 });
 

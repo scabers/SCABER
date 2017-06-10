@@ -11,6 +11,7 @@
 <body>
     <input type="hidden" id="channel" value="<%= channel %>">
     <input type="hidden" id="chatter" value="<%= chatter %>">
+    <input type="hidden" id="type" value="<%= type %>">
     <div class="container">
         <div class="panel-group">
             <div class="panel panel-default">
@@ -29,7 +30,7 @@
 
 <script>
 const socket = io();
-
+const type = $('#type').val();
 // bind
 socket.emit('bind2gather',{
     channel: $('#channel').val()
@@ -42,13 +43,23 @@ socket.on('coming_msg',function(msg){
 
 function send(){
     // emit to server
-    socket.emit('chat',{
-        channel: $('#channel').val(),
-        who: $('#chatter').val(),
-        content: $('#chattext').val()
-    });
+    if(type == "host"){
+        socket.emit('chat',{
+            channel: $('#channel').val(),
+            who: '[房主]'+$('#chatter').val(),
+            content: $('#chattext').val()
+        });
+    }
+    else{
+        socket.emit('chat',{
+            channel: $('#channel').val(),
+            who: $('#chatter').val(),
+            content: $('#chattext').val()
+        });
+    }
+
     // clear the value
-    $('#channel').val("");
+    $('#chattext').val("");
 }
 
 function appender(user,content){

@@ -27,10 +27,12 @@ class Debugger{
         });
     }
     trip_launch(req,res){
+        var type = req.query.type == undefined ? "monitor" : "host";
         res.render('chatRoom',{
             title: "歡迎來到共同頻道",
             channel: req.query.channel,
-            chatter: req.query.chatter
+            chatter: req.query.chatter,
+            type: type
         });
     }
 }
