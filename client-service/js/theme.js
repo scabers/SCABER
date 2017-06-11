@@ -2,6 +2,9 @@ $(document).ready(function() {
     // Start of use strict
     'use strict';
 
+    $('.account-page').hide();
+    $('.account-signin').show();
+
     // Smooth scrolling using jQuery easing
     $('a[href*="#"]:not([href="#"])').click(function() {
         if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
@@ -66,7 +69,30 @@ $(document).ready(function() {
 
 
     $('.account-tabs .account-tab').click(function() {
+        // For sigin tab
         if ($(this).hasClass('tab-signin')) {
+            $('.account-tabs .account-tab').removeClass('active');
+            $(this).addClass('active');
+            $('.account-page').hide();
+            $('.account-signin').show();
+        }
+        // For Google
+        if ($(this).hasClass('tab-google-signup')) {
+            $('.account-tabs .account-tab').removeClass('active');
+            $(this).addClass('active');
+            $('.account-page').hide();
+            $('.account-google-signup').show();
+        }
+        // For FB
+        if ($(this).hasClass('tab-facebook-signup')) {
+            $('.account-tabs .account-tab').removeClass('active');
+            $(this).addClass('active');
+            $('.account-page').hide();
+            $('.account-facebook-signup').show();
+        }
+
+        // For Local
+        /*if ($(this).hasClass('tab-signin')) {
             $('.account-tabs .account-tab').removeClass('active');
             $(this).addClass('active');
             $('.account-page').hide();
@@ -77,7 +103,7 @@ $(document).ready(function() {
             $(this).addClass('active');
             $('.account-page').hide();
             $('.account-signup').show();
-        }
+        }*/
     });
     $('.section-right').mousemove(function(e) {
         var amountMovedX = (e.pageX * -1 / 30);

@@ -7,6 +7,7 @@ const GithubStrategy = require('passport-github').Strategy;
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const {RedisServer} = require('./redis');
+const {MongoDBService} = require('./mongoDB_module');
 
 // definition here
 class AuthService{
@@ -45,24 +46,22 @@ class AuthService{
             // And then here: attach user object to req!!
             done(null, user);
         });
+        // for login
+        app.get('/login',this.login);
         // for facebook
-        app.get('/login/facebook',this.fblogin);
-        app.get('/auth/facebook',this.fbauth);
+        app.post('/auth/facebook',this.fbauth);
         app.get('/auth/facebook/callback',passport.authenticate('facebook',{ failureRedirect: config.auth.facebook.failureUrl_luffy}),
             function(req,res){
                 console.log(req.user);
-                req.session.auth_type = "facebook";
                 res.redirect(config.auth.facebook.successUrl_luffy);
         }
         );
         // for google
-        app.get('/login/google',this.googlelogin);
-        app.get('/auth/google',this.googleauth);
+        app.post('/auth/google',this.googleauth);
         app.get('/auth/google/callback',passport.authenticate('google',{ failureRedirect: config.auth.google.failureUrl_luffy }),
             function(req,res){
                 // successful goes here - debug with req.user data
                 console.log(req.user);
-                req.session.auth_type = "google";
                 // Prepare page for Google Auth
                 res.redirect(config.auth.google.successUrl_luffy);
             }
@@ -72,44 +71,38 @@ class AuthService{
         app.get('/logout',this.logout);
     }
     // Facebook
-    fblogin(req,res){
-        if(req.isAuthenticated() && req.session.auth_type == "facebook"){
-            res.redirect(config.auth.facebook.successUrl_luffy);
-        }
-        else{
-            // Main Login page ~
-            res.render('signin',{title:"LifeGamer-User login",type:'facebook'});
-        }
-    }
     fbauth(req,res,next){
         // Using passport to get authenticate
         if (!req.session) req.session = {};
         req.session.returnTo = config.auth.facebook.successUrl_luffy;
         // Pass them to session
-        req.session.email = req.query.email;
-        req.session.password = req.query.pwd;
-        console.log('Email: ' + req.session.email + "; Pwd: " + req.session.password );
+        req.session.username = req.body.username;
+        req.session.type = req.body.type;
+        console.log('Username: ' + req.session.username + "; Type: " + req.session.type );
         passport.authenticate('facebook')(req, res, next);
     }
     // Google
-    googlelogin(req,res){
-        if(req.isAuthenticated() && req.session.auth_type == "google"){
-            res.redirect(config.auth.google.successUrl_luffy);
-        }
-        else{
-            // Main Login page ~
-            res.render('signin',{title:"LifeGamer-User login",type:'google'});
-        }
-    }
     googleauth(req,res,next){
         // Using passport to get authenticate
         if (!req.session) req.session = {};
         req.session.returnTo = config.auth.google.successUrl_luffy;
         // Pass them to session
-        req.session.email = req.query.email;
-        req.session.password = req.query.pwd;
-        console.log('Email: ' + req.session.email + "; Pwd: " + req.session.password );
+        req.session.username = req.body.username;
+        req.session.type = req.body.type;
+        console.log('Username: ' + req.session.username + "; Type: " + req.session.type );
         passport.authenticate('google')(req, res, next);
+    }
+    login(req,res){
+        // fetch user and theck out
+        let username = req.query.username;
+        // Check this user from database
+        MongoDBService.user_check(username,function(err,msg_data){
+            if(err)
+                res.end(msg_data);
+            else {
+                res.end("Find you!\n"+JSON.stringify(msg_data));
+            }
+        });
     }
     logout(req,res){
         req.session.destroy();

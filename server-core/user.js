@@ -18,6 +18,8 @@ class UserService {
         console.log("Successfully Login with : " + req.query.type);
         let logintype = req.query.type;
         let profile = req.user;
+        let username = req.session.username;
+        let usertype = req.session.type;
         // Successfully login , and get redis session create
         // User id : using authenticate id
         RedisServer.create( profile.id ,req.connection.remoteAddress,7200,logintype, (err,user_token) => {
@@ -30,21 +32,19 @@ class UserService {
                 console.log("Get new user token: "+ user_token);
                 // Store in db
                 // FIXME Redis id need to store into mongo
-                MongoDBService.user_findOrCreateCB(req.query.type,profile.name.familyName + profile.name.givenName,user_token,profile.id,function(err,msg_type){
-                    if(err == 0){
+                MongoDBService.user_findOrCreateCB(username,logintype,profile.name.familyName + profile.name.givenName,usertype,user_token,profile.id,function(err,msg_type){
+                    if(err){
                         // Error occur
                         console.log(msg_type);
                         res.end("Error: " + msg_type);
                     }
                     else{
                         console.log("success : " + msg_type);
-                        res.end("Email: " + req.session.email + "Password: " + req.session.password + "\nOAuth name:" + profile.name.familyName + profile.name.givenName);
+                        res.end("SCABER account: " + username + "\nSCABER type: " + usertype + "\nAuth ID:" + profile.name.familyName + profile.name.givenName);
                     }
                 });
             }
         });
-
-        // res.render('index',{title: "SCABER - Your best choice of taxi."});
     }
     error(req,res){
         res.end("End");

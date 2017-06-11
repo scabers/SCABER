@@ -6,14 +6,63 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section-content">
-                <h1 class="section-head">註冊登入</h1>
+                <h1 class="section-head">成為 SCABER 的一員!</h1>
                 <div class="section-half section-left">
+                    <!-- ================================================== Tab here ================================================== -->
                     <div class="account-tabs">
-                        <span class="account-tab tab-signin active"><a href="#signin">登入</a></span>
-                        <span class="account-tab tab-signup"><a href="#signup">註冊</a></span>
+                        <!-- lOGIN -->
+                        <span class="account-tab tab-signin active"><a href="#signin">登入 SCABER</a></span>
+                        <!-- Google -->
+                        <span class="account-tab tab-google-signup"><a href="#google-signup">Google 註冊</a></span>
+                        <!-- Facebook -->
+                        <span class="account-tab tab-facebook-signup"><a href="#facebook-signup">FB 註冊</a></span>
+                        <!-- Local -->
+                        <!-- <span class="account-tab tab-signin"><a href="#signin">登入</a></span>
+                        <span class="account-tab tab-signup"><a href="#signup">註冊</a></span>-->
                     </div>
+                    <!-- ================================================== Tab content here ================================================== -->
                     <div class="account-content">
                         <div class="account-page account-signin">
+                            <!-- <h3><kbd> 目前使用 Google 註冊 </kbd></h3> -->
+                            <form action="/login" method="GET">
+                                <input class="account-input" id="username" type="username" name="username" required="required" placeholder="輸入您的SCABER帳號">
+                                <label for="email">SCABER 名稱</label>
+                                <div class="account-submit">
+                                    <input class="submit" type="submit" value="登入">
+                                    <a class="more" href="#">Terms and conditions</a>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Google -->
+                        <div class="account-page account-google-signup">
+                            <!-- <h3><kbd> 目前使用 Google 註冊 </kbd></h3> -->
+                            <form action="/auth/google" method="POST">
+                                <input class="account-input" id="username" type="username" name="username" required="required" placeholder="輸入您的SCABER帳號">
+                                <label for="email">SCABER 名稱</label>
+                                <input class="account-input" id="type" type="type" name="type" required="required" placeholder="司機 / 乘客">
+                                <label for="password">SCABER 角色</label>
+                                <div class="account-submit">
+                                    <input class="submit" type="submit" value="註冊">
+                                    <a class="more" href="#">Terms and conditions</a>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- FB -->
+                        <div class="account-page account-facebook-signup">
+                            <!-- <h3><kbd> 目前使用 Facebook 註冊 </kbd></h3> -->
+                            <form action="/auth/facebook" method="POST">
+                                <input class="account-input" id="username" type="username" name="username" required="required" placeholder="輸入您的SCABER帳號">
+                                <label for="email">SCABER 名稱</label>
+                                <input class="account-input" id="type" type="type" name="type" required="required" placeholder="司機 / 乘客">
+                                <label for="password">SCABER 角色</label>
+                                <div class="account-submit">
+                                    <input class="submit" type="submit" value="註冊">
+                                    <a class="more" href="#">Terms and conditions</a>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- Local -->
+                        <!--<div class="account-page account-signin">
                             <form action="#" method="post" enctype="multipart/form-data">
                                 <input class="account-input" id="email" type="email" name="email" required="required" placeholder="輸入您的電子信箱">
                                 <label for="email">電子信箱</label>
@@ -42,7 +91,7 @@
                                     <a class="more" href="#">Terms and conditions</a>
                                 </div>
                             </form>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </div>

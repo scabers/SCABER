@@ -19,8 +19,10 @@ class MongoDBService {
         this.userSchema = mongoose.Schema({
             name: String,
             type: String,
+            authID: String,
+            userTYPE: String,
             token: String,
-            redisID: String
+            trueID: String
         });
 
         // user schema model
@@ -28,44 +30,51 @@ class MongoDBService {
     }
 
     // callback method of findorCreate
-    user_findOrCreateCB(n_type,n_name,n_token,n_id,callback){
+    user_findOrCreateCB(scaber_account,auth_type,auth_id,scaber_type,token,trueid,callback){
         var usermodel = this.user_m;
-        this.user_m.findOne({name: n_name,type: n_type}, 'name type',function(err,user){
-            if(err)
+        this.user_m.findOne({name: scaber_account,type: auth_type}, 'name type',function(err,user){
+            if(err){
                 console.log(err);
+                callback(1,"User findone error.");
+            }
             else{
                 if(user == null){
                     // not found
-                    let newuser = new usermodel({name:n_name,type:n_type,token:n_token,redisID:n_id});
+                    let newuser = new usermodel({name:scaber_account,type:auth_type,authID: auth_id,userTYPE: scaber_type,token: token,trueID: trueid});
                     newuser.save(function(err,newuser){
                         if(err){
                             console.log("Error with user save:" + err);
-                            callback(0,err);
+                            callback(1,"New user saving error.");
                         }
                         else {
                             console.log("Successfully save user");
-                            callback(1,"create");
+                            callback(0,"create");
                         }
                     });
                 }
                 else{
-                    // found one , and then do not create
-                    // update token and id
-                    console.log("Token: " + n_token + "; ID: " + n_id);
-                    console.dir(n_token);
-                    user.token = n_token;
-                    user.redisID = n_id;
-                    user.save(function(err,user){
-                        if(err){
-                            console.log("Exist user information update failure.");
-                            callback(0,"Exist user information update failure.");
-                        }
-                        else{
-                            console.log("Found one, so do nothing");
-                            console.log("With info: "+user);
-                            callback(1,"exist");
-                        }
-                    });
+                    // found one , return with error
+                    callback(1,"Duplicate account");
+                }
+            }
+        });
+    }
+    // check user
+    user_check(scaber_account,callback){
+        this.user_m.findOne({name: scaber_account},'',function(err,user){
+            if(err){
+                console.log("Error occur when checking user");
+                callback(1,"Error occur when checking user");
+            }
+            else{
+                if(user == null){
+                    console.log("Not found");
+                    callback(1,"Not found");
+                }
+                else{
+                    // find one
+                    console.log("Find!");
+                    callback(0,user);
                 }
             }
         });
