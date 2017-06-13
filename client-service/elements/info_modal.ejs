@@ -1,0 +1,59 @@
+<!-- Donate Modal -->
+<div id="info_modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <!-- Modal header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">感謝您加入成為守護天使行列</h4>
+            </div>
+            <!-- Main Content goes here -->
+            <div class="modal-body">
+                <div class="col-md-12 col-xs-12 col-sm-12">
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <span class="glyphicon glyphicon-triangle-right"></span> 欲監看的頻道
+                            </div>
+                            <div class="panel-body">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span><strong> 頻道房間 </strong></span>
+                                    <input id="roomName" type="text" class="form-control" placeholder="RoomName" aria-describedby="basic-addon1" value="等待中..." readonly="true">
+                                </div>
+                                <hr>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span><strong> 負責司機 </strong></span>
+                                    <input id="ga_driver" type="text" class="form-control" placeholder="RoomName" aria-describedby="basic-addon1" value="等待中..." readonly="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-group">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <span class="glyphicon glyphicon-triangle-right"></span> 你的資訊
+                            </div>
+                            <div class="panel-body">
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span><strong> 使用者名稱 </strong></span>
+                                    <input id="userInfo" type="text" class="form-control" placeholder="你的 SCABER 帳號名稱" aria-describedby="basic-addon1">
+                                </div>
+                                <hr>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span><strong> 評價 </strong></span>
+                                    <input id="rate" type="text" class="form-control" placeholder="伺服器回傳評價" aria-describedby="basic-addon1" value="87" readonly="true">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Info box -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="goGAs()">Go!</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

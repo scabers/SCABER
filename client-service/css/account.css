@@ -318,6 +318,12 @@
     text-decoration: underline;
 }
 
+.account-content .account-signin {
+    display: none;
+}
 .account-content .account-signup {
+    display: none;
+}
+.account-content .account-google-signup {
     display: none;
 }
