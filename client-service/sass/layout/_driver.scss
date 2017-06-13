@@ -1,0 +1,23 @@
+/** layout/_driver.scss **/
+
+.section-driver {
+    @include driver;
+    .section-title {
+        @include driver-title;
+    }
+    .section-text {
+        @include driver-text;
+    }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+    .section-driver {
+        @include driver-sm;
+        .section-title {
+            @include driver-sm-title;
+        }
+        .section-text {
+            @include driver-sm-text;
+        }
+    }
+}

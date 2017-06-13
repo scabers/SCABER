@@ -1,0 +1,39 @@
+/** layout/_header.scss **/
+
+.header-default {
+    @include header-default;
+    .header-left {
+        .header-main {
+            @include header-main;
+            .header-content {
+                @include header-content;
+            }
+        }
+        .header-badges {
+            @include header-badges;
+        }
+        .header-pays {
+            @include header-pays;
+        }
+    }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+    .header-default {
+        @include header-sm-default;
+        .header-left {
+            .header-main {
+                @include header-sm-main;
+                .header-content {
+                    @include header-sm-content;
+                }
+            }
+            .header-badges {
+                @include header-sm-badges;
+            }
+            .header-pays {
+                @include header-sm-pays;
+            }
+        }
+    }
+}

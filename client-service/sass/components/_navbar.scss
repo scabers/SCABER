@@ -1,11 +1,54 @@
-/** _navbar.scss **/
+/** components/_navbar.scss **/
 
 .navbar-default {
-    @include navbar;
+    @include navbar-default;
     .navbar-header {
         @include navbar-header;
+        .navbar-brand {
+            @include navbar-brand;
+            .navbar-icon {
+                @include navbar-icon;
+            }
+        }
+        .navbar-toggle {
+            @include navbar-toggle;
+        }
     }
     .navbar-collapse {
-        @include navbar-collapse;
+        .nav {
+            @include navbar-nav;
+        }
+    }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+    .navbar-default {
+        @include navbar-sm-default;
+        .navabr-header {
+            .navbar-brand {
+                @include navbar-sm-brand;
+                .navbar-icon {
+                    @include navbar-sm-icon;
+                }
+            }
+        }
+        .navbar-collapse {
+            .nav {
+                @include navbar-sm-nav;
+            }
+        }
+        &.navbar-shrink {
+            @include navbar-sm-shrink;
+            .navbar-header {
+                .navbar-brand {
+                    @include navbar-sm-shrink-brand;
+                }
+            }
+            .navbar-collapse {
+                .nav {
+                    @include navbar-sm-shrink-nav;
+                }
+            }
+        }
     }
 }

@@ -1,216 +1,381 @@
-/** _mixins.scss **/
+/** helpers/_mixins.scss **/
 
 
-/* Navbar Style */
+/* transform */
 
-@mixin navbar {
-    @include navbar-transition;
-    background-color: $light-yellow;
-    border-color: fade-out($light-yellow, 0.1);
-    font-family: #{$font-text},
+@mixin transform($transform) {
+    transform: $transform;
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+}
+
+
+/* transition */
+
+@mixin transition($transition) {
+    transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+}
+
+
+/* navbar */
+
+@mixin navbar-default {
+    @include transition($nav-transition);
+    background-color: $nav-bg-color;
+    border-color: fade-out($nav-border-color, .1);
+    box-shadow: $nav-box-shadow;
+    font-family: #{$nav-font-family},
     sans-serif;
-    letter-spacing: $letter-spacing;
-    padding: {
-        top: 7.5px;
-        bottom: 7.5px;
-    }
+    letter-spacing: $nav-letter-spacing;
+    padding: $nav-padding;
 }
 
 @mixin navbar-header {
-    position: relative;
-    vertical-align: middle;
-    .navbar-toggle {
-        @include navbar-transition;
-        border: {
-            color: $dark-brown;
-            radius: 2.0rem;
-            width: .25rem;
-        }
-        color: $dark-brown;
-        font: {
-            size: 12px;
-            weight: $font-bold;
-        }
-        text-transform: $text-uppercase;
-        &:hover,
-        &:focus {
-            background-color: $dark-brown;
-            color: $dark-orange;
-        }
+    position: $nav-position;
+    vertical-align: $nav-vertical-align;
+}
+
+@mixin navbar-brand {
+    @include transition($nav-transition);
+    color: $nav-brand-color;
+    display: $nav-display;
+    font: {
+        family: #{$nav-font-family},
+        sans-serif;
+        size: $nav-brand-font-size;
     }
-    .navbar-brand {
-        @include navbar-transition;
-        color: $dark-brown;
-        display: inline-block;
-        font: {
-            family: #{$font-text},
-            sans-serif;
-            size: 3.0rem;
-        }
-        height: inherit;
-        letter-spacing: 5px;
-        line-height: 3.0rem;
-        margin: {
-            left: 2vw;
-            right: 2vw;
-        }
-        padding: $padding-none;
-        .navbar-icon {
-            display: inline-block;
-            height: $full-px / 2;
-            width: auto;
-        }
-        &:hover,
-        &:focus {
-            color: $light-brown;
-            text-decoration: none;
-        }
-        &:focus {
-            color: $dark-brown !important;
-        }
+    height: $nav-brand-height;
+    letter-spacing: $nav-brand-letter-spacing;
+    line-height: $nav-brand-line-height;
+    margin: $nav-margin;
+    padding: $nav-brand-padding;
+    vertical-align: $nav-vertical-align;
+    &:hover,
+    &:focus {
+        color: $nav-brand-color-hover;
+        text-decoration: $nav-brand-text-decoration;
+    }
+    &:focus {
+        color: $nav-brand-color-focus !important;
     }
 }
 
-@mixin navbar-collapse {
-    .nav {
-        li {
+@mixin navbar-icon {
+    display: $nav-display;
+    height: $nav-icon-height;
+    margin-top: $nav-icon-margin-top;
+    width: $nav-icon-width;
+}
+
+@mixin navbar-toggle {
+    @include transition($nav-transition);
+    border: {
+        color: $nav-toggle-border-color;
+        width: $nav-toggle-border-width;
+    }
+    color: $nav-color;
+    float: $nav-toggle-float;
+    font: {
+        size: $nav-font-size;
+        weight: $nav-font-weight;
+    }
+    margin: $nav-toggle-margin;
+    text-transform: $nav-text-transform;
+    &:hover,
+    &:focus {
+        background-color: $nav-bg-color-hover;
+        color: $nav-color-hover;
+    }
+}
+
+@mixin navbar-nav {
+    li {
+        a,
+        a:focus {
+            @include transition($nav-transition);
+            background-color: $nav-nav-bg-color-focus !important;
+            color: $nav-color;
+            font: {
+                size: $nav-font-size;
+                weight: $nav-font-weight;
+            }
+            overflow: $nav-overflow;
+            text-transform: $nav-text-transform;
+            &:hover {
+                color: $nav-nav-color-focus;
+                cursor: $nav-cursor;
+                &:after {
+                    left: 0;
+                    width: $nav-nav-width-focus-hover;
+                }
+            }
+            &:after {
+                @include transition($nav-transition);
+                background-color: $nav-nav-color-focus;
+                content: $nav-content;
+                height: $nav-nav-height;
+                position: $nav-nav-position-focus;
+                bottom: 0;
+                left: auto;
+                right: 0;
+                width: $nav-nav-width-focus-after;
+            }
+        }
+        &.active {
             a,
             a:focus {
-                @include navbar-transition;
-                background-color: $color-none !important;
-                color: $dark-brown;
-                font: {
-                    size: 12px;
-                    weight: $font-bold;
-                }
-                overflow: hidden;
-                text-transform: $text-uppercase;
+                @include transition($nav-transition);
+                color: $nav-nav-color-active !important;
                 &:hover {
-                    color: $light-brown;
-                    cursor: pointer;
+                    background-color: $nav-nav-bg-color-active-hover;
                     &:after {
                         left: 0;
-                        width: $full-perc;
+                        width: $nav-nav-width-active;
                     }
                 }
                 &:after {
-                    @include navbar-transition;
-                    background-color: $light-brown;
-                    content: '';
-                    height: 3px;
-                    position: absolute;
-                    bottom: 0;
-                    left: auto;
-                    right: 0;
-                    width: 0;
-                }
-            }
-            &:active {
-                a,
-                a:focus {
-                    @include navbar-transition;
-                    color: $dark-orange !important;
-                    &:hover {
-                        background-color: $color-none;
-                        &:after {
-                            left: 0;
-                            width: $full-perc;
-                        }
-                    }
-                    &:after {
-                        background-color: $dark-orange;
-                    }
+                    background-color: $nav-nav-bg-color-active-after;
                 }
             }
         }
     }
 }
 
-@mixin navbar-transition {
-    transition: all .35s;
-    -webkit-transition: all .35s;
-    -moz-transition: all .35s;
-    -o-transition: all .35s;
+// navbar animation pop
+@mixin navbar-anim-pop($duration, $delay) {
+    $nav-anim-pop: $nav-anim-pop-name $duration $delay $nav-anim-pop-iteration $nav-anim-pop-direction;
+    animation: $nav-anim-pop;
+    -webkit-animation: $nav-anim-pop;
+    -moz-animation: $nav-anim-pop;
+    -o-animation: $nav-anim-pop;
 }
 
 
-/* Footer Style */
+/* section */
 
-@mixin footer {
-    background-color: $light-yellow;
-    height: auto;
-    width: $full-perc;
-    h4 {
-        font-size: $p-rem;
-        letter-spacing: $letter-spacing;
-        margin: {
-            top: 10px;
-            bottom: 10px;
-        }
-        text-transform: $text-uppercase;
+@mixin section-default {
+    padding: $sct-padding;
+    position: $sct-position;
+    text-align: $sct-text-align;
+}
+
+@mixin section-title {
+    color: $sct-title-color;
+    font-size: $sct-title-font-size;
+    margin: $sct-title-margin;
+    text-align: $sct-text-align;
+}
+
+@mixin section-text {
+    color: $sct-text-color;
+    font-size: $sct-text-font-size;
+    text-align: $sct-text-align;
+}
+
+
+/* header */
+
+@mixin header-default {
+    background: {
+        image: $hdr-bg-linear-gradient,
+        url(#{$hdr-bg-image-url});
+        position: $hdr-bg-position;
+        size: $hdr-bg-size;
+    }
+    color: $hdr-color;
+    font-family: #{$hdr-font-family},
+    sans-serif;
+    margin: $hdr-margin;
+    overflow: $hdr-overflow;
+    position: $hdr-position;
+    text-align: $hdr-text-align;
+    width: $hdr-width;
+}
+
+@mixin header-main {
+    padding: $hdr-main-padding;
+    position: $hdr-position;
+    text-align: $hdr-text-align;
+}
+
+@mixin header-content {
+    @include transform(translateY(-10%));
+    overflow: $hdr-overflow;
+    position: $hdr-position;
+    h1 {
+        display: $hdr-display;
+        font-size: $hdr-main-h1-font-size;
+        margin: $hdr-main-h1-marin;
+        width: $hdr-main-width;
     }
     a {
-        color: $dark-brown;
-        font-size: 1.2rem;
-        text-transform: $text-uppercase;
+        margin: $hdr-main-a-margin;
     }
 }
 
-@mixin footer-top {
-    .footer-brand {
-        border-bottom: 1px solid $dark-brown;
-        padding: {
-            top: 15px;
-            bottom: 15px;
-        }
-        .footer-logo {
-            height: 15%;
-            img {
-                height: auto;
-                width: 90%;
-            }
-        }
-        .footer-user {
-            padding: 10px 0;
-            text-align: $text-center;
+@mixin header-badges {
+    margin: $hdr-badges-margin;
+    padding: $hdr-badges-padding;
+    text-align: $hdr-text-align;
+    a {
+        display: $hdr-display;
+        img {
+            height: $hdr-badges-img-height;
         }
     }
+}
+
+@mixin header-pays {
+    margin: $hdr-pays-margin;
+    padding: $hdr-pays-padding;
+    text-align: $hdr-text-align;
+    img {
+        display: $hdr-display;
+        height: $hdr-pays-img-height;
+        margin: $hdr-pays-img-margin;
+    }
+}
+
+
+/* passenger */
+
+@mixin passenger {
+    @include section-default;
+    background: {
+        image: url(#{$pass-bg-image-url});
+        position: $pass-bg-position;
+        size: $pass-bg-size;
+    }
+    position: $pass-position;
+}
+
+@mixin passenger-title {
+    @include section-title;
+    color: $pass-title-color !important;
+}
+
+@mixin passenger-text {
+    @include section-text;
+    color: $pass-text-color !important;
+}
+
+@mixin passenger-btn {
+    @include section-btn;
+}
+
+
+/* driver */
+
+@mixin driver {
+    @include section-default;
+    background: {
+        image: url(#{$driver-bg-image-url});
+        position: $driver-bg-position;
+        size: $driver-bg-size;
+    }
+    position: $driver-position;
+}
+
+@mixin driver-title {
+    @include section-title;
+    color: $driver-title-color !important;
+}
+
+@mixin driver-text {
+    @include section-text;
+    color: $driver-text-color !important;
+}
+
+@mixin driver-btn {
+    @include section-btn;
+}
+
+
+/* team */
+
+@mixin team {
+    @include section-default;
+    background-color: $team-bg-color;
+    position: $team-position;
+    * {
+        @include transition(all .5s);
+    }
+}
+
+@mixin team-title {
+    @include section-title;
+    color: $team-title-color;
+}
+
+
+/* footer */
+
+@mixin footer-default {
+    background-color: $ftr-top-bg-color;
+    color: $ftr-color;
+    height: $ftr-height;
+    width: $ftr-width;
+    h4 {
+        font-size: $ftr-h4-font-size;
+        letter-spacing: $ftr-letter-spacing;
+        margin: $ftr-h4-margin;
+        text-transform: $ftr-text-transform;
+    }
+    a {
+        font-size: $ftr-p-font-size;
+        text-transform: $ftr-text-transform;
+    }
+}
+
+@mixin footer-brand {
+    border-bottom: $ftr-brand-border-bottom;
+    padding: $ftr-brand-padding;
+    img {
+        height: $ftr-logo-height;
+        width: $ftr-logo-width;
+    }
+}
+
+@mixin footer-user {
+    text-align: $ftr-text-align;
+    vertical-align: $ftr-vertical-align;
 }
 
 @mixin footer-menu {
-    margin: 20px 0 0;
-    ul {
-        list-style: none;
-        padding: 0;
-        li {
-            display: inline-block;
-            padding: 5px 0;
-            text: {
-                align: left;
-                transform: $text-uppercase;
-            }
-            width: 20%;
-            a:hover {
-                color: $light-brown;
-                text-decoration: none;
-            }
-            a:focus {
-                color: $dark-brown;
-                text-decoration: none;
-            }
-            .footer-page a {
-                font: {
-                    size: $a-rem;
-                    weight: $font-bold;
-                }
-            }
+    margin: $ftr-margin;
+}
+
+@mixin footer-page {
+    list-style: $ftr-list-style;
+    padding: $ftr-menu-ul-padding;
+    li {
+        display: $ftr-display;
+        padding: $ftr-menu-li-padding;
+        text: {
+            align: $ftr-menu-text-align;
+            transform: $ftr-text-transform;
+        }
+        width: $ftr-menu-li-width;
+        a,
+        a:focus {
+            color: $ftr-menu-color-focus;
+            text-decoration: $ftr-text-decoration;
+        }
+        a:hover {
+            color: $ftr-menu-color-hover;
+            text-decoration: $ftr-text-decoration;
         }
     }
 }
 
 @mixin footer-social {
     @each $item,
-    $item-color in $color-social {
+    $item-color in $ftr-social-color {
         .btn-social##{$item} {
             span {
                 background-color: $item-color;
@@ -222,101 +387,258 @@
     }
 }
 
-@mixin footer-app {
-    .badge-link {
-        display: inline-block;
-        margin: {
-            top: 10px;
-            bottom: 0;
-            left: 5px;
-            right: 5px;
-        }
-        img {
-            height: 35px;
-            width: auto;
-        }
+@mixin footer-badges {
+    display: $ftr-display;
+    img {
+        height: $ftr-badge-height;
+        width: $ftr-badge-width;
     }
 }
 
 @mixin footer-bottom {
     background-color: $dark-brown;
-    padding: {
-        top: 10px;
-        bottom: 10px;
-    }
-    #copyright {
-        color: $dark-yellow;
-        font-size: 1.0rem;
-        text-align: $text-center;
-        width: inherit;
+    padding: $ftr-padding;
+    .footer-copyright {
+        color: $ftr-copyright-color;
+        font-size: $ftr-bottom-font-size;
+        text-align: $ftr-text-align;
     }
 }
 
 
-/* Button Style */
+/* responsive-block */
+
+@mixin responsive-block {
+    background-color: $rbl-bg-color;
+    box-sizing: $rbl-box-sizing;
+    cursor: $rbl-cursor;
+    display: $rbl-display;
+    height: $rbl-height;
+    margin: $rbl-margin;
+    overflow: $rbl-overflow;
+    padding: $rbl-padding;
+    position: $rbl-position;
+}
+
+@mixin responsive-block-selected {
+    background-color: $rbl-selected-bg-color;
+    box-shadow: $rbl-selected-box-shadow;
+}
+
+@mixin responsive-block-list {
+    color: $rbl-color;
+    font-family: #{$rbl-font-family},
+    sans-serif;
+    font-size: $rbl-list-font-size;
+    margin: $rbl-list-margin;
+    padding: $rbl-list-padding;
+    z-index: $rbl-zindex;
+    opacity: $rbl-list-opacity;
+    li {
+        line-height: $rbl-list-line-height;
+        list-style: $rbl-list-list-style;
+        i {
+            margin-right: $rbl-list-i-margin-right;
+            letter-spacing: $rbl-list-i-letter-spacing;
+        }
+    }
+}
+
+@mixin responsive-block-list-social {
+    @each $item,
+    $item-color in $ftr-social-color {
+        .btn-social##{$item} {
+            span {
+                background-color: $item-color;
+            }
+            i {
+                color: $item-color;
+            }
+        }
+    }
+}
+
+@mixin responsive-block-selected-list {
+    margin-top: $rbl-selected-list-margin-top;
+    opacity: $rbl-selected-list-opacity;
+    text-align: $rbl-list-text-align;
+}
+
+@mixin responsive-block-img {
+    border: $rbl-border-width $rbl-border-type $rbl-border-color;
+    border-radius: $rbl-img-border-radius;
+    box-shadow: $rbl-img-box-shadow;
+    display: $rbl-img-display;
+    height: $rbl-img-height;
+    margin: $rbl-img-margin;
+    position: $rbl-img-position;
+    top: $rbl-img-position-top;
+    left: $rbl-img-position-left;
+    right: $rbl-img-position-right;
+    text-align: $rbl-img-text-align;
+    width: $rbl-img-width;
+    z-index: $rbl-img-zindex;
+}
+
+@mixin responsive-block-selected-img {
+    @include responsive-block-selected-img-transform(1.5);
+    border: $rbl-selected-img-border;
+    opacity: $rbl-selected-img-opacity;
+    position: $rbl-selected-img-position;
+    top: $rbl-selected-img-position-top;
+    left: $rbl-selected-img-position-left;
+    right: $rbl-selected-img-position-right;
+}
+
+@mixin responsive-block-selected-img-transform($scale: 1.5) {
+    transform: scale($scale, $scale);
+    -webkit-transform: scale($scale, $scale);
+    -moz-transform: scale($scale, $scale);
+    -ms-transform: scale($scale, $scale);
+    -o-transform: scale($scale, $scale);
+}
+
+@mixin responsive-block-title {
+    border: 1.5px solid fade-out($white, 1.0);
+    color: $rbl-color;
+    font: {
+        family: #{$rbl-font-family},
+        sans-serif;
+        weight: normal;
+    }
+    letter-spacing: $rbl-letter-spacing;
+    padding: $rbl-title-padding;
+    position: $rbl-title-position;
+    top: $rbl-title-position-top;
+    left: $rbl-title-position-left;
+    text: {
+        align: $rbl-text-align;
+        transform: $rbl-text-transform;
+    }
+    width: $rbl-width;
+    z-index: $rbl-zindex;
+}
+
+@mixin responsive-block-selected-title {
+    padding: $rbl-selected-padding;
+    top: $rbl-selected-position-top;
+    left: $rbl-selected-position-left;
+    text-align: $rbl-selected-text-align;
+    width: $rbl-selected-width;
+}
+
+@mixin responsive-block-title-name {
+    font: {
+        size: $rbl-name-font-size;
+        weight: $rbl-name-font-weight;
+    }
+}
+
+@mixin responsive-block-selected-title-name {
+    font: {
+        size: $rbl-selected-name-font-size !important;
+        weight: $rbl-selected-name-font-weight !important;
+    }
+    top: $rbl-selected-name-position-top;
+}
+
+@mixin responsive-block-title-work {
+    font: {
+        size: $rbl-work-font-size;
+        weight: $rbl-work-font-weight;
+    }
+    top: $rbl-work-position-top;
+}
+
+@mixin responsive-block-selected-title-work {
+    border-bottom: $rbl-selected-work-border-bottom;
+    font: {
+        size: $rbl-selected-work-font-size !important;
+        weight: $rbl-selected-work-font-weight !important;
+    }
+    top: $rbl-selected-work-position-top;
+}
+
+// responsive-block animation shady
+@mixin responsive-block-img-anim-shady($duration: 4s) {
+    $rbl-img-anim: $rbl-img-anim-name $duration $rbl-img-anim-timing $rbl-img-anim-iteration;
+    animation: $rbl-img-anim;
+    -webkit-animation: $rbl-img-anim;
+    -moz-animation: $rbl-img-anim;
+    -o-animation: $rbl-img-anim;
+}
+
+@mixin responsive-block-img-anim-hover($anim: none) {
+    animation: $anim;
+    -webkit-animation: $anim;
+    -moz-animation: $anim;
+    -o-animation: $anim;
+}
+
+
+/* buttons */
 
 @mixin btn-normal {
-    background-color: $color-none;
+    background-color: $btn-bg-color;
     border: {
-        color: $dark-yellow;
-        radius: $border-radius;
-        width: $border-width;
+        color: $btn-border-color-light;
+        radius: $btn-border-radius;
+        width: $btn-border-width;
     }
-    color: $dark-yellow;
-    cursor: $cursor;
+    color: $btn-color-light;
+    cursor: $btn-cursor;
     font: {
-        family: #{$font-title},
+        family: #{$btn-font-family},
         sans-serif;
-        weight: $font-bold;
+        weight: $btn-font-weight;
     }
-    letter-spacing: $letter-spacing;
-    text-transform: $text-uppercase;
-    ;
+    letter-spacing: $btn-letter-spacing;
+    text-transform: $btn-text-transform;
     &:hover,
     &:focus,
     &:active {
-        background-color: $dark-yellow;
-        border-color: $dark-yellow;
-        color: $dark-brown;
+        background-color: $btn-bg-color-light-hover;
+        color: $btn-color-light-hover;
     }
 }
 
-@mixin btn-circle($radius: 3.6rem) {
-    background-color: $light-gray;
+@mixin btn-circle($radius: $btn-circle-border-radius) {
+    background-color: $btn-circle-bg-color;
     border-radius: $radius;
-    cursor: $cursor;
-    display: inline-block;
+    cursor: $btn-cursor;
+    display: $btn-circle-display;
     height: $radius;
     line-height: $radius;
-    margin: 10px 5px 0;
-    padding: $padding-none;
-    text-align: center !important;
+    margin: $btn-circle-margin;
+    padding: $btn-circle-padding;
+    text-align: $btn-text-align !important;
     width: $radius;
     i {
-        background-color: none;
+        @include transition($btn-circle-transition);
         border-right: none !important;
-        font-size: $h6-rem;
+        font-size: $btn-circle-font-size;
         height: $radius;
         line-height: $radius !important;
-        position: absolute;
+        position: $btn-circle-position;
         top: 0;
         left: 0;
         width: $radius !important;
         z-index: 10;
     }
     span {
-        border-radius: 0;
-        display: block;
+        @include transition($btn-circle-transition);
+        border-radius: $btn-circle-span-border-radius;
+        display: $btn-circle-span-display;
         height: 0;
-        margin: $margin-none;
-        position: absolute;
+        margin: $btn-circle-span-margin;
+        position: $btn-circle-span-position;
         top: 50%;
         left: 50%;
         width: 0;
     }
     &:hover {
         i {
-            color: $light-gray !important;
+            color: $btn-circle-color-hover !important;
         }
         span {
             border-radius: $radius;
@@ -325,11 +647,4 @@
             width: $radius;
         }
     }
-}
-
-@mixin btn-circle-transition {
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
 }

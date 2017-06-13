@@ -1,0 +1,16 @@
+/** layout/_team.scss **/
+
+.section-team {
+    @include team;
+    .section-title {
+        @include team-title;
+    }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+    .section-team {
+        .section-title {
+            @include team-sm-title;
+        }
+    }
+}

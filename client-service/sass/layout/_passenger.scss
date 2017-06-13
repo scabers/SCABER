@@ -1,0 +1,23 @@
+/** layout/_passenger.scss **/
+
+.section-passenger {
+    @include passenger;
+    .section-title {
+        @include passenger-title;
+    }
+    .section-text {
+        @include passenger-text;
+    }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+    .section-passenger {
+        @include passenger-sm;
+        .section-title {
+            @include passenger-sm-title;
+        }
+        .section-text {
+            @include passenger-sm-text;
+        }
+    }
+}

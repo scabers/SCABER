@@ -1,0 +1,71 @@
+/** _responsive-block.scss **/
+
+.responsive-block {
+    @include responsive-block;
+    &:hover {
+        .block-img {
+            @include responsive-block-img-anim-shady(4s);
+        }
+    }
+    &.selected {
+        @include responsive-block-selected;
+        &:hover {
+            .block-img {
+                @include responsive-block-img-anim-hover;
+            }
+        }
+        .block-img {
+            @include responsive-block-selected-img;
+        }
+        .block-title {
+            @include responsive-block-selected-title;
+            &#name {
+                @include responsive-block-selected-title-name;
+            }
+            &#work {
+                @include responsive-block-selected-title-work;
+            }
+        }
+        .block-list {
+            @include responsive-block-selected-list;
+        }
+    }
+    .block-img {
+        @include responsive-block-img;
+    }
+    .block-title {
+        @include responsive-block-title;
+        &#name {
+            @include responsive-block-title-name;
+        }
+        &#work {
+            @include responsive-block-title-work;
+        }
+    }
+    .block-list {
+        @include responsive-block-list;
+    }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+    .responsive-block {
+        &.selected {
+            .block-title {
+                &#name {
+                    @include responsive-block-sm-selected-title-name;
+                }
+                &#work {
+                    @include responsive-block-sm-selected-title-work;
+                }
+            }
+        }
+        .block-title {
+            &#name {
+                @include responsive-block-sm-title-name;
+            }
+            &#work {
+                @include responsive-block-sm-title-work;
+            }
+        }
+    }
+}

@@ -35,23 +35,6 @@ a:focus {
     color: #F6B41E;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Metrophobic', sans-serif;
-    font-weight: 500;
-    letter-spacing: 1px;
-}
-
-p {
-    font-size: 18px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
 .bg-primary {
     background-color: #FFCF47;
     color: #3F3133;
@@ -75,107 +58,13 @@ aside {
 }
 
 
-/* Selection effects */
-
-::selection {
-    background-color: #3F3133;
-    color: #FFCF47;
-    text-shadow: none;
-}
-
-::-moz-selection {
-    background-color: #3F3133;
-    color: #FFCF47;
-    text-shadow: none;
-}
-
-img::selection {
-    background-color: transparent;
-    color: #FFCF47;
-}
-
-img::-moz-selection {
-    background-color: transparent;
-    color: #FFCF47;
-}
-
-
-/* section-default */
-
-.section-default {
-    padding: 100px 0;
-    position: relative;
-}
-
-.section-head {
-    color: #F6B41E;
-    font-size: 2.5rem;
-    margin-top: 0;
-}
-
-.section-default .section-text {
-    color: #3F3133;
-    font-size: 1.25rem;
-}
-
-@media screen and (min-width: 768px) {
-    .section-default {
-        padding: 100px 0;
-        position: relative;
-    }
-    .section-head {
-        color: #F6B41E;
-        font-size: 4.0rem;
-        margin-top: 0;
-    }
-    .section-text {
-        color: #3F3133;
-        font-size: 1.5rem;
-    }
-}
-
-
-/** passenger.ejs **/
-
-.section-passenger {
-    background: linear-gradient(to bottom, rgba(63, 49, 51, .75) 0%, transparent), url('http://www.thedailybeast.com/content/dam/dailybeast/2013/07/30/130730-Blackman-Hailo-tease.jpg');
-    background-position: center center;
-    background-size: cover;
-}
-
-.section-passenger .section-heading {
-    color: #F6B41E;
-}
-
-.section-passenger .section-text {
-    color: #FFFFFF;
-}
-
-
 /** demo.ejs **/
 
 .section-demo {
-    background-color: #FFCF47;
+    background-color: #D8D8D8;
     position: relative;
 }
 
-.section-demo .section-head {
+.section-demo .section-title {
     color: #3F3133;
-}
-
-
-/** driver.ejs **/
-
-.section-driver {
-    background: linear-gradient(to top, rgba(63, 49, 51, .75) 0%, transparent), url('http://teanecktaxi.com/wp-content/uploads/2016/06/teaneck-taxi-bergenfield-1.png');
-    background-position: center center;
-    background-size: cover;
-}
-
-.section-driver .section-head {
-    color: #F6B41E;
-}
-
-.section-driver .section-text {
-    color: #FFFFFF;
 }

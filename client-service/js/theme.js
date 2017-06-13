@@ -59,8 +59,8 @@ $(document).ready(function() {
         }
     });
 
-    // Define animation of box
-    $('.team-box').click(function() {
+    // Define animation of responsive-block
+    $('.responsive-block').click(function() {
         $(this).toggleClass('selected');
     });
 

@@ -1,0 +1,240 @@
+/** media/_screen-sm.scss **/
+
+
+/* navbar-sm */
+
+@mixin navbar-sm-default {
+    background-color: $nav-sm-bg-color;
+    border-color: $nav-sm-border-color;
+    padding: $nav-sm-padding;
+}
+
+@mixin navbar-sm-brand {
+    @include navbar-anim-pop(.5s, .0s);
+    color: $nav-sm-brand-color !important;
+    &:hover,
+    &:focus {
+        color: $nav-sm-brand-color-hover !important;
+    }
+}
+
+@mixin navbar-sm-icon {
+    @include navbar-anim-pop(.5s, .0s);
+    @include transform(translateY(-100%));
+}
+
+@mixin navbar-sm-nav {
+    li {
+        @include transform(translateY(-100%));
+        a,
+        a:focus {
+            color: $nav-sm-nav-color;
+            &:hover {
+                // change to logo color
+                color: $nav-sm-nav-color-hover;
+            }
+        }
+        &:nth-child(1) {
+            @include navbar-anim-pop(.5s, .15s);
+        }
+        &:nth-child(2) {
+            @include navbar-anim-pop(.5s, .3s);
+        }
+        &:nth-child(3) {
+            @include navbar-anim-pop(.5s, .45s);
+        }
+        &:nth-child(4) {
+            @include navbar-anim-pop(.5s, .6s);
+        }
+        &:nth-child(5) {
+            @include navbar-anim-pop(.5s, .75s);
+        }
+    }
+}
+
+@mixin navbar-sm-shrink {
+    background-color: $nav-sm-shrink-bg-color;
+    border-color: $nav-sm-shrink-border-color;
+}
+
+@mixin navbar-sm-shrink-brand {
+    color: $nav-sm-shrink-brand-color;
+    font-size: $nav-sm-shrink-brand-font-size;
+    &:hover,
+    &:focus {
+        color: $nav-sm-shrink-brand-color-hover !important;
+    }
+}
+
+@mixin navbar-sm-shrink-nav {
+    li {
+        a,
+        a:focus {
+            color: $nav-sm-shrink-nav-color;
+            font-size: $nav-sm-shrink-nav-font-size;
+            &:hover {
+                // change to logo color
+                color: $nav-sm-shrink-nav-color-hover;
+            }
+        }
+        &.active {
+            a,
+            a:focus {
+                color: $nav-sm-shrink-nav-color-active !important;
+                &:hover {
+                    background-color: $nav-sm-shrink-nav-bg-color-active-hover;
+                }
+            }
+        }
+    }
+}
+
+
+/* section-sm */
+
+@mixin section-sm-default {
+    text-align: $sct-sm-text-align;
+}
+
+@mixin section-sm-title {
+    font-size: $sct-sm-title-font-size;
+    text-align: $sct-sm-text-align;
+}
+
+@mixin section-sm-text {
+    font-size: $sct-sm-text-font-size;
+    text-align: $sct-sm-text-align;
+}
+
+
+/* header-sm */
+
+@mixin header-sm-default {
+    min-height: 100%;
+}
+
+@mixin header-sm-main {
+    height: 85vh;
+    padding: $hdr-sm-main-padding;
+    text-align: $hdr-sm-text-align;
+}
+
+@mixin header-sm-content {
+    @include transform(translateY(-50%));
+    margin: $hdr-sm-main-margin;
+    position: $hdr-sm-position;
+    top: $hdr-sm-position-top;
+    h1 {
+        font-size: $hdr-sm-main-h1-font-size;
+    }
+    a {
+        margin: $hdr-sm-main-a-margin;
+    }
+}
+
+@mixin header-sm-badges {
+    position: $hdr-sm-position;
+    text-align: $hdr-sm-text-align;
+    img {
+        height: $hdr-sm-badges-img-height;
+        text-align: $hdr-sm-text-align;
+    }
+}
+
+@mixin header-sm-pays {
+    position: $hdr-sm-position;
+    text-align: $hdr-sm-text-align;
+    img {
+        height: $hdr-sm-pays-img-height;
+        text-align: $hdr-sm-text-align;
+    }
+}
+
+
+/* passenger-sm */
+
+@mixin passenger-sm {
+    @include section-sm-default;
+}
+
+@mixin passenger-sm-title {
+    @include section-sm-title;
+}
+
+@mixin passenger-sm-text {
+    @include section-sm-text;
+}
+
+
+/* driver-sm */
+
+@mixin driver-sm {
+    @include section-sm-default;
+}
+
+@mixin driver-sm-title {
+    @include section-sm-title;
+}
+
+@mixin driver-sm-text {
+    @include section-sm-text;
+}
+
+
+/* team-sm */
+
+@mixin team-sm-title {
+    @include section-sm-title;
+}
+
+
+/* footer-sm */
+
+@mixin footer-sm-default {
+    h4 {
+        font-size: $ftr-sm-h4-font-size;
+    }
+    a {
+        font-size: $ftr-sm-a-font-size;
+    }
+}
+
+@mixin footer-sm-user {
+    padding: $ftr-sm-margin;
+    vertical-align: $ftr-sm-vertical-align;
+}
+
+@mixin footer-sm-menu {
+    margin: $ftr-sm-margin;
+}
+
+@mixin footer-sm-social {
+    margin: $ftr-sm-margin;
+}
+
+@mixin footer-sm-badges {
+    margin: $ftr-sm-margin;
+    img {
+        height: $ftr-sm-badge-height;
+        width: $ftr-sm-badge-width;
+    }
+}
+
+
+/* responsive-block-sm */
+
+@mixin responsive-block-sm-title-name {
+    font-size: 2.0rem;
+}
+
+@mixin responsive-block-sm-title-work {
+    font-size: 1.6rem;
+}
+
+@mixin responsive-block-sm-selected-title-name {
+    font-size: 1.7rem;
+}
+
+@mixin responsive-block-sm-selected-title-work {
+    font-size: 1.3rem;
+}

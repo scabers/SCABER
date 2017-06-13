@@ -4,35 +4,26 @@
     @include btn-normal;
 }
 
-.btn-theme1 {
+.btn-light {
     @extend .btn;
 }
 
-.btn-theme2 {
-    @extend .btn-theme1;
+.btn-dark {
+    @extend .btn-light;
     border: {
-        color: $dark-brown;
+        color: $btn-border-color-dark;
     }
-    color: $dark-brown;
+    color: $btn-color-dark;
     &:hover,
     &:focus,
     &:active {
         background: {
-            color: $dark-brown;
+            color: $btn-bg-color-dark-hover;
         }
-        border: {
-            color: $dark-brown;
-        }
-        color: $dark-yellow;
+        color: $btn-color-dark-hover;
     }
 }
 
 .btn-social {
     @include btn-circle;
-    i {
-        @include btn-circle-transition;
-    }
-    span {
-        @include btn-circle-transition;
-    }
 }

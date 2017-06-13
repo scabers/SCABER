@@ -1,15 +1,25 @@
-/** _footer.scss **/
+/** layout/_footer.scss **/
 
-footer {
-    @include footer;
+.footer-default {
+    @include footer-default;
     .footer-top {
-        @include footer-top;
+        .footer-brand {
+            @include footer-brand;
+            .footer-user {
+                @include footer-user;
+            }
+        }
         .footer-menu {
             @include footer-menu;
+            .footer-page {
+                @include footer-page;
+            }
         }
-        .footer-link {
+        .footer-social {
             @include footer-social;
-            @include footer-app;
+        }
+        .footer-badges {
+            @include footer-badges;
         }
     }
     .footer-bottom {
@@ -17,45 +27,23 @@ footer {
     }
 }
 
-@media screen and (min-width: 768px) {
-    footer {
-        h4 {
-            font-size: $h4-rem;
-        }
-        a {
-            font-size: $a-rem;
-        }
+@media screen and (min-width: $screen-sm-min) {
+    .footer-default {
+        @include footer-sm-default;
         .footer-top {
             .footer-brand {
                 .footer-user {
-                    padding: $padding-none;
-                    padding: {
-                        top: 20px;
-                        bottom: 20px;
-                    }
+                    @include footer-sm-user;
                 }
             }
             .footer-menu {
-                margin: $margin-none;
-                margin: {
-                    top: 20px;
-                    bottom: 20px;
-                }
+                @include footer-sm-menu;
             }
-            .footer-link {
-                margin: $margin-none;
-                margin: {
-                    top: 20px;
-                    bottom: 20px;
-                }
-                .footer-app {
-                    .badge-link {
-                        img {
-                            height: 30px;
-                            width: auto;
-                        }
-                    }
-                }
+            .footer-social {
+                @include footer-sm-social;
+            }
+            .footer-badges {
+                @include footer-sm-badges;
             }
         }
     }

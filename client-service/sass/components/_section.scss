@@ -1,0 +1,22 @@
+/** components/_section.scss **/
+
+.section-default {
+    @include section-default;
+    .section-title {
+        @include section-title;
+    }
+    .section-text {
+        @include section-text;
+    }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+    .section-default {
+        .section-title {
+            @include section-sm-title;
+        }
+        .section-text {
+            @include section-sm-text;
+        }
+    }
+}

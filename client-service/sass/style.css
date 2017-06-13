@@ -13,6 +13,46 @@
 /** _mixins.scss **/
 /* Navbar Style */
 /* Footer Style */
+/* Responsive-box Style */
+@keyframes shady {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); }
+  20% {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0), 0 0 0 0px rgba(216, 216, 216, 0); }
+  20.1% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); }
+  50% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); }
+  70% {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0), 0 0 0 0px rgba(216, 216, 216, 0); }
+  100% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); } }
+@-webkit-keyframes shady {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); }
+  20% {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0), 0 0 0 0px rgba(216, 216, 216, 0); }
+  20.1% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); }
+  50% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); }
+  70% {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0), 0 0 0 0px rgba(216, 216, 216, 0); }
+  100% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); } }
+@-moz-keyframes shady {
+  0% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); }
+  20% {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0), 0 0 0 0px rgba(216, 216, 216, 0); }
+  20.1% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); }
+  50% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); }
+  70% {
+    box-shadow: 0 0 0 50px rgba(255, 255, 255, 0), 0 0 0 0px rgba(216, 216, 216, 0); }
+  100% {
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(216, 216, 216, 0.5); } }
 /* Button Style */
 /* Import Components */
 /** _buttons.scss **/
@@ -52,6 +92,10 @@
   text-align: center !important;
   width: 3.6rem; }
   .btn-social i {
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
     background-color: none;
     border-right: none !important;
     font-size: 1.6rem;
@@ -63,6 +107,10 @@
     width: 3.6rem !important;
     z-index: 10; }
   .btn-social span {
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
     border-radius: 0;
     display: block;
     height: 0;
@@ -78,16 +126,6 @@
     height: 3.6rem;
     margin: -1.8rem;
     width: 3.6rem; }
-  .btn-social i {
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s; }
-  .btn-social span {
-    transition: all 0.3s;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s; }
 
 /** _navbar.scss **/
 .navbar-default {
@@ -118,7 +156,7 @@
       text-transform: uppercase; }
       .navbar-default .navbar-header .navbar-toggle:hover, .navbar-default .navbar-header .navbar-toggle:focus {
         background-color: #3f3133;
-        color: #db5a3c; }
+        color: #f6b41e; }
     .navbar-default .navbar-header .navbar-brand {
       transition: all .35s;
       -webkit-transition: all .35s;
