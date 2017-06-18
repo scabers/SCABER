@@ -22,6 +22,60 @@
 }
 
 
+/* user-select */
+
+@mixin user-select($select) {
+    user-select: $select;
+    -webkit-user-select: $select;
+    -moz-user-select: if ($select==none) -moz-none;
+    -ms-user-select: $select;
+}
+
+
+/* ::selection */
+
+@mixin -selection {
+    background-color: $-selection-bg-color;
+    color: $-selection-color;
+    text-shadow: $-selection-text-shadow;
+}
+
+@mixin -selection-img {
+    background-color: $-selection-img-bg-color;
+    color: $-selection-img-color;
+}
+
+
+/* ::placeholder */
+
+@mixin -placeholder {
+    color: $-placeholder-color;
+    font: {
+        family: #{$-placeholder-font-family},
+        sans-serif;
+        size: $-placeholder-font-size;
+    }
+}
+
+
+/* inline elements */
+
+@mixin inline-h {
+    font: {
+        family: #{$h-font-family},
+        sans-serif;
+        weight: $h-font-weight;
+    }
+    letter-spacing: $h-letter-spacing;
+}
+
+@mixin inline-p {
+    font-size: $p-font-size;
+    line-height: $p-line-height;
+    margin-bottom: $p-margin-bottom;
+}
+
+
 /* navbar */
 
 @mixin navbar-default {
@@ -164,6 +218,18 @@
     text-align: $sct-text-align;
 }
 
+@mixin section-half {
+    height: $sct-height;
+    padding: $sct-half-padding;
+    width: $sct-half-width;
+    &.section-left {
+        float: left;
+    }
+    &.section-right {
+        float: right;
+    }
+}
+
 @mixin section-title {
     color: $sct-title-color;
     font-size: $sct-title-font-size;
@@ -266,6 +332,230 @@
 
 @mixin passenger-btn {
     @include section-btn;
+}
+
+
+/* account */
+
+@mixin account {
+    @include section-default;
+    background-color: $acc-bg-color;
+    padding-bottom: $acc-padding-bottom;
+    position: $acc-position;
+}
+
+@mixin account-center {
+    height: $acc-height;
+    position: $acc-position;
+    width: $acc-width;
+    * {
+        box-sizing: $acc-box-sizing;
+        -webkit-font-smoothing: $acc-content-font-smoothing;
+        -moz-osx-font-smoothing: $acc-content-font-smoothing;
+        text-rendering: $acc-text-rendering;
+    }
+    .section-left {
+        background-color: $acc-left-bg-color;
+        width: 70% !important;
+    }
+}
+
+@mixin account-title {
+    @include section-title;
+    color: $dark-yellow;
+}
+
+@mixin account-tabs {
+    margin: $acc-tabs-margin;
+    border-bottom: $acc-tabs-border-bottom;
+    width: $acc-tabs-width;
+}
+
+@mixin account-tab {
+    @include transition(all .1s ease-in-out);
+    @include user-select(none);
+    border-bottom: $acc-tab-border-bottom;
+    cursor: $acc-cursor;
+    display: $acc-tab-display;
+    letter-spacing: $acc-tab-letter-spacing;
+    margin-bottom: $acc-tab-margin-bottom;
+    padding: $acc-tab-padding;
+    a {
+        @include transition(all .1s ease-in-out);
+        color: $acc-tab-color;
+        font-size: $acc-tab-font-size;
+        text-decoration: $acc-tab-text-decoration;
+        text-transform: $acc-tab-text-transform;
+    }
+    &:hover,
+    &.active {
+        a {
+            color: $acc-tab-color-hover;
+        }
+    }
+    &.active {
+        border-bottom: $acc-tab-border-bottom-active;
+    }
+}
+
+@mixin account-form {
+    height: $acc-form-height;
+    position: $acc-form-position;
+}
+
+@mixin account-form-label {
+    @include user-select(none);
+    color: $acc-form-label-color;
+    font-size: $acc-form-label-font-size;
+    &:not([for='remember']) {
+        display: none;
+    }
+    &:first-of-type {
+        @include account-anim-slideIn(.4s);
+    }
+    &:nth-of-type(2) {
+        @include account-anim-slideIn(.5s);
+    }
+    &:nth-of-type(3) {
+        @include account-anim-slideIn(.6s);
+    }
+}
+
+@mixin account-form-submit {
+    position: $acc-form-submit-position;
+    bottom: $acc-form-submit-bottom;
+    width: $acc-form-submit-width;
+    a {
+        color: $acc-form-submit-terms-color;
+        display: $acc-form-submit-terms-display;
+        font-size: $acc-form-submit-terms-font-size;
+        margin-top: $acc-form-submit-terms-margin-top;
+        text-align: $acc-form-submit-terms-text-align;
+        text-decoration: $acc-form-submit-terms-text-decoration;
+        &:hover {
+            text-decoration: $acc-form-submit-terms-text-decoration-hover;
+        }
+        &:first-of-type {
+            @include account-anim-slideIn(.4s);
+        }
+        &:nth-of-type(2) {
+            @include account-anim-slideIn(.5s);
+        }
+        &:nth-of-type(3) {
+            @include account-anim-slideIn(.6s);
+        }
+    }
+}
+
+@mixin account-form-input {
+    background-color: $acc-form-input-bg-color;
+    border: $acc-form-input-border;
+    border-radius: $acc-form-input-border-radius;
+    color: $acc-form-input-color;
+    font-size: $acc-form-input-font-size;
+    display: $acc-form-input-display;
+    height: $acc-form-input-height;
+    margin-bottom: $acc-form-input-margin-bottom;
+    padding: $acc-form-input-padding;
+    width: $acc-form-input-width;
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-moz-placeholder,
+    &:-ms-input-placeholder {
+        @include -placeholder;
+    }
+    &:focus {
+        border: $acc-form-input-border-focus;
+        outline: $acc-form-input-outline;
+    }
+    &:first-of-type {
+        @include account-anim-slideIn(.4s);
+    }
+    &:nth-of-type(2) {
+        @include account-anim-slideIn(.5s);
+    }
+    &:nth-of-type(3) {
+        @include account-anim-slideIn(.6s);
+    }
+}
+
+@mixin account-form-submit-input {
+    background: $acc-form-input-bg-color;
+    border: $acc-form-input-border;
+    border-radius: $acc-form-input-border-radius;
+    color: $acc-form-input-color;
+    cursor: $acc-cursor;
+    display: $acc-form-input-display;
+    font-size: $acc-form-submit-font-size;
+    font-weight: $acc-form-submit-font-weight;
+    height: $acc-form-input-height;
+    letter-spacing: $acc-form-input-letter-spacing;
+    line-height: $acc-form-input-line-height;
+    text-transform: $acc-form-input-text-tranform;
+    width: $acc-form-input-width;
+    &:hover {
+        @include transition(all .2s);
+        background-color: $acc-form-input-bg-color-hover;
+        color: $acc-form-input-color-hover;
+    }
+}
+
+@mixin account-form-chkbox {
+    border: $acc-form-chkbox-border;
+    clip: $acc-form-chkbox-clip;
+    height: $acc-form-input-chkbox-height;
+    margin: $acc-form-chkbox-margin;
+    opacity: $acc-form-chkbox-opacity;
+    overflow: $acc-form-chkbox-overflow;
+    padding: $acc-form-chkbox-padding;
+    visibility: $acc-form-chkbox-visibility;
+    width: $acc-form-chkbox-width;
+    &+label {
+        display: $acc-form-chkbox-label-display;
+        vertical-align: $acc-form-chkbox-label-vertical-align;
+        width: $acc-form-chkbox-label-width;
+        &:before {
+            background: $acc-form-chkbox-label-bg-color-before;
+            border: $acc-form-chkbox-label-border-before;
+            border-radius: $acc-form-chkbox-label-border-radius-before;
+            color: $acc-form-chkbox-label-color-before;
+            content: $acc-form-chkbox-label-content-before;
+            display: $acc-form-chkbox-label-display-before;
+            font-family: #{$acc-form-chkbox-label-font-family-before},
+            sans-serif;
+            font-size: $acc-form-chkbox-label-font-size-before;
+            font-weight: $acc-form-chkbox-label-font-weight-before;
+            height: $acc-form-chkbox-label-height-before;
+            line-height: $acc-form-chkbox-label-line-height-before;
+            margin: $acc-form-chkbox-label-margin-before;
+            position: $acc-form-chkbox-label-position-before;
+            text-align: $acc-form-chkbox-label-text-align-before;
+            vertical-align: $acc-form-chkbox-label-vertical-align-before;
+            width: $acc-form-chkbox-label-width-before;
+        }
+    }
+    &:checked {
+        &+label {
+            &:before {
+                content: "✓";
+            }
+        }
+    }
+}
+
+@mixin account-form-signin {
+    display: $acc-form-signin-display;
+}
+
+@mixin account-form-signup {
+    display: $acc-form-signup-display;
+}
+
+@mixin account-anim-slideIn($duration) {
+    animation: $acc-anim-name $duration $acc-anim-timing;
+    -webkit-animation: $acc-anim-name $duration $acc-anim-timing;
+    -moz-animation: $acc-anim-name $duration $acc-anim-timing;
+    -o-animation: $acc-anim-name $duration $acc-anim-timing;
 }
 
 

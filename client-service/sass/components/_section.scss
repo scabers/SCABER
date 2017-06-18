@@ -2,6 +2,9 @@
 
 .section-default {
     @include section-default;
+    .section-half {
+        @include section-half;
+    }
     .section-title {
         @include section-title;
     }

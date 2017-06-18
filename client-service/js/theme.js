@@ -67,7 +67,7 @@ $(document).ready(function() {
         $(this).toggleClass('selected');
     });
 
-
+    // Define animation of section-account
     $('.account-tabs .account-tab').click(function() {
         // For sigin tab
         if ($(this).hasClass('tab-signin')) {
@@ -81,14 +81,14 @@ $(document).ready(function() {
             $('.account-tabs .account-tab').removeClass('active');
             $(this).addClass('active');
             $('.account-page').hide();
-            $('.account-google-signup').show();
+            $('.account-google').show();
         }
-        // For FB
+        // For Facebook
         if ($(this).hasClass('tab-facebook-signup')) {
             $('.account-tabs .account-tab').removeClass('active');
             $(this).addClass('active');
             $('.account-page').hide();
-            $('.account-facebook-signup').show();
+            $('.account-facebook').show();
         }
 
         // For Local

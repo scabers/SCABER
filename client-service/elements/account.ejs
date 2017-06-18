@@ -1,63 +1,58 @@
-<!-- Include CSS file -->
-<link rel="stylesheet" href="account.css">
-
 <!-- account.ejs -->
 <section class="section-default section-account" id="account">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section-content">
-                <h1 class="section-head">成為 SCABER 的一員!</h1>
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 section-center account-center">
+                <h2 class="section-title">成為 SCABER 的一員！</h2>
                 <div class="section-half section-left">
-                    <!-- ================================================== Tab here ================================================== -->
+                    <!-- account-tabs -->
                     <div class="account-tabs">
-                        <!-- lOGIN -->
+                        <!-- Sign-in -->
                         <span class="account-tab tab-signin active"><a href="#signin">登入 SCABER</a></span>
                         <!-- Google -->
                         <span class="account-tab tab-google-signup"><a href="#google-signup">Google 註冊</a></span>
                         <!-- Facebook -->
-                        <span class="account-tab tab-facebook-signup"><a href="#facebook-signup">FB 註冊</a></span>
-                        <!-- Local -->
-                        <!-- <span class="account-tab tab-signin"><a href="#signin">登入</a></span>
-                        <span class="account-tab tab-signup"><a href="#signup">註冊</a></span>-->
+                        <span class="account-tab tab-facebook-signup"><a href="#facebook-signup">Facebook 註冊</a></span>
                     </div>
-                    <!-- ================================================== Tab content here ================================================== -->
+                    <!-- ./account-tabs -->
                     <div class="account-content">
+                        <!-- Local Sign-in -->
                         <div class="account-page account-signin">
                             <!-- <h3><kbd> 目前使用 Google 註冊 </kbd></h3> -->
-                            <form action="/login" method="GET">
+                            <form class="account-form" action="/login" method="GET">
                                 <input class="account-input" id="username" type="username" name="username" required="required" placeholder="輸入您的SCABER帳號">
                                 <label for="email">SCABER 名稱</label>
                                 <div class="account-submit">
                                     <input class="submit" type="submit" value="登入">
-                                    <a class="more" href="#">Terms and conditions</a>
+                                    <a class="terms" href="#">Terms and conditions</a>
                                 </div>
                             </form>
                         </div>
-                        <!-- Google -->
-                        <div class="account-page account-google-signup">
+                        <!-- Google Sign-up -->
+                        <div class="account-page account-signup account-google">
                             <!-- <h3><kbd> 目前使用 Google 註冊 </kbd></h3> -->
-                            <form action="/auth/google" method="POST">
+                            <form class="account-form" action="/auth/google" method="POST">
                                 <input class="account-input" id="username" type="username" name="username" required="required" placeholder="輸入您的SCABER帳號">
                                 <label for="email">SCABER 名稱</label>
                                 <input class="account-input" id="type" type="type" name="type" required="required" placeholder="司機 / 乘客">
-                                <label for="password">SCABER 角色</label>
+                                <label for="password">SCABER 身份</label>
                                 <div class="account-submit">
                                     <input class="submit" type="submit" value="註冊">
-                                    <a class="more" href="#">Terms and conditions</a>
+                                    <a class="terms" href="#">Terms and conditions</a>
                                 </div>
                             </form>
                         </div>
-                        <!-- FB -->
-                        <div class="account-page account-facebook-signup">
+                        <!-- Facobook Sign-up -->
+                        <div class="account-page account-signup account-facebook">
                             <!-- <h3><kbd> 目前使用 Facebook 註冊 </kbd></h3> -->
-                            <form action="/auth/facebook" method="POST">
+                            <form class="account-form" action="/auth/facebook" method="POST">
                                 <input class="account-input" id="username" type="username" name="username" required="required" placeholder="輸入您的SCABER帳號">
                                 <label for="email">SCABER 名稱</label>
                                 <input class="account-input" id="type" type="type" name="type" required="required" placeholder="司機 / 乘客">
                                 <label for="password">SCABER 角色</label>
                                 <div class="account-submit">
                                     <input class="submit" type="submit" value="註冊">
-                                    <a class="more" href="#">Terms and conditions</a>
+                                    <a class="terms" href="#">Terms and conditions</a>
                                 </div>
                             </form>
                         </div>

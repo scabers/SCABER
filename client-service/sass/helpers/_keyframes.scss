@@ -1,7 +1,7 @@
 /** helpers/_keyframes.scss **/
 
 
-/* navbar-pop */
+/* navbar */
 
 @keyframes navbar-pop {
     0% {
@@ -36,6 +36,61 @@
     }
     100% {
         @include transform(translateY(0));
+    }
+}
+
+
+/* account */
+
+@keyframes slideIn {
+    0% {
+        filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
+        margin-left: -320px;
+        opacity: 0;
+    }
+    100% {
+        filter: 'progid: DXImageTransform.Microsoft.Alpha(enabled=false)';
+        margin-left: 0px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes slideIn {
+    0% {
+        filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
+        margin-left: -320px;
+        opacity: 0;
+    }
+    100% {
+        filter: 'progid: DXImageTransform.Microsoft.Alpha(enabled=false)';
+        margin-left: 0px;
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes slideIn {
+    0% {
+        filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
+        margin-left: -320px;
+        opacity: 0;
+    }
+    100% {
+        filter: 'progid: DXImageTransform.Microsoft.Alpha(enabled=false)';
+        margin-left: 0px;
+        opacity: 1;
+    }
+}
+
+@-o-keyframes slideIn {
+    0% {
+        filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
+        margin-left: -320px;
+        opacity: 0;
+    }
+    100% {
+        filter: 'progid: DXImageTransform.Microsoft.Alpha(enabled=false)';
+        margin-left: 0px;
+        opacity: 1;
     }
 }
 

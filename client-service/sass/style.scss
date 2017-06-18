@@ -4,8 +4,8 @@
 /* Import Helpers */
 
 @import 'helpers/variables';
-@import 'helpers/theme';
 @import 'helpers/mixins';
+@import 'helpers/theme';
 @import 'helpers/keyframes';
 
 /* Import Media */
@@ -23,6 +23,7 @@
 
 @import 'layout/header';
 @import 'layout/passenger';
+@import 'layout/account';
 @import 'layout/driver';
 @import 'layout/team';
 @import 'layout/footer';

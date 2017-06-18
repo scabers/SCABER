@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /** style.scss **/
 /* Import Helpers */
 /** helpers/variables.scss **/
@@ -14,15 +15,36 @@
 /* padding */
 /* text */
 /* media queries variables */
+/* inline elements */
+/* ::selection */
+/* ::placeholder */
 /* navbar */
 /* section */
 /* header */
 /* section-passenger */
+/* section-account */
 /* section-driver */
 /* section-team */
 /* footer */
 /* responsive-block */
 /* button */
+/** helpers/_mixins.scss **/
+/* transform */
+/* transition */
+/* user-select */
+/* ::selection */
+/* ::placeholder */
+/* inline elements */
+/* navbar */
+/* section */
+/* header */
+/* passenger */
+/* account */
+/* driver */
+/* team */
+/* footer */
+/* responsive-block */
+/* buttons */
 h1,
 h2,
 h3,
@@ -30,7 +52,7 @@ h4,
 h5,
 h6 {
   font-family: Metrophobic, sans-serif;
-  font-weight: 550;
+  font-weight: 700;
   letter-spacing: 2px; }
 
 p {
@@ -40,37 +62,41 @@ p {
 
 /* selection effects */
 ::selection {
-  background-color: #3F3133;
-  color: #FFCF47;
+  background-color: #3f3133;
+  color: #ffcf47;
   text-shadow: none; }
 
 ::-moz-selection {
-  background-color: #3F3133;
-  color: #FFCF47;
+  background-color: #3f3133;
+  color: #ffcf47;
   text-shadow: none; }
 
 img::selection {
   background-color: transparent;
-  color: #FFCF47; }
+  color: #ffcf47; }
 
 img::-moz-selection {
   background-color: transparent;
-  color: #FFCF47; }
+  color: #ffcf47; }
 
-/** helpers/_mixins.scss **/
-/* transform */
-/* transition */
-/* navbar */
-/* section */
-/* header */
-/* passenger */
-/* driver */
-/* team */
-/* footer */
-/* responsive-block */
-/* buttons */
+/* placeholder effects */
+::-webkit-input-placeholder {
+  color: #ffcf47;
+  font-family: Yantramanav, sans-serif;
+  font-size: 14px; }
+
+::-moz-placeholder {
+  color: #ffcf47;
+  font-family: Yantramanav, sans-serif;
+  font-size: 14px; }
+
+:-ms-input-placeholder {
+  color: #ffcf47;
+  font-family: Yantramanav, sans-serif;
+  font-size: 14px; }
+
 /** helpers/_keyframes.scss **/
-/* navbar-pop */
+/* navbar */
 @keyframes navbar-pop {
   0% {
     transform: translateY(-100%);
@@ -123,6 +149,43 @@ img::-moz-selection {
     -moz-transform: translateY(0);
     -ms-transform: translateY(0);
     -o-transform: translateY(0); } }
+/* account */
+@keyframes slideIn {
+  0% {
+    filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
+    margin-left: -320px;
+    opacity: 0; }
+  100% {
+    filter: 'progid: DXImageTransform.Microsoft.Alpha(enabled=false)';
+    margin-left: 0px;
+    opacity: 1; } }
+@-webkit-keyframes slideIn {
+  0% {
+    filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
+    margin-left: -320px;
+    opacity: 0; }
+  100% {
+    filter: 'progid: DXImageTransform.Microsoft.Alpha(enabled=false)';
+    margin-left: 0px;
+    opacity: 1; } }
+@-moz-keyframes slideIn {
+  0% {
+    filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
+    margin-left: -320px;
+    opacity: 0; }
+  100% {
+    filter: 'progid: DXImageTransform.Microsoft.Alpha(enabled=false)';
+    margin-left: 0px;
+    opacity: 1; } }
+@-o-keyframes slideIn {
+  0% {
+    filter: 'progid: DXImageTransform.Microsoft.Alpha(Opacity=0)';
+    margin-left: -320px;
+    opacity: 0; }
+  100% {
+    filter: 'progid: DXImageTransform.Microsoft.Alpha(enabled=false)';
+    margin-left: 0px;
+    opacity: 1; } }
 /* responsive-block */
 @keyframes shady {
   0% {
@@ -301,7 +364,7 @@ img::-moz-selection {
   .responsive-block .block-img {
     border: 6px solid rgba(246, 180, 30, 0.9);
     border-radius: 50%;
-    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0px rgba(255, 207, 71, 0.9), 0 0 0 0px rgba(0, 0, 0, 0.5);
     display: block;
     height: 100px;
     margin: 20px auto;
@@ -551,6 +614,14 @@ img::-moz-selection {
   padding: 100px 0;
   position: relative;
   text-align: center; }
+  .section-default .section-half {
+    height: 100%;
+    padding: 20px 40px 0;
+    width: 70%; }
+    .section-default .section-half.section-left {
+      float: left; }
+    .section-default .section-half.section-right {
+      float: right; }
   .section-default .section-title {
     color: #f6b41e;
     font-size: 2.5rem;
@@ -679,6 +750,211 @@ img::-moz-selection {
     .section-passenger .section-text {
       font-size: 1.5rem;
       text-align: left; } }
+/* layout/_account.scss */
+.section-account {
+  padding: 100px 0;
+  position: relative;
+  text-align: center;
+  background-color: #3f3133;
+  padding-bottom: 0;
+  position: relative; }
+  .section-account .account-center {
+    height: 100%;
+    position: relative;
+    width: 100%; }
+    .section-account .account-center * {
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility; }
+    .section-account .account-center .section-left {
+      background-color: #72595c;
+      width: 70% !important; }
+    .section-account .account-center .account-title {
+      color: #f6b41e;
+      font-size: 2.5rem;
+      margin: 15px 0;
+      text-align: center;
+      color: #f6b41e; }
+    .section-account .account-center .account-tabs {
+      margin: 29px 0;
+      border-bottom: 2px solid #ffcf47;
+      width: 100%; }
+      .section-account .account-center .account-tabs .account-tab {
+        transition: all 0.1s ease-in-out;
+        -webkit-transition: all 0.1s ease-in-out;
+        -moz-transition: all 0.1s ease-in-out;
+        -o-transition: all 0.1s ease-in-out;
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: if true -moz-none;
+        -ms-user-select: none;
+        border-bottom: 2px solid #ffcf47;
+        cursor: pointer;
+        display: inline-block;
+        letter-spacing: 2px;
+        margin-bottom: -2px;
+        padding: 20px 15px 10px; }
+        .section-account .account-center .account-tabs .account-tab a {
+          transition: all 0.1s ease-in-out;
+          -webkit-transition: all 0.1s ease-in-out;
+          -moz-transition: all 0.1s ease-in-out;
+          -o-transition: all 0.1s ease-in-out;
+          color: #ffcf47;
+          font-size: 12px;
+          text-decoration: none;
+          text-transform: uppercase; }
+        .section-account .account-center .account-tabs .account-tab:hover a, .section-account .account-center .account-tabs .account-tab.active a {
+          color: #e79535; }
+        .section-account .account-center .account-tabs .account-tab.active {
+          border-bottom: 2px solid #e79535; }
+    .section-account .account-center .account-content .account-page .account-form {
+      height: 287px;
+      position: relative; }
+      .section-account .account-center .account-content .account-page .account-form input {
+        background-color: transparent;
+        border: 1px solid #ffcf47;
+        border-radius: 2px;
+        color: #ffcf47;
+        font-size: 14px;
+        display: block;
+        height: 42px;
+        margin-bottom: 12px;
+        padding: 16px 13px;
+        width: 100%; }
+        .section-account .account-center .account-content .account-page .account-form input::-webkit-input-placeholder, .section-account .account-center .account-content .account-page .account-form input::-moz-placeholder, .section-account .account-center .account-content .account-page .account-form input:-moz-placeholder, .section-account .account-center .account-content .account-page .account-form input:-ms-input-placeholder {
+          color: #ffcf47;
+          font-family: Yantramanav, sans-serif;
+          font-size: 14px; }
+        .section-account .account-center .account-content .account-page .account-form input:focus {
+          border: 2px solid #e79535;
+          outline: none; }
+        .section-account .account-center .account-content .account-page .account-form input:first-of-type {
+          animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -webkit-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -moz-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -o-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1); }
+        .section-account .account-center .account-content .account-page .account-form input:nth-of-type(2) {
+          animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -webkit-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -moz-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -o-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1); }
+        .section-account .account-center .account-content .account-page .account-form input:nth-of-type(3) {
+          animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -webkit-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -moz-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -o-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1); }
+      .section-account .account-center .account-content .account-page .account-form label {
+        user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: if true -moz-none;
+        -ms-user-select: none;
+        color: #ffcf47;
+        font-size: 12px; }
+        .section-account .account-center .account-content .account-page .account-form label:not([for='remember']) {
+          display: none; }
+        .section-account .account-center .account-content .account-page .account-form label:first-of-type {
+          animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -webkit-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -moz-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -o-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1); }
+        .section-account .account-center .account-content .account-page .account-form label:nth-of-type(2) {
+          animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -webkit-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -moz-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -o-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1); }
+        .section-account .account-center .account-content .account-page .account-form label:nth-of-type(3) {
+          animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -webkit-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -moz-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+          -o-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1); }
+      .section-account .account-center .account-content .account-page .account-form .account-chkbox {
+        border: 0;
+        clip: rect(0 0 0 0);
+        height: 0;
+        margin: 4px -1px 17px;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0;
+        visibility: hidden;
+        width: 0; }
+        .section-account .account-center .account-content .account-page .account-form .account-chkbox + label {
+          display: inline-block;
+          vertical-align: middle;
+          width: 50%; }
+          .section-account .account-center .account-content .account-page .account-form .account-chkbox + label:before {
+            background: transparent;
+            border: 1px solid #ffcf47;
+            border-radius: 2px;
+            color: #ffcf47;
+            content: "\a";
+            display: inline-block;
+            font-family: Yantramanav, sans-serif;
+            font-size: 8px;
+            font-weight: 700;
+            height: 11px;
+            line-height: 10px;
+            margin: -2px 8px 0 0;
+            position: relative;
+            text-align: center;
+            vertical-align: middle;
+            width: 50%; }
+        .section-account .account-center .account-content .account-page .account-form .account-chkbox:checked + label:before {
+          content: "✓"; }
+      .section-account .account-center .account-content .account-page .account-form .account-submit {
+        position: absolute;
+        bottom: 0;
+        width: 100%; }
+        .section-account .account-center .account-content .account-page .account-form .account-submit a {
+          color: #d8d8d8;
+          display: block;
+          font-size: 12px;
+          margin-top: 20px;
+          text-align: center;
+          text-decoration: none; }
+          .section-account .account-center .account-content .account-page .account-form .account-submit a:hover {
+            text-decoration: underline; }
+          .section-account .account-center .account-content .account-page .account-form .account-submit a:first-of-type {
+            animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+            -webkit-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+            -moz-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1);
+            -o-animation: slideIn 0.4s cubic-bezier(0.37, 0.82, 0.2, 1); }
+          .section-account .account-center .account-content .account-page .account-form .account-submit a:nth-of-type(2) {
+            animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+            -webkit-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+            -moz-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1);
+            -o-animation: slideIn 0.5s cubic-bezier(0.37, 0.82, 0.2, 1); }
+          .section-account .account-center .account-content .account-page .account-form .account-submit a:nth-of-type(3) {
+            animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+            -webkit-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+            -moz-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1);
+            -o-animation: slideIn 0.6s cubic-bezier(0.37, 0.82, 0.2, 1); }
+        .section-account .account-center .account-content .account-page .account-form .account-submit .submit {
+          background: transparent;
+          border: 1px solid #ffcf47;
+          border-radius: 2px;
+          color: #ffcf47;
+          cursor: pointer;
+          display: block;
+          font-size: 18px;
+          font-weight: 700;
+          height: 42px;
+          letter-spacing: 2px;
+          line-height: 0;
+          text-transform: uppercase;
+          width: 100%; }
+          .section-account .account-center .account-content .account-page .account-form .account-submit .submit:hover {
+            transition: all 0.2s;
+            -webkit-transition: all 0.2s;
+            -moz-transition: all 0.2s;
+            -o-transition: all 0.2s;
+            background-color: #ffcf47;
+            color: #3f3133; }
+    .section-account .account-center .account-content .account-signin {
+      display: none; }
+    .section-account .account-center .account-content .account-signup {
+      display: none; }
+
 /** layout/_driver.scss **/
 .section-driver {
   padding: 100px 0;

@@ -4,39 +4,43 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: #{$font-family-title},
-    sans-serif;
-    font-weight: $font-medium;
-    letter-spacing: $letter-spacing-title;
+    @include inline-h;
 }
 
 p {
-    font-size: $p-rem;
-    line-height: $line-height-text;
-    margin-bottom: $margin-bottom-text;
+    @include inline-p;
 }
 
 
 /* selection effects */
 
 ::selection {
-    background-color: #3F3133;
-    color: #FFCF47;
-    text-shadow: none;
+    @include -selection;
 }
 
 ::-moz-selection {
-    background-color: #3F3133;
-    color: #FFCF47;
-    text-shadow: none;
+    @include -selection;
 }
 
 img::selection {
-    background-color: transparent;
-    color: #FFCF47;
+    @include -selection-img;
 }
 
 img::-moz-selection {
-    background-color: transparent;
-    color: #FFCF47;
+    @include -selection-img;
+}
+
+
+/* placeholder effects */
+
+::-webkit-input-placeholder {
+    @include -placeholder;
+}
+
+::-moz-placeholder {
+    @include -placeholder;
+}
+
+:-ms-input-placeholder {
+    @include -placeholder;
 }

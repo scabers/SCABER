@@ -16,6 +16,7 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    /**/
     text-rendering: optimizeLegibility;
 }
 
@@ -35,12 +36,6 @@
 .section-left {
     background: #72595C;
     float: left;
-}
-
-.section-half.section-right {
-    background-image: url("https://s7.postimg.org/boj7tcxhn/image.jpg");
-    background-repeat: no-repeat;
-    background-size: 400px;
 }
 
 .section-account .account-tabs {
@@ -185,6 +180,7 @@
 
 .account-content label:not([for='remember']) {
     display: none;
+    /**/
 }
 
 .account-content .account-input {
@@ -256,6 +252,7 @@
 
 .account-content input:focus {
     outline: none;
+    /**/
 }
 
 .account-content .checkbox {
@@ -321,9 +318,11 @@
 .account-content .account-signin {
     display: none;
 }
+
 .account-content .account-signup {
     display: none;
 }
+
 .account-content .account-google-signup {
     display: none;
 }
