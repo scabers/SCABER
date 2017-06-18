@@ -335,6 +335,29 @@
 }
 
 
+/* demo */
+
+@mixin demo {
+    @include section-default;
+    background-color: $demo-bg-color;
+    position: $demo-position;
+}
+
+@mixin demo-title {
+    @include section-title;
+    color: $demo-title-color !important;
+}
+
+@mixin demo-text {
+    @include section-text;
+    color: $demo-text-color !important;
+}
+
+@mixin demo-btn {
+    @include section-btn;
+}
+
+
 /* account */
 
 @mixin account {

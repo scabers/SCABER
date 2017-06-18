@@ -1,0 +1,23 @@
+/** layout/_demo.scss **/
+
+.section-demo {
+    @include demo;
+    .section-title {
+        @include demo-title;
+    }
+    .section-text {
+        @include demo-text;
+    }
+}
+
+@media screen and (min-width: $screen-sm-min) {
+    .section-demo {
+        @include demo-sm;
+        .section-title {
+            @include demo-sm-title;
+        }
+        .section-text {
+            @include demo-sm-text;
+        }
+    }
+}

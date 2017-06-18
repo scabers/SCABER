@@ -1,11 +1,11 @@
 /** _buttons.scss **/
 
-.btn {
+.btn-normal {
     @include btn-normal;
 }
 
 .btn-light {
-    @extend .btn;
+    @extend .btn-normal;
 }
 
 .btn-dark {

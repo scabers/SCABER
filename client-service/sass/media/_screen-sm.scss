@@ -166,6 +166,21 @@
 }
 
 
+/* demo-sm */
+
+@mixin demo-sm {
+    @include section-sm-default;
+}
+
+@mixin demo-sm-title {
+    @include section-sm-title;
+}
+
+@mixin demo-sm-text {
+    @include section-sm-text;
+}
+
+
 /* driver-sm */
 
 @mixin driver-sm {
